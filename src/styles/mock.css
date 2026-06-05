@@ -1,0 +1,307 @@
+/* =========================================
+   MOCK PAGE
+========================================= */
+
+.mock-page {
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.mock-hero {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.mock-badge {
+  width: fit-content;
+
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+
+  background: rgba(29, 78, 216, 0.1);
+
+  color: var(--color-primary);
+}
+
+.mock-hero h1 {
+  max-width: 900px;
+
+  margin-inline: auto;
+  margin-bottom: var(--space-lg);
+}
+
+.mock-hero p {
+  max-width: 760px;
+
+  margin-inline: auto;
+
+  font-size: var(--font-size-md);
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.mock-section {
+  padding: var(--space-xl);
+}
+
+.mock-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--space-lg);
+
+  margin-bottom: var(--space-xl);
+}
+
+.mock-section-tag {
+  display: inline-block;
+
+  margin-bottom: var(--space-sm);
+
+  color: var(--color-primary);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-semibold);
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   RULES
+========================================= */
+
+.mock-rules-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: var(--space-lg);
+
+  margin-bottom: var(--space-xl);
+}
+
+.mock-rule-card {
+  display: flex;
+  align-items: flex-start;
+
+  gap: var(--space-md);
+
+  padding: var(--space-lg);
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  transition: all var(--transition-normal);
+}
+
+.mock-rule-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.mock-rule-icon {
+  min-width: 22px;
+
+  font-size: 22px;
+
+  color: var(--color-primary);
+
+  margin-top: 2px;
+}
+
+.mock-rule-card h4 {
+  margin-bottom: 6px;
+}
+
+.mock-rule-card p {
+  font-size: var(--font-size-sm);
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.mock-table-wrapper {
+  overflow-x: auto;
+
+  margin-bottom: var(--space-xl);
+}
+
+.mock-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--color-border);
+}
+
+.mock-table thead {
+  background: var(--gradient-dark);
+}
+
+.mock-table th {
+  padding: 20px;
+
+  color: white;
+
+  text-align: center;
+
+  font-size: var(--font-size-base);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.mock-table td {
+  padding: 24px;
+
+  text-align: center;
+
+  border-top: 1px solid var(--color-border);
+
+  background: var(--color-card);
+}
+
+.mock-table-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 14px 18px;
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-semibold);
+
+  transition: all var(--transition-normal);
+}
+
+.mock-table-btn:hover {
+  background: var(--color-primary);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FULL MOCK
+========================================= */
+
+.full-mock-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--space-xl);
+
+  padding: var(--space-xl);
+
+  background: var(--gradient-dark);
+
+  border-radius: var(--radius-lg);
+
+  color: white;
+}
+
+.full-mock-box h3 {
+  color: white;
+
+  margin: 10px 0;
+}
+
+.full-mock-box p {
+  color: rgba(255, 255, 255, 0.75);
+
+  max-width: 700px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+  .mock-rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-mock-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .mock-section {
+    padding: var(--space-lg);
+  }
+
+  .mock-table th,
+  .mock-table td {
+    padding: 16px;
+  }
+
+  .mock-table-btn {
+    font-size: var(--font-size-sm);
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .mock-hero {
+    margin-bottom: var(--space-xl);
+  }
+
+  .mock-hero p {
+    font-size: var(--font-size-base);
+  }
+
+  .mock-table th {
+    font-size: 13px;
+  }
+
+  .mock-table td {
+    padding: 12px;
+  }
+
+  .mock-table-btn {
+    padding: 12px 10px;
+
+    font-size: 12px;
+  }
+
+}

@@ -1,0 +1,357 @@
+/* .wats-container {
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+} */
+
+.wats-container {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  /* background: #0f172a; */
+  background: linear-gradient(to bottom, #020617, #0f172a);
+  color: white;
+
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  overflow-y: auto;
+
+  user-select: none;
+}
+
+.wats-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.wats-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.wats-header p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+.wats-start-btn {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.wats-start-btn:hover {
+  background: #1d4ed8;
+}
+
+.wats-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.wats-modal {
+  width: 90%;
+  max-width: 600px;
+
+  background: #1e293b;
+
+  padding: 30px;
+
+  border-radius: 15px;
+}
+
+.wats-modal h2 {
+  margin-bottom: 20px;
+}
+
+.wats-modal ul {
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+
+.wats-modal li {
+  margin-bottom: 10px;
+  color: #e2e8f0;
+}
+
+.wats-test-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  margin-bottom: 20px;
+}
+
+.wat-test-btn {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #0ea5e9;
+  color: white;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.wat-test-btn:hover {
+  background: #0284c7;
+}
+
+.wats-close-btn {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: crimson;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* =================================================== */
+/* COUNTDOWN SCREEN */
+
+.countdown-screen {
+  position: fixed;
+  inset: 0;
+
+  background: #020617;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+.countdown-screen h1 {
+  font-size: 10rem;
+  color: white;
+}
+
+/* TEST STARTED SCREEN */
+
+.test-started-screen {
+  text-align: center;
+}
+
+.test-started-screen h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.test-started-screen p {
+  color: #cbd5e1;
+}
+
+/* =================================================== */
+
+@media (max-width: 768px) {
+  .wats-header h1 {
+    font-size: 2rem;
+  }
+
+  .wats-modal {
+    padding: 20px;
+  }
+
+  .wats-test-links {
+    flex-direction: column;
+  }
+}
+
+/* ================================================= */
+/* TEST SCREEN */
+
+.wat-test-screen {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP BAR */
+
+.wat-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  color: #cbd5e1;
+}
+
+/* WORD AREA */
+
+.wat-word-container {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* .wat-word {
+  font-size: 6rem;
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  text-align: center;
+
+  letter-spacing: 4px;
+} */
+
+.wat-word {
+  font-size: 6rem;
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  text-align: center;
+
+  letter-spacing: 4px;
+
+  /* animation: fadeWord 0.5s ease; */
+  animation: fadeWord 0.4s ease-in-out;
+
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+@keyframes fadeWord {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* COMPLETED SCREEN */
+
+.wat-completed-screen {
+  text-align: center;
+}
+
+.wat-completed-screen h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.wat-completed-screen p {
+  color: #cbd5e1;
+  font-size: 1.2rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .wat-word {
+    font-size: 3rem;
+  }
+
+  .wat-top-bar {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  .countdown-screen h1 {
+    font-size: 6rem;
+  }
+}
+
+/* ==================================== */
+/* Close Button CSS */
+.wats-exit-btn {
+  position: absolute;
+
+  bottom: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: crimson;
+  color: white;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  z-index: 10000;
+}
+
+/* ================================================= */
+/* Progress Bar CSS */
+/* PROGRESS BAR */
+
+.wat-progress-wrapper {
+  width: 100%;
+  height: 6px;
+
+  background: #1e293b;
+
+  border-radius: 3px;
+}
+
+.wat-progress-bar {
+  height: 100%;
+
+  background: #38bdf8;
+
+  border-radius: 3px;
+  transition: width 0.5s linear;
+}

@@ -1,0 +1,139 @@
+.result-page {
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.result-header h1 {
+  margin-bottom: 20px;
+}
+
+.result-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.result-stats div {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  min-width: 150px;
+}
+
+.status {
+  padding: 14px 30px;
+  border-radius: 40px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.pass {
+  background: #00c37a;
+}
+
+.fail {
+  background: crimson;
+}
+
+.result-table-wrapper {
+  overflow-x: auto;
+  margin-top: 40px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.result-table th,
+.result-table td {
+  padding: 16px;
+  border: 1px solid rgba(153, 152, 152, 0.171);
+  text-align: left;
+}
+
+.result-table th {
+  background: var(--color-primary);
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.download-btn {
+
+  margin-top: 20px;
+
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  background: var(--color-primary);
+
+  color: white;
+}
+.download-btn:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+
+  .download-btn {
+
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .result-page {
+    padding: 16px;
+  }
+
+  .result-stats div {
+    min-width: 100%;
+  }
+
+}
+
+.result-question-image {
+  width: 120px;
+  height: 80px;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--color-border);
+
+  background: white;
+}
+
+.result-question-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+}
+
+.result-table td {
+  vertical-align: middle;
+}
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}

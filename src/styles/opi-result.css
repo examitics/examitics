@@ -1,0 +1,482 @@
+/* =========================================
+   OPI RESULT PAGE
+========================================= */
+
+.opi-result-page {
+  min-height: 100vh;
+
+  padding:
+    calc(var(--navbar-height) + 30px)
+    20px
+    50px;
+
+  background: var(--color-bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.opi-result-card {
+  width: 100%;
+  max-width: 1100px;
+
+  background: var(--color-card);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+
+  padding: 40px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.opi-result-card h1 {
+  text-align: center;
+
+  margin-bottom: 10px;
+
+  color: var(--color-text);
+}
+
+.report-date {
+  text-align: center;
+
+  color: var(--color-text-muted);
+
+  margin-bottom: 30px;
+
+  font-size: var(--font-size-sm);
+}
+
+/* =========================================
+   OVERALL SCORE
+========================================= */
+
+.overall-score {
+  width: 180px;
+  height: 180px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  font-size: 3rem;
+  font-weight: var(--font-weight-extrabold);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.assessment-grade {
+  text-align: center;
+
+  font-size: var(--font-size-lg);
+
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-primary);
+
+  margin-bottom: 25px;
+}
+
+/* =========================================
+   COMPLETION BOX
+========================================= */
+
+.completion-box {
+  margin-bottom: 30px;
+
+  padding: 18px 22px;
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  text-align: center;
+
+  color: var(--color-text);
+}
+
+.completion-box strong {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   FEEDBACK CARD
+========================================= */
+
+.opi-feedback-card {
+  margin-bottom: 40px;
+
+  padding: 24px;
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+}
+
+.opi-feedback-card h3 {
+  margin-bottom: 12px;
+
+  color: var(--color-text);
+}
+
+.opi-feedback-card p {
+  color: var(--color-text-muted);
+
+  line-height: 1.8;
+
+  white-space: pre-line;
+}
+
+/* =========================================
+   TRAITS TITLE
+========================================= */
+
+.opi-result-card h2 {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+/* =========================================
+   TRAIT CARD
+========================================= */
+
+.trait-card {
+  margin-bottom: 18px;
+}
+
+.trait-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 10px;
+
+  gap: 12px;
+}
+
+.trait-header span {
+  font-weight: var(--font-weight-semibold);
+
+  color: var(--color-text);
+}
+
+.trait-score-group {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.trait-score-group strong {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   TRAIT LEVEL
+========================================= */
+
+.trait-level {
+  padding: 5px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.trait-level.success {
+  background: rgba(22, 163, 74, 0.12);
+  color: var(--color-success);
+}
+
+.trait-level.info {
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--color-info);
+}
+
+.trait-level.warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--color-warning);
+}
+
+.trait-level.danger {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--color-danger);
+}
+
+/* =========================================
+   TRAIT PROGRESS
+========================================= */
+
+.trait-progress {
+  height: 12px;
+
+  background: var(--color-bg-secondary);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.trait-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--gradient-primary);
+
+  transition: width 0.8s ease;
+}
+
+/* =========================================
+   REPORT SECTIONS
+========================================= */
+
+.report-section {
+  margin-top: 40px;
+}
+
+.report-section h3 {
+  margin-bottom: 18px;
+
+  color: var(--color-text);
+}
+
+/* =========================================
+   REPORT ITEMS
+========================================= */
+
+.report-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 16px 18px;
+
+  margin-bottom: 12px;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid transparent;
+}
+
+.report-item span {
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-medium);
+}
+
+.report-item strong {
+  font-weight: var(--font-weight-bold);
+}
+
+/* =========================================
+   STRENGTHS
+========================================= */
+
+.strength {
+  background: rgba(22, 163, 74, 0.08);
+
+  border-color: rgba(22, 163, 74, 0.18);
+}
+
+.strength strong {
+  color: var(--color-success);
+}
+
+/* =========================================
+   WEAKNESSES
+========================================= */
+
+.weakness {
+  background: rgba(220, 38, 38, 0.08);
+
+  border-color: rgba(220, 38, 38, 0.18);
+}
+
+.weakness strong {
+  color: var(--color-danger);
+}
+
+/* =========================================
+   DISCLAIMER
+========================================= */
+
+.opi-disclaimer {
+  margin-top: 40px;
+
+  padding: 18px 20px;
+
+  border-radius: var(--radius-md);
+
+  border-left: 4px solid var(--color-primary);
+
+  background: var(--color-card-secondary);
+
+  color: var(--color-text-muted);
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.result-actions {
+  margin-top: 35px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.opi-back-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 24px;
+
+  background: var(--color-primary);
+
+  color: white;
+
+  border-radius: var(--radius-md);
+
+  font-weight: var(--font-weight-semibold);
+
+  transition: all var(--transition-normal);
+}
+
+.opi-back-btn:hover {
+  background: var(--color-primary-hover);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.opi-result-empty {
+  text-align: center;
+
+  padding: 60px 20px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+  .opi-result-card {
+    padding: 30px;
+  }
+
+  .overall-score {
+    width: 160px;
+    height: 160px;
+
+    font-size: 2.5rem;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .opi-result-page {
+    padding:
+      calc(var(--navbar-height) + 15px)
+      12px
+      30px;
+  }
+
+  .opi-result-card {
+    padding: 22px;
+  }
+
+  .overall-score {
+    width: 140px;
+    height: 140px;
+
+    font-size: 2.2rem;
+  }
+
+  .trait-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .trait-score-group {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .report-item {
+    padding: 14px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .opi-result-card {
+    padding: 18px;
+  }
+
+  .overall-score {
+    width: 120px;
+    height: 120px;
+
+    font-size: 1.8rem;
+  }
+
+  .assessment-grade {
+    font-size: var(--font-size-md);
+  }
+
+  .report-item {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 6px;
+  }
+
+  .completion-box {
+    font-size: 14px;
+  }
+}

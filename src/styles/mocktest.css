@@ -1,0 +1,869 @@
+/* =========================================
+   MOCK TEST PAGE
+========================================= */
+
+.mock-test-page {
+
+  min-height: 100vh;
+
+  padding: 24px;
+
+  background: var(--color-bg);
+
+  color: var(--color-text);
+}
+
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.mock-topbar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.mock-topbar h2 {
+
+  font-size: 28px;
+
+  font-weight: var(--font-weight-bold);
+}
+
+.timer {
+
+  min-width: 120px;
+
+  padding: 12px 18px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 20px;
+
+  font-weight: var(--font-weight-bold);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.mock-layout {
+
+  display: grid;
+
+  grid-template-columns: 1fr 320px;
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   QUESTION SECTION
+========================================= */
+
+.question-section {
+
+  min-width: 0;
+}
+
+.question-card {
+
+  background: var(--color-card);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  padding: 32px;
+
+  box-shadow: var(--shadow-md);
+}
+
+.question-number {
+
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  font-size: var(--font-size-sm);
+
+  color: var(--color-text-muted);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.question-card h3 {
+
+  font-size: 24px;
+
+  line-height: 1.5;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.options-grid {
+
+  display: grid;
+
+  gap: 16px;
+}
+
+.option-btn {
+
+  width: 100%;
+
+  text-align: left;
+
+  padding: 18px 20px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition: all var(--transition-normal);
+
+  font-weight: var(--font-weight-medium);
+}
+
+.option-btn:hover {
+
+  border-color: var(--color-primary);
+
+  transform: translateY(-2px);
+}
+
+.option-btn.active {
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  border-color: transparent;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation-buttons {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-top: 32px;
+}
+
+.navigation-buttons button {
+
+  flex: 1;
+
+  padding: 15px 20px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  font-weight: var(--font-weight-semibold);
+
+  transition: all var(--transition-normal);
+}
+
+.navigation-buttons button:hover {
+
+  background: var(--color-primary);
+
+  color: white;
+
+  border-color: transparent;
+}
+
+
+/* =========================================
+   PALETTE SECTION
+========================================= */
+
+.palette-section {
+
+  position: sticky;
+
+  top: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  max-height: calc(100vh - 50px);
+
+  padding: 24px;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-card);
+
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-md);
+
+  overflow: hidden;
+}
+
+.palette-section h3 {
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   PALETTE GRID
+========================================= */
+
+.palette-grid {
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+
+  padding-right: 6px;
+}
+
+.palette-btn {
+
+  width: 100%;
+
+  height: 48px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-weight: var(--font-weight-bold);
+
+  transition: all var(--transition-normal);
+}
+
+
+/* =========================================
+   SKIPPED BUTTON
+========================================= */
+
+.palette-btn.skipped {
+
+  background: rgba(245, 158, 11, 0.15);
+
+  color: var(--color-warning);
+
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.palette-btn.skipped:hover {
+
+  background: var(--color-warning);
+
+  color: white;
+}
+
+
+/* =========================================
+   EMPTY MESSAGE
+========================================= */
+
+.all-attempted {
+
+  text-align: center;
+
+  font-size: var(--font-size-sm);
+
+  color: var(--color-text-muted);
+
+  padding: 10px 0;
+}
+
+
+/* =========================================
+   UNANSWERED BOX
+========================================= */
+
+.unanswered-box {
+
+  padding: 16px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+}
+
+.unanswered-box h4 {
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.submit-btn {
+
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: var(--font-weight-bold);
+
+  cursor: pointer;
+
+  transition: all var(--transition-normal);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.submit-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+QUESTION IMAGE
+========================================== */
+
+.question-image {
+  width: 100%;
+  max-width: 500px;
+
+  height: 200px;
+
+  display: block;
+
+  margin: 20px auto;
+
+  padding: 10px;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  object-fit: contain;
+
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+filter: grayscale(100%) brightness(0.5);
+  opacity: 0.9;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* OPTIONAL HOVER EFFECT */
+
+.question-image:hover {
+  filter: grayscale(0%);
+}
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 768px) {
+  .question-image {
+    height: 250px;
+
+    max-width: 100%;
+  }
+}
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .question-image {
+    height: 220px;
+
+    width: 100%;
+  }
+}
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+/* @media (max-width: 992px) {
+
+  .mock-layout {
+
+    grid-template-columns: 1fr;
+  }
+
+  .palette-section {
+
+    position: relative;
+
+    top: unset;
+
+    max-height: none;
+  }
+
+  .palette-grid {
+
+    max-height: 250px;
+  }
+} */
+
+@media (max-width: 992px) {
+
+  .mock-test-page {
+
+    padding: 18px;
+
+    overflow-y: auto;
+  }
+
+  .mock-layout {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .mock-topbar {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 16px;
+  }
+
+  .mock-topbar h2 {
+
+    font-size: 24px;
+  }
+
+  .timer {
+
+    width: 100%;
+
+    font-size: 18px;
+  }
+
+  .question-card {
+
+    padding: 22px;
+  }
+
+  .question-card h3 {
+
+    font-size: 20px;
+
+    line-height: 1.5;
+  }
+
+  .options-grid {
+
+    gap: 14px;
+  }
+
+  .option-btn {
+
+    padding: 15px;
+
+    font-size: 15px;
+  }
+
+  .navigation-buttons {
+
+    gap: 12px;
+  }
+
+  .navigation-buttons button {
+
+    padding: 14px 10px;
+
+    font-size: 14px;
+  }
+
+  .palette-section {
+
+    position: relative;
+
+    top: unset;
+
+    max-height: none;
+
+    padding: 20px;
+  }
+
+  .palette-grid {
+
+    max-height: 220px;
+
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .palette-btn {
+
+    height: 44px;
+
+    font-size: 14px;
+  }
+
+  .submit-btn {
+
+    padding: 14px;
+
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .mock-test-page {
+
+    padding: 14px;
+
+    overflow: auto;
+  }
+
+  .mock-topbar {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+  .mock-topbar h2 {
+
+    font-size: 22px;
+  }
+
+  .timer {
+
+    width: 100%;
+
+    font-size: 18px;
+  }
+
+  .question-card {
+
+    padding: 18px;
+  }
+
+  .question-card h3 {
+
+    font-size: 18px;
+
+    line-height: 1.5;
+  }
+
+  .option-btn {
+
+    padding: 14px;
+
+    font-size: 14px;
+  }
+
+  /* .navigation-buttons {
+
+    flex-direction: column;
+  } */
+
+  .navigation-buttons button {
+
+    width: 100%;
+  }
+
+  /* -------------------------------------- */
+  .skip-btn {
+
+  background: rgba(245, 158, 11, 0.15) !important;
+
+  color: var(--color-warning) !important;
+
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+.skip-btn:hover {
+
+  background: var(--color-warning) !important;
+
+  color: white !important;
+}
+  /* ------------------------------------------- */
+  .palette-section {
+
+    padding: 18px;
+  }
+
+  .palette-grid {
+
+    grid-template-columns: repeat(4, 1fr);
+
+    max-height: 220px;
+  }
+
+  .palette-btn {
+
+    height: 42px;
+
+    font-size: 14px;
+  }
+
+  .submit-btn {
+
+    padding: 14px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .mock-test-page {
+
+    padding: 12px;
+  }
+
+  .question-card {
+
+    padding: 16px;
+  }
+
+  .question-card h3 {
+
+    font-size: 16px;
+  }
+
+  .palette-grid {
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .palette-btn {
+
+    height: 40px;
+  }
+}
+
+/* .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+} */
+
+.exit-btn {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: var(--color-danger);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.exit-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.exit-btn svg {
+  font-size: 1.2rem;
+}
+
+
+/* =========================================
+   FLOATING EXIT BUTTON
+========================================= */
+
+.floating-exit-btn {
+  position: fixed;
+
+  bottom: 24px;
+  right: 24px;
+
+  width: 56px;
+  height: 56px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--color-primary) !important;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.25s ease;
+
+  z-index: 999;
+}
+
+.floating-exit-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.floating-exit-btn:active {
+  transform: scale(0.95);
+}
+
+.floating-exit-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+
+  width: 56px;
+  height: 56px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--color-primary);
+  /* color: white; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-lg);
+
+  transition: all var(--transition-fast);
+
+  z-index: 999;
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.mock-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-left {
+  flex: 1;
+}
+
+.progress-wrapper {
+  margin-top: 10px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 6px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 8px;
+
+  background: var(--color-bg-secondary);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+
+  background: var(--gradient-primary);
+
+  border-radius: 999px;
+
+  transition: width 0.4s ease;
+}

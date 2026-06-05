@@ -1,0 +1,435 @@
+/* =========================
+   TAT OVERLAY
+========================= */
+/* 
+.tat-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: var(--bg-primary);
+
+  color: var(--text-primary);
+
+  overflow: hidden;
+} */
+
+.tat-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(5, 10, 20, 0.85);
+
+  backdrop-filter: blur(25px);
+
+  -webkit-backdrop-filter: blur(25px);
+
+  color: white;
+
+  overflow: hidden;
+}
+/* =========================
+   EXIT BUTTON
+========================= */
+
+.tat-exit-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(239, 68, 68, 0.15);
+
+  color: #ef4444;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  z-index: 100;
+}
+
+.tat-exit-btn:hover {
+  transform: scale(1.08);
+
+  background: rgba(239, 68, 68, 0.25);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.tat-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 10000;
+}
+
+.tat-modal {
+  width: 100%;
+  max-width: 650px;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-xl);
+
+  padding: 2.5rem;
+
+  box-shadow: var(--shadow-xl);
+
+  animation: fadeInUp 0.4s ease;
+}
+
+.tat-modal h2 {
+  text-align: center;
+
+  margin-bottom: 1.5rem;
+
+  color: var(--text-primary);
+
+  font-size: 2rem;
+}
+
+.tat-modal ul {
+  margin-bottom: 2rem;
+
+  padding-left: 1.25rem;
+}
+
+.tat-modal li {
+  margin-bottom: 12px;
+
+  color: var(--text-secondary);
+
+  line-height: 1.6;
+}
+
+.tat-start-btn {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.tat-start-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.tat-countdown {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tat-countdown h1 {
+  font-size: clamp(7rem, 15vw, 12rem);
+
+  font-weight: 800;
+
+  color: var(--primary-color);
+
+  animation: pulseCountdown 1s ease infinite;
+}
+
+/* =========================
+   TEST SCREEN
+========================= */
+
+.tat-test-screen {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+/* .tat-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 1.5rem;
+
+  margin-bottom: 2rem;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+} */
+
+.tat-top-bar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+
+  gap: 20px;
+
+  align-items: center;
+
+  padding: 1rem 1.5rem;
+
+  margin-bottom: 2rem;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-md);
+}
+
+.tat-top-bar span {
+  font-weight: 700;
+
+  color: var(--text-primary);
+}
+
+
+.phase-indicator {
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  background: rgba(59, 130, 246, 0.15);
+
+  color: var(--primary-color);
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+}
+
+/* =========================
+   IMAGE SCREEN
+========================= */
+
+.tat-image {
+  width: 100%;
+  max-width: 1200px;
+
+  height: calc(100vh - 180px);
+
+  margin: auto;
+
+  object-fit: contain;
+
+  border-radius: var(--radius-xl);
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-xl);
+
+  animation: fadeIn 0.5s ease;
+}
+
+/* =========================
+   POINTER STORY
+========================= */
+
+.pointer-box {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 2rem;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  color: var(--text-primary);
+
+  animation: fadeIn 0.5s ease;
+}
+
+/* =========================
+   WRITING PHASE
+========================= */
+
+.writing-screen {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.writing-screen h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  margin-bottom: 1rem;
+
+  color: var(--primary-color);
+}
+
+.writing-screen p {
+  font-size: 1.1rem;
+
+  color: var(--text-secondary);
+
+  max-width: 500px;
+}
+
+/* =========================
+   COMPLETED SCREEN
+========================= */
+
+.tat-completed {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 2rem;
+}
+
+.tat-completed h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  margin-bottom: 1rem;
+
+  color: #22c55e;
+}
+
+.tat-completed p {
+  color: var(--text-secondary);
+
+  font-size: 1.1rem;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseCountdown {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .tat-test-screen {
+    padding: 1rem;
+  }
+
+  .tat-top-bar {
+    padding: 12px 16px;
+  }
+
+  .tat-modal {
+    padding: 1.5rem;
+  }
+
+  .tat-image {
+    height: calc(100vh - 150px);
+  }
+
+  .pointer-box {
+    font-size: 1.8rem;
+  }
+}

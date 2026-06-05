@@ -1,0 +1,458 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.exams-page {
+  padding:
+    140px 0 100px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.exams-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 40px;
+
+  margin-bottom: 60px;
+}
+
+.page-badge {
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  padding:
+    10px 18px;
+
+  border-radius: 100px;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  color: var(--color-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.exams-header h1 {
+  margin-bottom: 18px;
+
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+
+  line-height: 1.1;
+
+  color: var(--color-text);
+}
+
+.exams-header p {
+  max-width: 700px;
+
+  line-height: 1.8;
+
+  color: var(--color-text-muted);
+}
+
+
+/* SEARCH */
+
+.exams-search {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 340px;
+
+  padding:
+    18px 22px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.02)
+    );
+
+  border: 1px solid var(--color-border);
+}
+
+.exams-search svg {
+  font-size: 20px;
+
+  color: var(--color-text-muted);
+}
+
+.exams-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.exams-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+
+  margin-bottom: 60px;
+}
+
+.exam-stat-card {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 28px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.02)
+    );
+
+  border: 1px solid var(--color-border);
+}
+
+.exam-stat-card svg {
+  font-size: 34px;
+
+  color: var(--color-primary);
+}
+
+.exam-stat-card h3 {
+  margin-bottom: 4px;
+
+  font-size: 30px;
+
+  color: var(--color-text);
+}
+
+.exam-stat-card p {
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.exams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.exam-page-card {
+  position: relative;
+
+  padding: 32px;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.02)
+    );
+
+  border: 1px solid var(--color-border);
+
+  overflow: hidden;
+
+  transition:
+    transform var(--transition-normal),
+    border var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.exam-page-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(37, 99, 235, 0.28);
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.08);
+}
+
+
+/* TOP */
+
+.exam-page-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 28px;
+}
+
+.exam-page-icon {
+  width: 74px;
+  height: 74px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.18),
+      rgba(96, 165, 250, 0.08)
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exam-page-icon svg {
+  font-size: 34px;
+
+  color: var(--color-primary);
+}
+
+.exam-difficulty {
+  padding:
+    10px 16px;
+
+  border-radius: 100px;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  color: var(--color-primary);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* BODY */
+
+.exam-category {
+  margin-bottom: 12px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  color: var(--color-primary);
+}
+
+.exam-page-body h3 {
+  margin-bottom: 18px;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  color: var(--color-text);
+}
+
+.exam-description {
+  line-height: 1.8;
+
+  color: var(--color-text-muted);
+}
+
+
+/* STATS */
+
+.exam-page-stats {
+  display: flex;
+  justify-content: space-between;
+
+  margin:
+    30px 0;
+}
+
+.exam-page-stats div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.exam-page-stats strong {
+  font-size: 20px;
+
+  color: var(--color-text);
+}
+
+.exam-page-stats span {
+  font-size: 14px;
+
+  color: var(--color-text-muted);
+}
+
+
+/* PROGRESS */
+
+.exam-progress-wrapper {
+  margin-bottom: 30px;
+}
+
+.exam-progress-info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.exam-progress-info span,
+.exam-progress-info strong {
+  color: var(--color-text);
+}
+
+.exam-progress-bar {
+  width: 100%;
+  height: 10px;
+
+  border-radius: 100px;
+
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.08);
+}
+
+.exam-progress-bar span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: 100px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #60a5fa
+    );
+}
+
+
+/* BUTTON */
+
+.exam-start-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  padding:
+    18px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d4ed8
+    );
+
+  color: white;
+
+  font-weight: 700;
+
+  transition:
+    transform var(--transition-normal);
+}
+
+.exam-start-btn:hover {
+  transform: translateY(-4px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .exams-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .exams-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exams-search {
+    width: 100%;
+
+    min-width: auto;
+  }
+
+  .exams-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .exams-page {
+    padding:
+      120px 0 90px;
+  }
+
+  .exams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exams-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .exam-page-card {
+    padding: 26px;
+  }
+
+  .exam-page-body h3 {
+    font-size: 24px;
+  }
+
+}

@@ -1,0 +1,257 @@
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.exa-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  background: var(--color-card);
+
+  border-right: 1px solid var(--color-border);
+
+  padding: 24px 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    width var(--transition-normal),
+    background var(--transition-normal);
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   COLLAPSED
+========================================= */
+
+.exa-sidebar.collapsed {
+  width: 92px;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.exa-sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.exa-sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.exa-sidebar-logo img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: contain;
+}
+
+.exa-sidebar-logo span {
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================
+   TOGGLE BUTTON
+========================================= */
+
+.exa-sidebar-toggle {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--color-border);
+
+  background: var(--color-bg-secondary);
+
+  color: var(--color-text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: all var(--transition-normal);
+}
+
+.exa-sidebar-toggle:hover {
+  background: var(--color-primary);
+
+  color: white;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.exa-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  flex: 1;
+}
+
+.exa-sidebar-menu a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 14px 18px;
+
+  border-radius: var(--radius-lg);
+
+  color: var(--color-text-muted);
+
+  font-weight: 600;
+
+  transition: all var(--transition-normal);
+}
+
+.exa-sidebar-menu a svg {
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+.exa-sidebar-menu a:hover {
+  background: rgba(29, 78, 216, 0.12);
+
+  color: var(--color-primary);
+
+  transform: translateX(4px);
+}
+
+.exa-sidebar-menu a.active {
+  background: linear-gradient(
+    135deg,
+    rgba(29, 78, 216, 0.18),
+    rgba(59, 130, 246, 0.12)
+  );
+
+  color: var(--color-primary);
+}
+
+
+/* =========================================
+   ACTIVE BAR
+========================================= */
+
+.exa-sidebar-menu a.active::before {
+  content: "";
+
+  position: absolute;
+  left: -18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 4px;
+  height: 60%;
+
+  border-radius: 10px;
+
+  background: var(--color-primary);
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.exa-sidebar-bottom {
+  padding-top: 20px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.exa-logout-btn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 14px 18px;
+
+  border: none;
+
+  border-radius: var(--radius-lg);
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: var(--color-danger);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all var(--transition-normal);
+}
+
+.exa-logout-btn svg {
+  font-size: 20px;
+}
+
+.exa-logout-btn:hover {
+  background: rgba(239, 68, 68, 0.14);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+  .exa-sidebar {
+    transform: translateX(-100%);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .exa-sidebar {
+    width: 260px;
+  }
+
+}
