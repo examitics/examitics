@@ -2,15 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://examitics.vercel.app/</loc>
+    <loc>https://examitics.vercel.app</loc>
   </url>
 
   <url>
-    <loc>https://examitics.vercel.app/pma-lc</loc>
-  </url>
-
-  <url>
-    <loc>https://examitics.vercel.app/issb-1</loc>
+    <loc>https://examitics.vercel.app/exams</loc>
   </url>
 
   <url>
@@ -18,7 +14,19 @@
   </url>
 
   <url>
+    <loc>https://examitics.vercel.app/ISSB-1</loc>
+  </url>
+
+  <url>
+    <loc>https://examitics.vercel.app/PMA-LC</loc>
+  </url>
+
+  <url>
     <loc>https://examitics.vercel.app/opi</loc>
+  </url>
+
+   <url>
+    <loc>https://examitics.vercel.app/opi-result</loc>
   </url>
 
 </urlset>
