@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Helmet } from "react-helmet-async";
+
 import Navbar from "../components/layout/navbar";
 import Features from "../components/landing/features";
 import AnalyticsPreview from "../components/landing/analyticspreview";
@@ -15,6 +17,22 @@ import { FiArrowRight, FiBarChart2, FiClock, FiTarget } from "react-icons/fi";
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>EXAMITICS | ISSB & PMA Preparation Platform Pakistan</title>
+
+        <meta
+          name="description"
+          content="Prepare for ISSB, PMA Long Course, MAT, WAT, TAT, SCT and OPI tests with EXAMITICS. Practice mock tests, track performance and improve your selection chances."
+        />
+
+        <meta
+          name="keywords"
+          content="ISSB preparation, PMA preparation, MAT test, WAT test, TAT test, OPI interview, Pakistan Army preparation"
+        />
+
+        <link rel="canonical" href="https://examitics.vercel.app/" />
+      </Helmet>
+
       <Navbar />
 
       <main className="home-page">

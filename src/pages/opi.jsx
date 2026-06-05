@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Helmet } from "react-helmet-async";
+
 import { FiClock, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaClipboardList } from "react-icons/fa";
 
@@ -215,6 +217,21 @@ const OPI = () => {
 
   return (
     <>
+      <Helmet>
+        <title>OPI Personality Assessment | EXAMITICS</title>
+
+        <meta
+          name="description"
+          content="Take the OPI personality assessment and receive insights into your personality traits, officer-like qualities, leadership potential and behavioral strengths."
+        />
+
+        <meta
+          name="keywords"
+          content="OPI test, personality assessment, officer like qualities, ISSB personality test, psychological assessment"
+        />
+
+        <link rel="canonical" href="https://examitics.vercel.app/opi" />
+      </Helmet>
       <Navbar />
 
       <div className="opi-page">

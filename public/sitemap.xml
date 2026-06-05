@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://examitics.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://examitics.vercel.app/pma-lc</loc>
+  </url>
+
+  <url>
+    <loc>https://examitics.vercel.app/issb-1</loc>
+  </url>
+
+  <url>
+    <loc>https://examitics.vercel.app/mock</loc>
+  </url>
+
+  <url>
+    <loc>https://examitics.vercel.app/opi</loc>
+  </url>
+
+</urlset>

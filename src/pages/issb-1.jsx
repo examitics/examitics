@@ -1,5 +1,7 @@
 // import React from "react";
 
+import { Helmet } from "react-helmet-async";
+
 import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
@@ -33,7 +35,6 @@ import {
 import "../styles/issb-1.css";
 
 const ISSB = () => {
-  
   const [activeTest, setActiveTest] = useState(null);
   const navigate = useNavigate();
 
@@ -85,7 +86,7 @@ const ISSB = () => {
       image: matImg,
       action: "mat",
       buttonText: "Coming Soon",
-    }
+    },
   ];
 
   const gtoTasks = [
@@ -140,6 +141,21 @@ const ISSB = () => {
 
   return (
     <>
+      <Helmet>
+        <title>ISSB Preparation Guide | EXAMITICS</title>
+
+        <meta
+          name="description"
+          content="Comprehensive ISSB preparation guide covering psychology tests, WAT, TAT, SCT, GTO tasks, interviews, and officer-like qualities."
+        />
+
+        <meta
+          name="keywords"
+          content="ISSB preparation, ISSB guide, ISSB psychology tests, GTO tasks, WAT, TAT, SCT, officer like qualities"
+        />
+
+        <link rel="canonical" href="https://examitics.vercel.app/issb-1" />
+      </Helmet>
       <Navbar />
       <main className="issb-page section-padding">
         <div className="container-custom">
@@ -472,7 +488,6 @@ const ISSB = () => {
       {activeTest === "tat" && <TAT closeTAT={() => setActiveTest(null)} />}
 
       {activeTest === "sct" && <SCT closeSCT={() => setActiveTest(null)} />}
-
 
       {activeTest === "opi" && <OPI />}
     </>
