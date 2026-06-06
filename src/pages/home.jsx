@@ -12,6 +12,8 @@ import CTASection from "../components/landing/CTAsection";
 import Footer from "../components/layout/footer";
 import "../styles/home.css";
 
+import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
+
 import { FiArrowRight, FiBarChart2, FiClock, FiTarget } from "react-icons/fi";
 
 const Home = () => {
@@ -185,6 +187,8 @@ const Home = () => {
             </div>
           </div>
         </section>
+        {/* AD BANNER */}
+         <AdsterraNativeBanner />
         {/* CTA SECTION */}
         <CTASection />
         {/* Testimonials  */}
