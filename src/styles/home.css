@@ -566,3 +566,13 @@
   }
 
 }
+
+.desktop-ad {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .desktop-ad {
+    display: none;
+  }
+}

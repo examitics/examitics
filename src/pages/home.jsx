@@ -13,6 +13,8 @@ import Footer from "../components/layout/footer";
 import "../styles/home.css";
 
 import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
+// import Adsterra300x250 from "../components/Adsterra300x250";
+import Adsterra728x90 from "../components/Adsterra728x90";
 
 import { FiArrowRight, FiBarChart2, FiClock, FiTarget } from "react-icons/fi";
 
@@ -199,6 +201,8 @@ const Home = () => {
         <AnalyticsPreview />
         {/* EXAM CATEGORIES */}
         <ExamCategories />
+        {/* AD BANNER */}
+        <Adsterra728x90 />
         {/* Footer */}
         <Footer />
       </main>
