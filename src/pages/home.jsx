@@ -191,6 +191,7 @@ const Home = () => {
         </section>
         {/* AD BANNER */}
          <AdsterraNativeBanner />
+         <Adsterra728x90 />
         {/* CTA SECTION */}
         <CTASection />
         {/* Testimonials  */}

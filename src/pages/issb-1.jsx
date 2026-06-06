@@ -22,6 +22,8 @@ import sctImg from "../assets/images/sct-img.png";
 import opiImg from "../assets/images/opi-img.png";
 import matImg from "../assets/images/mat-img.png";
 
+import Adsterra728x90 from "../components/Adsterra728x90";
+
 import {
   FiShield,
   FiTarget,
@@ -225,7 +227,7 @@ const ISSB = () => {
               </div>
             </div>
           </section>
-
+<Adsterra728x90 />
           {/* PROCESS */}
           <section className="issb-process-section">
             <div className="section-heading center-heading">
@@ -480,6 +482,7 @@ const ISSB = () => {
             </button>
           </section>
         </div>
+        <Adsterra728x90 />
       </main>
       {/* {showWAT && <WATS closeWAT={() => setShowWAT(false)} />}
       {showTAT && <TAT closeTAT={() => setShowTAT(false)} />} */}

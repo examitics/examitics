@@ -8,6 +8,8 @@ import { FaClipboardList } from "react-icons/fa";
 
 import Navbar from "../components/layout/navbar";
 
+import Adsterra728x90 from "../components/Adsterra728x90";
+
 import opiQuestions from "../data/opi/opiquestions";
 
 import "../styles/opi.css";
@@ -415,11 +417,9 @@ const OPI = () => {
             </div>
           </div>
 
-          {/* NAVIGATION */}
         </div>
-
-        {/* PALETTE */}
       </div>
+      <Adsterra728x90 />
     </>
   );
 };
