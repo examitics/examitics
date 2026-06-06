@@ -5,7 +5,7 @@
     <loc>https://examitics.vercel.app</loc>
   </url>
 
-  <!-- <url>
+  <url>
     <loc>https://examitics.vercel.app/exams</loc>
   </url>
 
@@ -27,6 +27,6 @@
 
    <url>
     <loc>https://examitics.vercel.app/opi-result</loc>
-  </url> -->
+  </url>
 
 </urlset>
