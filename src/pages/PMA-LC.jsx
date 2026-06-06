@@ -5,6 +5,8 @@ import "../styles/pma-lc.css";
 
 import Navbar from "../components/layout/navbar";
 
+import Adsterra300x250 from "../components/Adsterra300x250";
+
 import {
   FiCheckCircle,
   FiActivity,
@@ -162,7 +164,8 @@ const PMALC = () => {
             </div>
           </div>
         </section>
-
+        {/* ADVERTISEMENT 300x250 banner */}
+        <Adsterra300x250 />
         {/* =====================================
             SECTION 3 — INITIAL TEST
         ===================================== */}
