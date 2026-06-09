@@ -11,6 +11,7 @@ import MOCK from "./pages/mock";
 import ISSBa from "./pages/issb-1";
 import OPI from "./pages/opi";
 import OPIResult from "./pages/opiresult";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 import "./styles/globals.css";
 
@@ -44,6 +45,9 @@ function App() {
 
         {/* OPI RESULT PAGE */}
         <Route path="/opi-result" element={<OPIResult />} />
+
+        {/* PRIVACY POLICY PAGE */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Add more routes for other exams as needed */}
       </Routes>
