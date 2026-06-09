@@ -34,7 +34,7 @@ const ExamCategories = () => {
       mcqs: "8K+",
       mocks: "20 Mock Tests",
       level: "Intermediate",
-      route: "/issb-prep",
+      route: "/issb-1",
     },
 
     {
