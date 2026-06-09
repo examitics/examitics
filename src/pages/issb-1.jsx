@@ -11,6 +11,7 @@ import SCT from "../components/issb/sct";
 
 import OPI from "../pages/opi";
 import Navbar from "../components/layout/navbar";
+import Footer from "../components/layout/footer";
 
 import armyLogo from "../assets/logos/forces-logo/PAK-ARMY-logo.png";
 import navyLogo from "../assets/logos/forces-logo/PAK-NAVY-logo.png";
@@ -484,6 +485,7 @@ const ISSB = () => {
         </div>
         <Adsterra728x90 />
       </main>
+      <Footer />
       {/* {showWAT && <WATS closeWAT={() => setShowWAT(false)} />}
       {showTAT && <TAT closeTAT={() => setShowTAT(false)} />} */}
       {activeTest === "wat" && <WATS closeWAT={() => setActiveTest(null)} />}

@@ -297,24 +297,23 @@ const PMALC = () => {
                   <tr>
                     <td>Running</td>
                     <td>
-                      1.6 km in max 8 minutes & in min 6 minutes to get 10
-                      points
+                      1.6 km in max 8 minutes 
                     </td>
                   </tr>
 
                   <tr>
                     <td>Push-ups</td>
-                    <td>min 15 – max 40</td>
+                    <td>min 15</td>
                   </tr>
 
                   <tr>
                     <td>Sit-ups</td>
-                    <td>min 20 – max 45</td>
+                    <td>min 20</td>
                   </tr>
 
                   <tr>
                     <td>Pull-ups</td>
-                    <td>min 3 – max 10</td>
+                    <td>min 3</td>
                   </tr>
 
                   <tr>

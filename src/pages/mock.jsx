@@ -3,6 +3,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 import Navbar from "../components/layout/navbar";
+import Footer from "../components/layout/footer";
 import MockSection from "../components/mock/mocksection";
 
 import "../styles/mock.css";
@@ -45,6 +46,7 @@ const MOCK = () => {
           <MockSection title="PMA LONG COURSE" examCode="pma-lc" />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

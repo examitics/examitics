@@ -3,6 +3,7 @@ import React from "react";
 import "../styles/exams.css";
 
 import Navbar from "../components/layout/navbar";
+import Footer from "../components/layout/footer";
 
 import ExamCard from "../components/exam/examcard";
 
@@ -157,7 +158,7 @@ const Exams = () => {
         </div>
 
       </main>
-
+      <Footer />
     </>
   );
 };
