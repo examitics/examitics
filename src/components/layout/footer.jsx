@@ -36,20 +36,21 @@ const Footer = () => {
       setMessage("");
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyZLhwG2Ezp2ZrfJIErZG-6teJg8rLYRUUiTdy7lWyYl5CG1S_Bkp9B_PD7aYpqDPEXtg/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: "Anonymous",
-            email: "",
-            rating,
-            feedback,
-          }),
-        },
-      );
+  "https://script.google.com/macros/s/AKfycbyZLhwG2Ezp2ZrfJIErZG-6teJg8rLYRUUiTdy7lWyYl5CG1S_Bkp9B_PD7aYpqDPEXtg/exec",
+  {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain",
+    },
+    body: JSON.stringify({
+      name: "Anonymous",
+      email: "",
+      rating,
+      feedback,
+    }),
+  }
+);
 
       const result = await response.text();
 
