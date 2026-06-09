@@ -81,41 +81,41 @@ const examsData = [
     route: "/exams/navy",
   },
 
-  {
-    id: "mdcat",
-    title: "MDCAT",
-    category: "Medical Entry Test",
-    icon: FiTrendingUp,
-    difficulty: "Comming Soon",
+  // {
+  //   id: "mdcat",
+  //   title: "MDCAT",
+  //   category: "Medical Entry Test",
+  //   icon: FiTrendingUp,
+  //   difficulty: "Comming Soon",
 
-    description:
-      "Master biology, chemistry, and physics using high-quality structured preparation systems.",
+  //   description:
+  //     "Master biology, chemistry, and physics using high-quality structured preparation systems.",
 
-    mcqs: "25K+",
-    mocks: "60",
-    accuracy: "95%",
-    progress: 82,
+  //   mcqs: "25K+",
+  //   mocks: "60",
+  //   accuracy: "95%",
+  //   progress: 82,
 
-    route: "/exams/mdcat",
-  },
+  //   route: "/exams/mdcat",
+  // },
 
-  {
-    id: "ecat",
-    title: "ECAT",
-    category: "Engineering Entry Test",
-    icon: FiActivity,
-    difficulty: "Comming Soon",
+  // {
+  //   id: "ecat",
+  //   title: "ECAT",
+  //   category: "Engineering Entry Test",
+  //   icon: FiActivity,
+  //   difficulty: "Comming Soon",
 
-    description:
-      "Engineering-focused preparation with analytical MCQs and intelligent performance tracking.",
+  //   description:
+  //     "Engineering-focused preparation with analytical MCQs and intelligent performance tracking.",
 
-    mcqs: "18K+",
-    mocks: "45",
-    accuracy: "89%",
-    progress: 70,
+  //   mcqs: "18K+",
+  //   mocks: "45",
+  //   accuracy: "89%",
+  //   progress: 70,
 
-    route: "/exams/ecat",
-  },
+  //   route: "/exams/ecat",
+  // },
 
 ];
 
