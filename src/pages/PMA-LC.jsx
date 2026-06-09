@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/pma-lc.css";
 
 import Navbar from "../components/layout/navbar";
-
+import Footer from "../components/layout/footer";
 import Adsterra300x250 from "../components/Adsterra300x250";
 
 import {
@@ -374,6 +374,7 @@ const PMALC = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };
