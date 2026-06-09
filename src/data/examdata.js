@@ -24,6 +24,8 @@ const examsData = [
     accuracy: "92%",
     progress: 68,
 
+    status: "Continue Preparation",
+
     route: "/PMA-LC",
   },
 
@@ -41,6 +43,8 @@ const examsData = [
     mocks: "20",
     accuracy: "88%",
     progress: 52,
+
+    status: "Continue Preparation",
 
     route: "/issb-1",
   },
@@ -60,6 +64,8 @@ const examsData = [
     accuracy: "91%",
     progress: 74,
 
+      status: "Comming Soon",
+
     route: "/exams/paf",
   },
 
@@ -77,6 +83,8 @@ const examsData = [
     mocks: "24",
     accuracy: "86%",
     progress: 61,
+
+      status: "Comming Soon",
 
     route: "/exams/navy",
   },

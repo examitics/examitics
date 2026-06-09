@@ -122,16 +122,34 @@ const ExamCard = ({ exam }) => {
           BUTTON
       ===================================== */}
 
-      <Link
+      {/* <Link
         to={exam.route}
         className="exam-start-btn"
       >
 
-        Continue Preparation
+        {exam.status === "Continue Preparation" && <span className="status-indicator">•</span>}
+
 
         <FiArrowRight />
 
-      </Link>
+      </Link> */}
+      <Link
+  to={isDisabled ? "#" : exam.route}
+  className={`exam-start-btn ${isDisabled ? "disabled" : ""}`}
+  onClick={(e) => {
+    if (isDisabled) {
+      e.preventDefault();
+    }
+  }}
+>
+  {exam.status === "Continue Preparation" && (
+    <span className="status-indicator">•</span>
+  )}
+
+  {exam.status === "Coming Soon" ? "Coming Soon" : "Start"}
+
+  <FiArrowRight />
+</Link>
 
     </div>
   );
