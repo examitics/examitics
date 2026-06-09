@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "../../styles/exam-categories.css";
 
 import SectionHeading from "../common/sectionheading";
@@ -9,8 +9,6 @@ import {
   FiAward,
   FiCompass,
   FiTarget,
-  FiTrendingUp,
-  FiActivity,
 } from "react-icons/fi";
 
 const ExamCategories = () => {
@@ -48,6 +46,7 @@ const ExamCategories = () => {
       mcqs: "10K+",
       mocks: "28 Mock Tests",
       level: "Advanced",
+      route: "/paf-initial-test",
     },
 
     {
@@ -59,37 +58,15 @@ const ExamCategories = () => {
       mcqs: "9K+",
       mocks: "24 Mock Tests",
       level: "Intermediate",
+      route: "/navy-initial-test",
     },
-
-    // {
-    //   icon: <FiTrendingUp />,
-    //   title: "MDCAT",
-    //   subtitle: "Medical Entry Test",
-    //   description:
-    //     "Master biology, chemistry, physics, and logical reasoning with high-quality MCQ preparation.",
-    //   mcqs: "25K+",
-    //   mocks: "60 Mock Tests",
-    //   level: "Expert",
-    // },
-
-    // {
-    //   icon: <FiActivity />,
-    //   title: "ECAT",
-    //   subtitle: "Engineering Entry Test",
-    //   description:
-    //     "Structured engineering preparation with analytical practice and smart performance tracking.",
-    //   mcqs: "18K+",
-    //   mocks: "45 Mock Tests",
-    //   level: "Advanced",
-    // },
   ];
 
   return (
     <section className="exam-section">
-      <Link to={exams.route} className="exam-start-btn">
       <div className="container-custom">
-        {/* SECTION HEADING */}
 
+        {/* SECTION HEADING */}
         <SectionHeading
           badge="Exam Categories"
           title="Prepare for"
@@ -97,53 +74,51 @@ const ExamCategories = () => {
           text="Examitics provides structured preparation systems for military, medical, engineering, and competitive examination pathways."
         />
 
-        {/* EXAMS GRID */}
-
+        {/* GRID */}
         <div className="exam-grid">
           {exams.map((exam, index) => (
-            <div className="exam-card" key={index}>
-              {/* <div className="rotating-glow"></div> */}
-              <div className="rotating-glow"></div>
+            <Link
+              to={exam.route}
+              className="exam-card-link"
+              key={index}
+            >
+              <div className="exam-card">
 
-              <div className="card-shine"></div>
-              {/* TOP */}
+                <div className="rotating-glow"></div>
+                <div className="card-shine"></div>
 
-              <div className="exam-card-top">
-                <div className="exam-icon">{exam.icon}</div>
-
-                <span className="exam-level">{exam.level}</span>
-              </div>
-
-              {/* BODY */}
-
-              <div className="exam-body">
-                <p className="exam-subtitle">{exam.subtitle}</p>
-
-                <h3>{exam.title}</h3>
-
-                <p className="exam-description">{exam.description}</p>
-              </div>
-
-              {/* FOOTER */}
-
-              <div className="exam-footer">
-                <div>
-                  <strong>{exam.mcqs}</strong>
-
-                  <span>MCQs</span>
+                {/* TOP */}
+                <div className="exam-card-top">
+                  <div className="exam-icon">{exam.icon}</div>
+                  <span className="exam-level">{exam.level}</span>
                 </div>
 
-                <div>
-                  <strong>{exam.mocks}</strong>
-
-                  <span>Practice</span>
+                {/* BODY */}
+                <div className="exam-body">
+                  <p className="exam-subtitle">{exam.subtitle}</p>
+                  <h3>{exam.title}</h3>
+                  <p className="exam-description">{exam.description}</p>
                 </div>
+
+                {/* FOOTER */}
+                <div className="exam-footer">
+                  <div>
+                    <strong>{exam.mcqs}</strong>
+                    <span>MCQs</span>
+                  </div>
+
+                  <div>
+                    <strong>{exam.mocks}</strong>
+                    <span>Practice</span>
+                  </div>
+                </div>
+
               </div>
-            </div>
+            </Link>
           ))}
         </div>
+
       </div>
-      </Link>
     </section>
   );
 };
