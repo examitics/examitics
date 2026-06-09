@@ -21,7 +21,7 @@ const Testimonials = () => {
       exam: "PMA Long Course",
       initials: "AR",
       text:
-        "Examatics helped me improve verbal intelligence and time management before my PMA initial test.",
+        "Examitics helped me improve verbal intelligence and time management before my PMA initial test.",
     },
 
     {
@@ -56,7 +56,7 @@ const Testimonials = () => {
           badge="Student Feedback"
           title="Trusted by"
           highlight="Serious Aspirants"
-          text="Students preparing for military, medical, and competitive examinations use Examatics to train with precision and confidence."
+          text="Students preparing for military, medical, and competitive examinations use Examitics to train with precision and confidence."
         />
 
         {/* =====================================

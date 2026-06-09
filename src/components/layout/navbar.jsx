@@ -33,7 +33,7 @@ const Navbar = () => {
 
           <div className="exa-logo">
             <Link to="/" className="exa-logo">
-              <img src={darkMode ? logoLight : logoDark} alt="Examatics Logo" />
+              <img src={darkMode ? logoLight : logoDark} alt="Examitics Logo" />
             </Link>
           </div>
 

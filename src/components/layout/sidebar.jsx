@@ -35,11 +35,11 @@ const Sidebar = () => {
 
           <img
             src={darkMode ? iconLight : iconDark}
-            alt="Examatics"
+            alt="Examitics"
           />
 
           {!collapsed && (
-            <span>EXAMATICS</span>
+            <span>EXAMITICS</span>
           )}
 
         </div>

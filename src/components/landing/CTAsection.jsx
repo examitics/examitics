@@ -32,7 +32,7 @@ const CTASection = () => {
             </h2>
 
             <p>
-              Join Examatics and access structured preparation systems,
+              Join Examitics and access structured preparation systems,
               intelligent analytics, and performance-focused exam practice built
               for serious aspirants.
             </p>

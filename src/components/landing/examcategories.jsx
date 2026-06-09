@@ -91,7 +91,7 @@ const ExamCategories = () => {
           badge="Exam Categories"
           title="Prepare for"
           highlight="Competitive Excellence"
-          text="Examatics provides structured preparation systems for military, medical, engineering, and competitive examination pathways."
+          text="Examitics provides structured preparation systems for military, medical, engineering, and competitive examination pathways."
         />
 
         {/* EXAMS GRID */}

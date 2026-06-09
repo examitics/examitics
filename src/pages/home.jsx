@@ -62,7 +62,7 @@ const Home = () => {
                 </h1>
 
                 <p>
-                  Examatics helps students prepare smarter with structured MCQs,
+                  Examitics helps students prepare smarter with structured MCQs,
                   performance analytics, timed mock exams, and intelligent
                   progress tracking.
                 </p>
@@ -176,7 +176,7 @@ const Home = () => {
 
                     <div className="recent-test-card">
                       <div>
-                        <h5>MDCAT Biology Mock</h5>
+                        <h5>PMA-LC Verbal Test</h5>
 
                         <p>Completed 2h ago</p>
                       </div>

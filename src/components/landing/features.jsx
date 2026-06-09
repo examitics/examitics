@@ -74,7 +74,7 @@ const Features = () => {
           badge="Core Features"
           title="Built for"
           highlight="Serious Preparation"
-          text="Examatics combines structured MCQ practice, intelligent analytics, and performance-driven tools to help students prepare with precision."
+          text="Examitics combines structured MCQ practice, intelligent analytics, and performance-driven tools to help students prepare with precision."
         />
 
         {/* FEATURES GRID */}

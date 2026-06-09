@@ -31,7 +31,7 @@ const AnalyticsPreview = () => {
               badge="Performance Intelligence"
               title="Track Every"
               highlight="Performance Metric"
-              text="Examatics provides deep analytical insights to help students improve strategically and prepare with precision."
+              text="Examitics provides deep analytical insights to help students improve strategically and prepare with precision."
             />
 
             {/* FEATURES */}

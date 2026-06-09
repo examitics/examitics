@@ -30,15 +30,15 @@ const Footer = () => {
 
             <div className="footer-logo">
 
-              <span><img src={logo} alt="Examatics Logo" /></span>
+              <span><img src={logo} alt="Examitics Logo" /></span>
 
             </div>
 
-            <h3>Examatics</h3>
+            <h3>Examitics</h3>
 
             <p>
 
-              Examatics is a modern MCQ-based preparation platform
+              Examitics is a modern MCQ-based preparation platform
               designed for disciplined learning, competitive exams,
               and intelligent performance tracking.
 
@@ -134,7 +134,7 @@ const Footer = () => {
 
             <h3>
 
-              Stay Updated with Examatics
+              Stay Updated with Examitics
 
             </h3>
 
@@ -174,7 +174,7 @@ const Footer = () => {
 
           <p>
 
-            © 2026 Examatics. All rights reserved.
+            © 2026 Examitics. All rights reserved.
 
           </p>
 
