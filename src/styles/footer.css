@@ -412,3 +412,56 @@
   margin-top: 12px;
   font-size: 14px;
 }
+
+
+.feedback-card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #1f2937;
+  max-width: 420px;
+}
+
+.feedback-card h3 {
+  color: #38bdf8;
+  margin-bottom: 5px;
+}
+
+.feedback-card p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+.feedback-card input,
+.feedback-card textarea {
+  width: 100%;
+  background: #111827;
+  border: 1px solid #1f2937;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.feedback-card input:focus,
+.feedback-card textarea:focus {
+  border-color: #38bdf8;
+}
+
+.feedback-card button {
+  width: 100%;
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+}
+
+.feedback-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

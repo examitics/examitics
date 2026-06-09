@@ -17,6 +17,8 @@ const Footer = () => {
   const [feedback, setFeedback] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleFeedbackSubmit = async (e) => {
     e.preventDefault();
@@ -36,21 +38,21 @@ const Footer = () => {
       setMessage("");
 
       const response = await fetch(
-  "https://script.google.com/macros/s/AKfycbyZLhwG2Ezp2ZrfJIErZG-6teJg8rLYRUUiTdy7lWyYl5CG1S_Bkp9B_PD7aYpqDPEXtg/exec",
-  {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain",
-    },
-    body: JSON.stringify({
-      name: "Anonymous",
-      email: "",
-      rating,
-      feedback,
-    }),
-  }
-);
+        "https://script.google.com/macros/s/AKfycbyZLhwG2Ezp2ZrfJIErZG-6teJg8rLYRUUiTdy7lWyYl5CG1S_Bkp9B_PD7aYpqDPEXtg/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain",
+          },
+          body: JSON.stringify({
+            name: name.trim() || "Anonymous",
+            email: email.trim() || "Not provided",
+            rating,
+            feedback,
+          }),
+        },
+      );
 
       const result = await response.text();
 
@@ -188,28 +190,53 @@ const Footer = () => {
 
           <form className="footer-form" onSubmit={handleFeedbackSubmit}>
             {" "}
-            <div className="feedback-rating">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <FaStar
-                  key={star}
-                  className={`star ${star <= rating ? "active" : ""}`}
-                  onClick={() => setRating(star)}
-                />
-              ))}
-            </div>
-            <textarea
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-              placeholder="Tell us how we can improve EXAMITICS..."
-              rows="4"
-              required
-            />
-            <button type="submit" disabled={loading}>
-              {loading ? "Submitting..." : "Send Feedback"}
+            <div className="feedback-card">
+              <h3>Share Your Feedback</h3>
+              <p>Help us improve EXAMITICS</p>
 
-              <FiArrowUpRight />
-            </button>
-            {message && <p className="feedback-message">{message}</p>}
+              {/* NAME */}
+              <input
+                type="text"
+                placeholder="Your name (optional)"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+
+              {/* EMAIL */}
+              <input
+                type="email"
+                placeholder="Your email (optional)"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+
+              {/* RATING */}
+              <div className="feedback-rating">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <FaStar
+                    key={star}
+                    className={`star ${star <= rating ? "active" : ""}`}
+                    onClick={() => setRating(star)}
+                  />
+                ))}
+              </div>
+
+              {/* FEEDBACK TEXT */}
+              <textarea
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
+                placeholder="Write your feedback..."
+                rows="4"
+              />
+
+              {/* BUTTON */}
+              <button onClick={handleFeedbackSubmit} disabled={loading}>
+                {loading ? "Submitting..." : "Send Feedback"}
+              </button>
+
+              {/* MESSAGE */}
+              {message && <p className="feedback-message">{message}</p>}
+            </div>
           </form>
         </div>
 
