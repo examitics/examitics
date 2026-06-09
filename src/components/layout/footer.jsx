@@ -35,7 +35,8 @@ const handleFeedbackSubmit = async (e) => {
     setMessage("");
 
     const response = await fetch(
-      "https://script.google.com/u/0/home/projects/1vY4RHOL_olOtgFB0xEkmB3zTMabqHpoeqLFui_q6vJdkDwOyoL8BmDTn/edit",
+      "https://script.google.com/macros/s/AKfycbyZLhwG2Ezp2ZrfJIErZG-6teJg8rLYRUUiTdy7lWyYl5CG1S_Bkp9B_PD7aYpqDPEXtg/exec",
+
       {
         method: "POST",
         body: JSON.stringify({
