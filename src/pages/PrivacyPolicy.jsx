@@ -2,7 +2,7 @@ import React from "react";
 
 import { Helmet } from "react-helmet-async";
 
-import "../../styles/privacy-policy.css";
+import "../styles/privacy-policy.css";
 
 const PrivacyPolicy = () => {
   return (
