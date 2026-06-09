@@ -355,3 +355,28 @@
   }
 
 }
+
+.feedback-rating {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 28px;
+  cursor: pointer;
+  color: #4b5563;
+  transition: 0.2s ease;
+}
+
+.star.active {
+  color: #facc15;
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+.feedback-message {
+  margin-top: 10px;
+}

@@ -1,5 +1,6 @@
-import React from "react";
-
+// import React from "react";
+import React, { useState } from "react";
+import { FaStar } from "react-icons/fa";
 import "../../styles/footer.css";
 import logo from "../../assets/logos/examitics-logo.png";
 import {
@@ -11,6 +12,56 @@ import {
 } from "react-icons/fi";
 
 const Footer = () => {
+  const [rating, setRating] = useState(0);
+const [feedback, setFeedback] = useState("");
+const [loading, setLoading] = useState(false);
+const [message, setMessage] = useState("");
+
+const handleFeedbackSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!rating) {
+    setMessage("Please select a rating.");
+    return;
+  }
+
+  if (!feedback.trim()) {
+    setMessage("Please enter feedback.");
+    return;
+  }
+
+  try {
+    setLoading(true);
+    setMessage("");
+
+    const response = await fetch(
+      "https://script.google.com/u/0/home/projects/1vY4RHOL_olOtgFB0xEkmB3zTMabqHpoeqLFui_q6vJdkDwOyoL8BmDTn/edit",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Anonymous",
+          email: "",
+          rating,
+          feedback,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      setMessage("Thank you for your feedback!");
+      setRating(0);
+      setFeedback("");
+    } else {
+      setMessage("Failed to submit feedback.");
+    }
+  } catch (error) {
+    setMessage("Something went wrong.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
 
@@ -165,6 +216,69 @@ const Footer = () => {
           </form>
 
         </div>
+
+        {/* =====================================
+            Feedback
+        ===================================== */}
+
+        <div className="footer-newsletter">
+
+          <div>
+
+            <h3>
+
+              Share your Feedback with Examitics
+
+            </h3>
+
+            <p>
+
+              Help us improve by sharing your experience and suggestions.
+
+            </p>
+
+          </div> 
+
+          <form className="footer-form">
+<div className="feedback-rating">
+  {[1, 2, 3, 4, 5].map((star) => (
+    <FaStar
+      key={star}
+      className={`star ${
+        star <= rating ? "active" : ""
+      }`}
+      onClick={() => setRating(star)}
+    />
+  ))}
+</div>
+
+<textarea
+  value={feedback}
+  onChange={(e) =>
+    setFeedback(e.target.value)
+  }
+  placeholder="Tell us how we can improve EXAMITICS..."
+  rows="4"
+  required
+/>
+
+<button
+  type="submit"
+  disabled={loading}
+>
+  {loading
+    ? "Submitting..."
+    : "Send Feedback"}
+</button>
+            {message && (
+  <p className="feedback-message">
+    {message}
+  </p>
+)}
+          </form>
+
+        </div>
+
 
         {/* =====================================
             BOTTOM
