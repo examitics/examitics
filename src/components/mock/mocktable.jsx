@@ -77,6 +77,7 @@ const MockTable = ({ examCode }) => {
               <Link
                 to={`/mock/${examCode}/nonverbal-3`}
                 className="mock-table-btn"
+                aria-disabled="true"
               >
                 Not Uploaded
               </Link>
