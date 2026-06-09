@@ -12,6 +12,8 @@ import ISSBa from "./pages/issb-1";
 import OPI from "./pages/opi";
 import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+
 
 import "./styles/globals.css";
 
@@ -48,6 +50,9 @@ function App() {
 
         {/* PRIVACY POLICY PAGE */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+        {/* TERMS & CONDITIONS PAGE */}
+        <Route path="/terms-conditions" element={<TermsConditions />} />
 
         {/* Add more routes for other exams as needed */}
       </Routes>
