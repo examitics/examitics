@@ -479,8 +479,8 @@ const ISSB = () => {
             </p>
 
             <button className="exa-btn exa-btn-primary">
-              Start ISSB Journey
-            </button>
+              <a href="#psych-tests">Start ISSB Journey</a>
+            </button> 
           </section>
         </div>
         <Adsterra728x90 />
