@@ -72,7 +72,7 @@ const ExamCard = ({ exam }) => {
       ) : (
         <Link to={exam.route} className="exam-start-btn">
           {isActive && <span className="status-indicator">•</span>}
-          Start <FiArrowRight />
+          Start Preparation <FiArrowRight />
         </Link>
       )}
     </div>

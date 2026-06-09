@@ -24,6 +24,7 @@ const ExamCategories = () => {
       mcqs: "12K+",
       mocks: "35 Mock Tests",
       level: "Advanced",
+      route: "/pma-lc",
     },
 
     {
@@ -35,6 +36,7 @@ const ExamCategories = () => {
       mcqs: "8K+",
       mocks: "20 Mock Tests",
       level: "Intermediate",
+      route: "/issb-prep",
     },
 
     {
@@ -59,31 +61,32 @@ const ExamCategories = () => {
       level: "Intermediate",
     },
 
-    {
-      icon: <FiTrendingUp />,
-      title: "MDCAT",
-      subtitle: "Medical Entry Test",
-      description:
-        "Master biology, chemistry, physics, and logical reasoning with high-quality MCQ preparation.",
-      mcqs: "25K+",
-      mocks: "60 Mock Tests",
-      level: "Expert",
-    },
+    // {
+    //   icon: <FiTrendingUp />,
+    //   title: "MDCAT",
+    //   subtitle: "Medical Entry Test",
+    //   description:
+    //     "Master biology, chemistry, physics, and logical reasoning with high-quality MCQ preparation.",
+    //   mcqs: "25K+",
+    //   mocks: "60 Mock Tests",
+    //   level: "Expert",
+    // },
 
-    {
-      icon: <FiActivity />,
-      title: "ECAT",
-      subtitle: "Engineering Entry Test",
-      description:
-        "Structured engineering preparation with analytical practice and smart performance tracking.",
-      mcqs: "18K+",
-      mocks: "45 Mock Tests",
-      level: "Advanced",
-    },
+    // {
+    //   icon: <FiActivity />,
+    //   title: "ECAT",
+    //   subtitle: "Engineering Entry Test",
+    //   description:
+    //     "Structured engineering preparation with analytical practice and smart performance tracking.",
+    //   mcqs: "18K+",
+    //   mocks: "45 Mock Tests",
+    //   level: "Advanced",
+    // },
   ];
 
   return (
     <section className="exam-section">
+      <Link to={exams.route} className="exam-start-btn">
       <div className="container-custom">
         {/* SECTION HEADING */}
 
@@ -140,6 +143,7 @@ const ExamCategories = () => {
           ))}
         </div>
       </div>
+      </Link>
     </section>
   );
 };
