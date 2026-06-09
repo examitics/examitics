@@ -407,7 +407,7 @@ QUESTION IMAGE
   object-fit: contain;
 
   -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 filter: grayscale(100%) brightness(0.5);
   opacity: 0.9;
 
@@ -416,9 +416,9 @@ filter: grayscale(100%) brightness(0.5);
 
 /* OPTIONAL HOVER EFFECT */
 
-.question-image:hover {
+/* .question-image:hover {
   filter: grayscale(0%);
-}
+} */
 
 /* ==========================================
 TABLET
