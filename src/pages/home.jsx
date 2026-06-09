@@ -190,16 +190,20 @@ const Home = () => {
           </div>
         </section>
         {/* AD BANNER */}
-         <AdsterraNativeBanner />
-         <Adsterra728x90 />
+        <AdsterraNativeBanner />
+        <Adsterra728x90 />
         {/* CTA SECTION */}
         <CTASection />
         {/* Testimonials  */}
         {/* <Testimonials /> */}
         {/* FEATURES */}
-        <Features />
+        <section id="features">
+          <Features id="features" />
+        </section>
         {/* ANALYTICS PREVIEW */}
-        <AnalyticsPreview />
+        <section id="analytics">
+          <AnalyticsPreview />
+        </section>
         {/* EXAM CATEGORIES */}
         <ExamCategories />
         {/* AD BANNER */}

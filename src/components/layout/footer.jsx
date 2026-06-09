@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../../styles/footer.css";
-
+import logo from "../../assets/logos/examitics-logo.png";
 import {
   FiFacebook,
   FiInstagram,
@@ -30,7 +30,7 @@ const Footer = () => {
 
             <div className="footer-logo">
 
-              <span>EXA</span>
+              <span><img src={logo} alt="Examatics Logo" /></span>
 
             </div>
 
@@ -86,10 +86,10 @@ const Footer = () => {
 
               <h4>Quick Links</h4>
 
-              <a href="#">Home</a>
-              <a href="#">Features</a>
-              <a href="#">Analytics</a>
-              <a href="#">Mock Tests</a>
+              <a href="/">Home</a>
+              <a href="/exams">Exams</a>
+              <a href="#features">Features</a>
+              <a href="/mock">Mock Tests</a>
 
             </div>
 
@@ -99,10 +99,11 @@ const Footer = () => {
 
               <h4>Exam Categories</h4>
 
-              <a href="#">PMA Long Course</a>
-              <a href="#">ISSB Preparation</a>
-              <a href="#">PAF Initial Test</a>
-              <a href="#">MDCAT</a>
+              <a href="/pma-lc">PMA Long Course</a>
+              <a href="/issb-1">ISSB Preparation</a>
+              <a href="/paf">PAF Initial Test</a>
+              <a href="/navy">Navy Initial Test</a>
+
 
             </div>
 
@@ -112,10 +113,10 @@ const Footer = () => {
 
               <h4>Platform</h4>
 
-              <a href="#">Leaderboard</a>
-              <a href="#">Performance Tracking</a>
-              <a href="#">Practice MCQs</a>
-              <a href="#">Mock Exams</a>
+              <a href="/leaderboard">Leaderboard</a>
+              <a href="#analytics">Performance Tracking</a>
+              <a href="/mock">Practice MCQs</a>
+              <a href="/opi">OPI Test</a>
 
             </div>
 

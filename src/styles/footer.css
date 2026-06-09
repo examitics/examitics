@@ -53,8 +53,8 @@
   background:
     linear-gradient(
       135deg,
-      #2563eb,
-      #1d4ed8
+      #e9ecf3,
+      #c5d2f5
     );
 
   display: flex;
@@ -62,14 +62,6 @@
   justify-content: center;
 }
 
-.footer-logo span {
-  color: white;
-
-  font-size: 24px;
-  font-weight: 800;
-
-  letter-spacing: 1px;
-}
 
 .footer-brand h3 {
   margin-bottom: 20px;
