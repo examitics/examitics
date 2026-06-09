@@ -7,7 +7,12 @@ import { FiArrowRight } from "react-icons/fi";
 
 
 const ExamCard = ({ exam }) => {
-
+// const isDisabled = exam.status === "Coming Soon";
+const STATUS = {
+  ACTIVE: "Continue Preparation",
+  SOON: "Coming Soon",
+};
+const isDisabled = exam.status === STATUS.SOON;
   const Icon = exam.icon;
 
   return (

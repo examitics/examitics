@@ -395,7 +395,29 @@
 .exam-start-btn:hover {
   transform: translateY(-4px);
 }
+.exam-start-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none; /* important */
+  filter: grayscale(40%);
+}
+.exam-start-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.status-indicator {
+  color: #22c55e; /* green dot */
+  font-size: 18px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
 
 /* =========================================
    RESPONSIVE
