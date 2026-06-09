@@ -406,9 +406,9 @@ QUESTION IMAGE
 
   object-fit: contain;
 
-  -webkit-filter: grayscale(100%);
+  /* -webkit-filter: grayscale(100%); */
   /* filter: grayscale(100%); */
-filter: grayscale(100%) brightness(0.5);
+/* filter: grayscale(100%) brightness(0.5); */
   opacity: 0.9;
 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
