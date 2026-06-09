@@ -190,7 +190,7 @@ const Home = () => {
           </div>
         </section>
         {/* AD BANNER */}
-        <AdsterraNativeBanner />
+        {/* <AdsterraNativeBanner /> */}
         <Adsterra728x90 />
         {/* CTA SECTION */}
         <CTASection />
