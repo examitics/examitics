@@ -4,19 +4,10 @@
 
 .footer {
   position: relative;
-
   padding-top: 120px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #0f172a,
-      #020617
-    );
-
+  background: linear-gradient(180deg, #0f172a, #020617);
   overflow: hidden;
 }
-
 
 /* =========================================
    TOP
@@ -25,14 +16,10 @@
 .footer-top {
   display: flex;
   justify-content: space-between;
-
   gap: 80px;
-
   padding-bottom: 70px;
-
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-
 
 /* =========================================
    BRAND
@@ -45,38 +32,24 @@
 .footer-logo {
   width: 74px;
   height: 74px;
-
   margin-bottom: 24px;
-
   border-radius: 24px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #e9ecf3,
-      #c5d2f5
-    );
-
+  background: linear-gradient(135deg, #e9ecf3, #c5d2f5);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
 .footer-brand h3 {
   margin-bottom: 20px;
-
   font-size: 34px;
-
-  color: white;
+  color: #fff;
 }
 
 .footer-brand p {
   line-height: 1.9;
-
-  color: rgba(255,255,255,0.68);
+  color: rgba(255, 255, 255, 0.68);
 }
-
 
 /* =========================================
    SOCIALS
@@ -84,42 +57,28 @@
 
 .footer-socials {
   display: flex;
-
   gap: 16px;
-
   margin-top: 28px;
 }
 
 .footer-socials a {
   width: 48px;
   height: 48px;
-
   border-radius: 14px;
-
-  background: rgba(255,255,255,0.05);
-
-  border: 1px solid rgba(255,255,255,0.06);
-
-  color: white;
-
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  transition:
-    transform var(--transition-normal),
-    background var(--transition-normal),
-    border var(--transition-normal);
+  transition: all var(--transition-normal);
 }
 
 .footer-socials a:hover {
   transform: translateY(-4px);
-
   background: rgba(37, 99, 235, 0.18);
-
   border-color: rgba(96, 165, 250, 0.22);
 }
-
 
 /* =========================================
    LINKS
@@ -127,16 +86,7 @@
 
 .footer-links-wrapper {
   display: flex;
-
   gap: 80px;
-}
-
-.footer-links h4 {
-  margin-bottom: 24px;
-
-  font-size: 18px;
-
-  color: white;
 }
 
 .footer-links {
@@ -144,11 +94,15 @@
   flex-direction: column;
 }
 
+.footer-links h4 {
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #fff;
+}
+
 .footer-links a {
   margin-bottom: 16px;
-
-  color: rgba(255,255,255,0.68);
-
+  color: rgba(255, 255, 255, 0.68);
   transition: color var(--transition-normal);
 }
 
@@ -156,102 +110,72 @@
   color: #60a5fa;
 }
 
-
 /* =========================================
-   NEWSLETTER
+   NEWSLETTER / FEEDBACK SECTION
 ========================================= */
 
 .footer-newsletter {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 40px;
-
-  padding:
-    60px 0;
-
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-newsletter h3 {
   margin-bottom: 14px;
-
   font-size: 34px;
-
-  color: white;
+  color: #fff;
 }
 
 .footer-newsletter p {
   max-width: 580px;
-
   line-height: 1.8;
-
-  color: rgba(255,255,255,0.68);
+  color: rgba(255, 255, 255, 0.68);
 }
 
-
-/* FORM */
+/* =========================================
+   FORM
+========================================= */
 
 .footer-form {
   display: flex;
-
   min-width: 480px;
-
-  background: rgba(255,255,255,0.05);
-
-  border: 1px solid rgba(255,255,255,0.08);
-
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-
   overflow: hidden;
 }
 
-.footer-form input {
+.footer-form input,
+.footer-form textarea {
   flex: 1;
-
-  padding:
-    20px 22px;
-
+  padding: 20px 22px;
   border: none;
   outline: none;
-
   background: transparent;
-
-  color: white;
-
+  color: #fff;
   font-size: 16px;
 }
 
-.footer-form input::placeholder {
-  color: rgba(255,255,255,0.42);
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.42);
 }
 
 .footer-form button {
   display: flex;
   align-items: center;
-
+  justify-content: center;
   gap: 10px;
-
-  padding:
-    0 26px;
-
+  padding: 0 26px;
   border: none;
-
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #1d4ed8
-    );
-
-  color: white;
-
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
   font-weight: 700;
-
   cursor: pointer;
 }
-
 
 /* =========================================
    BOTTOM
@@ -261,24 +185,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding:
-    28px 0;
+  padding: 28px 0;
 }
 
 .footer-bottom p {
-  color: rgba(255,255,255,0.58);
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .footer-bottom-links {
   display: flex;
-
   gap: 24px;
 }
 
 .footer-bottom-links a {
-  color: rgba(255,255,255,0.58);
-
+  color: rgba(255, 255, 255, 0.58);
   transition: color var(--transition-normal);
 }
 
@@ -286,100 +206,9 @@
   color: #60a5fa;
 }
 
-
 /* =========================================
-   RESPONSIVE
+   FEEDBACK RATING
 ========================================= */
-
-@media (max-width: 1100px) {
-
-  .footer-top {
-    flex-direction: column;
-  }
-
-  .footer-newsletter {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-form {
-    width: 100%;
-
-    min-width: auto;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .footer {
-    padding-top: 90px;
-  }
-
-  .footer-links-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 40px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-
-    gap: 20px;
-
-    text-align: center;
-  }
-
-}
-
-@media (max-width: 576px) {
-
-  .footer-links-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-form {
-    flex-direction: column;
-  }
-
-  .footer-form button {
-    justify-content: center;
-
-    padding:
-      18px;
-  }
-
-  .footer-newsletter h3 {
-    font-size: 28px;
-  }
-
-}
-
-.feedback-rating {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 15px;
-}
-
-.star {
-  font-size: 28px;
-  cursor: pointer;
-  color: #4b5563;
-  transition: 0.2s ease;
-}
-
-.star.active {
-  color: #facc15;
-}
-
-.star:hover {
-  transform: scale(1.15);
-}
-
-.feedback-message {
-  margin-top: 10px;
-}
 
 .feedback-rating {
   display: flex;
@@ -402,17 +231,18 @@
   transform: scale(1.15);
 }
 
-.footer-form textarea {
-  width: 100%;
-  min-height: 100px;
-  resize: vertical;
-}
+/* =========================================
+   FEEDBACK MESSAGE
+========================================= */
 
 .feedback-message {
   margin-top: 12px;
   font-size: 14px;
 }
 
+/* =========================================
+   FEEDBACK CARD (optional standalone)
+========================================= */
 
 .feedback-card {
   background: #0f172a;
@@ -441,7 +271,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 8px;
-  color: white;
+  color: #fff;
   outline: none;
 }
 
@@ -457,11 +287,67 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  color: black;
+  color: #000;
   font-weight: 600;
 }
 
 .feedback-card button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-form {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 90px;
+  }
+
+  .footer-links-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-links-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-form {
+    flex-direction: column;
+  }
+
+  .footer-form button {
+    padding: 18px;
+  }
+
+  .footer-newsletter h3 {
+    font-size: 28px;
+  }
 }
