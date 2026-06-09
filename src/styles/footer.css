@@ -380,3 +380,35 @@
 .feedback-message {
   margin-top: 10px;
 }
+
+.feedback-rating {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.star {
+  font-size: 28px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: 0.2s ease;
+}
+
+.star.active {
+  color: #facc15;
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+.footer-form textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.feedback-message {
+  margin-top: 12px;
+  font-size: 14px;
+}
