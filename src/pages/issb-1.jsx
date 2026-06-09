@@ -311,7 +311,7 @@ const ISSB = () => {
 
                     <button
                       className="exa-btn exa-btn-primary"
-                      // disabled={test.action === "sct"}
+                      disabled={test.action === "mat"}
                       onClick={() => {
                         if (test.action === "wat") {
                           setActiveTest("wat");
