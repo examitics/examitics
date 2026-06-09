@@ -45,8 +45,8 @@ const ExamCategories = () => {
         "Comprehensive preparation for PAF initial exams including physics, intelligence, and academic modules.",
       mcqs: "10K+",
       mocks: "28 Mock Tests",
-      level: "Advanced",
-      route: "/paf-initial-test",
+      level: "Comming Soon",
+      // route: "/paf-initial-test",
     },
 
     {
@@ -57,8 +57,8 @@ const ExamCategories = () => {
         "Practice Navy initial test patterns with subject-based MCQs and time-based mock exams.",
       mcqs: "9K+",
       mocks: "24 Mock Tests",
-      level: "Intermediate",
-      route: "/navy-initial-test",
+      level: "Comming Soon",
+      // route: "/navy-initial-test",
     },
   ];
 
