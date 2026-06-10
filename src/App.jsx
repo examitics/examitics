@@ -16,10 +16,13 @@ import TermsConditions from "./pages/TermsConditions";
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
+import { usePageTracking } from "./analytics/usePageTracking";
 
 import "./styles/globals.css";
 
 function App() {
+  usePageTracking();
+
   return (
     <BrowserRouter>
       <ScrollToTop />
