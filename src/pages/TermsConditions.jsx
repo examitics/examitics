@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/terms-conditions.css";
 
+import { Helmet } from "react-helmet-async";
+
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 
@@ -8,6 +10,13 @@ const TermsConditions = () => {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <title>Terms & Conditions | EXAMITICS</title>
+        <meta
+          name="description"
+          content="Read EXAMITICS terms and conditions covering user responsibilities, intellectual property, and disclaimer."
+        />
+      </Helmet>
 
       <div className="terms-container">
         <div className="terms-hero">

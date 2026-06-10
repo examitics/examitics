@@ -145,8 +145,9 @@ const Footer = () => {
             <div className="footer-links">
               <h4>Platform</h4>
 
-              <a href="/leaderboard">Leaderboard</a>
-              <a href="#analytics">Performance Tracking</a>
+              {/* <a href="/issb-1#psych-tests">Psychological Tests</a> */}
+              {/* <Link to="#psych-tests">Psychological-Tests</Link> */}
+              {/* <a href="#analytics">Performance Tracking</a> */}
               <a href="/mock">Practice MCQs</a>
               <a href="/opi">OPI Test</a>
             </div>
@@ -181,7 +182,7 @@ const Footer = () => {
             Feedback
         ===================================== */}
 
-        <div className="footer-newsletter">
+        <div className="feedback-section" id="feedback-section">
           <div>
             <h3>Share your Feedback with Examitics</h3>
 

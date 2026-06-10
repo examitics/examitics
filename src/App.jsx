@@ -14,12 +14,15 @@ import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 
+import ScrollToTop from "./components/common/ScrollToTop";
+import FloatingFeedback from "./components/common/FloatingFeedback";
 
 import "./styles/globals.css";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* HOME PAGE */}
         <Route path="/" element={<Home />} />
@@ -54,8 +57,11 @@ function App() {
         {/* TERMS & CONDITIONS PAGE */}
         <Route path="/terms-conditions" element={<TermsConditions />} />
 
+        {/*floating feedback button */}
+        {/* <FloatingFeedback /> */}
         {/* Add more routes for other exams as needed */}
       </Routes>
+      <FloatingFeedback />
     </BrowserRouter>
   );
 }

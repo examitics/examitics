@@ -1,0 +1,130 @@
+.floating-feedback-btn {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  border-radius: 999px;
+
+  box-shadow: var(--shadow-lg);
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  transition: all var(--transition-normal);
+}
+
+.floating-feedback-btn:hover {
+  transform: translateY(-4px);
+}
+
+.floating-feedback-btn svg {
+  font-size: 20px;
+}
+
+.floating-feedback-btn span {
+  font-weight: var(--font-weight-semibold);
+}
+
+.floating-feedback-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  background: var(--gradient-primary);
+  color: white;
+
+  border-radius: 999px;
+
+  box-shadow: var(--shadow-lg);
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  transition: all var(--transition-normal);
+}
+
+/* hidden tooltip */
+.feedback-tooltip {
+  position: absolute;
+
+  right: 0;
+  bottom: 65px;
+
+  background: var(--color-card);
+  color: var(--color-text);
+
+  padding: 10px 12px;
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-md);
+
+  font-size: var(--font-size-sm);
+
+  width: 240px;
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  pointer-events: none;
+
+  transition: all 0.25s ease;
+}
+
+/* show on hover */
+.floating-feedback-btn:hover .feedback-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* optional arrow */
+.feedback-tooltip::after {
+  content: "";
+
+  position: absolute;
+  right: 20px;
+  bottom: -6px;
+
+  width: 12px;
+  height: 12px;
+
+  background: var(--color-card);
+
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .feedback-tooltip {
+    display: none;
+  }
+
+  .feedback-text {
+    display: none;
+  }
+
+  .floating-feedback-btn {
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    padding: 0;
+  }
+}
