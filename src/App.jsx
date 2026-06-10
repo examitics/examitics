@@ -1,6 +1,6 @@
 // import React from "react";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
 import Exams from "./pages/exams";
@@ -24,7 +24,7 @@ function App() {
   usePageTracking();
 
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Routes>
         {/* HOME PAGE */}
@@ -65,7 +65,7 @@ function App() {
         {/* Add more routes for other exams as needed */}
       </Routes>
       <FloatingFeedback />
-    </BrowserRouter>
+    </>
   );
 }
 
