@@ -3,7 +3,7 @@ const questions1to10 = [
     id: 1,
     question: "At which point is the ball going faster?",
     options: ["A", "B", "Equal"],
-    correctAnswer: "A"
+    correctAnswer: "B"
   },
   {
     id: 2,
