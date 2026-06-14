@@ -5,6 +5,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FiX, FiClock } from "react-icons/fi";
 
 import verbalSet1 from "../data/mcqs/verbal/set1";
+import verbalSet2 from "../data/mcqs/verbal/set2";
+
 import academicSet1 from "../data/mcqs/academic/set1";
 import academicSet2 from "../data/mcqs/academic/set2";
 import academicSet3 from "../data/mcqs/academic/set3";
@@ -37,8 +39,8 @@ const shuffleArray = (array) => {
 const questionBank = {
   verbal: {
     set1: verbalSet1,
+    set2: verbalSet2,
   },
-
   academic: {
     set1: academicSet1,
     set2: academicSet2,

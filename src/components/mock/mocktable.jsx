@@ -40,11 +40,11 @@ const MockTable = ({ examCode }) => {
           <tr>
             <td>
               <Link
-                to={`/mock/${examCode}/verbal-2`}
-                // to ="/mock/mat/set1"
+                // to={`/mock/${examCode}/verbal-2`}
+                to="/mock/verbal/set2"
                 className="mock-table-btn"
               >
-                Not Uploaded
+                Verbal Mock 2
               </Link>
             </td>
 
