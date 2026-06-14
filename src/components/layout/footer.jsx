@@ -136,8 +136,8 @@ const Footer = () => {
 
               <a href="/pma-lc">PMA Long Course</a>
               <a href="/issb-1">ISSB Preparation</a>
-              <a href="/paf">PAF Initial Test</a>
-              <a href="/navy">Navy Initial Test</a>
+              <a href="">PAF Initial Test</a>
+              <a href="">Navy Initial Test</a>
             </div>
 
             {/* PLATFORM */}
