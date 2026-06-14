@@ -41,6 +41,7 @@ const MockTable = ({ examCode }) => {
             <td>
               <Link
                 to={`/mock/${examCode}/verbal-2`}
+                // to ="/mock/mat/set1"
                 className="mock-table-btn"
               >
                 Not Uploaded

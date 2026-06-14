@@ -1,7 +1,9 @@
-const questions1to10 = [
+const questionsmat = [
   {
     id: 1,
     question: "At which point is the ball going faster?",
+    image: "/images/mat-images/q1.PNG",
+    
     options: ["A", "B", "Equal"],
     correctAnswer: "B"
   },
@@ -581,3 +583,4 @@ const questions1to10 = [
   }
 
 ];
+export default questionsmat;

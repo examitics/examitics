@@ -10,6 +10,7 @@ import academicSet2 from "../data/mcqs/academic/set2";
 import academicSet3 from "../data/mcqs/academic/set3";
 
 import nonVerbalSet1 from "../data/mcqs/nonverbal/set1";
+import MAT from "../data/mcqs/mat/set1";
 
 import "../styles/mocktest.css";
 
@@ -46,6 +47,10 @@ const questionBank = {
 
   nonverbal: {
     set1: nonVerbalSet1,
+  },
+
+  mat: {
+    set1: MAT,
   },
 };
 

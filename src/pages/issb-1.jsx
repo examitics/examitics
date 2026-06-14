@@ -88,7 +88,7 @@ const ISSB = () => {
         "Assess your understanding of mechanical principles and problem-solving abilities.",
       image: matImg,
       action: "mat",
-      buttonText: "Coming Soon",
+      buttonText: "Start MAT Practice",
     },
   ];
 
@@ -311,7 +311,7 @@ const ISSB = () => {
 
                     <button
                       className="exa-btn exa-btn-primary"
-                      disabled={test.action === "mat"}
+                      // disabled={test.action === "mat"}
                       onClick={() => {
                         if (test.action === "wat") {
                           setActiveTest("wat");
@@ -331,6 +331,9 @@ const ISSB = () => {
 
                         if (test.action === "opi") {
                           navigate("/opi");
+                        }
+                        if (test.action === "mat") {
+                          navigate("/mock/mat/set1");
                         }
                       }}
                     >
