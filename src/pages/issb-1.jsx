@@ -142,6 +142,7 @@ const ISSB = () => {
     "Hanging Log",
   ];
 
+
   return (
     <>
       <Helmet>
@@ -228,7 +229,7 @@ const ISSB = () => {
               </div>
             </div>
           </section>
-<Adsterra728x90 />
+          <Adsterra728x90 />
           {/* PROCESS */}
           <section className="issb-process-section">
             <div className="section-heading center-heading">
@@ -298,17 +299,6 @@ const ISSB = () => {
 
                     <p>{test.description}</p>
 
-                    {/* <button
-                      className="exa-btn exa-btn-primary"
-                      onClick={() => setShowWAT(true)}
-                    >
-                      Start WAT Practice
-                    </button>
-
-                    <button onClick={() => setShowTAT(true)}>
-                      Start Picture Story Practice
-                    </button> */}
-
                     <button
                       className="exa-btn exa-btn-primary"
                       // disabled={test.action === "mat"}
@@ -324,10 +314,6 @@ const ISSB = () => {
                         if (test.action === "sct") {
                           setActiveTest("sct");
                         }
-
-                        // if (test.action === "opi") {
-                        //   setActiveTest("opi");
-                        // }
 
                         if (test.action === "opi") {
                           navigate("/opi");
@@ -393,6 +379,8 @@ const ISSB = () => {
                     {item}
                   </div>
                 ))}
+
+                
               </div>
             </div>
 
@@ -483,7 +471,7 @@ const ISSB = () => {
 
             <button className="exa-btn exa-btn-primary">
               <a href="#psych-tests">Start ISSB Journey</a>
-            </button> 
+            </button>
           </section>
         </div>
         <Adsterra728x90 />
