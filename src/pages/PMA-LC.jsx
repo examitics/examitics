@@ -231,8 +231,8 @@ const PMALC = () => {
                 Academic Mock Test
               </Link>
               
-              <Link to="/mock" className="mock-btn">
-                Explorw More Mock Tests
+              <Link to="/mock" className="mock-btn" style={{backgroundColor: "var(--color-success)"}}>
+                <b>Explorw More Mock Tests</b>
               </Link>
             </div>
           </div>
