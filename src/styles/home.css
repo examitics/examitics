@@ -194,3 +194,23 @@
     width: 100%;
   }
 }
+
+/* add management  */
+.desktop-ad {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-ad {
+    display: none;
+  }
+}
+.mobile-ad {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-ad {
+    display: block;
+  }
+}

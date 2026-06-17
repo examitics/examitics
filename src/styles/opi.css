@@ -740,3 +740,14 @@
 .tracker-item.upcoming .tracker-number {
   color: var(--color-text-muted);
 }
+
+/* add management  */
+.desktop-ad {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .desktop-ad {
+    display: none;
+  }
+}

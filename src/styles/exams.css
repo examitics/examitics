@@ -529,3 +529,34 @@
   50% { opacity: 1; }
   100% { opacity: 0.4; }
 }
+
+.page-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.exams-page {
+  flex: 1;
+}
+
+.sidebar {
+  width: 300px;
+}
+
+/* Hide sidebar on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .page-layout {
+    flex-direction: column;
+  }
+}
+
+.sidebar-ad {
+  width: 300px;
+  position: sticky;
+  top: 20px;
+}

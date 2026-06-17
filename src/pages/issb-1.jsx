@@ -24,6 +24,7 @@ import opiImg from "../assets/images/opi-img.png";
 import matImg from "../assets/images/mat-img.png";
 
 import Adsterra728x90 from "../components/Adsterra728x90";
+import Adsterra300x250 from "../components/Adsterra300x250";
 
 import {
   FiShield,
@@ -229,8 +230,15 @@ const ISSB = () => {
               </div>
             </div>
           </section>
-          <Adsterra728x90 />
-          {/* PROCESS */}
+
+<div className="mobile-ad">
+  {/* 320x50 Adsterra banner code */}
+  <Adsterra300x250/>
+</div>
+<div className="desktop-ad">
+        <Adsterra728x90 />
+      </div>   
+             {/* PROCESS */}
           <section className="issb-process-section">
             <div className="section-heading center-heading">
               <span className="section-tag">ISSB PROCESS</span>

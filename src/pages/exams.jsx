@@ -9,6 +9,8 @@ import ExamCard from "../components/exam/examcard";
 
 import examsData from "../data/examdata";
 
+import SidebarAd160x600 from "../components/SidebarAd160x600";
+
 import {
   FiSearch,
   FiBarChart2,
@@ -18,146 +20,99 @@ import {
 } from "react-icons/fi";
 
 const Exams = () => {
-
   return (
-
     <>
-
       <Navbar />
-
-      <main className="exams-page">
-
-        <div className="container-custom">
-
-          {/* =====================================
+      <div className="page-layout">
+        <main className="exams-page">
+          <div className="container-custom">
+            {/* =====================================
               HEADER
           ===================================== */}
 
-          <div className="exams-header">
+            <div className="exams-header">
+              <div>
+                <span className="page-badge">Competitive Preparation</span>
 
-            <div>
+                <h1>Exam Preparation Portal</h1>
 
-              <span className="page-badge">
+                <p>
+                  Access structured MCQ preparation systems, mock examinations,
+                  and performance analytics for competitive and military
+                  examinations.
+                </p>
+              </div>
 
-                Competitive Preparation
+              {/* SEARCH */}
 
-              </span>
+              <div className="exams-search">
+                <FiSearch />
 
-              <h1>
-
-                Exam Preparation Portal
-
-              </h1>
-
-              <p>
-
-                Access structured MCQ preparation systems,
-                mock examinations, and performance analytics
-                for competitive and military examinations.
-
-              </p>
-
+                <input type="text" placeholder="Search exam categories..." />
+              </div>
             </div>
 
-            {/* SEARCH */}
-
-            <div className="exams-search">
-
-              <FiSearch />
-
-              <input
-                type="text"
-                placeholder="Search exam categories..."
-              />
-
-            </div>
-
-          </div>
-
-          {/* =====================================
+            {/* =====================================
               STATS
           ===================================== */}
 
-          <div className="exams-stats-grid">
+            <div className="exams-stats-grid">
+              <div className="exam-stat-card">
+                <FiBarChart2 />
 
-            <div className="exam-stat-card">
+                <div>
+                  <h3>18</h3>
 
-              <FiBarChart2 />
-
-              <div>
-
-                <h3>18</h3>
-
-                <p>Mock Exams Completed</p>
-
+                  <p>Mock Exams Completed</p>
+                </div>
               </div>
 
-            </div>
+              <div className="exam-stat-card">
+                <FiClock />
 
-            <div className="exam-stat-card">
+                <div>
+                  <h3>124h</h3>
 
-              <FiClock />
-
-              <div>
-
-                <h3>124h</h3>
-
-                <p>Total Study Time</p>
-
+                  <p>Total Study Time</p>
+                </div>
               </div>
 
-            </div>
+              <div className="exam-stat-card">
+                <FiTarget />
 
-            <div className="exam-stat-card">
+                <div>
+                  <h3>89%</h3>
 
-              <FiTarget />
-
-              <div>
-
-                <h3>89%</h3>
-
-                <p>Average Accuracy</p>
-
+                  <p>Average Accuracy</p>
+                </div>
               </div>
 
-            </div>
+              <div className="exam-stat-card">
+                <FiTrendingUp />
 
-            <div className="exam-stat-card">
+                <div>
+                  <h3>+14%</h3>
 
-              <FiTrendingUp />
-
-              <div>
-
-                <h3>+14%</h3>
-
-                <p>Monthly Improvement</p>
-
+                  <p>Monthly Improvement</p>
+                </div>
               </div>
-
             </div>
 
-          </div>
-
-          {/* =====================================
+            {/* =====================================
               GRID
           ===================================== */}
 
-          <div className="exams-grid">
-
-            {examsData.map((exam) => (
-
-              <ExamCard
-                key={exam.id}
-                exam={exam}
-              />
-
-            ))}
-
+            <div className="exams-grid">
+              {examsData.map((exam) => (
+                <ExamCard key={exam.id} exam={exam} />
+              ))}
+            </div>
           </div>
-
-        </div>
-
-      </main>
+        </main>
+        <aside className="sidebar">
+          <SidebarAd160x600 />
+        </aside>
+      </div>
       <Footer />
     </>
   );

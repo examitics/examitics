@@ -235,7 +235,6 @@ const OPI = () => {
         <link rel="canonical" href="https://examitics.vercel.app/opi" />
       </Helmet>
       <Navbar />
-
       <div className="opi-page">
         {/* HEADER */}
 
@@ -352,6 +351,19 @@ const OPI = () => {
               <button className="opi-nav-btn submit-btn" onClick={handleSubmit}>
                 Submit Test
               </button>
+              {/* <button
+  className="opi-nav-btn submit-btn"
+  onClick={() => {
+    window.open(
+      "https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d",
+      "_blank"
+    );
+
+    handleSubmit();
+  }}
+>
+  Submit Test
+</button> */}
 
               <button
                 className="opi-nav-btn primary"
@@ -416,10 +428,11 @@ const OPI = () => {
               })}
             </div>
           </div>
-
         </div>
       </div>
-      <Adsterra728x90 />
+      <div className="desktop-ad">
+        <Adsterra728x90 />
+      </div>{" "}
     </>
   );
 };

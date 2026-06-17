@@ -13,10 +13,17 @@ import Footer from "../components/layout/footer";
 import "../styles/home.css";
 
 import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
-// import Adsterra300x250 from "../components/Adsterra300x250";
+import Adsterra300x250 from "../components/Adsterra300x250";
 import Adsterra728x90 from "../components/Adsterra728x90";
 
-import { FiArrowRight, FiBarChart2, FiClock, FiTarget, FiBookOpen, FiAward } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiBarChart2,
+  FiClock,
+  FiTarget,
+  FiBookOpen,
+  FiAward,
+} from "react-icons/fi";
 
 const Home = () => {
   return (
@@ -43,47 +50,42 @@ const Home = () => {
         {/* =====================================
             HERO SECTION
         ===================================== */}
- <section className="hero-section">
-      <div className="hero-overlay"></div>
+        <section className="hero-section">
+          <div className="hero-overlay"></div>
 
-      <div className="container-custom">
-        <div className="hero-content">
+          <div className="container-custom">
+            <div className="hero-content">
+              <div className="hero-badge">
+                ISSB • PMA • PAF • Navy Preparation
+              </div>
 
-          <div className="hero-badge">
-            ISSB • PMA • PAF • Navy Preparation
-          </div>
+              <h1>
+                Prepare for
+                <span> ISSB, PMA, PAF & Navy </span>
+                Selection with Confidence
+              </h1>
 
-          <h1>
-            Prepare for
-            <span> ISSB, PMA, PAF & Navy </span>
-            Selection with Confidence
-          </h1>
+              <p>
+                Practice Intelligence Tests, Psychology Tests, Mock Exams, and
+                Interview Preparation on one free platform designed for Pakistan
+                Armed Forces candidates.
+              </p>
 
-          <p>
-            Practice Intelligence Tests, Psychology Tests,
-            Mock Exams, and Interview Preparation on one
-            free platform designed for Pakistan Armed
-            Forces candidates.
-          </p>
+              <div className="hero-buttons">
+                <Link to="/exams" className="exa-btn exa-btn-primary">
+                  Start Preparation
+                  <FiArrowRight />
+                </Link>
 
-          <div className="hero-buttons">
-            <Link
-              to="/exams"
-              className="exa-btn exa-btn-primary"
-            >
-              Start Preparation
-              <FiArrowRight />
-            </Link>
+                <Link
+                  to="/issb-1"
+                  className="exa-btn exa-btn-outline hero-outline-btn"
+                >
+                  Explore Tests
+                </Link>
+              </div>
 
-            <Link
-              to="/issb-1"
-              className="exa-btn exa-btn-outline hero-outline-btn"
-            >
-              Explore Tests
-            </Link>
-          </div>
-
-          {/* <div className="hero-stats">
+              {/* <div className="hero-stats">
 
             <div className="hero-stat-card">
               <FiBookOpen />
@@ -113,21 +115,27 @@ const Home = () => {
             </div>
 
           </div> */}
-
-        </div>
-      </div>
-    </section>
+            </div>
+          </div>
+        </section>
         {/* AD BANNER */}
-        {/* <AdsterraNativeBanner /> */}
-        <Adsterra728x90 />
+        <AdsterraNativeBanner />
+
         {/* CTA SECTION */}
         <CTASection />
+        <div className="desktop-ad">
+          <Adsterra728x90 />
+        </div>
+        <div className="mobile-ad">
+          <Adsterra300x250/>
+        </div>
         {/* Testimonials  */}
         {/* <Testimonials /> */}
         {/* FEATURES */}
         <section id="features">
           <Features id="features" />
         </section>
+
         {/* ANALYTICS PREVIEW */}
         <section id="analytics">
           <AnalyticsPreview />
