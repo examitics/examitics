@@ -147,7 +147,7 @@ const ISSB = () => {
   return (
     <>
       <Helmet>
-        <title>ISSB Preparation Guide | EXAMITICS</title>
+        <title>ISSB Preparation website</title>
 
         <meta
           name="description"
