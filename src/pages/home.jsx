@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>EXAMITICS | ISSB & PMA Preparation Platform Pakistan</title>
+        <title>ISSB Preparation Website</title>
 
         <meta
           name="description"
