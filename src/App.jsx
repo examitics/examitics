@@ -13,6 +13,7 @@ import OPI from "./pages/opi";
 import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import PmaInitialTestProcedure from "./pages/PmaInitialTestProcedure";
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
@@ -59,6 +60,9 @@ function App() {
 
         {/* TERMS & CONDITIONS PAGE */}
         <Route path="/terms-conditions" element={<TermsConditions />} />
+
+        {/* PmaInitialTestProcedure.jsx */}
+        <Route path="/pma-lc-initial-procedure" element={<PmaInitialTestProcedure />} />
 
         {/*floating feedback button */}
         {/* <FloatingFeedback /> */}

@@ -48,6 +48,8 @@ const Navbar = () => {
 
             <Link to="/ISSB-1">ISSB</Link>
 
+            {/* <Link to="/pma-lc-initial-procedure">PMA Guide</Link> */}
+
           </nav>
 
           {/* ================= RIGHT ACTIONS ================= */}
