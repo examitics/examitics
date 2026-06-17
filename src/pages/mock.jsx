@@ -6,6 +6,7 @@ import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 import MockSection from "../components/mock/mocksection";
 
+import SidebarAd160x300 from "../components/SidebarAd160x300";
 import "../styles/mock.css";
 
 const MOCK = () => {
@@ -27,6 +28,7 @@ const MOCK = () => {
         <link rel="canonical" href="https://examitics.vercel.app/mock" />
       </Helmet>
       <Navbar />
+      <div className="page-layout">
       <main className="mock-page section-padding">
         <div className="container-custom">
           {/* HERO */}
@@ -46,6 +48,10 @@ const MOCK = () => {
           <MockSection title="PMA LONG COURSE" examCode="pma-lc" />
         </div>
       </main>
+      {/* <aside className="sidebar">
+        <SidebarAd160x300 />
+      </aside> */}
+      </div>
       <Footer />
     </>
   );

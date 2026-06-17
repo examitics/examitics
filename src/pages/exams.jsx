@@ -10,6 +10,7 @@ import ExamCard from "../components/exam/examcard";
 import examsData from "../data/examdata";
 
 import SidebarAd160x600 from "../components/SidebarAd160x600";
+import SidebarAd160x300 from "../components/SidebarAd160x300";
 
 import {
   FiSearch,
@@ -24,7 +25,7 @@ const Exams = () => {
     <>
       <Navbar />
       <div className="page-layout">
-        <main className="exams-page">
+        <div className="exams-page">
           <div className="container-custom">
             {/* =====================================
               HEADER
@@ -108,10 +109,11 @@ const Exams = () => {
               ))}
             </div>
           </div>
-        </main>
-        <aside className="sidebar">
+        </div>
+        {/* <aside className="sidebar">
           <SidebarAd160x600 />
-        </aside>
+          <SidebarAd160x300 />
+        </aside> */}
       </div>
       <Footer />
     </>
