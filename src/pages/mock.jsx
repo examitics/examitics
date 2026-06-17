@@ -28,29 +28,31 @@ const MOCK = () => {
         <link rel="canonical" href="https://examitics.vercel.app/mock" />
       </Helmet>
       <Navbar />
-      <div className="page-layout">
-      <main className="mock-page section-padding">
-        <div className="container-custom">
-          {/* HERO */}
-          <section className="mock-hero">
-            <div className="mock-badge exa-badge">EXAMITICS MOCK CENTER</div>
+      <div className="mock-page-layout">
+        <main className="mock-page section-padding">
+          <div className="container-custom">
+            {/* HERO */}
+            <section className="mock-hero">
+              <div className="mock-badge exa-badge">EXAMITICS MOCK CENTER</div>
 
-            <h1>Practice Like The Real Exam</h1>
+              <h1>Practice Like The Real Exam</h1>
 
-            <p>
-              Attempt PMA-style mock tests designed to improve your speed,
-              intelligence solving ability, and academic performance under real
-              exam conditions.
-            </p>
-          </section>
+              <p>
+                Attempt PMA-style mock tests designed to improve your speed,
+                intelligence solving ability, and academic performance under
+                real exam conditions.
+              </p>
+            </section>
 
-          {/* PMA LC SECTION */}
-          <MockSection title="PMA LONG COURSE" examCode="pma-lc" />
-        </div>
-      </main>
-      {/* <aside className="sidebar">
-        <SidebarAd160x300 />
-      </aside> */}
+            {/* PMA LC SECTION */}
+            <MockSection title="PMA LONG COURSE" examCode="pma-lc" />
+          </div>
+        </main>
+        {/* <aside className="mock-sidebar">
+          <div className="sidebar-ad">
+            <SidebarAd160x300 />
+          </div>
+        </aside> */}
       </div>
       <Footer />
     </>

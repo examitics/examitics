@@ -2,10 +2,7 @@ import { useEffect } from "react";
 
 const SidebarAd160x300 = () => {
   useEffect(() => {
-    // Prevent multiple injections in React Strict Mode / route changes
-    if (window.__ad160x300_loaded__) return;
-    window.__ad160x300_loaded__ = true;
-
+    // prevent duplicate injection per mount
     window.atOptions = {
       key: "551c80cc900e9fb3b297811274021e0f",
       format: "iframe",
@@ -19,7 +16,13 @@ const SidebarAd160x300 = () => {
       "https://www.highperformanceformat.com/551c80cc900e9fb3b297811274021e0f/invoke.js";
     script.async = true;
 
-    document.body.appendChild(script);
+    const container = document.body;
+    container.appendChild(script);
+
+    return () => {
+      // optional cleanup (important for SPA stability)
+      script.remove();
+    };
   }, []);
 
   return (

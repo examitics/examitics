@@ -182,7 +182,7 @@ const Footer = () => {
             Feedback
         ===================================== */}
 
-        <div className="feedback-section" id="feedback-section">
+        <div className="footer-newsletter feedback-section" id="feedback-section">
           <div>
             <h3>Share your Feedback with Examitics</h3>
 
