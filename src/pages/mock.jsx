@@ -7,6 +7,7 @@ import Footer from "../components/layout/footer";
 import MockSection from "../components/mock/mocksection";
 
 import SidebarAd160x300 from "../components/SidebarAd160x300";
+import Adsterra728x90 from "../components/Adsterra728x90";
 import "../styles/mock.css";
 
 const MOCK = () => {

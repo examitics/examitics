@@ -1,7 +1,7 @@
 import React from "react";
-
 import { FiClock, FiMonitor, FiCheckCircle } from "react-icons/fi";
 
+import Adsterra728x90 from "../Adsterra728x90";
 import MockTable from "./mocktable";
 
 const MockSection = ({ title, examCode }) => {
@@ -70,6 +70,10 @@ const MockSection = ({ title, examCode }) => {
 
       {/* TABLE */}
       <MockTable examCode={examCode} />
+
+      <div className="desktop-ad">
+          <Adsterra728x90 />
+        </div>
 
       {/* FULL MOCK */}
       <div className="full-mock-box">

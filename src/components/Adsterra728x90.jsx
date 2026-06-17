@@ -1,21 +1,26 @@
-// Adsterra728x90.jsx
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Adsterra728x90 = () => {
-  useEffect(() => {
-    const container = document.getElementById("adsterra-728x90");
+  const containerRef = useRef(null);
 
-    if (!container || container.childNodes.length > 0) return;
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const container = containerRef.current;
+
+    // Prevent double load safely
+    if (container.dataset.loaded === "true") return;
+    container.dataset.loaded = "true";
 
     const optionsScript = document.createElement("script");
 
-    optionsScript.innerHTML = `
-      atOptions = {
-        'key' : 'b8ac6ccae399e264e416bd733f64cba2',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
+    optionsScript.text = `
+      var atOptions = {
+        key: "b8ac6ccae399e264e416bd733f64cba2",
+        format: "iframe",
+        height: 90,
+        width: 728,
+        params: {}
       };
     `;
 
@@ -30,7 +35,7 @@ const Adsterra728x90 = () => {
 
   return (
     <div
-      id="adsterra-728x90"
+      ref={containerRef}
       style={{
         display: "flex",
         justifyContent: "center",

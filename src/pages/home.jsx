@@ -143,7 +143,13 @@ const Home = () => {
         {/* EXAM CATEGORIES */}
         <ExamCategories />
         {/* AD BANNER */}
-        <Adsterra728x90 />
+        <div className="mobile-ad">
+            {/* 320x50 Adsterra banner code */}
+            <Adsterra300x250 />
+          </div>
+          <div className="desktop-ad">
+            <Adsterra728x90 />
+          </div>
         {/* Footer */}
         <Footer />
       </main>

@@ -1,26 +1,25 @@
-// Adsterra300x250.jsx
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Adsterra300x250 = () => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    const container = document.getElementById(
-      "adsterra-300x250-container"
-    );
+    if (!containerRef.current) return;
 
-    if (!container) return;
+    const container = containerRef.current;
 
-    // Prevent duplicate loading
-    if (container.childNodes.length > 0) return;
+    if (container.dataset.loaded === "true") return;
+    container.dataset.loaded = "true";
 
     const optionsScript = document.createElement("script");
 
-    optionsScript.innerHTML = `
-      atOptions = {
-        'key' : 'b767e415e09c8921b6427eb63f2179bf',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
+    optionsScript.text = `
+      var atOptions = {
+        key: "b767e415e09c8921b6427eb63f2179bf",
+        format: "iframe",
+        height: 250,
+        width: 300,
+        params: {}
       };
     `;
 
@@ -35,7 +34,7 @@ const Adsterra300x250 = () => {
 
   return (
     <div
-      id="adsterra-300x250-container"
+      ref={containerRef}
       style={{
         width: "300px",
         minHeight: "250px",

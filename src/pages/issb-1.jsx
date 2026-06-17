@@ -143,7 +143,6 @@ const ISSB = () => {
     "Hanging Log",
   ];
 
-
   return (
     <>
       <Helmet>
@@ -231,14 +230,14 @@ const ISSB = () => {
             </div>
           </section>
 
-<div className="mobile-ad">
-  {/* 320x50 Adsterra banner code */}
-  <Adsterra300x250/>
-</div>
-<div className="desktop-ad">
-        <Adsterra728x90 />
-      </div>   
-             {/* PROCESS */}
+          <div className="mobile-ad">
+            {/* 320x50 Adsterra banner code */}
+            <Adsterra300x250 />
+          </div>
+          <div className="desktop-ad">
+            <Adsterra728x90 />
+          </div>
+          {/* PROCESS */}
           <section className="issb-process-section">
             <div className="section-heading center-heading">
               <span className="section-tag">ISSB PROCESS</span>
@@ -387,8 +386,6 @@ const ISSB = () => {
                     {item}
                   </div>
                 ))}
-
-                
               </div>
             </div>
 
@@ -399,7 +396,13 @@ const ISSB = () => {
               />
             </div>
           </section>
-
+<div className="mobile-ad">
+            {/* 320x50 Adsterra banner code */}
+            <Adsterra300x250 />
+          </div>
+          <div className="desktop-ad">
+            <Adsterra728x90 />
+          </div>
           {/* INTERVIEW */}
           <section className="issb-section">
             <div className="section-heading">
