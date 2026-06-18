@@ -111,7 +111,7 @@ const PmaInitialTestProcedure = () => {
                 <a href="#issb">ISSB Selection</a>
               </li>
             </ul>
-            <div className="toc-ad">
+            {/* <div className="toc-ad">
               <ul>
                 <li style={{ display: "grid", placeItems: "center" }}>
                   Advertisement
@@ -120,7 +120,7 @@ const PmaInitialTestProcedure = () => {
                   <Adsterra300x250 />
                 </li>
               </ul>
-            </div>
+            </div> */}
           </aside>
 
           {/* ARTICLE */}
@@ -914,13 +914,13 @@ const PmaInitialTestProcedure = () => {
                   </ul>
                 </div>
               </div>
-<a
-  href="/pdfs/pma-initial-interview-prep.pdf"
-  download
-  className="pdf-download-btn"
->
-  📥 Download PDF Prepration Material
-</a>
+              <a
+                href="/pdfs/pma-initial-interview-prep.pdf"
+                download
+                className="pdf-download-btn"
+              >
+                📥 Download PDF Prepration Material
+              </a>
               {/* <div className="cta-box">
                 <h3>Prepare for Your PMA Interview</h3>
 
