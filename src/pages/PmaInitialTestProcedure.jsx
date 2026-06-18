@@ -64,14 +64,18 @@ const PmaInitialTestProcedure = () => {
           </div>
         </section>
 
-<div className="desktop-ad">
-          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+        <div className="desktop-ad">
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
           <Adsterra728x90 />
         </div>
-        <div className="mobile-ad"> 
-          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
-          <Adsterra300x250/>
-         </div>
+        <div className="mobile-ad">
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
+          <Adsterra300x250 />
+        </div>
         {/* BLOG CONTENT */}
         <section className="blog-content">
           {/* TABLE OF CONTENTS */}
@@ -107,8 +111,8 @@ const PmaInitialTestProcedure = () => {
                 <a href="#issb">ISSB Selection</a>
               </li>
             </ul>
-             <div className="toc-ad">
-            <Adsterra300x250 />
+            <div className="toc-ad">
+              <Adsterra300x250 />
             </div>
           </aside>
 
@@ -238,7 +242,7 @@ const PmaInitialTestProcedure = () => {
                 </li> */}
               </ul>
               <div className="horizontal-ad">
-              <Adsterra728x90 />
+                <Adsterra728x90 />
               </div>
             </section>
 
@@ -546,7 +550,7 @@ const PmaInitialTestProcedure = () => {
                 </a>
               </div> */}
               <div className="horizontal-ad">
-              <Adsterra728x90 />
+                <Adsterra728x90 />
               </div>
             </section>
 
@@ -918,7 +922,7 @@ const PmaInitialTestProcedure = () => {
                 </a>
               </div> */}
               <div className="horizontal-ad">
-              <Adsterra728x90 />
+                <Adsterra728x90 />
               </div>
             </section>
 

@@ -6,7 +6,7 @@ import "../styles/pma-lc.css";
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 import Adsterra300x250 from "../components/Adsterra300x250";
-
+import Adsterra728x90 from "../components/Adsterra728x90"; 
 import {
   FiCheckCircle,
   FiActivity,
@@ -165,7 +165,15 @@ const PMALC = () => {
           </div>
         </section>
         {/* ADVERTISEMENT 300x250 banner */}
-        <Adsterra300x250 />
+        {/* <Adsterra300x250 /> */}
+        <div className="desktop-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra728x90 />
+        </div>
+        <div className="mobile-ad"> 
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra300x250/>
+         </div>
         {/* =====================================
             SECTION 3 — INITIAL TEST
         ===================================== */}
@@ -297,21 +305,21 @@ const PMALC = () => {
                   <tr>
                     <td>Running</td>
                     <td>
-                      1.6 km in max 8 minutes 
+                      1 km running in 8 minutes 
                     </td>
                   </tr>
 
                   <tr>
                     <td>Push-ups</td>
-                    <td>min 15</td>
+                    <td>15 repetitions in 2 minutes</td>
                   </tr>
 
                   <tr>
                     <td>Sit-ups</td>
-                    <td>min 20</td>
+                    <td>15 repetitions in 2 minutes</td>
                   </tr>
 
-                  <tr>
+                  {/* <tr>
                     <td>Pull-ups</td>
                     <td>min 3</td>
                   </tr>
@@ -319,11 +327,19 @@ const PMALC = () => {
                   <tr>
                     <td>Ditch Crossing</td>
                     <td>7.4 Feet</td>
-                  </tr>
+                  </tr> */}
                 </tbody>
               </table>
             </div>
           </div>
+          <div className="desktop-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra728x90 />
+        </div>
+        <div className="mobile-ad"> 
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra300x250/>
+         </div>
         </section>
 
         {/* =====================================

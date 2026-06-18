@@ -43,13 +43,20 @@ const CTASection = () => {
           ===================================== */}
 
           <div className="cta-actions">
-            
             <Link to="/exams" className="cta-primary-btn">
               Get Started
               <FiArrowRight />
             </Link>
 
-            <button className="cta-secondary-btn">Explore Exams</button>
+            <button className="cta-secondary-btn">
+              <a
+                href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore More
+              </a>
+            </button>
           </div>
         </div>
       </div>

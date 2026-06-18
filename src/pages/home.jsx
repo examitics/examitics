@@ -77,44 +77,31 @@ const Home = () => {
                   <FiArrowRight />
                 </Link>
 
-                <Link
-                  to="/issb-1"
+                <div className="explore-wrapper">
+                  <a
+                    href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exa-btn exa-btn-outline hero-outline-btn"
+                  >
+                    Explore More
+                  </a>
+
+                  <div className="explore-tooltip">
+                    Exploring our sponsored resources helps support server and
+                    development costs, allowing us to keep PMA and ISSB
+                    preparation free for all candidates.
+                  </div>
+                </div>
+                {/* <a
+                  href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="exa-btn exa-btn-outline hero-outline-btn"
                 >
-                  Explore Tests
-                </Link>
+                  Explore More{" "}
+                </a> */}
               </div>
-
-              {/* <div className="hero-stats">
-
-            <div className="hero-stat-card">
-              <FiBookOpen />
-
-              <div>
-                <h3>10K+</h3>
-                <p>Practice Questions</p>
-              </div>
-            </div>
-
-            <div className="hero-stat-card">
-              <FiTarget />
-
-              <div>
-                <h3>WAT • TAT</h3>
-                <p>Psych Tests</p>
-              </div>
-            </div>
-
-            <div className="hero-stat-card">
-              <FiAward />
-
-              <div>
-                <h3>100%</h3>
-                <p>Free Access</p>
-              </div>
-            </div>
-
-          </div> */}
             </div>
           </div>
         </section>
@@ -124,13 +111,17 @@ const Home = () => {
         {/* CTA SECTION */}
         <CTASection />
         <div className="desktop-ad">
-          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
           <Adsterra728x90 />
         </div>
-        <div className="mobile-ad"> 
-          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
-          <Adsterra300x250/>
-         </div>
+        <div className="mobile-ad">
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
+          <Adsterra300x250 />
+        </div>
         {/* Testimonials  */}
         {/* <Testimonials /> */}
         {/* FEATURES */}
@@ -145,14 +136,18 @@ const Home = () => {
         {/* EXAM CATEGORIES */}
         <ExamCategories />
         {/* AD BANNER */}
-       <div className="desktop-ad">
-          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+        <div className="desktop-ad">
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
           <Adsterra728x90 />
         </div>
-        <div className="mobile-ad"> 
-          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
-          <Adsterra300x250/>
-         </div>
+        <div className="mobile-ad">
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
+          <Adsterra300x250 />
+        </div>
         {/* Footer */}
         <Footer />
       </main>
