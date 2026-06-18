@@ -48,7 +48,7 @@ const Navbar = () => {
 
             <Link to="/ISSB-1">ISSB</Link>
 
-            {/* <Link to="/pma-lc-initial-procedure">PMA Guide</Link> */}
+            <Link to="/pma-lc-initial-procedure">PMA LC Guide</Link>
 
           </nav>
 

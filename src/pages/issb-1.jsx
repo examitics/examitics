@@ -231,10 +231,14 @@ const ISSB = () => {
           </section>
 
           <div className="mobile-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+
             {/* 320x50 Adsterra banner code */}
             <Adsterra300x250 />
           </div>
           <div className="desktop-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+
             <Adsterra728x90 />
           </div>
           {/* PROCESS */}
@@ -396,11 +400,15 @@ const ISSB = () => {
               />
             </div>
           </section>
-<div className="mobile-ad">
+          <div className="mobile-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
             {/* 320x50 Adsterra banner code */}
             <Adsterra300x250 />
           </div>
           <div className="desktop-ad">
+            <h6 style={{ display: "grid", placeItems: "center" }}>
+              Advertisement
+            </h6>
             <Adsterra728x90 />
           </div>
           {/* INTERVIEW */}

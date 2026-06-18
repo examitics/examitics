@@ -50,6 +50,7 @@ HERO SECTION
   font-weight: var(--font-weight-extrabold);
   line-height: 1.2;
   margin-bottom: var(--space-md);
+  color: var(--color-info);
 }
 
 .pma-hero p {
@@ -139,12 +140,14 @@ TABLE OF CONTENTS
 
 .table-of-contents a {
   text-decoration: none;
-  color: var(--color-text-muted);
+  /* color: var(--color-text-muted); */
+  color: var(--color-info);
   transition: var(--transition-fast);
 }
 
 .table-of-contents a:hover {
-  color: var(--color-primary);
+  /* color: var(--color-primary); */
+  color: white;
 }
 
 /* =========================================
@@ -307,4 +310,298 @@ RESPONSIVE
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
+}
+
+/* =========================================
+PHYSICAL TEST IMAGES
+========================================= */
+
+.physical-image {
+  margin: var(--space-lg) 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.physical-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
+REQUIREMENT BOX
+========================================= */
+
+.requirement-box {
+  margin: var(--space-md) 0 var(--space-xl);
+  padding: var(--space-lg);
+
+  background: var(--color-card-secondary);
+
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+
+  border-radius: var(--radius-md);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.requirement-box span {
+  color: var(--color-text-muted);
+}
+
+.requirement-box strong {
+  color: var(--color-text);
+}
+
+/* =========================================
+WARNING BOX
+========================================= */
+
+.warning-box {
+  margin-top: var(--space-lg);
+
+  padding: var(--space-lg);
+
+  background: rgba(255, 170, 0, 0.08);
+
+  border: 1px solid rgba(255, 170, 0, 0.2);
+
+  border-left: 4px solid #ffaa00;
+
+  border-radius: var(--radius-md);
+
+  line-height: 1.8;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .physical-image img {
+    height: 220px;
+  }
+
+  .requirement-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================
+MEDICAL STANDARDS
+========================================= */
+
+.medical-standards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+
+.standard-item {
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.standard-item strong {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.standard-item span {
+  display: block;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+/* =========================================
+MEDICAL CONDITION GRID
+========================================= */
+
+.medical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.medical-card {
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: 0.2s ease;
+}
+
+.medical-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.medical-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.medical-card h4 {
+  padding: var(--space-md) var(--space-md) 0;
+  margin-bottom: var(--space-sm);
+}
+
+.medical-card p {
+  padding: 0 var(--space-md) var(--space-md);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .medical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medical-card img {
+    height: 180px;
+  }
+}
+
+
+/* =========================================
+INTERVIEW SECTION
+========================================= */
+
+.process-list {
+  padding-left: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.process-list li {
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+.essay-grid,
+.traits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.essay-card,
+.trait-card,
+.qa-card {
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.qa-card {
+  margin-bottom: var(--space-md);
+}
+
+.qa-card h4 {
+  margin-bottom: var(--space-sm);
+}
+
+.essay-card h4,
+.trait-card h4 {
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .essay-grid,
+  .traits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================
+ISSB CENTERS
+========================================= */
+
+.issb-centers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-xl) 0;
+}
+
+.issb-center-card {
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.issb-center-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.issb-center-card h4 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.issb-center-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.toc-ad {
+  width: 100%;
+  margin-top: var(--space-lg);
+
+  display: flex;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.toc-ad iframe,
+.toc-ad ins,
+.toc-ad div {
+  max-width: 100%;
+}
+.horizontal-ad {
+  max-width: var(--container-width);
+  margin: var(--space-xl) auto;
+
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.horizontal-ad iframe,
+.horizontal-ad ins {
+  max-width: 100%;
+}
+
+.horizontal-ad {
+  width: 100%;
+  overflow: hidden;
+}
+
+.horizontal-ad iframe {
+  max-width: 100%;
 }

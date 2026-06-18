@@ -124,11 +124,13 @@ const Home = () => {
         {/* CTA SECTION */}
         <CTASection />
         <div className="desktop-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
           <Adsterra728x90 />
         </div>
-        <div className="mobile-ad">
+        <div className="mobile-ad"> 
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
           <Adsterra300x250/>
-        </div>
+         </div>
         {/* Testimonials  */}
         {/* <Testimonials /> */}
         {/* FEATURES */}
