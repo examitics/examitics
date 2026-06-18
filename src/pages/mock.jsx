@@ -49,11 +49,7 @@ const MOCK = () => {
             <MockSection title="PMA LONG COURSE" examCode="pma-lc" />
           </div>
         </main>
-        {/* <aside className="mock-sidebar">
-          <div className="sidebar-ad">
-            <SidebarAd160x300 />
-          </div>
-        </aside> */}
+        
       </div>
       <Footer />
     </>

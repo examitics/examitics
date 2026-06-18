@@ -145,13 +145,14 @@ const Home = () => {
         {/* EXAM CATEGORIES */}
         <ExamCategories />
         {/* AD BANNER */}
-        <div className="mobile-ad">
-            {/* 320x50 Adsterra banner code */}
-            <Adsterra300x250 />
-          </div>
-          <div className="desktop-ad">
-            <Adsterra728x90 />
-          </div>
+       <div className="desktop-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra728x90 />
+        </div>
+        <div className="mobile-ad"> 
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra300x250/>
+         </div>
         {/* Footer */}
         <Footer />
       </main>

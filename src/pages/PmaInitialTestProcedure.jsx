@@ -64,6 +64,14 @@ const PmaInitialTestProcedure = () => {
           </div>
         </section>
 
+<div className="desktop-ad">
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra728x90 />
+        </div>
+        <div className="mobile-ad"> 
+          <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
+          <Adsterra300x250/>
+         </div>
         {/* BLOG CONTENT */}
         <section className="blog-content">
           {/* TABLE OF CONTENTS */}
