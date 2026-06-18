@@ -914,7 +914,13 @@ const PmaInitialTestProcedure = () => {
                   </ul>
                 </div>
               </div>
-
+<a
+  href="/pdfs/pma-initial-interview-prep.pdf"
+  download
+  className="pdf-download-btn"
+>
+  📥 Download PDF Prepration Material
+</a>
               {/* <div className="cta-box">
                 <h3>Prepare for Your PMA Interview</h3>
 
