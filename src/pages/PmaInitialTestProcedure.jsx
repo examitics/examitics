@@ -112,7 +112,14 @@ const PmaInitialTestProcedure = () => {
               </li>
             </ul>
             <div className="toc-ad">
-              <Adsterra300x250 />
+              <ul>
+                <li style={{ display: "grid", placeItems: "center" }}>
+                  Advertisement
+                </li>
+                <li style={{ display: "grid", placeItems: "center" }}>
+                  <Adsterra300x250 />
+                </li>
+              </ul>
             </div>
           </aside>
 
