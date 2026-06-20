@@ -1,0 +1,47 @@
+.ad-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+
+  z-index: 99999;
+}
+
+.ad-modal {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 2rem;
+
+  background: var(--color-bg);
+}
+
+.ad-modal h2 {
+  margin-bottom: 1rem;
+}
+
+.ad-modal p {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+.ad-modal-btn{
+    color: var(--color-primary);
+}
+.ad-modal-btn:hover{
+    cursor: pointer;
+}
