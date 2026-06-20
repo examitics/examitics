@@ -19,6 +19,9 @@ import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
 import { usePageTracking } from "./analytics/usePageTracking";
 
+import SecurityProtection from "./components/SecurityProtection";
+import SecurityToast from "./components/SecurityToast";
+
 import "./styles/globals.css";
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
 
   return (
     <>
+      <SecurityToast />
+      <SecurityProtection />
+
       <ScrollToTop />
       <Routes>
         {/* HOME PAGE */}
@@ -62,7 +68,10 @@ function App() {
         <Route path="/terms-conditions" element={<TermsConditions />} />
 
         {/* PmaInitialTestProcedure.jsx */}
-        <Route path="/pma-lc-initial-procedure" element={<PmaInitialTestProcedure />} />
+        <Route
+          path="/pma-lc-initial-procedure"
+          element={<PmaInitialTestProcedure />}
+        />
 
         {/*floating feedback button */}
         {/* <FloatingFeedback /> */}

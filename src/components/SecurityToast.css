@@ -1,0 +1,115 @@
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================
+   BASE TOAST
+========================= */
+.toast {
+  min-width: 280px;
+  max-width: 420px;
+
+  padding: 12px 16px;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+
+  color: var(--text-color, #ffffff);
+  background: var(--bg-color, #111827);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 12px rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(10px);
+
+  animation: toastIn 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   PROFESSIONAL GLOW EFFECT
+========================= */
+.toast::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.08),
+    transparent 60%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================
+   VARIANT GLOWS (SUBTLE)
+========================= */
+
+/* COPY (blue glow - focus / learning) */
+.toast-copy {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 12px rgba(59, 130, 246, 0.25);
+}
+
+/* CUT (amber glow - caution) */
+.toast-cut {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 12px rgba(245, 158, 11, 0.25);
+}
+
+/* RIGHT CLICK (red glow - restriction) */
+.toast-rightClick {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 12px rgba(239, 68, 68, 0.25);
+}
+
+/* DEVTOOLS (purple glow - system/security) */
+.toast-devtools {
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    0 0 12px rgba(124, 58, 237, 0.25);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+/* =========================
+   OPTIONAL: SUBTLE HOVER LIFT
+========================= */
+.toast:hover {
+  transform: translateY(-2px) translateX(-50%);
+  transition: 0.2s ease;
+}
