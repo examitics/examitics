@@ -14,6 +14,7 @@ import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import PmaInitialTestProcedure from "./pages/PmaInitialTestProcedure";
+import ISSBGuide from "./pages/IssbGuide";
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
@@ -72,6 +73,9 @@ function App() {
           path="/pma-lc-initial-procedure"
           element={<PmaInitialTestProcedure />}
         />
+
+        {/* ISSB Comprehencive Guide  */}
+        <Route path="/issbguide" element={<ISSBGuide />} />
 
         {/*floating feedback button */}
         {/* <FloatingFeedback /> */}

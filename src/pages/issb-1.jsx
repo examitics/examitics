@@ -202,7 +202,7 @@ const ISSB = () => {
           </section>
 
           {/* FORCES */}
-          <section className="forces-section">
+          {/* <section className="forces-section">
             <div className="section-heading center-heading">
               <span className="section-tag">ARMED FORCES</span>
 
@@ -228,7 +228,7 @@ const ISSB = () => {
                 <h3>Pakistan Air Force</h3>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <div className="mobile-ad">
             <h6 style={{ display: "grid", placeItems: "center" }}>
@@ -246,7 +246,7 @@ const ISSB = () => {
             <Adsterra728x90 />
           </div>
           {/* PROCESS */}
-          <section className="issb-process-section">
+          {/* <section className="issb-process-section">
             <div className="section-heading center-heading">
               <span className="section-tag">ISSB PROCESS</span>
 
@@ -286,7 +286,7 @@ const ISSB = () => {
                 <p>Final assessment and recommendation decision.</p>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* PSYCH TESTS */}
           <section className="issb-section" id="psych-tests">
@@ -347,7 +347,7 @@ const ISSB = () => {
           </section>
 
           {/* GTO */}
-          <section className="issb-section" id="gto">
+          {/* <section className="issb-section" id="gto">
             <div className="section-heading">
               <span className="section-tag">GTO TASKS</span>
 
@@ -372,7 +372,7 @@ const ISSB = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </section> */}
 
           {/* OBSTACLES */}
           <section className="obstacles-section exa-card">

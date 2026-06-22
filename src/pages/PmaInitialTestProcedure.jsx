@@ -15,19 +15,19 @@ import DownloadAdModal from "../components/DownloadAdModal";
 const PmaInitialTestProcedure = () => {
   const [showAdModal, setShowAdModal] = useState(false);
   const handleDownload = () => {
-  const link = document.createElement("a");
+    const link = document.createElement("a");
 
-  link.href = "/pdfs/pma-initial-interview-prep.pdf";
-  link.download = "pma-initial-interview-prep.pdf";
+    link.href = "/pdfs/pma-initial-interview-prep.pdf";
+    link.download = "pma-initial-interview-prep.pdf";
 
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
-  setTimeout(() => {
-    setShowAdModal(true);
-  }, 500);
-};
+    setTimeout(() => {
+      setShowAdModal(true);
+    }, 500);
+  };
   return (
     <>
       {" "}
@@ -944,16 +944,13 @@ const PmaInitialTestProcedure = () => {
               >
                 📥 Interview Prepration Material
               </a> */}
-              <button
-  onClick={handleDownload}
-  className="pdf-download-btn"
->
-  📥 Interview Preparation Material
-</button>
-<DownloadAdModal
-  isOpen={showAdModal}
-  onClose={() => setShowAdModal(false)}
-/>
+              <button onClick={handleDownload} className="pdf-download-btn">
+                📥 Interview Preparation Material
+              </button>
+              <DownloadAdModal
+                isOpen={showAdModal}
+                onClose={() => setShowAdModal(false)}
+              />
               {/* <div className="cta-box">
                 <h3>Prepare for Your PMA Interview</h3>
 
@@ -974,150 +971,164 @@ const PmaInitialTestProcedure = () => {
 
             {/* document submission  */}
 
-<section id="issb-documents" className="article-card content-section">
-  <h2>ISSB Form Submission & Required Documents</h2>
+            <section
+              id="issb-documents"
+              className="article-card content-section"
+            >
+              <h2>ISSB Form Submission & Required Documents</h2>
 
-  <p>
-    Candidates who successfully clear the Initial Interview at the Army Selection
-    and Recruitment Centre (AS&RC) are issued ISSB forms. These forms must be
-    completed carefully and submitted on the date provided by the Selection
-    Centre. Failure to submit complete documentation may result in delays or
-    disqualification from the ISSB process.
-  </p>
+              <p>
+                Candidates who successfully clear the Initial Interview at the
+                Army Selection and Recruitment Centre (AS&RC) are issued ISSB
+                forms. These forms must be completed carefully and submitted on
+                the date provided by the Selection Centre. Failure to submit
+                complete documentation may result in delays or disqualification
+                from the ISSB process.
+              </p>
 
-  <div className="info-grid">
-    <div>✓ ISSB Form Issued After Initial Interview</div>
-    <div>✓ Attested Documents Required</div>
-    <div>✓ Submission on Assigned Date</div>
-    <div>✓ Reporting Time: 9 AM – 12 PM</div>
-  </div>
+              <div className="info-grid">
+                <div>✓ ISSB Form Issued After Initial Interview</div>
+                <div>✓ Attested Documents Required</div>
+                <div>✓ Submission on Assigned Date</div>
+                <div>✓ Reporting Time: 9 AM – 12 PM</div>
+              </div>
 
-  <h3>When Are ISSB Forms Issued?</h3>
+              <h3>When Are ISSB Forms Issued?</h3>
 
-  <p>
-    After qualifying the written test, physical test, medical examination, and
-    initial interview conducted at AS&RC, eligible candidates are issued ISSB
-    forms. These forms contain personal, academic, and family information that
-    is reviewed before the candidate is called for ISSB.
-  </p>
+              <p>
+                After qualifying the written test, physical test, medical
+                examination, and initial interview conducted at AS&RC, eligible
+                candidates are issued ISSB forms. These forms contain personal,
+                academic, and family information that is reviewed before the
+                candidate is called for ISSB.
+              </p>
 
-  <p>
-    Candidates must carefully complete all sections of the form and attach the
-    required documents before submission.
-  </p>
+              <p>
+                Candidates must carefully complete all sections of the form and
+                attach the required documents before submission.
+              </p>
 
-  <h3>Required Documents</h3>
+              <h3>Required Documents</h3>
 
-<ul>
-  <li>
-    <strong>Educational Certificates:</strong> 4 attested photocopies of
-    Detailed Mark Sheets and Certificates (Sanad) of Matric and Intermediate
-    (front and back sides).
-  </li>
+              <ul>
+                <li>
+                  <strong>Educational Certificates:</strong> 4 attested
+                  photocopies of Detailed Mark Sheets and Certificates (Sanad)
+                  of Matric and Intermediate (front and back sides).
+                </li>
 
-  <li>
-    <strong>O-Level / A-Level Equivalence:</strong> 4 attested photocopies of
-    O-Level and A-Level Equivalence Certificates issued by IBCC (if applicable).
-  </li>
+                <li>
+                  <strong>O-Level / A-Level Equivalence:</strong> 4 attested
+                  photocopies of O-Level and A-Level Equivalence Certificates
+                  issued by IBCC (if applicable).
+                </li>
 
-  <li>
-    <strong>Domicile Certificate:</strong> 4 attested photocopies of Domicile
-    Certificate.
-  </li>
+                <li>
+                  <strong>Domicile Certificate:</strong> 4 attested photocopies
+                  of Domicile Certificate.
+                </li>
 
-  <li>
-    <strong>Hope Certificate:</strong> Original Hope Certificate duly verified
-    by AS&RC along with 3 attested photocopies.
-  </li>
+                <li>
+                  <strong>Hope Certificate:</strong> Original Hope Certificate
+                  duly verified by AS&RC along with 3 attested photocopies.
+                </li>
 
-  <li>
-    <strong>CNIC Copies:</strong> 4 attested photocopies of CNICs of the
-    candidate, father, and guardian.
-  </li>
+                <li>
+                  <strong>CNIC Copies:</strong> 4 attested photocopies of CNICs
+                  of the candidate, father, and guardian.
+                </li>
 
-  <li>
-    <strong>Passport Photographs:</strong> 6 passport-size coloured photographs
-    duly attested (1 attested on the front side and 5 attested on the back
-    side).
-  </li>
+                <li>
+                  <strong>Passport Photographs:</strong> 6 passport-size
+                  coloured photographs duly attested (1 attested on the front
+                  side and 5 attested on the back side).
+                </li>
 
-  <li>
-    <strong>Army Ward Documents:</strong> Serving Certificate (Original) or
-    attested photocopy of Discharge Book for wards of Army personnel.
-  </li>
+                <li>
+                  <strong>Army Ward Documents:</strong> Serving Certificate
+                  (Original) or attested photocopy of Discharge Book for wards
+                  of Army personnel.
+                </li>
 
-  <li>
-    <strong>Previous ISSB / GHQ Letters:</strong> 4 attested photocopies of
-    ISSB Recommended, Not Recommended, or GHQ Selection Board letters (if
-    previously issued).
-  </li>
+                <li>
+                  <strong>Previous ISSB / GHQ Letters:</strong> 4 attested
+                  photocopies of ISSB Recommended, Not Recommended, or GHQ
+                  Selection Board letters (if previously issued).
+                </li>
 
-  <li>
-    <strong>Medical Fitness Form:</strong> Original Medical Fitness Form issued
-    by the RMO at AS&RC.
-  </li>
+                <li>
+                  <strong>Medical Fitness Form:</strong> Original Medical
+                  Fitness Form issued by the RMO at AS&RC.
+                </li>
 
-  <li>
-    <strong>No Objection Certificate (NOC):</strong> Required for candidates
-    serving in Government, Semi-Government, or Private Organizations.
-  </li>
+                <li>
+                  <strong>No Objection Certificate (NOC):</strong> Required for
+                  candidates serving in Government, Semi-Government, or Private
+                  Organizations.
+                </li>
 
-  <li>
-    <strong>Postal Order:</strong> Postal Order of Rs. 100 obtained from the
-    General Post Office (GPO).
-  </li>
+                <li>
+                  <strong>Postal Order:</strong> Postal Order of Rs. 100
+                  obtained from the General Post Office (GPO).
+                </li>
 
-  <li>
-    <strong>Family Registration Certificate (FRC):</strong> 4 attested
-    photocopies of FRC issued by NADRA.
-  </li>
-</ul>
-  
-  <h3>Important Instructions</h3>
+                <li>
+                  <strong>Family Registration Certificate (FRC):</strong> 4
+                  attested photocopies of FRC issued by NADRA.
+                </li>
+              </ul>
 
-  <ul>
-    <li>
-      All educational certificates must be photocopied from both front and back
-      sides (bacause of pma course stamps on back side).
-    </li>
+              <h3>Important Instructions</h3>
 
-    <li>
-      Copies should clearly display the attestation stamps and signatures.
-    </li>
+              <ul>
+                <li>
+                  All educational certificates must be photocopied from both
+                  front and back sides (bacause of pma course stamps on back
+                  side).
+                </li>
 
-    <li>
-      Candidates with O-Level and A-Level qualifications must submit IBCC
-      equivalence certificates. Submission of equivalence is compulsory.
-    </li>
+                <li>
+                  Copies should clearly display the attestation stamps and
+                  signatures.
+                </li>
 
-    <li>
-      Incomplete documentation may lead to delays in ISSB processing.
-    </li>
-  </ul>
+                <li>
+                  Candidates with O-Level and A-Level qualifications must submit
+                  IBCC equivalence certificates. Submission of equivalence is
+                  compulsory.
+                </li>
 
-  <h3>ISSB Form Submission Timing</h3>
+                <li>
+                  Incomplete documentation may lead to delays in ISSB
+                  processing.
+                </li>
+              </ul>
 
-  <p>
-    ISSB forms must be submitted at the Selection Centre on the date specified
-    by AS&RC. Candidates should ensure that all documents are properly arranged,
-    attested, and attached before submission.
-  </p>
+              <h3>ISSB Form Submission Timing</h3>
 
-  <p>
-    Form submission timings are normally from <strong>9:00 AM to 12:00 PM</strong>.
-    Candidates are advised to arrive early and carry all original documents for
-    verification if required.
-  </p>
+              <p>
+                ISSB forms must be submitted at the Selection Centre on the date
+                specified by AS&RC. Candidates should ensure that all documents
+                are properly arranged, attested, and attached before submission.
+              </p>
 
-  <h3>Preparation Tip</h3>
+              <p>
+                Form submission timings are normally from{" "}
+                <strong>9:00 AM to 12:00 PM</strong>. Candidates are advised to
+                arrive early and carry all original documents for verification
+                if required.
+              </p>
 
-  <p>
-    Create a dedicated document file immediately after receiving the ISSB form.
-    Arrange all photocopies, attestations, photographs, and certificates in
-    advance to avoid last-minute issues. Many candidates face unnecessary
-    difficulties due to missing attestations or incomplete documentation.
-  </p>
-</section>
+              <h3>Preparation Tip</h3>
+
+              <p>
+                Create a dedicated document file immediately after receiving the
+                ISSB form. Arrange all photocopies, attestations, photographs,
+                and certificates in advance to avoid last-minute issues. Many
+                candidates face unnecessary difficulties due to missing
+                attestations or incomplete documentation.
+              </p>
+            </section>
             {/* issb introduction  */}
             <section id="issb" className="article-card content-section">
               <h2>ISSB Recommendation & Call Letter</h2>
@@ -1215,7 +1226,7 @@ const PmaInitialTestProcedure = () => {
                   guide.
                 </p>
 
-                <a href="/ISSB-1" className="cta-button">
+                <a href="/issbguide" className="cta-button">
                   Read Complete ISSB Guide →
                 </a>
               </div>

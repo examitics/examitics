@@ -12,6 +12,9 @@ import examsData from "../data/examdata";
 import SidebarAd160x600 from "../components/SidebarAd160x600";
 import SidebarAd160x300 from "../components/SidebarAd160x300";
 
+import Adsterra728x90 from "../components/Adsterra728x90";
+import Adsterra300x250 from "../components/Adsterra300x250";
+
 import {
   FiSearch,
   FiBarChart2,
@@ -24,6 +27,7 @@ const Exams = () => {
   return (
     <>
       <Navbar />
+      
       <div className="page-layout">
         <div className="exams-page">
           <div className="container-custom">
@@ -57,7 +61,7 @@ const Exams = () => {
               STATS
           ===================================== */}
 
-            <div className="exams-stats-grid">
+            {/* <div className="exams-stats-grid">
               <div className="exam-stat-card">
                 <FiBarChart2 />
 
@@ -97,7 +101,22 @@ const Exams = () => {
                   <p>Monthly Improvement</p>
                 </div>
               </div>
-            </div>
+            </div> */}
+            <div className="mobile-ad">
+                        <h6 style={{ display: "grid", placeItems: "center" }}>
+                          Advertisement
+                        </h6>
+            
+                        {/* 320x50 Adsterra banner code */}
+                        <Adsterra300x250 />
+                      </div>
+                      <div className="desktop-ad">
+                        <h6 style={{ display: "grid", placeItems: "center" }}>
+                          Advertisement
+                        </h6>
+            
+                        <Adsterra728x90 />
+                      </div>
 
             {/* =====================================
               GRID
