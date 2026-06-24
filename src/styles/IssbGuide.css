@@ -139,3 +139,14 @@ RESPONSIVE
   }
 
 }
+
+.exa-btn-outline{
+  margin-left: 10px;
+}
+.exa-btn-outline:hover{
+  color: var(--color-primary) !important;
+}
+.explore-tooltip{
+  height: auto;
+  padding: 1px;
+}

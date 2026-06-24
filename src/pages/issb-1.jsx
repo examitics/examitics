@@ -184,10 +184,27 @@ const ISSB = () => {
                   Start Preparation
                 </a>
 
-                <a href="#gto" className="exa-btn exa-btn-outline">
+                <a href="issbguide" className="exa-btn exa-btn-outline">
                   Explore ISSB Process
                   <FiArrowRight />
                 </a>
+
+                <div className="explore-wrapper exa-btn exa-btn-outline">
+                  <a
+                    href="https://www.effectivecpmnetwork.com/dhcrjrva?key=6c9838dacc1c3ec52df70ed95298a899"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    // className="exa-btn exa-btn-outline hero-outline-btn"
+                  >
+                    Explore More
+                  </a>
+
+                  <div className="explore-tooltip">
+                    Exploring our sponsored resources helps support server and
+                    development costs, allowing us to keep PMA and ISSB
+                    preparation free for all candidates.
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -33,6 +33,10 @@ import DeputyInterview from "../assets/images/deputy.png";
 
 import JoharHall from "../assets/images/johar-hall.png";
 
+import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
+import Adsterra300x250 from "../components/Adsterra300x250";
+import Adsterra728x90 from "../components/Adsterra728x90";
+
 import "../styles/PmaInitialTestProcedure.css";
 import "../styles/IssbGuide.css";
 
@@ -94,6 +98,21 @@ const IssbGuide = () => {
             </div>
           </div>
         </section>
+<div className="mobile-ad">
+            <h6 style={{ display: "grid", placeItems: "center" }}>
+              Advertisement
+            </h6>
+
+            {/* 320x50 Adsterra banner code */}
+            <Adsterra300x250 />
+          </div>
+          <div className="desktop-ad">
+            <h6 style={{ display: "grid", placeItems: "center" }}>
+              Advertisement
+            </h6>
+
+            <Adsterra728x90 />
+          </div>        
 
         {/* CONTENT */}
 
@@ -359,7 +378,9 @@ const IssbGuide = () => {
                   </ul>
                 </div>
               </div>
-
+              <div className="horizontal-ad">
+                <Adsterra728x90 />
+              </div>
               <h2>ISSB Four-Day Selection Process</h2>
 
               <p>
@@ -773,6 +794,23 @@ const IssbGuide = () => {
                   <Link to="/issb-1" className="cta-button">
                     Practice Psych Tests
                   </Link>
+
+                  <div className="explore-wrapper">
+                    <a
+                      href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exa-btn exa-btn-outline hero-outline-btn"
+                    >
+                      Explore More
+                    </a>
+
+                    <div className="explore-tooltip">
+                      Exploring our sponsored resources helps support server and
+                      development costs, allowing us to keep PMA and ISSB
+                      preparation free for all candidates.
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -914,6 +952,22 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice MAT
                 </Link>
+                <div className="explore-wrapper">
+                  <a
+                    href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exa-btn exa-btn-outline hero-outline-btn"
+                  >
+                    Explore More
+                  </a>
+
+                  <div className="explore-tooltip">
+                    Exploring our sponsored resources helps support server and
+                    development costs, allowing us to keep PMA and ISSB
+                    preparation free for all candidates.
+                  </div>
+                </div>
               </div>
 
               <h3>Officer Personality Inventory (OPI)</h3>
@@ -969,6 +1023,22 @@ const IssbGuide = () => {
                 <Link to="/opi" className="cta-button">
                   Practice OPI
                 </Link>
+                <div className="explore-wrapper">
+                  <a
+                    href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exa-btn exa-btn-outline hero-outline-btn"
+                  >
+                    Explore More
+                  </a>
+
+                  <div className="explore-tooltip">
+                    Exploring our sponsored resources helps support server and
+                    development costs, allowing us to keep PMA and ISSB
+                    preparation free for all candidates.
+                  </div>
+                </div>
               </div>
 
               <h3>Sentence Completion Test (SCT)</h3>
@@ -1031,6 +1101,22 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice SCT
                 </Link>
+                <div className="explore-wrapper">
+                  <a
+                    href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exa-btn exa-btn-outline hero-outline-btn"
+                  >
+                    Explore More
+                  </a>
+
+                  <div className="explore-tooltip">
+                    Exploring our sponsored resources helps support server and
+                    development costs, allowing us to keep PMA and ISSB
+                    preparation free for all candidates.
+                  </div>
+                </div>
               </div>
 
               <h3>Word Association Test (WAT)</h3>
@@ -1078,6 +1164,22 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice WAT
                 </Link>
+                <div className="explore-wrapper">
+                  <a
+                    href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exa-btn exa-btn-outline hero-outline-btn"
+                  >
+                    Explore More
+                  </a>
+
+                  <div className="explore-tooltip">
+                    Exploring our sponsored resources helps support server and
+                    development costs, allowing us to keep PMA and ISSB
+                    preparation free for all candidates.
+                  </div>
+                </div>
               </div>
 
               <h3>Picture Story Writing Test (TAT)</h3>
@@ -1134,6 +1236,22 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice Stories
                 </Link>
+                <div className="explore-wrapper">
+                  <a
+                    href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="exa-btn exa-btn-outline hero-outline-btn"
+                  >
+                    Explore More
+                  </a>
+
+                  <div className="explore-tooltip">
+                    Exploring our sponsored resources helps support server and
+                    development costs, allowing us to keep PMA and ISSB
+                    preparation free for all candidates.
+                  </div>
+                </div>
               </div>
 
               <h3>Situation Reaction Test (SRT)</h3>
@@ -1532,7 +1650,7 @@ const IssbGuide = () => {
                 <li>Maintain officer-like behavior throughout the day.</li>
               </ul>
             </section>
-
+<AdsterraNativeBanner/>
             {/* day 3 / gto outdoor tasks or psych interviews  */}
             <section id="day3" className="article-card content-section">
               <h2>Day 3 – Outdoor GTO Tasks & Psychologist Interview</h2>
@@ -2091,6 +2209,22 @@ const IssbGuide = () => {
                   <Link to="/iss-1" className="cta-button">
                     Practice Mock Tests
                   </Link>
+                  <div className="explore-wrapper">
+                    <a
+                      href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exa-btn exa-btn-outline hero-outline-btn"
+                    >
+                      Explore More
+                    </a>
+
+                    <div className="explore-tooltip">
+                      Exploring our sponsored resources helps support server and
+                      development costs, allowing us to keep PMA and ISSB
+                      preparation free for all candidates.
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -2388,9 +2522,41 @@ const IssbGuide = () => {
                   <Link to="/issb-1" className="cta-button">
                     Practice Mock Tests
                   </Link>
+                  <div className="explore-wrapper">
+                    <a
+                      href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exa-btn exa-btn-outline hero-outline-btn"
+                    >
+                      Explore More
+                    </a>
+
+                    <div className="explore-tooltip">
+                      Exploring our sponsored resources helps support server and
+                      development costs, allowing us to keep PMA and ISSB
+                      preparation free for all candidates.
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
+
+            <div className="mobile-ad">
+                        <h6 style={{ display: "grid", placeItems: "center" }}>
+                          Advertisement
+                        </h6>
+            
+                        {/* 320x50 Adsterra banner code */}
+                        <Adsterra300x250 />
+                      </div>
+                      <div className="desktop-ad">
+                        <h6 style={{ display: "grid", placeItems: "center" }}>
+                          Advertisement
+                        </h6>
+            
+                        <Adsterra728x90 />
+                      </div>
             {/* OLQ */}
 
             <section id="olqs" className="article-card">
@@ -2656,6 +2822,22 @@ const IssbGuide = () => {
                   <div>
                     <strong>ISSB Mock Tests</strong>
                   </div>
+                  <div className="explore-wrapper">
+                    <a
+                      href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      // className="exa-btn exa-btn-outline hero-outline-btn"
+                    >
+                      Explore More
+                    </a>
+
+                    <div className="explore-tooltip" style={{ padding: "1px" }}>
+                      Exploring our sponsored resources helps support server and
+                      development costs, allowing us to keep PMA and ISSB
+                      preparation free for all candidates.
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -2916,42 +3098,62 @@ const IssbGuide = () => {
                   <p>Take full-length mock tests and review performance.</p>
                 </div>
               </div>
-<a href="/issb-1">
-              <div className="cta-box">
-                <h3>Prepare for ISSB with EXAMITICS</h3>
+              <a href="/issb-1">
+                <div className="cta-box">
+                  <h3>Prepare for ISSB with EXAMITICS</h3>
 
-                <p>
-                  Build confidence through realistic practice. Train under timed
-                  conditions and experience psychological tests in an
-                  environment similar to actual ISSB assessment.
-                </p>
+                  <p>
+                    Build confidence through realistic practice. Train under
+                    timed conditions and experience psychological tests in an
+                    environment similar to actual ISSB assessment.
+                  </p>
 
-                <div className="info-grid">
-                  <div>
-                    <strong>WAT Practice</strong>
-                  </div>
+                  <div className="info-grid">
+                    <div>
+                      <strong>WAT Practice</strong>
+                    </div>
 
-                  <div>
-                    <strong>SCT Practice</strong>
-                  </div>
+                    <div>
+                      <strong>SCT Practice</strong>
+                    </div>
 
-                  <div>
-                    <strong>TAT & Pointer Stories</strong>
-                  </div>
+                    <div>
+                      <strong>TAT & Pointer Stories</strong>
+                    </div>
 
-                  <div>
-                    <strong>OPI Practice</strong>
-                  </div>
+                    <div>
+                      <strong>OPI Practice</strong>
+                    </div>
 
-                  <div>
-                    <strong>MAT Mock Tests</strong>
-                  </div>
+                    <div>
+                      <strong>MAT Mock Tests</strong>
+                    </div>
 
-                  <div>
-                    <strong>Full ISSB Simulation</strong>
+                    <div>
+                      <strong>Full ISSB Simulation</strong>
+                    </div>
+                    <div className="explore-wrapper">
+                      <a
+                        href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        // className="exa-btn exa-btn-outline hero-outline-btn"
+                      >
+                        Explore More
+                      </a>
+
+                      <div
+                        className="explore-tooltip"
+                        style={{ padding: "1px" }}
+                      >
+                        Exploring our sponsored resources helps support server
+                        and development costs, allowing us to keep PMA and ISSB
+                        preparation free for all candidates.
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div></a>
+              </a>
             </section>
 
             {/* issb myths and faq */}
@@ -3226,52 +3428,68 @@ const IssbGuide = () => {
               {/* ========================================= */}
               {/* FINAL CTA */}
               {/* ========================================= */}
-<a href="/issb-1">
-              <div className="cta-box" >
-                <h3>Practice Before Your ISSB Call</h3>
+              <a href="/issb-1">
+                <div className="cta-box">
+                  <h3>Practice Before Your ISSB Call</h3>
 
-                <p>
-                  The best preparation is consistent practice under realistic
-                  conditions. Familiarity with ISSB tests helps candidates
-                  manage time, improve confidence and reduce anxiety during
-                  assessment.
-                </p>
+                  <p>
+                    The best preparation is consistent practice under realistic
+                    conditions. Familiarity with ISSB tests helps candidates
+                    manage time, improve confidence and reduce anxiety during
+                    assessment.
+                  </p>
 
-                <div className="info-grid">
-                  <div>
-                    <strong>Word Association Test (WAT)</strong>
+                  <div className="info-grid">
+                    <div>
+                      <strong>Word Association Test (WAT)</strong>
+                    </div>
+
+                    <div>
+                      <strong>Sentence Completion Test (SCT)</strong>
+                    </div>
+
+                    <div>
+                      <strong>Picture & Pointer Stories (TAT)</strong>
+                    </div>
+
+                    <div>
+                      <strong>Officer Personality Inventory (OPI)</strong>
+                    </div>
+
+                    <div>
+                      <strong>Mechanical Aptitude Test (MAT)</strong>
+                    </div>
+
+                    <div>
+                      <strong>Full Mock ISSB Practice</strong>
+                    </div>
                   </div>
 
-                  <div>
-                    <strong>Sentence Completion Test (SCT)</strong>
-                  </div>
-
-                  <div>
-                    <strong>Picture & Pointer Stories (TAT)</strong>
-                  </div>
-
-                  <div>
-                    <strong>Officer Personality Inventory (OPI)</strong>
-                  </div>
-
-                  <div>
-                    <strong>Mechanical Aptitude Test (MAT)</strong>
-                  </div>
-
-                  <div>
-                    <strong>Full Mock ISSB Practice</strong>
-                  </div>
+                  <p style={{ marginTop: "20px" }}>
+                    Prepare smarter with EXAMITICS and experience ISSB-style
+                    practice tests designed specifically for Pakistan Army, Navy
+                    and Air Force officer candidates.
+                  </p>
+                  <p>
+                    Exploring our{" "}
+                    <a
+                      href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exa-btn exa-btn-outline hero-outline-btn"
+                      style={{ padding: "1px", borderRadius: "10px" }}
+                    >
+                      <u>sponsored resources</u>{" "}
+                    </a>{" "}
+                    helps support server and development costs, allowing us to
+                    keep PMA and ISSB preparation free for all candidates.
+                  </p>
                 </div>
-
-                <p style={{ marginTop: "20px" }}>
-                  Prepare smarter with EXAMITICS and experience ISSB-style
-                  practice tests designed specifically for Pakistan Army, Navy
-                  and Air Force officer candidates.
-                </p>
-              </div></a>
+              </a>
             </section>
           </div>
         </section>
+        <AdsterraNativeBanner/>
       </main>
 
       <Footer />
