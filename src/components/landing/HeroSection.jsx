@@ -75,10 +75,10 @@ const HeroSection = () => {
                 <FiArrowRight />
               </Link>
 
-              <Link to="/guides" className="exa-btn exa-btn-outline">
+              <a href="#guides" className="exa-btn exa-btn-outline">
                 <FiBookOpen />
                 Study Guides
-              </Link>
+              </a>
             </div>
 
             {/* Statistics */}
