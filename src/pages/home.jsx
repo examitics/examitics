@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 import Navbar from "../components/layout/navbar";
-import Features from "../components/landing/features";
-import AnalyticsPreview from "../components/landing/analyticspreview";
-import ExamCategories from "../components/landing/examcategories";
-import Testimonials from "../components/landing/testimonials";
-import CTASection from "../components/landing/CTAsection";
+import Hero from "../components/landing/HeroSection";
+import WhyChoose from "../components/landing/WhyChoose";
+import PreparationCategories from "../components/landing/PreparationCategories";
+import HowItWorks from "../components/landing/HowItWorks";
+import FeaturedGuides from "../components/landing/FeaturedGuides";
+import FAQ from "../components/landing/FAQ";
+
 import Footer from "../components/layout/footer";
-import "../styles/home.css";
+// import "../styles/home.css";
 
 import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
 import Adsterra300x250 from "../components/Adsterra300x250";
@@ -29,19 +31,83 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>ISSB Preparation Website</title>
+        {/* Primary SEO */}
+        <title>
+          EXAMITICS | Free ISSB, PMA Long Course, PAF & Navy Preparation
+          Platform
+        </title>
 
         <meta
           name="description"
-          content="Prepare for ISSB, PMA Long Course, MAT, WAT, TAT, SCT and OPI tests with EXAMITICS. Practice mock tests, track performance and improve your selection chances."
+          content="Prepare for ISSB, PMA Long Course, Pakistan Air Force and Pakistan Navy selection with free mock tests, intelligence tests, WAT, TAT, SCT, OPI, interview preparation, study guides and performance analytics."
         />
 
         <meta
           name="keywords"
-          content="ISSB preparation, PMA preparation, MAT test, WAT test, TAT test, OPI interview, Pakistan Army preparation"
+          content="
+      ISSB Preparation,
+      PMA Long Course,
+      PMA Initial Test,
+      Pakistan Army Preparation,
+      Pakistan Navy Preparation,
+      Pakistan Air Force Preparation,
+      ISSB Mock Test,
+      Verbal Intelligence Test,
+      Non Verbal Intelligence Test,
+      Mechanical Aptitude Test,
+      Academic Test,
+      WAT,
+      TAT,
+      SCT,
+      OPI,
+      Initial Interview,
+      EXAMITICS
+    "
         />
 
+        <meta name="author" content="EXAMITICS" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
         <link rel="canonical" href="https://examitics.vercel.app/" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="EXAMITICS | Free ISSB, PMA, PAF & Navy Preparation"
+        />
+
+        <meta
+          property="og:description"
+          content="Free online preparation platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Navy and Pakistan Air Force candidates."
+        />
+
+        <meta
+          property="og:image"
+          content="public\images\examitics-banner.png"
+        />
+
+        <meta property="og:url" content="https://examitics.vercel.app/" />
+
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+          name="twitter:title"
+          content="EXAMITICS | Free ISSB Preparation Platform"
+        />
+
+        <meta
+          name="twitter:description"
+          content="Practice ISSB, PMA, PAF and Navy tests with free mock exams, psychology tests and interview preparation."
+        />
+
+        <meta
+          name="twitter:image"
+          content="public\images\examitics-banner.png"
+        />
       </Helmet>
 
       <Navbar />
@@ -50,7 +116,7 @@ const Home = () => {
         {/* =====================================
             HERO SECTION
         ===================================== */}
-        <section className="hero-section">
+        {/* <section className="hero-section">
           <div className="hero-overlay"></div>
 
           <div className="container-custom">
@@ -93,23 +159,49 @@ const Home = () => {
                     preparation free for all candidates.
                   </div>
                 </div>
-                {/* <a
-                  href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="exa-btn exa-btn-outline hero-outline-btn"
-                >
-                  Explore More{" "}
-                </a> */}
+               
               </div>
             </div>
           </div>
+        </section> */}
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="whyChoose">
+          <WhyChoose />
+        </section>
+
+        <section id="categories">
+          <PreparationCategories />
+        </section>
+
+        <section id="HowWorks">
+          <HowItWorks />
+        </section>
+
+        <section id="guides">
+          <FeaturedGuides />
+        </section>
+         {/* AD BANNER */}
+        <div className="desktop-ad">
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
+          <Adsterra728x90 />
+        </div>
+        <div className="mobile-ad">
+          <h6 style={{ display: "grid", placeItems: "center" }}>
+            Advertisement
+          </h6>
+          <Adsterra300x250 />
+        </div>
+        <section id="faq">
+          <FAQ />
         </section>
         {/* AD BANNER */}
         <AdsterraNativeBanner />
 
-        {/* CTA SECTION */}
-        <CTASection />
         <div className="desktop-ad">
           <h6 style={{ display: "grid", placeItems: "center" }}>
             Advertisement
@@ -122,32 +214,8 @@ const Home = () => {
           </h6>
           <Adsterra300x250 />
         </div>
-        {/* Testimonials  */}
-        {/* <Testimonials /> */}
-        {/* FEATURES */}
-        <section id="features">
-          <Features id="features" />
-        </section>
 
-        {/* ANALYTICS PREVIEW */}
-        <section id="analytics">
-          <AnalyticsPreview />
-        </section>
-        {/* EXAM CATEGORIES */}
-        <ExamCategories />
-        {/* AD BANNER */}
-        <div className="desktop-ad">
-          <h6 style={{ display: "grid", placeItems: "center" }}>
-            Advertisement
-          </h6>
-          <Adsterra728x90 />
-        </div>
-        <div className="mobile-ad">
-          <h6 style={{ display: "grid", placeItems: "center" }}>
-            Advertisement
-          </h6>
-          <Adsterra300x250 />
-        </div>
+       
         {/* Footer */}
         <Footer />
       </main>
