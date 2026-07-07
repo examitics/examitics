@@ -360,3 +360,125 @@ body.dark-theme .exa-navbar {
   }
 
 }
+/* 
+===============================
+ISSB DROPDOWN 
+=============================== */
+.exa-dropdown {
+  position: relative;
+}
+.exa-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+
+  transition: color .3s;
+}
+
+.exa-dropdown-btn:hover {
+  color: var(--color-primary);
+}
+.exa-dropdown-btn svg {
+  transition: transform .3s;
+}
+
+.exa-dropdown-btn svg.rotate {
+  transform: rotate(180deg);
+}
+.exa-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 14px);
+  left: 0;
+
+  min-width: 220px;
+
+  background: var(--color-card);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-lg);
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(10px);
+
+  transition: all .25s ease;
+
+  z-index: 1000;
+}
+.exa-dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.exa-dropdown-menu a {
+  padding: 14px 18px;
+
+  color: var(--color-text);
+
+  text-decoration: none;
+
+  transition: background .25s;
+}
+
+.exa-dropdown-menu a:hover {
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+@media (max-width:992px){
+
+    .exa-dropdown{
+        width:100%;
+    }
+
+    .exa-dropdown-btn{
+        width:100%;
+        justify-content:space-between;
+
+        padding:12px 0;
+    }
+
+    .exa-dropdown-menu{
+
+        position:static;
+
+        border:none;
+
+        box-shadow:none;
+
+        background:transparent;
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:none;
+
+        display:none;
+
+        padding-left:18px;
+
+        margin-top:8px;
+    }
+
+    .exa-dropdown-menu.show{
+        display:flex;
+    }
+
+}

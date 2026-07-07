@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { Helmet } from "react-helmet-async";
 
-import Navbar from "../components/layout/navbar";
 import Hero from "../components/landing/HeroSection";
 import WhyChoose from "../components/landing/WhyChoose";
 import PreparationCategories from "../components/landing/PreparationCategories";
@@ -11,6 +10,7 @@ import HowItWorks from "../components/landing/HowItWorks";
 import FeaturedGuides from "../components/landing/FeaturedGuides";
 import FAQ from "../components/landing/FAQ";
 
+import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 // import "../styles/home.css";
 

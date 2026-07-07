@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { FiMessageSquare } from "react-icons/fi";
 
 import "../../styles/floatingfeedback.css";
+
+// import { FiArrowUp, FiGraphTrend } from 'react-icons/fi';
 const FloatingFeedback = () => {
   const location = useLocation();
 
@@ -17,6 +19,7 @@ const FloatingFeedback = () => {
     // "/navy",
     "/privacy-policy",
     "/terms-conditions",
+    // "/knowledgehub"
   ];
 
   if (!allowedPages.includes(location.pathname)) {
@@ -44,7 +47,8 @@ const FloatingFeedback = () => {
       <FiMessageSquare />
       <span className="feedback-text">Feedback</span>
       <span className="feedback-tooltip">
-      Share your feedback — it helps us improve EXAMITICS 🚀
+      Share your feedback — it helps us improve EXAMITICS 🚀 
+
     </span>
     </button>
   );

@@ -6,7 +6,7 @@ import App from "./App.jsx";
 import DisableDevtool from "disable-devtool";
 import { BrowserRouter } from "react-router-dom";
 
-DisableDevtool();
+// DisableDevtool();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -189,7 +189,7 @@ const ISSB = () => {
                   <FiArrowRight />
                 </a>
 
-                <div className="explore-wrapper exa-btn exa-btn-outline">
+                {/* <div className="explore-wrapper exa-btn exa-btn-outline">
                   <a
                     href="https://www.effectivecpmnetwork.com/dhcrjrva?key=6c9838dacc1c3ec52df70ed95298a899"
                     target="_blank"
@@ -204,7 +204,7 @@ const ISSB = () => {
                     development costs, allowing us to keep PMA and ISSB
                     preparation free for all candidates.
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 

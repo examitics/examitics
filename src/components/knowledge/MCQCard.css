@@ -1,0 +1,103 @@
+.mcq-card{
+  margin-top:30px;
+  padding:28px;
+}
+
+.mcq-question{
+  margin-bottom:22px;
+}
+
+.mcq-options{
+  display:grid;
+  gap:14px;
+}
+
+.mcq-option{
+
+  display:flex;
+  align-items:center;
+
+  gap:15px;
+
+  width:100%;
+
+  padding:16px 20px;
+
+  background:var(--color-card);
+
+  color:var(--color-text);
+
+  border:1px solid var(--color-border);
+
+  border-radius:14px;
+
+  cursor:pointer;
+
+  transition:.25s;
+
+}
+
+.mcq-option:hover{
+
+  transform:translateX(4px);
+
+  border-color:var(--color-primary);
+
+}
+
+.mcq-letter{
+
+  width:36px;
+  height:36px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:var(--color-bg-secondary);
+
+  font-weight:700;
+
+}
+
+.mcq-option.correct{
+
+  background:#16A34A20;
+
+  border-color:#16A34A;
+
+  color:#16A34A;
+
+}
+
+.mcq-option.wrong{
+
+  background:#DC262620;
+
+  border-color:#DC2626;
+
+  color:#DC2626;
+
+}
+
+.mcq-explanation{
+
+  margin-top:20px;
+
+  padding:18px;
+
+  border-radius:14px;
+
+  background:var(--color-card-secondary);
+
+}
+
+.mcq-explanation strong{
+
+  display:block;
+
+  margin-bottom:10px;
+
+}

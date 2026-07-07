@@ -26,7 +26,7 @@ const examsData = [
 
     status: "Continue Preparation",
 
-    route: "/PMA-LC",
+    route: "/pma-lc-initial-procedure",
   },
 
   {

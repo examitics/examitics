@@ -83,7 +83,7 @@ const HeroSection = () => {
 
             {/* Statistics */}
 
-            <div className="hero-stats">
+            {/* <div className="hero-stats">
               <div className="hero-stat-card">
                 <h3>120+</h3>
                 <p>Practice Tests</p>
@@ -103,7 +103,7 @@ const HeroSection = () => {
                 <h3>100%</h3>
                 <p>Free Access</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* ==========================

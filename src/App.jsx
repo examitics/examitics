@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
 import Exams from "./pages/exams";
-import PMALC from "./pages/PMA-LC";
+// import PMALC from "./pages/PMA-LC";
 import MockTest from "./pages/mocktest";
 import Result from "./pages/result";
 import MOCK from "./pages/mock";
@@ -15,6 +15,23 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import PmaInitialTestProcedure from "./pages/PmaInitialTestProcedure";
 import ISSBGuide from "./pages/IssbGuide";
+
+import KnowledgeHub from "./pages/KnowledgeHub";
+// import TopicPage from "./pages/knowledge/TopicPage";
+import MotorwaysOfPakistan from "./pages/knowledge/general-knowledge/MotorwaysOfPakistan";
+import NationalHighwaysOfPakistan from "./pages/knowledge/general-knowledge/NationalHighwaysOfPakistan";
+import RiversOfPakistan from "./pages/knowledge/general-knowledge/RiversOfPakistan";
+import DamsOfPakistan from "./pages/knowledge/general-knowledge/DamsOfPakistan";
+import LakesOfPakistan from "./pages/knowledge/general-knowledge/LakesOfPakistan";
+import MountainsOfPakistan from "./pages/knowledge/general-knowledge/MountainsOfPakistan";
+import DesertsOfPakistan from "./pages/knowledge/general-knowledge/DesertsOfPakistan";
+import NationalParksOfPakistan from "./pages/knowledge/general-knowledge/NationalParksOfPakistan";
+import CountriesAndCapitals from "./pages/knowledge/general-knowledge/CountriesAndCapitals";
+import WorldCurrencies from "./pages/knowledge/general-knowledge/WorldCurrencies";
+
+
+
+
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
@@ -30,8 +47,8 @@ function App() {
 
   return (
     <>
-      <SecurityToast />
-      <SecurityProtection />
+      {/* <SecurityToast /> 
+      <SecurityProtection /> */}
 
       <ScrollToTop />
       <Routes>
@@ -42,7 +59,7 @@ function App() {
         <Route path="/exams" element={<Exams />} />
 
         {/* PMA LC PAGE */}
-        <Route path="/PMA-LC" element={<PMALC />} />
+        {/* <Route path="/PMA-LC" element={<PMALC />} /> */}
 
         {/* MOCK TEST PAGE */}
         <Route path="/mock/:category/:setId" element={<MockTest />} />
@@ -77,9 +94,27 @@ function App() {
         {/* ISSB Comprehencive Guide  */}
         <Route path="/issbguide" element={<ISSBGuide />} />
 
-        {/*floating feedback button */}
-        {/* <FloatingFeedback /> */}
-        {/* Add more routes for other exams as needed */}
+        {/* =================================
+        Knowledge Hub 
+        ================================= */}
+        <Route path="/knowledgehub" element={<KnowledgeHub />} />
+        {/* <Route path="/knowledge/:category/:slug" element={<TopicPage />} /> */}
+
+         {/* ===============================
+         general-Knowledge topics pages 
+         =============================== */}
+        <Route path="/knowledge/general-knowledge/MotorwaysOfPakistan" element={<MotorwaysOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/NationalHighwaysOfPakistan" element={<NationalHighwaysOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/RiversOfPakistan" element={<RiversOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/dams-of-pakistan" element={<DamsOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/lakes-of-pakistan" element={<LakesOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/mountains-of-pakistan" element={<MountainsOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/deserts-of-pakistan" element={<DesertsOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/national-parks-of-pakistan" element={<NationalParksOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/countries-and-capitals" element={<CountriesAndCapitals />} />
+        <Route path="/knowledge/general-knowledge/world-currencies" element={<WorldCurrencies />} />
+        
+       {/* Add more routes for other exams as needed */}
       </Routes>
       <FloatingFeedback />
     </>
