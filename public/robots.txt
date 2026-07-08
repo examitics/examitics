@@ -1,4 +1,5 @@
 User-agent: *
+
 Allow: /
 
-Sitemap: https://examitics.vercel.app/sitemap.xml
+Sitemap: https://www.examitics.com/sitemap.xml

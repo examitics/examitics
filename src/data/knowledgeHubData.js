@@ -260,7 +260,7 @@ export const knowledgeItems = [
     category: "general-knowledge",
     title: "Motorways of Pakistan",
     // slug: "/knowledge/general-knowledge/motorways-of-pakistan",
-    slug: "/knowledge/general-knowledge/MotorwaysOfPakistan",
+    slug: "/knowledge/general-knowledge/motorways-of-pakistan",
     icon: FiNavigation,
     description:
       "Complete motorway network, routes and important facts.",
@@ -273,7 +273,7 @@ export const knowledgeItems = [
     id: 8,
     category: "general-knowledge",
     title: "National Highways",
-    slug: "/knowledge/general-knowledge/NationalHighwaysOfPakistan",
+    slug: "/knowledge/general-knowledge/national-highways-of-pakistan",
     icon: FiNavigation,
     description:
       "Important national highways connecting Pakistan.",
@@ -285,7 +285,7 @@ export const knowledgeItems = [
     id: 9,
     category: "general-knowledge",
     title: "Rivers of Pakistan",
-    slug: "/knowledge/general-knowledge/RiversOfPakistan",
+    slug: "/knowledge/general-knowledge/rivers-of-pakistan",
     icon: FiDroplet,
     description:
       "Major rivers, tributaries and river systems.",

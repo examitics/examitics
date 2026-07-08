@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
 import Exams from "./pages/exams";
-// import PMALC from "./pages/PMA-LC";
 import MockTest from "./pages/mocktest";
 import Result from "./pages/result";
 import MOCK from "./pages/mock";
@@ -17,7 +16,6 @@ import PmaInitialTestProcedure from "./pages/PmaInitialTestProcedure";
 import ISSBGuide from "./pages/IssbGuide";
 
 import KnowledgeHub from "./pages/KnowledgeHub";
-// import TopicPage from "./pages/knowledge/TopicPage";
 import MotorwaysOfPakistan from "./pages/knowledge/general-knowledge/MotorwaysOfPakistan";
 import NationalHighwaysOfPakistan from "./pages/knowledge/general-knowledge/NationalHighwaysOfPakistan";
 import RiversOfPakistan from "./pages/knowledge/general-knowledge/RiversOfPakistan";
@@ -58,10 +56,7 @@ function App() {
         {/* EXAMS PAGE */}
         <Route path="/exams" element={<Exams />} />
 
-        {/* PMA LC PAGE */}
-        {/* <Route path="/PMA-LC" element={<PMALC />} /> */}
-
-        {/* MOCK TEST PAGE */}
+         {/* MOCK TEST PAGE */}
         <Route path="/mock/:category/:setId" element={<MockTest />} />
 
         {/* RESULT PAGE */}
@@ -98,14 +93,13 @@ function App() {
         Knowledge Hub 
         ================================= */}
         <Route path="/knowledgehub" element={<KnowledgeHub />} />
-        {/* <Route path="/knowledge/:category/:slug" element={<TopicPage />} /> */}
-
+       
          {/* ===============================
          general-Knowledge topics pages 
          =============================== */}
-        <Route path="/knowledge/general-knowledge/MotorwaysOfPakistan" element={<MotorwaysOfPakistan />} />
-        <Route path="/knowledge/general-knowledge/NationalHighwaysOfPakistan" element={<NationalHighwaysOfPakistan />} />
-        <Route path="/knowledge/general-knowledge/RiversOfPakistan" element={<RiversOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/motorways-of-pakistan" element={<MotorwaysOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/national-highways-of-pakistan" element={<NationalHighwaysOfPakistan />} />
+        <Route path="/knowledge/general-knowledge/rivers-of-pakistan" element={<RiversOfPakistan />} />
         <Route path="/knowledge/general-knowledge/dams-of-pakistan" element={<DamsOfPakistan />} />
         <Route path="/knowledge/general-knowledge/lakes-of-pakistan" element={<LakesOfPakistan />} />
         <Route path="/knowledge/general-knowledge/mountains-of-pakistan" element={<MountainsOfPakistan />} />
