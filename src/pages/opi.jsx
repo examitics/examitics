@@ -14,6 +14,8 @@ import opiQuestions from "../data/opi/opiquestions";
 
 import "../styles/opi.css";
 
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
+
 const OPI = () => {
   const navigate = useNavigate();
   const paletteRef = useRef(null);
@@ -98,18 +100,6 @@ const OPI = () => {
   // ANSWER
   // =====================
 
-  // const handleAnswer = (value) => {
-  //   setAnswers((prev) => ({
-  //     ...prev,
-  //     [question.id]: value,
-  //   }));
-
-  //   if (currentQuestion < totalQuestions - 1) {
-  //     setTimeout(() => {
-  //       setCurrentQuestion((prev) => prev + 1);
-  //     }, 150);
-  //   }
-  // };
   const handleAnswer = (value) => {
     setAnswers((prev) => ({
       ...prev,
@@ -220,20 +210,81 @@ const OPI = () => {
   return (
     <>
       <Helmet>
-        <title>OPI Personality Assessment | EXAMITICS</title>
+        {/* Primary SEO */}
+        <title>
+          Free OPI Personality Test | Officer Like Qualities Assessment |
+          EXAMITICS
+        </title>
 
         <meta
           name="description"
-          content="Take the OPI personality assessment and receive insights into your personality traits, officer-like qualities, leadership potential and behavioral strengths."
+          content="Take the free OPI Personality Test and receive an instant personality analysis with Officer Like Qualities (OLQs), leadership traits, behavioral strengths and detailed performance insights. Ideal for ISSB, PMA Long Course, Pakistan Army, Navy and Air Force candidates."
         />
 
         <meta
           name="keywords"
-          content="OPI test, personality assessment, officer like qualities, ISSB personality test, psychological assessment"
+          content="OPI Test, OPI Personality Test, Officer Like Qualities, OLQ Test, Personality Assessment, ISSB Personality Test, ISSB Psychology Test, Leadership Assessment, Personality Analysis, Pakistan Army ISSB, PMA Long Course Preparation, Pakistan Navy ISSB, Pakistan Air Force ISSB, Free Personality Test, EXAMITICS"
         />
 
-        <link rel="canonical" href="https://examitics.vercel.app/opi" />
+        <meta name="author" content="EXAMITICS" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.examitics.com/opi" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Free OPI Personality Test | Officer Like Qualities Assessment"
+        />
+
+        <meta
+          property="og:description"
+          content="Discover your personality traits, leadership potential and Officer Like Qualities with a free OPI Personality Test and instant analysis on EXAMITICS."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EXAMITICS" />
+        <meta property="og:locale" content="en_PK" />
+
+        <meta property="og:url" content="https://www.examitics.com/opi" />
+
+        <meta
+          property="og:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+          name="twitter:title"
+          content="Free OPI Personality Test | Officer Like Qualities Assessment"
+        />
+
+        <meta
+          name="twitter:description"
+          content="Take the free OPI Personality Test and receive instant personality insights, Officer Like Qualities evaluation and leadership analysis for ISSB preparation."
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
       </Helmet>
+      <BreadcrumbSchema
+  items={[
+    {
+      name: "Home",
+      url: "https://www.examitics.com/",
+    },
+    {
+      name: "OPI Personality Test",
+      url: "https://www.examitics.com/opi",
+    },
+  ]}
+/>
       <Navbar />
       <div className="opi-page">
         {/* HEADER */}

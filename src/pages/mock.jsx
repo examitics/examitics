@@ -6,6 +6,8 @@ import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 import MockSection from "../components/mock/mocksection";
 
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
+
 import SidebarAd160x300 from "../components/SidebarAd160x300";
 import Adsterra728x90 from "../components/Adsterra728x90";
 import "../styles/mock.css";
@@ -14,20 +16,80 @@ const MOCK = () => {
   return (
     <>
       <Helmet>
-        <title>ISSB Mock Tests Online | EXAMITICS</title>
+        {/* Primary SEO */}
+        <title>
+          Free ISSB & PMA Mock Tests | Intelligence Test Practice | EXAMITICS
+        </title>
 
         <meta
           name="description"
-          content="Take full-length mock tests for ISSB and PMA preparation. Analyze performance, identify weaknesses and improve your score."
+          content="Practice free ISSB and PMA Long Course mock tests including Verbal Intelligence, Non-Verbal Intelligence, Academic Tests, Mechanical Aptitude Test (MAT) and Full-Length Initial Tests. Improve your preparation for Pakistan Army, Pakistan Navy and Pakistan Air Force selection."
         />
 
         <meta
           name="keywords"
-          content="ISSB mock tests, PMA mock tests, online intelligence tests, practice tests, exam preparation Pakistan"
+          content="ISSB Mock Test, PMA Mock Test, PMA Long Course Mock Test, Online Intelligence Test, Verbal Intelligence Test, Non-Verbal Intelligence Test, Academic Test, Mechanical Aptitude Test, MAT Test, Pakistan Army Initial Test, Pakistan Navy Test, Pakistan Air Force Test, Free Mock Tests, ISSB Preparation, PMA Preparation, EXAMITICS"
         />
 
-        <link rel="canonical" href="https://examitics.vercel.app/mock" />
+        <meta name="author" content="EXAMITICS" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.examitics.com/mock" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Free ISSB & PMA Mock Tests | Intelligence Test Practice"
+        />
+
+        <meta
+          property="og:description"
+          content="Take free online mock tests for ISSB and PMA Long Course. Practice Verbal Intelligence, Non-Verbal Intelligence, Academic Tests, Mechanical Aptitude Test and Full-Length Initial Tests."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EXAMITICS" />
+        <meta property="og:locale" content="en_PK" />
+
+        <meta property="og:url" content="https://www.examitics.com/mock" />
+
+        <meta
+          property="og:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+          name="twitter:title"
+          content="Free ISSB & PMA Mock Tests | Intelligence Test Practice"
+        />
+
+        <meta
+          name="twitter:description"
+          content="Practice free ISSB and PMA mock tests including Verbal, Non-Verbal, Academic and Mechanical Aptitude Tests with detailed performance analysis."
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
       </Helmet>
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://www.examitics.com/",
+          },
+          {
+            name: "Mock Tests",
+            url: "https://www.examitics.com/mock",
+          },
+        ]}
+      />
       <Navbar />
       <div className="mock-page-layout">
         <main className="mock-page section-padding">
@@ -49,7 +111,6 @@ const MOCK = () => {
             <MockSection title="PMA LONG COURSE" examCode="pma-lc" />
           </div>
         </main>
-        
       </div>
       <Footer />
     </>

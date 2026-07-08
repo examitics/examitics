@@ -14,6 +14,7 @@ import Footer from "../../../components/layout/footer";
 
 import MCQCard from "../../../components/knowledge/MCQCard";
 import "./MotorwaysOfPakistan.css";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema";
 
 const sections = [
   {
@@ -41,17 +42,17 @@ const sections = [
     title: "Importance",
     icon: FiCheckCircle,
   },
-  
+
   {
     id: "faq",
     title: "FAQs",
     icon: FiHelpCircle,
-  },{
+  },
+  {
     id: "practicemcq",
     title: "Practice MCQs",
     icon: FiHelpCircle,
   },
-  
 ];
 
 const DamsOfPakistan = () => {
@@ -93,6 +94,19 @@ const DamsOfPakistan = () => {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://www.examitics.com/" },
+          {
+            name: "Knowledge Hub",
+            url: "https://www.examitics.com/knowledgehub",
+          },
+          {
+            name: "Dams of Pakistan",
+            url: "https://www.examitics.com/knowledge/general-knowledge/dams-of-pakistan",
+          },
+        ]}
+      />
       <Navbar />
       <main className="motorways-page">
         {/* HERO */}

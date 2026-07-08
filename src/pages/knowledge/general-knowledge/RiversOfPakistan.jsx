@@ -13,6 +13,7 @@ import Footer from "../../../components/layout/footer";
 
 import MCQCard from "../../../components/knowledge/MCQCard";
 import "./MotorwaysOfPakistan.css";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema";
 
 const sections = [
   {
@@ -88,6 +89,19 @@ const RiversOfPakistan = () => {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://www.examitics.com/" },
+          {
+            name: "Knowledge Hub",
+            url: "https://www.examitics.com/knowledgehub",
+          },
+          {
+            name: "Rivers of Pakistan",
+            url: "https://www.examitics.com/knowledge/general-knowledge/rivers-of-pakistan",
+          },
+        ]}
+      />
       <main className="motorways-page">
         <Navbar />
         {/* HERO */}

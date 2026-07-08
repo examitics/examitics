@@ -16,6 +16,7 @@ import Footer from "../../../components/layout/footer";
 import MCQCard from "../../../components/knowledge/MCQCard";
 
 import "./MotorwaysOfPakistan.css";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema";
 
 const sections = [
   {
@@ -128,7 +129,19 @@ const DesertsOfPakistan = () => {
             href="https://www.examitics.com/knowledge/general-knowledge/deserts-of-pakistan"
           />
         </Helmet>
-
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", url: "https://www.examitics.com/" },
+            {
+              name: "Knowledge Hub",
+              url: "https://www.examitics.com/knowledgehub",
+            },
+            {
+              name: "Deserts of Pakistan",
+              url: "https://www.examitics.com/knowledge/general-knowledge/deserts-of-pakistan",
+            },
+          ]}
+        />
         {/* HERO */}
 
         <section className="motorways-hero">

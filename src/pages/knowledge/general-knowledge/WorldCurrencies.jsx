@@ -19,6 +19,7 @@ import Footer from "../../../components/layout/footer";
 
 import MCQCard from "../../../components/knowledge/MCQCard";
 import "./MotorwaysOfPakistan.css";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema";
 
 const sections = [
   {
@@ -106,7 +107,19 @@ const WorldCurrencies = () => {
             content="World Currencies, Countries and Currencies, Currency Codes, ISO 4217, PKR, USD, EUR, GBP, JPY, PMA Notes, ISSB General Knowledge, CSS GK"
           />
         </Helmet>
-
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", url: "https://www.examitics.com/" },
+            {
+              name: "Knowledge Hub",
+              url: "https://www.examitics.com/knowledgehub",
+            },
+            {
+              name: "World Currencies",
+              url: "https://www.examitics.com/knowledge/general-knowledge/world-currencies",
+            },
+          ]}
+        />
         {/* Hero */}
 
         <section className="motorways-hero">
@@ -986,10 +999,10 @@ const WorldCurrencies = () => {
 
               <p>
                 Do not assume every European country uses the Euro. Countries
-                such as the <strong>United Kingdom</strong>,{" "} 
-                <strong>Switzerland</strong>, <strong>Norway</strong>, 
-                {" "}<strong>Sweden</strong>,{" "}<strong>Denmark</strong>,{" "}
-                <strong>Poland</strong>,{" "}<strong>Czech Republic</strong> and
+                such as the <strong>United Kingdom</strong>,{" "}
+                <strong>Switzerland</strong>, <strong>Norway</strong>,{" "}
+                <strong>Sweden</strong>, <strong>Denmark</strong>,{" "}
+                <strong>Poland</strong>, <strong>Czech Republic</strong> and
                 <strong> Hungary</strong> have their own national currencies.
                 Questions on these exceptions are common in PMA, ISSB, CSS, FPSC
                 and PPSC examinations.

@@ -5,19 +5,80 @@ import { Helmet } from "react-helmet-async";
 
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
 const TermsConditions = () => {
   return (
     <>
       <Navbar />
       <Helmet>
+        {/* Primary SEO */}
         <title>Terms & Conditions | EXAMITICS</title>
+
         <meta
           name="description"
-          content="Read EXAMITICS terms and conditions covering user responsibilities, intellectual property, and disclaimer."
+          content="Read the EXAMITICS Terms & Conditions to understand the rules, user responsibilities, intellectual property rights, disclaimers and conditions for using our website and free educational resources."
+        />
+
+        <meta name="author" content="EXAMITICS" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.examitics.com/terms-conditions"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Terms & Conditions | EXAMITICS" />
+
+        <meta
+          property="og:description"
+          content="Review the EXAMITICS Terms & Conditions, including user responsibilities, intellectual property, website usage and legal disclaimers."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EXAMITICS" />
+        <meta property="og:locale" content="en_PK" />
+
+        <meta
+          property="og:url"
+          content="https://www.examitics.com/terms-conditions"
+        />
+
+        <meta
+          property="og:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta name="twitter:title" content="Terms & Conditions | EXAMITICS" />
+
+        <meta
+          name="twitter:description"
+          content="Read the EXAMITICS Terms & Conditions governing the use of our website, educational content and free preparation resources."
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
         />
       </Helmet>
-
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://www.examitics.com/",
+          },
+          {
+            name: "Terms & Conditions",
+            url: "https://www.examitics.com/terms-conditions",
+          },
+        ]}
+      />
       <div className="terms-container">
         <div className="terms-hero">
           <h1>Terms & Conditions</h1>

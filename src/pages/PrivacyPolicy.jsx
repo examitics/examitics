@@ -5,19 +5,77 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 import "../styles/privacy-policy.css";
-
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 const PrivacyPolicy = () => {
   return (
     <>
       <Navbar />
 
       <Helmet>
+        {/* Primary SEO */}
         <title>Privacy Policy | EXAMITICS</title>
+
         <meta
           name="description"
-          content="Read EXAMITICS privacy policy covering data collection, cookies, analytics, and user rights."
+          content="Read the EXAMITICS Privacy Policy to learn how we collect, use and protect your information, including cookies, analytics, push notifications and your privacy rights."
+        />
+
+        <meta name="author" content="EXAMITICS" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.examitics.com/privacy-policy" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Privacy Policy | EXAMITICS" />
+
+        <meta
+          property="og:description"
+          content="Learn how EXAMITICS collects, uses and protects your personal information, cookies and analytics data."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EXAMITICS" />
+        <meta property="og:locale" content="en_PK" />
+
+        <meta
+          property="og:url"
+          content="https://www.examitics.com/privacy-policy"
+        />
+
+        <meta
+          property="og:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta name="twitter:title" content="Privacy Policy | EXAMITICS" />
+
+        <meta
+          name="twitter:description"
+          content="Read the EXAMITICS Privacy Policy covering data collection, cookies, analytics and user privacy."
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
         />
       </Helmet>
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://www.examitics.com/",
+          },
+          {
+            name: "Privacy Policy",
+            url: "https://www.examitics.com/privacy-policy",
+          },
+        ]}
+      />
       <div className="privacy-container">
         {/* HERO */}
         <div className="privacy-hero">

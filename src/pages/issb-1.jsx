@@ -23,6 +23,8 @@ import sctImg from "../assets/images/sct-img.png";
 import opiImg from "../assets/images/opi-img.png";
 import matImg from "../assets/images/mat-img.png";
 
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
+
 import Adsterra728x90 from "../components/Adsterra728x90";
 import Adsterra300x250 from "../components/Adsterra300x250";
 
@@ -146,20 +148,76 @@ const ISSB = () => {
   return (
     <>
       <Helmet>
-        <title>ISSB Preparation website</title>
+        {/* Primary SEO */}
+        <title>
+          ISSB Preparation | Free MAT, WAT, TAT, SCT & OPI Practice Tests |
+          EXAMITICS
+        </title>
 
         <meta
           name="description"
-          content="Comprehensive ISSB preparation guide covering psychology tests, WAT, TAT, SCT, GTO tasks, interviews, and officer-like qualities."
+          content="Practice free ISSB mock tests including Verbal Intelligence, Non-Verbal Intelligence, Mechanical Aptitude Test (MAT), WAT, TAT, SCT, OPI and psychological tests. Prepare online for ISSB selection with EXAMITICS."
         />
 
         <meta
           name="keywords"
-          content="ISSB preparation, ISSB guide, ISSB psychology tests, GTO tasks, WAT, TAT, SCT, officer like qualities"
+          content="ISSB Mock Test, ISSB Preparation, ISSB Online Practice, MAT Test, Mechanical Aptitude Test, WAT Practice, TAT Practice, SCT Practice, OPI Practice, Verbal Intelligence Test, Non-Verbal Intelligence Test, ISSB Psychology Tests, Pakistan Army ISSB, Pakistan Navy ISSB, Pakistan Air Force ISSB, Officer Like Qualities, EXAMITICS"
         />
 
-        <link rel="canonical" href="https://examitics.vercel.app/issb-1" />
+        <meta name="author" content="EXAMITICS" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://www.examitics.com/issb-1" />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="ISSB Preparation | Free MAT, WAT, TAT, SCT & OPI Practice Tests | EXAMITICS"
+        />
+
+        <meta
+          property="og:description"
+          content="Practice free ISSB mock tests including MAT, WAT, TAT, SCT, OPI and intelligence tests. Improve your ISSB preparation with realistic online practice."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EXAMITICS" />
+        <meta property="og:locale" content="en_PK" />
+        <meta property="og:url" content="https://www.examitics.com/issb-1" />
+        <meta
+          property="og:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="ISSB Preparation | Free MAT, WAT, TAT, SCT & OPI Practice Tests | EXAMITICS"
+        />
+        <meta
+          name="twitter:description"
+          content="Practice ISSB intelligence and psychology tests online with free MAT, WAT, TAT, SCT and OPI mock tests on EXAMITICS."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.examitics.com/images/examitics-banner.png"
+        />
       </Helmet>
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://www.examitics.com/",
+          },
+          {
+            name: "ISSB Mock Tests",
+            url: "https://www.examitics.com/issb-1",
+          },
+        ]}
+      />
       <Navbar />
       <main className="issb-page section-padding">
         <div className="container-custom">
@@ -188,64 +246,17 @@ const ISSB = () => {
                   Explore ISSB Process
                   <FiArrowRight />
                 </a>
-
-                {/* <div className="explore-wrapper exa-btn exa-btn-outline">
-                  <a
-                    href="https://www.effectivecpmnetwork.com/dhcrjrva?key=6c9838dacc1c3ec52df70ed95298a899"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    // className="exa-btn exa-btn-outline hero-outline-btn"
-                  >
-                    Explore More
-                  </a>
-
-                  <div className="explore-tooltip">
-                    Exploring our sponsored resources helps support server and
-                    development costs, allowing us to keep PMA and ISSB
-                    preparation free for all candidates.
-                  </div>
-                </div> */}
               </div>
             </div>
 
             <div className="issb-hero-image-wrapper exa-card">
               <img
-                //   src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
                 src="https://static.wixstatic.com/media/0b1f9a_f1b84cd52132448b804dbb46ab3160e2~mv2.jpg/v1/fill/w_873,h_491,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/32cc86e6-da34-432c-bf89-2a02d44d8e34.jpg"
                 alt="ISSB preparation"
                 className="issb-hero-image"
               />
             </div>
           </section>
-
-          {/* FORCES */}
-          {/* <section className="forces-section">
-            <div className="section-heading center-heading">
-              <span className="section-tag">ARMED FORCES</span>
-
-              <h2>Prepare For All Services</h2>
-            </div>
-
-            <div className="forces-grid">
-              <div className="force-card exa-card">
-                <img src={armyLogo} alt="Pakistan Army" />
-
-                <h3>Pakistan Army</h3>
-              </div>
-
-              <div className="force-card exa-card">
-                <img src={navyLogo} alt="Pakistan Navy" />
-
-                <h3>Pakistan Navy</h3>
-              </div>
-
-              <div className="force-card exa-card">
-                <img src={pafLogo} alt="Pakistan Air Force" />
-
-                <h3>Pakistan Air Force</h3>
-              </div>
-            </div>
-          </section> */}
 
           <div className="mobile-ad">
             <h6 style={{ display: "grid", placeItems: "center" }}>

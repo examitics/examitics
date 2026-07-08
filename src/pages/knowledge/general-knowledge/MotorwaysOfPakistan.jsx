@@ -2,6 +2,8 @@ import Navbar from "../../../components/layout/navbar";
 import Footer from "../../../components/layout/footer";
 
 import MCQCard from "../../../components/knowledge/MCQCard";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema";
+
 import { useEffect, useState } from "react";
 
 import {
@@ -83,6 +85,23 @@ const MotorwaysOfPakistan = () => {
   };
 
   return (
+    <>
+    <BreadcrumbSchema
+  items={[
+    {
+      name: "Home",
+      url: "https://www.examitics.com/",
+    },
+    {
+      name: "Knowledge Hub",
+      url: "https://www.examitics.com/knowledgehub",
+    },
+    {
+      name: "Motorways of Pakistan",
+      url: "https://www.examitics.com/knowledge/general-knowledge/motorways-of-pakistan",
+    },
+  ]}
+/>
     <main className="motorways-page">
       <Navbar />
       {/* HERO */}
@@ -688,6 +707,7 @@ const MotorwaysOfPakistan = () => {
         <Footer />
       </section>
     </main>
+    </>
   );
 };
 

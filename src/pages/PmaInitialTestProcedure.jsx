@@ -10,6 +10,8 @@ import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
 import Adsterra300x250 from "../components/Adsterra300x250";
 import Adsterra728x90 from "../components/Adsterra728x90";
 
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
+
 import DownloadAdModal from "../components/DownloadAdModal";
 
 const PmaInitialTestProcedure = () => {
@@ -32,17 +34,86 @@ const PmaInitialTestProcedure = () => {
     <>
       {" "}
       <Helmet>
-        {" "}
-        <title>PMA Long Course Initial Test Procedure | EXAMITICS </title>
+        {/* Primary SEO */}
+        <title>
+          PMA Long Course Initial Test Procedure & Free Preparation | EXAMITICS
+        </title>
+
         <meta
           name="description"
-          content="Learn the complete PMA Long Course Initial Test Procedure including registration, written test, intelligence test, physical test, medical examination, and interview process."
+          content="Complete PMA Long Course Initial Test Procedure with free preparation material, intelligence tests, academic tests, interview preparation, physical test requirements, medical standards, registration guide, PDFs and online mock tests for Pakistan Army candidates."
         />
+
         <meta
           name="keywords"
-          content="PMA Long Course, PMA Initial Test, PMA Registration, PMA Physical Test, PMA Interview, Pakistan Army"
+          content="PMA Long Course, PMA Initial Test, PMA Initial Test Preparation, PMA Registration, PMA Written Test, PMA Intelligence Test, PMA Verbal Test, PMA Non Verbal Test, PMA Academic Test, PMA Physical Test, PMA Medical Test, PMA Interview, PMA Preparation Material, PMA Mock Test, Pakistan Army Initial Test, Join Pakistan Army, PMA Long Course Guide, EXAMITICS"
+        />
+
+        <meta name="author" content="EXAMITICS" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href="https://www.examitics.com/pma-lc-initial-procedure"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="PMA Long Course Initial Test Procedure & Free Preparation"
+        />
+
+        <meta
+          property="og:description"
+          content="Learn the complete PMA Long Course Initial Test Procedure with free mock tests, intelligence test preparation, interview guide, physical standards, medical requirements and preparation material."
+        />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="EXAMITICS" />
+        <meta property="og:locale" content="en_PK" />
+
+        <meta
+          property="og:url"
+          content="https://www.examitics.com/pma-lc-initial-procedure"
+        />
+
+        <meta
+          property="og:image"
+          content="https://www.examitics.com/images/pma-lc-guide.png"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+          name="twitter:title"
+          content="PMA Long Course Initial Test Procedure & Free Preparation"
+        />
+
+        <meta
+          name="twitter:description"
+          content="Free PMA Long Course preparation with mock tests, interview guide, physical standards, medical requirements, registration process and complete initial test procedure."
+        />
+
+        <meta
+          name="twitter:image"
+          content="https://www.examitics.com/images/pma-lc-guide.png"
         />
       </Helmet>
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://www.examitics.com/",
+          },
+          {
+            name: "PMA Initial Test Procedure",
+            url: "https://www.examitics.com/pma-lc-initial-procedure",
+          },
+        ]}
+      />
       <Navbar />
       <main className="pma-blog-page">
         {/* HERO SECTION */}

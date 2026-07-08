@@ -14,6 +14,7 @@ import "./MotorwaysOfPakistan.css";
 
 import Navbar from "../../../components/layout/navbar";
 import Footer from "../../../components/layout/footer";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema";
 
 const sections = [
   {
@@ -89,6 +90,22 @@ const NationalHighwaysOfPakistan = () => {
 
   return (
     <>
+    <BreadcrumbSchema
+  items={[
+    {
+      name: "Home",
+      url: "https://www.examitics.com/",
+    },
+    {
+      name: "Knowledge Hub",
+      url: "https://www.examitics.com/knowledgehub",
+    },
+    {
+      name: "National Highways of Pakistan",
+      url: "https://www.examitics.com/knowledge/general-knowledge/national-highways-of-pakistan",
+    },
+  ]}
+/>
     <main className="motorways-page">
         <Navbar />
 

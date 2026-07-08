@@ -37,6 +37,8 @@ import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
 import Adsterra300x250 from "../components/Adsterra300x250";
 import Adsterra728x90 from "../components/Adsterra728x90";
 
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
+
 import "../styles/PmaInitialTestProcedure.css";
 import "../styles/IssbGuide.css";
 
@@ -44,21 +46,85 @@ const IssbGuide = () => {
   return (
     <>
       <Helmet>
-        <title>
-          ISSB Complete Guide 2026 | ISSB Preparation Pakistan | EXAMITICS
-        </title>
+  {/* Primary SEO */}
+  <title>
+    Complete ISSB Guide 2026 | ISSB Preparation, Procedure & Tips | EXAMITICS
+  </title>
 
-        <meta
-          name="description"
-          content="Complete ISSB Guide covering ISSB procedure, screening tests, psychological tests, GTO tasks, interview, conference and officer like qualities."
-        />
+  <meta
+    name="description"
+    content="Complete ISSB Guide for Pakistan Army, Pakistan Navy and Pakistan Air Force candidates. Learn the complete ISSB procedure, psychological tests, GTO tasks, interviews, conference, Officer Like Qualities (OLQs), preparation tips and selection process."
+  />
 
-        <meta
-          name="keywords"
-          content="ISSB Guide, ISSB Procedure, ISSB Preparation Pakistan, ISSB Psychological Tests, ISSB GTO Tasks, ISSB Interview"
-        />
-      </Helmet>
+  <meta
+    name="keywords"
+    content="ISSB Guide, Complete ISSB Guide, ISSB Preparation, ISSB Pakistan, ISSB Procedure, ISSB 4 Days Process, ISSB Psychological Tests, ISSB GTO Tasks, ISSB Interview, Officer Like Qualities, OLQs, Pakistan Army ISSB, Pakistan Navy ISSB, Pakistan Air Force ISSB, ISSB Tips, EXAMITICS"
+  />
 
+  <meta name="author" content="EXAMITICS" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+
+  {/* Canonical */}
+  <link
+    rel="canonical"
+    href="https://www.examitics.com/issbguide"
+  />
+
+  {/* Open Graph */}
+  <meta
+    property="og:title"
+    content="Complete ISSB Guide 2026 | ISSB Preparation Pakistan"
+  />
+
+  <meta
+    property="og:description"
+    content="Learn the complete ISSB selection process including psychological tests, GTO tasks, interviews, conference, Officer Like Qualities and expert preparation tips."
+  />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EXAMITICS" />
+  <meta property="og:locale" content="en_PK" />
+  <meta
+    property="og:url"
+    content="https://www.examitics.com/issbguide"
+  />
+
+  <meta
+    property="og:image"
+    content="https://www.examitics.com/images/issb-guide.png"
+  />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta
+    name="twitter:title"
+    content="Complete ISSB Guide 2026 | ISSB Preparation Pakistan"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Complete ISSB preparation guide covering ISSB procedure, psychology tests, GTO tasks, interviews, Officer Like Qualities and expert preparation tips."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://www.examitics.com/images/issb-guide.png"
+  />
+</Helmet>
+<BreadcrumbSchema
+  items={[
+    {
+      name: "Home",
+      url: "https://www.examitics.com/",
+    },
+    {
+      name: "ISSB Complete Guide",
+      url: "https://www.examitics.com/issbguide",
+    },
+  ]}
+/>
       <Navbar />
 
       <main className="pma-blog-page">
