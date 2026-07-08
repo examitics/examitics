@@ -31,84 +31,86 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        {/* Primary SEO */}
-        <title>
-          EXAMITICS | Free ISSB, PMA Long Course, PAF & Navy Preparation
-          Platform
-        </title>
+  {/* =========================
+      Primary SEO
+  ========================= */}
+  <title>
+    EXAMITICS | Free ISSB, PMA Long Course, Pakistan Army, PAF & Navy Preparation
+  </title>
 
-        <meta
-          name="description"
-          content="Prepare for ISSB, PMA Long Course, Pakistan Air Force and Pakistan Navy selection with free mock tests, intelligence tests, WAT, TAT, SCT, OPI, interview preparation, study guides and performance analytics."
-        />
+  <meta
+    name="description"
+    content="Prepare for ISSB, PMA Long Course, Pakistan Army, Pakistan Air Force and Pakistan Navy with free online mock tests, verbal & non-verbal intelligence tests, MAT, WAT, TAT, SCT, OPI, interview preparation, study guides and performance analytics."
+  />
 
-        <meta
-          name="keywords"
-          content="
-      ISSB Preparation,
-      PMA Long Course,
-      PMA Initial Test,
-      Pakistan Army Preparation,
-      Pakistan Navy Preparation,
-      Pakistan Air Force Preparation,
-      ISSB Mock Test,
-      Verbal Intelligence Test,
-      Non Verbal Intelligence Test,
-      Mechanical Aptitude Test,
-      Academic Test,
-      WAT,
-      TAT,
-      SCT,
-      OPI,
-      Initial Interview,
-      EXAMITICS
-    "
-        />
+  <meta
+    name="keywords"
+    content="ISSB Preparation, PMA Long Course, PMA Initial Test, Pakistan Army Preparation, Pakistan Air Force Preparation, Pakistan Navy Preparation, ISSB Mock Test, Verbal Intelligence Test, Non Verbal Intelligence Test, Mechanical Aptitude Test, Academic Test, WAT, TAT, SCT, OPI, Initial Interview, Pakistan Armed Forces, EXAMITICS"
+  />
 
-        <meta name="author" content="EXAMITICS" />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="English" />
+  <meta name="author" content="EXAMITICS Team" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d6efd" />
 
-        <link rel="canonical" href="https://examitics.vercel.app/" />
+  {/* =========================
+      Canonical
+  ========================= */}
+  <link rel="canonical" href="https://www.examitics.com/" />
 
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="EXAMITICS | Free ISSB, PMA, PAF & Navy Preparation"
-        />
+  {/* =========================
+      Open Graph (Facebook, LinkedIn, WhatsApp)
+  ========================= */}
+  <meta
+    property="og:title"
+    content="EXAMITICS | Free ISSB, PMA Long Course, Pakistan Army, PAF & Navy Preparation"
+  />
 
-        <meta
-          property="og:description"
-          content="Free online preparation platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Navy and Pakistan Air Force candidates."
-        />
+  <meta
+    property="og:description"
+    content="Practice ISSB, PMA Long Course, Pakistan Army, Pakistan Air Force and Pakistan Navy tests with free mock tests, intelligence tests, psychology tests, interview preparation and comprehensive study guides."
+  />
 
-        <meta
-          property="og:image"
-          content="public\images\examitics-banner.png"
-        />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EXAMITICS" />
+  <meta property="og:locale" content="en_PK" />
+  <meta property="og:url" content="https://www.examitics.com/" />
 
-        <meta property="og:url" content="https://examitics.vercel.app/" />
+  <meta
+    property="og:image"
+    content="https://www.examitics.com/images/examitics-banner.png"
+  />
 
-        <meta property="og:type" content="website" />
+  <meta
+    property="og:image:secure_url"
+    content="https://www.examitics.com/images/examitics-banner.png"
+  />
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-        <meta
-          name="twitter:title"
-          content="EXAMITICS | Free ISSB Preparation Platform"
-        />
+  {/* =========================
+      Twitter
+  ========================= */}
+  <meta name="twitter:card" content="summary_large_image" />
 
-        <meta
-          name="twitter:description"
-          content="Practice ISSB, PMA, PAF and Navy tests with free mock exams, psychology tests and interview preparation."
-        />
+  <meta
+    name="twitter:title"
+    content="EXAMITICS | Free ISSB, PMA Long Course, Pakistan Army, PAF & Navy Preparation"
+  />
 
-        <meta
-          name="twitter:image"
-          content="public\images\examitics-banner.png"
-        />
-      </Helmet>
+  <meta
+    name="twitter:description"
+    content="Free preparation platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Air Force and Pakistan Navy with mock tests, intelligence tests, interview preparation and study guides."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://www.examitics.com/images/examitics-banner.png"
+  />
+</Helmet>
 
       <Navbar />
 
