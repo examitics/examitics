@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import "./KnowledgeHub.css";
+import { Helmet } from "react-helmet-async";
 
 import Hero from "../components/knowledge/Hero";
 import SearchBar from "../components/knowledge/SearchBar";
