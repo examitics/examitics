@@ -45,8 +45,8 @@ function App() {
 
   return (
     <>
-      {/* <SecurityToast /> 
-      <SecurityProtection /> */}
+      <SecurityToast /> 
+      <SecurityProtection />
 
       <ScrollToTop />
       <Routes>
