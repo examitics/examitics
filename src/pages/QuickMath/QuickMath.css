@@ -136,3 +136,104 @@
   }
 }
 
+/* ---------------------------------------- */
+.qm-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.qm-feature {
+  padding: 30px 20px;
+  text-align: center;
+  min-width: 0; /* Prevents overflow */
+}
+
+.qm-feature-icon {
+  font-size: 38px;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.qm-feature h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  word-break: break-word;
+}
+
+.qm-feature p {
+  word-break: break-word;
+}
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 992px) {
+
+  .qm-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+  .qm-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .qm-feature {
+    padding: 18px 12px;
+  }
+
+  .qm-feature-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+  .qm-feature h3 {
+    font-size: 17px;
+  }
+
+  .qm-feature p {
+    font-size: 14px;
+  }
+
+}
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media (max-width: 480px) {
+
+  .qm-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .qm-feature {
+    padding: 14px 10px;
+  }
+
+  .qm-feature-icon {
+    font-size: 26px;
+  }
+
+  .qm-feature h3 {
+    font-size: 15px;
+  }
+
+  .qm-feature p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+}
