@@ -56,7 +56,7 @@ export default function QuickMathCategories() {
               {item.icon}
             </div>
 
-            <h3>{item.title}</h3>
+            <h5>{item.title}</h5>
           </div>
         ))}
 

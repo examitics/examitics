@@ -7,7 +7,8 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 50px;
   padding: 50px;
-  margin-bottom: 50px;
+  margin-top: -60px;
+  margin-bottom: 30px;
   align-items: center;
 }
 
@@ -60,7 +61,7 @@
 }
 
 .qm-categories {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .qm-categories h2 {
@@ -69,13 +70,14 @@
 }
 
 .qm-category-grid {
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
 }
 
 .qm-category {
-  padding: 35px;
+  padding: 25px;
   text-align: center;
   cursor: pointer;
 }

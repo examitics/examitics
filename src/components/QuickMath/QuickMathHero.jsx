@@ -1,4 +1,5 @@
 import { FiZap, FiClock } from "react-icons/fi";
+import quickmath from "../../assets/images/quick-math.png";
 
 export default function QuickMathHero() {
   return (
@@ -35,7 +36,7 @@ export default function QuickMathHero() {
 
       <div className="qm-hero-image">
         <img
-          src="/images/quick-math-banner.png"
+          src= {quickmath}
           alt="Quick Math Practice"
         />
       </div>

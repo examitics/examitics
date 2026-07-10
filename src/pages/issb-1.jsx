@@ -22,6 +22,7 @@ import tatImg from "../assets/images/tat-img.png";
 import sctImg from "../assets/images/sct-img.png";
 import opiImg from "../assets/images/opi-img.png";
 import matImg from "../assets/images/mat-img.png";
+import quickmath from "../assets/images/quick-math.png";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
@@ -93,6 +94,15 @@ const ISSB = () => {
       action: "mat",
       buttonText: "Start MAT Practice",
     },
+    {
+  title: "Quick Math Practice",
+  subtitle: "ISSB & PMA Mental Math Trainer",
+  description:
+    "Improve your calculation speed with timed practice in addition, multiplication, division, percentages, speed, time & distance, area finding, and mixed questions designed for ISSB and PMA initial tests.",
+  image: quickmath,
+  action: "quick-math",
+  buttonText: "Start Quick Math Practice",
+},
   ];
 
   const gtoTasks = [
@@ -363,6 +373,9 @@ const ISSB = () => {
                         }
                         if (test.action === "mat") {
                           navigate("/mock/mat/set1");
+                        }
+                        if (test.action === "quick-math") {
+                          navigate("/quick-math");
                         }
                       }}
                     >
