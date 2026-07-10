@@ -14,6 +14,11 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import PmaInitialTestProcedure from "./pages/PmaInitialTestProcedure";
 import ISSBGuide from "./pages/IssbGuide";
+import QuickMath from "./pages/QuickMath/QuickMath";
+import QuickMathSetup from "./pages/QuickMath/QuickMathSetup";
+import QuickMathPractice from "./pages/QuickMath/QuickMathPractice";
+import QuickMathResult from "./pages/QuickMath/QuickMathResult";
+
 
 import KnowledgeHub from "./pages/KnowledgeHub";
 import MotorwaysOfPakistan from "./pages/knowledge/general-knowledge/MotorwaysOfPakistan";
@@ -68,6 +73,11 @@ function App() {
         {/* ISSB-1 PAGE */}
         <Route path="/issb-1" element={<ISSBa />} />
 
+        {/* QUICK MATH PAGE */}
+        <Route path="/quick-math" element={<QuickMath />} />
+        <Route path="/quick-math/setup" element={<QuickMathSetup />} />
+        <Route path="/quick-math/practice" element={<QuickMathPractice />} />
+        <Route path="/quick-math/result" element={<QuickMathResult />} />
         {/* OPI PAGE */}
         <Route path="/opi" element={<OPI />} />
 
