@@ -95,14 +95,14 @@ const ISSB = () => {
       buttonText: "Start MAT Practice",
     },
     {
-  title: "Quick Math Practice",
-  subtitle: "ISSB & PMA Mental Math Trainer",
-  description:
-    "Improve your calculation speed with timed practice in addition, multiplication, division, percentages, speed, time & distance, area finding, and mixed questions designed for ISSB and PMA initial tests.",
-  image: quickmath,
-  action: "quick-math",
-  buttonText: "Start Quick Math Practice",
-},
+      title: "Quick Math Practice",
+      subtitle: "ISSB & PMA Mental Math Trainer",
+      description:
+        "Improve your calculation speed for ISSB (Military planning) and PMA initial tests.",
+      image: quickmath,
+      action: "quick-math",
+      buttonText: "Start Quick Math Practice",
+    },
   ];
 
   const gtoTasks = [
