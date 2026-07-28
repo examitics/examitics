@@ -207,7 +207,7 @@ export const knowledgeItems = [
     id: 3,
     category: "current-affairs",
     title: "Sports Updates",
-    slug: "/knowledge/current-affairs/sports-updates",
+    slug: "/knowledge/current-affairs/sports-current-affairs",
     icon: FiFlag,
     description:
       "National and international sports events and records.",

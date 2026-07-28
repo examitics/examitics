@@ -32,6 +32,13 @@ import NationalParksOfPakistan from "./pages/knowledge/general-knowledge/Nationa
 import CountriesAndCapitals from "./pages/knowledge/general-knowledge/CountriesAndCapitals";
 import WorldCurrencies from "./pages/knowledge/general-knowledge/WorldCurrencies";
 
+import PakistanCurrentAffairs from "./pages/knowledge/current-affairs/PakistanCurrentAffairs";
+import InternationalCurrentAffairs from "./pages/knowledge/current-affairs/InternationalCurrentAffairs";
+import SportsCurrentAffairs from "./pages/knowledge/current-affairs/SportsCurrentAffairs";
+
+
+
+
 
 
 
@@ -50,8 +57,8 @@ function App() {
 
   return (
     <>
-      <SecurityToast /> 
-      <SecurityProtection />
+      {/* <SecurityToast />  */}
+      {/* <SecurityProtection /> */}
 
       <ScrollToTop />
       <Routes>
@@ -118,11 +125,17 @@ function App() {
         <Route path="/knowledge/general-knowledge/countries-and-capitals" element={<CountriesAndCapitals />} />
         <Route path="/knowledge/general-knowledge/world-currencies" element={<WorldCurrencies />} />
         
+        {/* ===============================
+         current- affairs topics pages 
+         =============================== */}
+        <Route path="/knowledge/current-affairs/pakistan-current-affairs" element={<PakistanCurrentAffairs />} />
+        <Route path="/knowledge/current-affairs/international-current-affairs" element={<InternationalCurrentAffairs />} />
+        <Route path="/knowledge/current-affairs/sports-current-affairs" element={<SportsCurrentAffairs />} />
        {/* Add more routes for other exams as needed */}
       </Routes>
       <FloatingFeedback />
     </>
-  );
+  );    
 }
 
 export default App;
