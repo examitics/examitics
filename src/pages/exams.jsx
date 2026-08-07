@@ -9,11 +9,8 @@ import ExamCard from "../components/exam/examcard";
 
 import examsData from "../data/examdata";
 
-import SidebarAd160x600 from "../components/SidebarAd160x600";
-import SidebarAd160x300 from "../components/SidebarAd160x300";
-
-import Adsterra728x90 from "../components/Adsterra728x90";
-import Adsterra300x250 from "../components/Adsterra300x250";
+// import Adsterra728x90 from "../components/Adsterra728x90";
+// import Adsterra300x250 from "../components/Adsterra300x250";
 
 import {
   FiSearch,
@@ -27,7 +24,7 @@ const Exams = () => {
   return (
     <>
       <Navbar />
-      
+
       <div className="page-layout">
         <div className="exams-page">
           <div className="container-custom">
@@ -102,21 +99,19 @@ const Exams = () => {
                 </div>
               </div>
             </div> */}
-            <div className="mobile-ad">
+            {/* <div className="mobile-ad">
                         <h6 style={{ display: "grid", placeItems: "center" }}>
                           Advertisement
                         </h6>
-            
-                        {/* 320x50 Adsterra banner code */}
                         <Adsterra300x250 />
-                      </div>
-                      <div className="desktop-ad">
+                      </div> */}
+            {/* <div className="desktop-ad">
                         <h6 style={{ display: "grid", placeItems: "center" }}>
                           Advertisement
                         </h6>
             
                         <Adsterra728x90 />
-                      </div>
+                      </div> */}
 
             {/* =====================================
               GRID

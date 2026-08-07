@@ -85,7 +85,7 @@ const MockSection = ({ title, examCode }) => {
                  </div>
 
       {/* FULL MOCK */}
-      <div className="full-mock-box">
+      {/* <div className="full-mock-box">
 
         <div>
 
@@ -111,7 +111,7 @@ const MockSection = ({ title, examCode }) => {
           Start Full Mock
         </a>
 
-      </div>
+      </div> */}
 
     </section>
   );

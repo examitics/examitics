@@ -132,7 +132,6 @@ const PrivacyPolicy = () => {
           <p>We may use third-party services that collect limited user data:</p>
           <ul>
             <li>Google Analytics (website usage tracking)</li>
-            <li>Ad networks (e.g., Adsterra or similar platforms)</li>
             <li>Hosting services (e.g., Vercel)</li>
           </ul>
         </section>

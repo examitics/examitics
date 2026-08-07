@@ -6,9 +6,9 @@ import Footer from "../components/layout/footer";
 
 import { Helmet } from "react-helmet-async";
 
-import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
-import Adsterra300x250 from "../components/Adsterra300x250";
-import Adsterra728x90 from "../components/Adsterra728x90";
+// import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
+// import Adsterra300x250 from "../components/Adsterra300x250";
+// import Adsterra728x90 from "../components/Adsterra728x90";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
@@ -154,7 +154,7 @@ const PmaInitialTestProcedure = () => {
           </div>
         </section>
 
-        <div className="desktop-ad">
+        {/* <div className="desktop-ad">
           <h6 style={{ display: "grid", placeItems: "center" }}>
             Advertisement
           </h6>
@@ -165,7 +165,7 @@ const PmaInitialTestProcedure = () => {
             Advertisement
           </h6>
           <Adsterra300x250 />
-        </div>
+        </div> */}
         {/* BLOG CONTENT */}
         <section className="blog-content">
           {/* TABLE OF CONTENTS */}
@@ -342,9 +342,9 @@ const PmaInitialTestProcedure = () => {
                   preliminary test.
                 </li> */}
               </ul>
-              <div className="horizontal-ad">
+              {/* <div className="horizontal-ad">
                 <Adsterra728x90 />
-              </div>
+              </div> */}
             </section>
 
             <section
@@ -650,9 +650,9 @@ const PmaInitialTestProcedure = () => {
                   View Complete PMA Preparation Guide →
                 </a>
               </div> */}
-              <div className="horizontal-ad">
+              {/* <div className="horizontal-ad">
                 <Adsterra728x90 />
-              </div>
+              </div> */}
             </section>
 
             {/* physical test  */}
@@ -1035,9 +1035,9 @@ const PmaInitialTestProcedure = () => {
                   Start OPI & Interview Preparation →
                 </a>
               </div> */}
-              <div className="horizontal-ad">
+              {/* <div className="horizontal-ad">
                 <Adsterra728x90 />
-              </div>
+              </div> */}
             </section>
 
             {/* document submission  */}
@@ -1304,7 +1304,7 @@ const PmaInitialTestProcedure = () => {
             </section>
           </div>
         </section>
-        <AdsterraNativeBanner />
+        {/* <AdsterraNativeBanner /> */}
       </main>
       <Footer />
     </>

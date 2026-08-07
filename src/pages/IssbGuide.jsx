@@ -33,9 +33,9 @@ import DeputyInterview from "../assets/images/deputy.png";
 
 import JoharHall from "../assets/images/johar-hall.png";
 
-import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
-import Adsterra300x250 from "../components/Adsterra300x250";
-import Adsterra728x90 from "../components/Adsterra728x90";
+// import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
+// import Adsterra300x250 from "../components/Adsterra300x250";
+// import Adsterra728x90 from "../components/Adsterra728x90";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
@@ -164,12 +164,10 @@ const IssbGuide = () => {
             </div>
           </div>
         </section>
-<div className="mobile-ad">
+{/* <div className="mobile-ad">
             <h6 style={{ display: "grid", placeItems: "center" }}>
               Advertisement
             </h6>
-
-            {/* 320x50 Adsterra banner code */}
             <Adsterra300x250 />
           </div>
           <div className="desktop-ad">
@@ -178,7 +176,7 @@ const IssbGuide = () => {
             </h6>
 
             <Adsterra728x90 />
-          </div>        
+          </div>         */}
 
         {/* CONTENT */}
 
@@ -444,9 +442,9 @@ const IssbGuide = () => {
                   </ul>
                 </div>
               </div>
-              <div className="horizontal-ad">
+              {/* <div className="horizontal-ad"> 
                 <Adsterra728x90 />
-              </div>
+              </div> */}
               <h2>ISSB Four-Day Selection Process</h2>
 
               <p>
@@ -1716,7 +1714,7 @@ const IssbGuide = () => {
                 <li>Maintain officer-like behavior throughout the day.</li>
               </ul>
             </section>
-<AdsterraNativeBanner/>
+{/* <AdsterraNativeBanner/> */}
             {/* day 3 / gto outdoor tasks or psych interviews  */}
             <section id="day3" className="article-card content-section">
               <h2>Day 3 – Outdoor GTO Tasks & Psychologist Interview</h2>
@@ -2608,13 +2606,11 @@ const IssbGuide = () => {
               </div>
             </section>
 
-            <div className="mobile-ad">
+            {/* <div className="mobile-ad">
                         <h6 style={{ display: "grid", placeItems: "center" }}>
                           Advertisement
                         </h6>
-            
-                        {/* 320x50 Adsterra banner code */}
-                        <Adsterra300x250 />
+                                    <Adsterra300x250 />
                       </div>
                       <div className="desktop-ad">
                         <h6 style={{ display: "grid", placeItems: "center" }}>
@@ -2622,7 +2618,7 @@ const IssbGuide = () => {
                         </h6>
             
                         <Adsterra728x90 />
-                      </div>
+                      </div> */}
             {/* OLQ */}
 
             <section id="olqs" className="article-card">
@@ -3555,7 +3551,7 @@ const IssbGuide = () => {
             </section>
           </div>
         </section>
-        <AdsterraNativeBanner/>
+        {/* <AdsterraNativeBanner/> */}
       </main>
 
       <Footer />

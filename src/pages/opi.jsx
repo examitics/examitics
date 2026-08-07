@@ -8,7 +8,7 @@ import { FaClipboardList } from "react-icons/fa";
 
 import Navbar from "../components/layout/navbar";
 
-import Adsterra728x90 from "../components/Adsterra728x90";
+// import Adsterra728x90 from "../components/Adsterra728x90";
 
 import opiQuestions from "../data/opi/opiquestions";
 
@@ -481,9 +481,9 @@ const OPI = () => {
           </div>
         </div>
       </div>
-      <div className="desktop-ad">
+      {/* <div className="desktop-ad">
         <Adsterra728x90 />
-      </div>{" "}
+      </div>{" "} */}
     </>
   );
 };

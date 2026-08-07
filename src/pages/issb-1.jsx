@@ -26,8 +26,8 @@ import quickmath from "../assets/images/quick-math.png";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
-import Adsterra728x90 from "../components/Adsterra728x90";
-import Adsterra300x250 from "../components/Adsterra300x250";
+// import Adsterra728x90 from "../components/Adsterra728x90";
+// import Adsterra300x250 from "../components/Adsterra300x250";
 
 import {
   FiShield,
@@ -268,12 +268,10 @@ const ISSB = () => {
             </div>
           </section>
 
-          <div className="mobile-ad">
+          {/* <div className="mobile-ad">
             <h6 style={{ display: "grid", placeItems: "center" }}>
               Advertisement
             </h6>
-
-            {/* 320x50 Adsterra banner code */}
             <Adsterra300x250 />
           </div>
           <div className="desktop-ad">
@@ -282,7 +280,7 @@ const ISSB = () => {
             </h6>
 
             <Adsterra728x90 />
-          </div>
+          </div> */}
           {/* PROCESS */}
           {/* <section className="issb-process-section">
             <div className="section-heading center-heading">
@@ -445,11 +443,10 @@ const ISSB = () => {
               />
             </div>
           </section>
-          <div className="mobile-ad">
+          {/* <div className="mobile-ad">
             <h6 style={{ display: "grid", placeItems: "center" }}>
               Advertisement
             </h6>
-            {/* 320x50 Adsterra banner code */}
             <Adsterra300x250 />
           </div>
           <div className="desktop-ad">
@@ -457,7 +454,7 @@ const ISSB = () => {
               Advertisement
             </h6>
             <Adsterra728x90 />
-          </div>
+          </div> */}
           {/* INTERVIEW */}
           <section className="issb-section">
             <div className="section-heading">
@@ -540,7 +537,7 @@ const ISSB = () => {
             </button>
           </section>
         </div>
-        <div className="desktop-ad">
+        {/* <div className="desktop-ad">
           <h6 style={{ display: "grid", placeItems: "center" }}>
             Advertisement
           </h6>
@@ -551,7 +548,7 @@ const ISSB = () => {
             Advertisement
           </h6>
           <Adsterra300x250 />
-        </div>{" "}
+        </div>{" "} */}
       </main>
       <Footer />
       {/* {showWAT && <WATS closeWAT={() => setShowWAT(false)} />}

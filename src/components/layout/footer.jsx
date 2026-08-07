@@ -96,7 +96,7 @@ const Footer = () => {
 
             {/* SOCIALS */}
 
-            <div className="footer-socials">
+            {/* <div className="footer-socials">
               <a href="#">
                 <FiFacebook />
               </a>
@@ -112,7 +112,7 @@ const Footer = () => {
               <a href="#">
                 <FiLinkedin />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* LINKS */}
@@ -125,7 +125,7 @@ const Footer = () => {
 
               <a href="/">Home</a>
               <a href="/exams">Exams</a>
-              <a href="#features">Features</a>
+              {/* <a href="#features">Features</a> */}
               <a href="/mock">Mock Tests</a>
             </div>
 
@@ -150,6 +150,8 @@ const Footer = () => {
               {/* <a href="#analytics">Performance Tracking</a> */}
               <a href="/mock">Practice MCQs</a>
               <a href="/opi">OPI Test</a>
+              <a href="/knowledgehub">Knowledge Hub</a>
+
             </div>
           </div>
         </div>

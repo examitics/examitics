@@ -16,9 +16,9 @@ import Footer from "../components/layout/footer";
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 // import "../styles/home.css";
 
-import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
-import Adsterra300x250 from "../components/Adsterra300x250";
-import Adsterra728x90 from "../components/Adsterra728x90";
+// import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
+// import Adsterra300x250 from "../components/Adsterra300x250";
+// import Adsterra728x90 from "../components/Adsterra728x90";
 
 import {
   FiArrowRight,
@@ -245,7 +245,7 @@ const Home = () => {
           <FeaturedGuides />
         </section>
         {/* AD BANNER */}
-        <div className="desktop-ad">
+        {/* <div className="desktop-ad">
           <h6 style={{ display: "grid", placeItems: "center" }}>
             Advertisement
           </h6>
@@ -256,12 +256,12 @@ const Home = () => {
             Advertisement
           </h6>
           <Adsterra300x250 />
-        </div>
+        </div> */}
         <section id="faq">
           <FAQ />
         </section>
         {/* AD BANNER */}
-        <AdsterraNativeBanner />
+        {/* <AdsterraNativeBanner />
 
         <div className="desktop-ad">
           <h6 style={{ display: "grid", placeItems: "center" }}>
@@ -274,7 +274,7 @@ const Home = () => {
             Advertisement
           </h6>
           <Adsterra300x250 />
-        </div>
+        </div> */}
 
         {/* Footer */}
         <Footer />
