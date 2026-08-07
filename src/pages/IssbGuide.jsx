@@ -859,7 +859,7 @@ const IssbGuide = () => {
                     Practice Psych Tests
                   </Link>
 
-                  <div className="explore-wrapper">
+                  {/* <div className="explore-wrapper">
                     <a
                       href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                       target="_blank"
@@ -874,7 +874,7 @@ const IssbGuide = () => {
                       development costs, allowing us to keep PMA and ISSB
                       preparation free for all candidates.
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>
@@ -1016,7 +1016,7 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice MAT
                 </Link>
-                <div className="explore-wrapper">
+                {/* <div className="explore-wrapper">
                   <a
                     href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                     target="_blank"
@@ -1031,7 +1031,7 @@ const IssbGuide = () => {
                     development costs, allowing us to keep PMA and ISSB
                     preparation free for all candidates.
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <h3>Officer Personality Inventory (OPI)</h3>
@@ -1087,7 +1087,7 @@ const IssbGuide = () => {
                 <Link to="/opi" className="cta-button">
                   Practice OPI
                 </Link>
-                <div className="explore-wrapper">
+                {/* <div className="explore-wrapper">
                   <a
                     href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                     target="_blank"
@@ -1102,7 +1102,7 @@ const IssbGuide = () => {
                     development costs, allowing us to keep PMA and ISSB
                     preparation free for all candidates.
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <h3>Sentence Completion Test (SCT)</h3>
@@ -1165,7 +1165,7 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice SCT
                 </Link>
-                <div className="explore-wrapper">
+                {/* <div className="explore-wrapper">
                   <a
                     href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                     target="_blank"
@@ -1180,7 +1180,7 @@ const IssbGuide = () => {
                     development costs, allowing us to keep PMA and ISSB
                     preparation free for all candidates.
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <h3>Word Association Test (WAT)</h3>
@@ -1228,7 +1228,7 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice WAT
                 </Link>
-                <div className="explore-wrapper">
+                {/* <div className="explore-wrapper">
                   <a
                     href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                     target="_blank"
@@ -1243,7 +1243,7 @@ const IssbGuide = () => {
                     development costs, allowing us to keep PMA and ISSB
                     preparation free for all candidates.
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <h3>Picture Story Writing Test (TAT)</h3>
@@ -1300,7 +1300,7 @@ const IssbGuide = () => {
                 <Link to="/issb-1" className="cta-button">
                   Practice Stories
                 </Link>
-                <div className="explore-wrapper">
+                {/* <div className="explore-wrapper">
                   <a
                     href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                     target="_blank"
@@ -1315,7 +1315,7 @@ const IssbGuide = () => {
                     development costs, allowing us to keep PMA and ISSB
                     preparation free for all candidates.
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <h3>Situation Reaction Test (SRT)</h3>
@@ -2273,7 +2273,7 @@ const IssbGuide = () => {
                   <Link to="/iss-1" className="cta-button">
                     Practice Mock Tests
                   </Link>
-                  <div className="explore-wrapper">
+                  {/* <div className="explore-wrapper">
                     <a
                       href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                       target="_blank"
@@ -2288,7 +2288,7 @@ const IssbGuide = () => {
                       development costs, allowing us to keep PMA and ISSB
                       preparation free for all candidates.
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>
@@ -2586,7 +2586,7 @@ const IssbGuide = () => {
                   <Link to="/issb-1" className="cta-button">
                     Practice Mock Tests
                   </Link>
-                  <div className="explore-wrapper">
+                  {/* <div className="explore-wrapper">
                     <a
                       href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                       target="_blank"
@@ -2601,7 +2601,7 @@ const IssbGuide = () => {
                       development costs, allowing us to keep PMA and ISSB
                       preparation free for all candidates.
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>
@@ -2884,12 +2884,11 @@ const IssbGuide = () => {
                   <div>
                     <strong>ISSB Mock Tests</strong>
                   </div>
-                  <div className="explore-wrapper">
+                  {/* <div className="explore-wrapper">
                     <a
                       href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                       target="_blank"
                       rel="noopener noreferrer"
-                      // className="exa-btn exa-btn-outline hero-outline-btn"
                     >
                       Explore More
                     </a>
@@ -2899,7 +2898,7 @@ const IssbGuide = () => {
                       development costs, allowing us to keep PMA and ISSB
                       preparation free for all candidates.
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>
@@ -3194,7 +3193,7 @@ const IssbGuide = () => {
                     <div>
                       <strong>Full ISSB Simulation</strong>
                     </div>
-                    <div className="explore-wrapper">
+                    {/* <div className="explore-wrapper">
                       <a
                         href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
                         target="_blank"
@@ -3212,7 +3211,7 @@ const IssbGuide = () => {
                         and development costs, allowing us to keep PMA and ISSB
                         preparation free for all candidates.
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </a>
@@ -3532,7 +3531,7 @@ const IssbGuide = () => {
                     practice tests designed specifically for Pakistan Army, Navy
                     and Air Force officer candidates.
                   </p>
-                  <p>
+                  {/* <p>
                     Exploring our{" "}
                     <a
                       href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
@@ -3545,7 +3544,7 @@ const IssbGuide = () => {
                     </a>{" "}
                     helps support server and development costs, allowing us to
                     keep PMA and ISSB preparation free for all candidates.
-                  </p>
+                  </p> */}
                 </div>
               </a>
             </section>

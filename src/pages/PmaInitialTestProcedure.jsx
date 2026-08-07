@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet-async";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
-import DownloadAdModal from "../components/DownloadAdModal";
+// import DownloadAdModal from "../components/DownloadAdModal";
 
 const PmaInitialTestProcedure = () => {
   const [showAdModal, setShowAdModal] = useState(false);
@@ -1018,10 +1018,10 @@ const PmaInitialTestProcedure = () => {
               <button onClick={handleDownload} className="pdf-download-btn">
                 📥 Interview Preparation Material
               </button>
-              <DownloadAdModal
+              {/* <DownloadAdModal
                 isOpen={showAdModal}
                 onClose={() => setShowAdModal(false)}
-              />
+              /> */}
               {/* <div className="cta-box">
                 <h3>Prepare for Your PMA Interview</h3>
 
