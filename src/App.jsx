@@ -13,6 +13,7 @@ import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import PmaInitialTestProcedure from "./pages/PmaInitialTestProcedure";
+import PafInitialTestProcedure from "./pages/PafInitialTestProcedure";
 import ISSBGuide from "./pages/IssbGuide";
 import QuickMath from "./pages/QuickMath/QuickMath";
 import QuickMathSetup from "./pages/QuickMath/QuickMathSetup";
@@ -101,6 +102,12 @@ function App() {
         <Route
           path="/pma-lc-initial-procedure"
           element={<PmaInitialTestProcedure />}
+        />
+
+        {/* PAF Initial Test Procedure.jsx */}
+        <Route
+          path="/paf-initial-test-procedure"
+          element={<PafInitialTestProcedure />}
         />
 
         {/* ISSB Comprehencive Guide  */}

@@ -15,6 +15,7 @@ import nonVerbalSet1 from "../data/mcqs/nonverbal/set1";
 import MAT from "../data/mcqs/mat/set1";
 
 import "../styles/mocktest.css";
+import intelligenceSet1 from "../data/paf-mcqs/intelligence/intelligence-set1";
 
 // ==========================================
 // SHUFFLE FUNCTION
@@ -54,6 +55,10 @@ const questionBank = {
   mat: {
     set1: MAT,
   },
+
+  intelligence: {
+  "intelligence-set1": intelligenceSet1,
+},
 };
 
 // ==========================================
@@ -99,7 +104,20 @@ const MockTest = () => {
 
   const [answers, setAnswers] = useState({});
 
-  const [timeLeft, setTimeLeft] = useState(1800);
+  // const [timeLeft, setTimeLeft] = useState(1800);
+// ==========================================
+// TEST TIME LIMIT
+// ==========================================
+
+// Intelligence category → 40 minutes
+// All other categories → 30 minutes
+
+const testDuration =
+  category === "intelligence"
+    ? 40 * 60
+    : 30 * 60;
+
+const [timeLeft, setTimeLeft] = useState(testDuration);
 
   const [skippedQuestions, setSkippedQuestions] = useState([]);
 

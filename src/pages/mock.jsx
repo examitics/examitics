@@ -4,7 +4,9 @@ import { Helmet } from "react-helmet-async";
 
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
-import MockSection from "../components/mock/mocksection";
+import PMAMockSection from "../components/mock/pmamocksection";
+import PAFMockSection from "../components/mock/pafmocksection";
+
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
@@ -101,14 +103,17 @@ const MOCK = () => {
               <h1>Practice Like The Real Exam</h1>
 
               <p>
-                Attempt PMA-style mock tests designed to improve your speed,
+                Attempt exam style mock tests designed to improve your speed,
                 intelligence solving ability, and academic performance under
                 real exam conditions.
               </p>
             </section>
 
             {/* PMA LC SECTION */}
-            <MockSection title="PMA LONG COURSE" examCode="pma-lc" />
+            <PMAMockSection title="PMA LONG COURSE" examCode="pma-lc" />
+<div style={{margin: "20px"}}></div>
+            {/* PAF SECTION */}
+            <PAFMockSection title="PAF INITIAL TEST" examCode="paf-initial"/>
           </div>
         </main>
       </div>

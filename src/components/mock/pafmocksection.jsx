@@ -3,7 +3,7 @@ import { FiClock, FiMonitor, FiCheckCircle } from "react-icons/fi";
 
 import Adsterra728x90 from "../Adsterra728x90";
 import Adsterra300x250 from "../Adsterra300x250";
-import MockTable from "./mocktable";
+import MockTable from "./pafmocktable";
 
 const MockSection = ({ title, examCode }) => {
   return (

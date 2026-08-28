@@ -46,7 +46,7 @@ const examsData = [
 
     status: "Continue Preparation",
 
-    route: "/issb-1",
+    route: "/issbguide",
   },
 
   {
@@ -54,7 +54,7 @@ const examsData = [
     title: "PAF Initial Test",
     category: "Pakistan Air Force",
     icon: FiAward,
-    difficulty: "Comming Soon",
+    difficulty: "Beginning",
 
     description:
       "Practice PAF initial exam modules with physics, intelligence, and timed mock environments.",
@@ -64,9 +64,9 @@ const examsData = [
     accuracy: "91%",
     progress: 74,
 
-      status: "Comming Soon",
+      status: "Continue Preparation",
 
-    route: "/exams/paf",
+    route: "/paf-initial-test-procedure",
   },
 
   {

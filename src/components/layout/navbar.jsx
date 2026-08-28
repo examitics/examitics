@@ -16,186 +16,647 @@ import {
 import logoDark from "../../assets/logos/examitics-logo.png";
 import logoLight from "../../assets/logos/examitics-logo.png";
 
+
 const Navbar = () => {
+
+  /* =========================================================
+     DROPDOWN STATES
+     =========================================================
+     Each dropdown has its own state.
+
+     PMA LC  → pmaDropdown
+     PAF     → pafDropdown
+     ISSB    → issbDropdown
+
+     Only one dropdown should be open at a time.
+  ========================================================= */
+
   const [issbDropdown, setIssbDropdown] = useState(false);
   const [pmaDropdown, setPmaDropdown] = useState(false);
+  const [pafDropdown, setPafDropdown] = useState(false);
+
+
+  /* =========================================================
+     MOBILE MENU STATE
+  ========================================================= */
 
   const [mobileMenu, setMobileMenu] = useState(false);
+
+
+  /* =========================================================
+     DARK MODE STATE
+     ========================================================= */
 
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
 
+
+  /* =========================================================
+     APPLY THEME
+     ========================================================= */
+
   useEffect(() => {
+
     if (darkMode) {
+
       document.body.classList.add("dark-theme");
+
       localStorage.setItem("theme", "dark");
+
     } else {
+
       document.body.classList.remove("dark-theme");
+
       localStorage.setItem("theme", "light");
+
     }
+
   }, [darkMode]);
 
+
+  /* =========================================================
+     CLOSE ALL DROPDOWNS
+     =========================================================
+     This helper keeps dropdown behavior consistent.
+  ========================================================= */
+
+  const closeAllDropdowns = () => {
+
+    setPmaDropdown(false);
+    setPafDropdown(false);
+    setIssbDropdown(false);
+
+  };
+
+
+  /* =========================================================
+     OPEN PMA DROPDOWN
+     ========================================================= */
+
+  const openPmaDropdown = () => {
+
+    setPmaDropdown(true);
+
+    // Close other dropdowns
+    setPafDropdown(false);
+    setIssbDropdown(false);
+
+  };
+
+
+  /* =========================================================
+     OPEN PAF DROPDOWN
+     ========================================================= */
+
+  const openPafDropdown = () => {
+
+    setPafDropdown(true);
+
+    // Close other dropdowns
+    setPmaDropdown(false);
+    setIssbDropdown(false);
+
+  };
+
+
+  /* =========================================================
+     OPEN ISSB DROPDOWN
+     ========================================================= */
+
+  const openIssbDropdown = () => {
+
+    setIssbDropdown(true);
+
+    // Close other dropdowns
+    setPmaDropdown(false);
+    setPafDropdown(false);
+
+  };
+
+
+  /* =========================================================
+     TOGGLE PMA DROPDOWN
+     ========================================================= */
+
+  const togglePmaDropdown = () => {
+
+    if (pmaDropdown) {
+
+      closeAllDropdowns();
+
+    } else {
+
+      openPmaDropdown();
+
+    }
+
+  };
+
+
+  /* =========================================================
+     TOGGLE PAF DROPDOWN
+     ========================================================= */
+
+  const togglePafDropdown = () => {
+
+    if (pafDropdown) {
+
+      closeAllDropdowns();
+
+    } else {
+
+      openPafDropdown();
+
+    }
+
+  };
+
+
+  /* =========================================================
+     TOGGLE ISSB DROPDOWN
+     ========================================================= */
+
+  const toggleIssbDropdown = () => {
+
+    if (issbDropdown) {
+
+      closeAllDropdowns();
+
+    } else {
+
+      openIssbDropdown();
+
+    }
+
+  };
+
+
+  /* =========================================================
+     CLOSE MENU AFTER NAVIGATION
+     ========================================================= */
+
+  const handleNavigation = () => {
+
+    closeAllDropdowns();
+
+    setMobileMenu(false);
+
+  };
+
+
   return (
+
     <header className="exa-navbar">
+
       <div className="container-custom">
+
         <div className="exa-navbar-wrapper">
-          {/* ================= LOGO ================= */}
+
+
+          {/* =================================================
+              LOGO
+          ================================================= */}
 
           <div className="exa-logo">
-            <Link to="/" className="exa-logo">
-              <img src={darkMode ? logoLight : logoDark} alt="Examitics Logo" />
+
+            <Link
+              to="/"
+              className="exa-logo"
+              onClick={handleNavigation}
+            >
+
+              <img
+                src={darkMode ? logoLight : logoDark}
+                alt="Examitics Logo"
+              />
+
             </Link>
+
           </div>
 
-          {/* ================= NAV LINKS ================= */}
 
-          <nav className={`exa-nav-links ${mobileMenu ? "active" : ""}`}>
-            <Link to="/">Home</Link>
+          {/* =================================================
+              NAVIGATION LINKS
+          ================================================= */}
 
-            <Link to="/exams">Exams</Link>
+          <nav
+            className={`exa-nav-links ${
+              mobileMenu ? "active" : ""
+            }`}
+          >
 
-            {/* <Link to="/mock">Mock</Link>
 
-            <Link to="/pma-lc-initial-procedure">PMA LC Guide</Link> */}
-<div
-              className="exa-dropdown"
-              onMouseEnter={() =>
-                window.innerWidth > 992 && setPmaDropdown(true)
-              }
-              onMouseLeave={() =>
-                window.innerWidth > 992 && setPmaDropdown(false)
-              }
+            {/* =================================================
+                HOME
+            ================================================= */}
+
+            <Link
+              to="/"
+              onClick={handleNavigation}
             >
+              Home
+            </Link>
+
+
+            {/* =================================================
+                EXAMS
+            ================================================= */}
+
+            <Link
+              to="/exams"
+              onClick={handleNavigation}
+            >
+              Exams
+            </Link>
+
+
+            {/* =================================================
+                PMA LONG COURSE DROPDOWN
+            ================================================= */}
+
+            <div
+              className="exa-dropdown"
+
+              /*
+                Desktop:
+                Open dropdown when mouse enters.
+
+                Mobile:
+                Hover events are ignored.
+              */
+              onMouseEnter={() => {
+
+                if (window.innerWidth > 992) {
+
+                  openPmaDropdown();
+
+                }
+
+              }}
+
+              onMouseLeave={() => {
+
+                if (window.innerWidth > 992) {
+
+                  setPmaDropdown(false);
+
+                }
+
+              }}
+            >
+
+              {/* PMA BUTTON */}
+
               <button
+                type="button"
                 className="exa-dropdown-btn"
-                onClick={() => setPmaDropdown(!pmaDropdown)}
+                onClick={togglePmaDropdown}
               >
+
                 PMA LC
-                <FiChevronDown className={pmaDropdown ? "rotate" : ""} />
+
+                <FiChevronDown
+                  className={
+                    pmaDropdown
+                      ? "rotate"
+                      : ""
+                  }
+                />
+
               </button>
 
+
+              {/* PMA DROPDOWN MENU */}
+
               <div
-                className={`exa-dropdown-menu ${pmaDropdown ? "show" : ""}`}
+                className={`exa-dropdown-menu ${
+                  pmaDropdown ? "show" : ""
+                }`}
               >
+
                 <Link
                   to="/pma-lc-initial-procedure"
-                  onClick={() => {
-                    setPmaDropdown(false);
-                    setMobileMenu(false);
-                  }}
+                  onClick={handleNavigation}
                 >
                   PMA LC Initial Guide
                 </Link>
 
+
                 <Link
                   to="/mock"
-                  onClick={() => {
-                    setPmaDropdown(false);
-                    setMobileMenu(false);
-                  }}
+                  onClick={handleNavigation}
                 >
                   PMA LC Mock Test
                 </Link>
+
               </div>
+
             </div>
 
-            {/* <Link to="/issbguide">ISSB Guide</Link>
-            
-            <Link to="/ISSB-1">ISSB</Link> */}
+
+            {/* =================================================
+                PAF DROPDOWN
+            ================================================= */}
 
             <div
               className="exa-dropdown"
-              onMouseEnter={() =>
-                window.innerWidth > 992 && setIssbDropdown(true)
-              }
-              onMouseLeave={() =>
-                window.innerWidth > 992 && setIssbDropdown(false)
-              }
+
+              /*
+                IMPORTANT BUG FIX:
+
+                Previously this section incorrectly used:
+
+                setPmaDropdown(true)
+                setPmaDropdown(false)
+
+                That caused the PAF dropdown to control
+                the PMA dropdown.
+
+                It now correctly uses:
+
+                openPafDropdown()
+                setPafDropdown(false)
+              */
+
+              onMouseEnter={() => {
+
+                if (window.innerWidth > 992) {
+
+                  openPafDropdown();
+
+                }
+
+              }}
+
+              onMouseLeave={() => {
+
+                if (window.innerWidth > 992) {
+
+                  setPafDropdown(false);
+
+                }
+
+              }}
             >
+
+              {/* PAF BUTTON */}
+
               <button
+                type="button"
                 className="exa-dropdown-btn"
-                onClick={() => setIssbDropdown(!issbDropdown)}
+                onClick={togglePafDropdown}
               >
-                ISSB
-                <FiChevronDown className={issbDropdown ? "rotate" : ""} />
+
+                PAF
+
+                <FiChevronDown
+                  className={
+                    pafDropdown
+                      ? "rotate"
+                      : ""
+                  }
+                />
+
               </button>
 
+
+              {/* PAF DROPDOWN MENU */}
+
               <div
-                className={`exa-dropdown-menu ${issbDropdown ? "show" : ""}`}
+                className={`exa-dropdown-menu ${
+                  pafDropdown ? "show" : ""
+                }`}
               >
+
+                <Link
+                  to="/paf-initial-test-procedure"
+                  onClick={handleNavigation}
+                >
+                  PAF Initial Guide
+                </Link>
+
+
+                <Link
+                  to="/mock"
+                  onClick={handleNavigation}
+                >
+                  PAF Mock Test
+                </Link>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+                ISSB DROPDOWN
+            ================================================= */}
+
+            <div
+              className="exa-dropdown"
+
+              onMouseEnter={() => {
+
+                if (window.innerWidth > 992) {
+
+                  openIssbDropdown();
+
+                }
+
+              }}
+
+              onMouseLeave={() => {
+
+                if (window.innerWidth > 992) {
+
+                  setIssbDropdown(false);
+
+                }
+
+              }}
+            >
+
+              {/* ISSB BUTTON */}
+
+              <button
+                type="button"
+                className="exa-dropdown-btn"
+                onClick={toggleIssbDropdown}
+              >
+
+                ISSB
+
+                <FiChevronDown
+                  className={
+                    issbDropdown
+                      ? "rotate"
+                      : ""
+                  }
+                />
+
+              </button>
+
+
+              {/* ISSB DROPDOWN MENU */}
+
+              <div
+                className={`exa-dropdown-menu ${
+                  issbDropdown ? "show" : ""
+                }`}
+              >
+
                 <Link
                   to="/issbguide"
-                  onClick={() => {
-                    setIssbDropdown(false);
-                    setMobileMenu(false);
-                  }}
+                  onClick={handleNavigation}
                 >
                   ISSB Guide
                 </Link>
 
+
                 <Link
                   to="/ISSB-1"
-                  onClick={() => {
-                    setIssbDropdown(false);
-                    setMobileMenu(false);
-                  }}
+                  onClick={handleNavigation}
                 >
                   ISSB Preparation
                 </Link>
+
               </div>
+
             </div>
 
-            <Link to="/knowledgehub">Knowledge Hub</Link>
+
+            {/* =================================================
+                KNOWLEDGE HUB
+            ================================================= */}
+
+            <Link
+              to="/knowledgehub"
+              onClick={handleNavigation}
+            >
+              Knowledge Hub
+            </Link>
+
           </nav>
 
-          {/* ================= RIGHT ACTIONS ================= */}
+
+          {/* =================================================
+              RIGHT NAVBAR ACTIONS
+          ================================================= */}
 
           <div className="exa-navbar-actions">
-            {/* Search */}
+
+
+            {/* =================================================
+                SEARCH
+            ================================================= */}
 
             <div className="exa-search-box">
+
               <FiSearch className="search-icon" />
 
-              <input type="text" placeholder="Search..." />
+              <input
+                type="text"
+                placeholder="Search..."
+              />
+
             </div>
 
-            {/* Notifications */}
 
-            <button className="exa-icon-btn">
+            {/* =================================================
+                NOTIFICATIONS
+            ================================================= */}
+
+            <button
+              type="button"
+              className="exa-icon-btn"
+              aria-label="Notifications"
+            >
+
               <FiBell />
 
               <span className="notification-dot"></span>
+
             </button>
 
-            {/* Theme Toggle */}
+
+            {/* =================================================
+                DARK / LIGHT MODE
+            ================================================= */}
 
             <button
+              type="button"
               className="exa-icon-btn"
               onClick={() => setDarkMode(!darkMode)}
+              aria-label={
+                darkMode
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
             >
-              {darkMode ? <FiSun /> : <FiMoon />}
+
+              {darkMode
+                ? <FiSun />
+                : <FiMoon />
+              }
+
             </button>
 
-            {/* Profile */}
+
+            {/* =================================================
+                PROFILE AVATAR
+            ================================================= */}
 
             <div className="exa-profile-avatar">
-              <img src="https://i.pravatar.cc/100" alt="Profile" />
+
+              <img
+                src="https://i.pravatar.cc/100"
+                alt="Profile"
+              />
+
             </div>
 
-            {/* Mobile Toggle */}
+
+            {/* =================================================
+                MOBILE MENU BUTTON
+            ================================================= */}
 
             <button
+              type="button"
               className="exa-mobile-toggle"
-              onClick={() => setMobileMenu(!mobileMenu)}
+              onClick={() => {
+
+                setMobileMenu(!mobileMenu);
+
+                // Close dropdowns when mobile menu changes
+                closeAllDropdowns();
+
+              }}
+              aria-label={
+                mobileMenu
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
             >
-              {mobileMenu ? <FiX /> : <FiMenu />}
+
+              {mobileMenu
+                ? <FiX />
+                : <FiMenu />
+              }
+
             </button>
+
           </div>
+
         </div>
+
       </div>
+
     </header>
+
   );
+
 };
+
 
 export default Navbar;
