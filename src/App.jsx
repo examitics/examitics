@@ -69,8 +69,8 @@ function App() {
   return (
     <>
       {/* <AuthTest /> */}
-      {/* <SecurityToast />   */}
-      {/* <SecurityProtection />  */}
+      <SecurityToast />  
+      <SecurityProtection /> 
 
       <ScrollToTop />
 
@@ -86,10 +86,7 @@ function App() {
 
         {/* PREMIUM PAGE */}
         <Route path="/premium" element={<Premium />} />
-<Route
-  path="/premium/plans"
-  element={<PremiumPlans />}
-/>
+        <Route path="/premium/plans" element={<PremiumPlans />} />
 
         {/* PREMIUM TEST PAGE */}
         <Route
@@ -130,150 +127,110 @@ function App() {
     PREMIUM PMA ACADEMIC MOCK TEST 2
 ========================================== */}
 
-<Route
-  path="/mock/academic/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="academic"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/academic/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="academic" setId="set2" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM PMA ACADEMIC MOCK TEST 3
 ========================================== */}
 
-<Route
-  path="/mock/academic/set3"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="academic"
-        setId="set3"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/academic/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="academic" setId="set3" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/academic/set4"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="academic"
-        setId="set4"
-      />
-    </PremiumRoute>
-  }
-/>
-{/* ==========================================
+        <Route
+          path="/mock/academic/set4"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="academic" setId="set4" />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
     PREMIUM PMA VERBAL MOCK TEST 2
 ========================================== */}
 
-<Route
-  path="/mock/verbal/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="verbal"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/verbal/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="verbal" setId="set2" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
 ========================================== */}
 
-<Route
-  path="/mock/english/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="english"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/english/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="english" setId="set2" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 3
 ========================================== */}
 
-<Route
-  path="/mock/english/set3"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="english"
-        setId="set3"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/english/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="english" setId="set3" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/physics/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="physics"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/physics/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="physics" setId="set2" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/physics/set3"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="physics"
-        setId="set3"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/physics/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="physics" setId="set3" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/math/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="math"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/math/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="math" setId="set2" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/math/set3"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="math"
-        setId="set3"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/math/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="math" setId="set3" />
+            </PremiumRoute>
+          }
+        />
 
         {/* FREE MOCK TESTS */}
         <Route path="/mock/:category/:setId" element={<MockTest />} />
