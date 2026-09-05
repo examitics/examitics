@@ -396,28 +396,22 @@ const Result = () => {
           Download Result CSV
         </button> */}
         <div className="action-buttons">
-          <button className="download-btn" onClick={downloadCSV}>
+          {/* <button className="download-btn" onClick={downloadCSV}>
             <a
-              // href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
-              // target="_blank"
-              // rel="noopener noreferrer"
               className="practice-btn"
             >
               Download Result CSV
             </a>
-          </button>
+          </button> */}
         </div>
 
-        <button className="download-btn" onClick={downloadExcel}>
+        {/* <button className="download-btn" onClick={downloadExcel} disabled>
           <a
-            // href="https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d"
-            // target="_blank"
-            // rel="noopener noreferrer"
             className="practice-btn"
           >
             Download Result Excel
           </a>
-        </button>
+        </button> */}
       </div>
 
       <div className="result-table-wrapper">

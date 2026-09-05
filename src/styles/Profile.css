@@ -1,0 +1,1137 @@
+/* =========================================================
+   EXAMATICS PROFILE PAGE
+   ========================================================= */
+
+.profile-page {
+  min-height: 100vh;
+
+  padding: calc(var(--navbar-height) + var(--space-xl))
+    var(--space-lg)
+    var(--space-2xl);
+
+  background: var(--color-bg);
+
+  color: var(--color-text);
+
+  font-family: var(--font-primary);
+
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal);
+}
+
+
+/* =========================================================
+   PROFILE CONTAINER
+   ========================================================= */
+
+.profile-container {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   PROFILE HEADER
+   ========================================================= */
+
+.profile-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-md);
+
+  margin-bottom: var(--space-lg);
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+   ========================================================= */
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+
+  min-width: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--gradient-primary);
+
+  color: #ffffff;
+
+  font-size: var(--font-size-lg);
+
+  font-weight: var(--font-weight-bold);
+
+  box-shadow: var(--shadow-md);
+
+  user-select: none;
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.profile-avatar:hover {
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================================
+   PROFILE HEADING
+   ========================================================= */
+
+.profile-heading {
+  min-width: 0;
+}
+
+.profile-heading h1 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-xl);
+
+  font-weight: var(--font-weight-bold);
+
+  line-height: 1.2;
+}
+
+.profile-heading p {
+  margin: var(--space-xs) 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-normal);
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROFILE MESSAGE
+   ========================================================= */
+
+.profile-message {
+  padding: var(--space-sm) var(--space-md);
+
+  margin-bottom: var(--space-lg);
+
+  border-radius: var(--radius-sm);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-medium);
+
+  line-height: 1.5;
+
+  animation: profileMessageIn 0.3s ease;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.profile-error {
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    var(--color-card)
+  );
+
+  color: var(--color-danger);
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--color-danger) 25%,
+      var(--color-border)
+    );
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+.profile-success {
+  background: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    var(--color-card)
+  );
+
+  color: var(--color-success);
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--color-success) 25%,
+      var(--color-border)
+    );
+}
+
+
+/* =========================================================
+   PROFILE CARD
+   ========================================================= */
+
+.profile-card {
+  padding: var(--space-xl);
+
+  margin-bottom: var(--space-lg);
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-card);
+
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-md);
+
+  transition:
+    background var(--transition-normal),
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.profile-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.profile-card-title {
+  margin-bottom: var(--space-lg);
+}
+
+.profile-card-title h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-lg);
+
+  font-weight: var(--font-weight-bold);
+
+  line-height: 1.3;
+}
+
+.profile-card-title p {
+  margin: var(--space-xs) 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.profile-form-group {
+  margin-bottom: var(--space-lg);
+}
+
+
+/* =========================================================
+   FORM LABEL
+   ========================================================= */
+
+.profile-form-group label {
+  display: block;
+
+  margin-bottom: var(--space-xs);
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-semibold);
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FORM INPUTS + SELECT
+   ========================================================= */
+
+.profile-form-group input,
+.profile-form-group select {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding: 11px var(--space-sm);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--color-card-secondary);
+
+  color: var(--color-text);
+
+  font-family: var(--font-primary);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-normal);
+
+  outline: none;
+
+  appearance: auto;
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-normal),
+    color var(--transition-normal);
+}
+
+
+/* =========================================================
+   INPUT PLACEHOLDER
+   ========================================================= */
+
+.profile-form-group input::placeholder {
+  color: var(--color-text-muted);
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+.profile-form-group input:focus,
+.profile-form-group select:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px
+    color-mix(
+      in srgb,
+      var(--color-primary) 15%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   DISABLED EMAIL INPUT
+   ========================================================= */
+
+.profile-form-group input:disabled {
+  background: var(--color-bg-secondary);
+
+  color: var(--color-text-muted);
+
+  opacity: 0.8;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SELECT OPTIONS
+   ========================================================= */
+
+.profile-form-group select option {
+  background: var(--color-card);
+
+  color: var(--color-text);
+}
+
+
+/* =========================================================
+   FORM HELPER TEXT
+   ========================================================= */
+
+.profile-form-group small {
+  display: block;
+
+  margin-top: var(--space-xs);
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-xs);
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ACCOUNT CREATED ROW
+   ========================================================= */
+
+.profile-info-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: var(--space-md);
+
+  padding: var(--space-md) 0;
+
+  margin-bottom: var(--space-lg);
+
+  border-top: 1px solid var(--color-border);
+
+  border-bottom: 1px solid var(--color-border);
+
+  font-size: var(--font-size-sm);
+}
+
+.profile-info-row span {
+  color: var(--color-text-muted);
+
+  font-weight: var(--font-weight-normal);
+}
+
+.profile-info-row strong {
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-semibold);
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.profile-save-btn {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding: 11px var(--space-lg);
+
+  border: none;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--gradient-primary);
+
+  color: #ffffff;
+
+  font-family: var(--font-primary);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-semibold);
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.profile-save-btn:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.profile-save-btn:active:not(:disabled) {
+  transform: translateY(0);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-save-btn:focus-visible {
+  outline: 3px solid
+    color-mix(
+      in srgb,
+      var(--color-primary) 25%,
+      transparent
+    );
+
+  outline-offset: 2px;
+}
+
+.profile-save-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   ACCOUNT CARD
+   ========================================================= */
+
+.profile-account-card {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.profile-back-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 9px var(--space-md);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-family: var(--font-primary);
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-semibold);
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.profile-back-btn:hover {
+  background: var(--color-bg-secondary);
+
+  border-color: var(--color-primary);
+
+  color: var(--color-primary);
+
+  transform: translateY(-1px);
+}
+
+.profile-back-btn:active {
+  transform: translateY(0);
+}
+
+.profile-back-btn:focus-visible {
+  outline: 3px solid
+    color-mix(
+      in srgb,
+      var(--color-primary) 20%,
+      transparent
+    );
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.profile-loading {
+  min-height: 60vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: var(--space-sm);
+
+  color: var(--color-text-muted);
+}
+
+.profile-loading p {
+  margin: 0;
+
+  font-size: var(--font-size-sm);
+
+  font-weight: var(--font-weight-medium);
+}
+
+
+/* =========================================================
+   PROFILE SPINNER
+   ========================================================= */
+
+.profile-spinner {
+  width: 36px;
+  height: 36px;
+
+  border: 3px solid var(--color-border);
+
+  border-top-color: var(--color-primary);
+
+  border-radius: 50%;
+
+  animation:
+    profileSpin 0.8s linear infinite;
+}
+
+@keyframes profileSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   MESSAGE ANIMATION
+   ========================================================= */
+
+@keyframes profileMessageIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .profile-page {
+    padding:
+      calc(var(--navbar-height) + var(--space-lg))
+      var(--space-md)
+      var(--space-xl);
+  }
+
+  .profile-card {
+    padding: var(--space-lg);
+
+    border-radius: var(--radius-md);
+  }
+
+  .profile-header {
+    gap: var(--space-sm);
+
+    margin-bottom: var(--space-lg);
+  }
+
+  .profile-avatar {
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+
+    font-size: var(--font-size-md);
+  }
+
+  .profile-heading h1 {
+    font-size: var(--font-size-lg);
+  }
+
+  .profile-heading p {
+    font-size: var(--font-size-xs);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .profile-page {
+    padding:
+      calc(var(--navbar-height) + var(--space-md))
+      var(--space-sm)
+      var(--space-lg);
+  }
+
+  .profile-header {
+    align-items: flex-start;
+  }
+
+  .profile-avatar {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    font-size: var(--font-size-base);
+  }
+
+  .profile-heading h1 {
+    font-size: var(--font-size-lg);
+  }
+
+  .profile-card {
+    padding: var(--space-md);
+
+    border-radius: var(--radius-md);
+  }
+
+  .profile-card-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .profile-card-title h2 {
+    font-size: var(--font-size-md);
+  }
+
+  .profile-form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .profile-info-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: var(--space-xs);
+  }
+
+  .profile-info-row strong {
+    text-align: left;
+  }
+
+  .profile-message {
+    font-size: var(--font-size-xs);
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .profile-page,
+  .profile-card,
+  .profile-avatar,
+  .profile-form-group input,
+  .profile-form-group select,
+  .profile-save-btn,
+  .profile-back-btn {
+    transition: none;
+  }
+
+  .profile-spinner {
+    animation: none;
+  }
+
+  .profile-message {
+    animation: none;
+  }
+
+}
+
+/* =========================================================
+   PROFILE PROGRESS
+   ========================================================= */
+
+.profile-progress-card {
+  margin-top: 24px;
+}
+
+
+/* =========================================================
+   PROGRESS LOADING
+   ========================================================= */
+
+.profile-progress-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 120px;
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   PROGRESS STATISTICS
+   ========================================================= */
+
+.profile-progress-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.profile-progress-stat {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-card-secondary);
+}
+
+.profile-progress-stat-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.profile-progress-stat-value {
+  display: block;
+  color: var(--color-text);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PROGRESS SECTION
+   ========================================================= */
+
+.profile-progress-section {
+  margin-top: 32px;
+}
+
+.profile-progress-section-heading {
+  margin-bottom: 14px;
+}
+
+.profile-progress-section-heading h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CATEGORY PERFORMANCE
+   ========================================================= */
+
+.profile-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-card-secondary);
+}
+
+.profile-category-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-category-info strong {
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.profile-category-info span {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.profile-category-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.profile-category-score strong {
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.profile-category-score span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RECENT ATTEMPTS
+   ========================================================= */
+
+.profile-attempts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-attempt-item {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-card-secondary);
+}
+
+.profile-attempt-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-attempt-main strong {
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.profile-attempt-main span {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.profile-attempt-result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-attempt-result strong {
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.profile-attempt-result span {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.profile-attempt-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY PROGRESS STATE
+   ========================================================= */
+
+.profile-progress-empty {
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-card-secondary);
+}
+
+.profile-progress-empty h4 {
+  margin: 0 0 8px;
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.profile-progress-empty p {
+  margin: 0 0 18px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .profile-progress-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-attempt-item {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-attempt-meta {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .profile-progress-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-category-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-category-score {
+    align-items: flex-start;
+  }
+
+  .profile-attempt-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .profile-attempt-meta {
+    grid-column: auto;
+    flex-direction: row;
+  }
+
+}
+
+/* =========================================================
+   SCORE PROGRESS CHART
+========================================================= */
+
+.profile-score-chart {
+  width: 100%;
+  height: 320px;
+  margin-top: 1.25rem;
+  position: relative;
+}
+
+/* Chart section spacing */
+
+.profile-progress-section-heading {
+  margin-bottom: 0.5rem;
+}
+
+.profile-progress-section-heading h3 {
+  margin-bottom: 0.35rem;
+}
+
+.profile-progress-section-heading p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Recharts grid */
+
+.profile-score-chart .recharts-cartesian-grid-horizontal line,
+.profile-score-chart .recharts-cartesian-grid-vertical line {
+  stroke: var(--color-border);
+  opacity: 0.6;
+}
+
+/* Axis text */
+
+.profile-score-chart .recharts-cartesian-axis-tick-value {
+  fill: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* Tooltip */
+
+.profile-score-chart .recharts-default-tooltip {
+  background: var(--color-card) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.profile-score-chart .recharts-tooltip-label {
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.profile-score-chart .recharts-tooltip-item {
+  color: var(--color-text);
+}
+
+/* Improve chart spacing on smaller screens */
+
+@media (max-width: 768px) {
+  .profile-score-chart {
+    height: 280px;
+    margin-top: 1rem;
+  }
+
+  .profile-progress-section-heading h3 {
+    font-size: 1rem;
+  }
+
+  .profile-progress-section-heading p {
+    font-size: 0.82rem;
+  }
+
+  .profile-score-chart .recharts-cartesian-axis-tick-value {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-score-chart {
+    height: 250px;
+  }
+}

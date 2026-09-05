@@ -867,3 +867,33 @@ MOBILE
 
   transition: width 0.4s ease;
 }
+
+
+/* ==========================================
+   SUBMIT ERROR
+========================================== */
+
+.submit-error {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--color-danger);
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    transparent
+  );
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* ==========================================
+   SUBMIT BUTTON DISABLED
+========================================== */
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}

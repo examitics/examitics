@@ -1,0 +1,359 @@
+/* =========================================
+   Defence Day Offer Popup
+   ========================================= */
+
+.defence-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+
+  animation: defencePopupFadeIn 0.25s ease;
+}
+
+.defence-popup {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  animation: defencePopupSlideUp 0.3s ease;
+}
+
+.defence-popup-content {
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+/* =========================================
+   Close Button
+   ========================================= */
+
+.defence-popup-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: var(--color-background);
+  color: var(--color-text-muted);
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.defence-popup-close:hover {
+  color: var(--color-text);
+  transform: rotate(90deg);
+}
+
+/* =========================================
+   Badge
+   ========================================= */
+
+.defence-popup-badge {
+  display: inline-block;
+
+  margin-bottom: 0.9rem;
+  padding: 0.45rem 0.8rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  color: var(--color-primary);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   Heading & Description
+   ========================================= */
+
+.defence-popup h2 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 1.65rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.defence-popup-description {
+  max-width: 410px;
+
+  margin: 0.75rem auto 1.35rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Countdown
+   ========================================= */
+
+.defence-popup-countdown-label {
+  margin-bottom: 0.65rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+.defence-popup-countdown {
+  display: flex;
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  margin-bottom: 1.4rem;
+}
+
+.defence-popup-time {
+  min-width: 68px;
+
+  padding: 0.7rem 0.45rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+
+  background: var(--color-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.defence-popup-time strong {
+  color: var(--color-primary);
+
+  font-size: 1.35rem;
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.defence-popup-time span {
+  margin-top: 0.35rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.62rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   Buttons
+   ========================================= */
+
+.defence-popup-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.65rem;
+}
+
+.defence-popup-actions button {
+  width: 100%;
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.defence-popup-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.defence-popup-actions button:active {
+  transform: translateY(0);
+}
+
+/* Primary CTA */
+
+.defence-popup-primary {
+  border: 1px solid var(--color-primary);
+
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.defence-popup-primary:hover {
+  opacity: 0.9;
+}
+
+.defence-popup-primary svg {
+  font-size: 1rem;
+}
+
+/* WhatsApp */
+
+.defence-popup-whatsapp {
+  border: 1px solid var(--color-border);
+
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.defence-popup-whatsapp:hover {
+  border-color: var(--color-primary);
+}
+
+.defence-popup-whatsapp svg {
+  font-size: 1rem;
+}
+
+/* Free option */
+
+.defence-popup-free {
+  border: none;
+
+  background: transparent;
+  color: var(--color-text-muted);
+
+  min-height: 38px !important;
+}
+
+.defence-popup-free:hover {
+  color: var(--color-text);
+}
+
+/* =========================================
+   Bottom Note
+   ========================================= */
+
+.defence-popup-note {
+  margin: 1rem 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+/* =========================================
+   Animations
+   ========================================= */
+
+@keyframes defencePopupFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes defencePopupSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   Mobile
+   ========================================= */
+
+@media (max-width: 480px) {
+  .defence-popup-overlay {
+    padding: 0.75rem;
+  }
+
+  .defence-popup {
+    border-radius: 16px;
+  }
+
+  .defence-popup-content {
+    padding: 1.75rem 1rem 1.25rem;
+  }
+
+  .defence-popup h2 {
+    font-size: 1.35rem;
+  }
+
+  .defence-popup-description {
+    font-size: 0.82rem;
+  }
+
+  .defence-popup-countdown {
+    gap: 0.4rem;
+  }
+
+  .defence-popup-time {
+    min-width: 60px;
+    padding: 0.6rem 0.35rem;
+  }
+
+  .defence-popup-time strong {
+    font-size: 1.15rem;
+  }
+
+  .defence-popup-time span {
+    font-size: 0.55rem;
+  }
+}

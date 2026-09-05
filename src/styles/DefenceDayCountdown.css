@@ -1,0 +1,125 @@
+/* =========================================
+   Defence Day Special Offer
+   ========================================= */
+
+.defence-day-offer {
+  width: 100%;
+  margin: 2rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-card);
+  overflow: hidden;
+}
+
+.defence-day-offer-content {
+  text-align: center;
+  padding: 2rem 1.25rem;
+}
+
+.defence-day-offer-badge {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.defence-day-offer h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.defence-day-offer p {
+  margin: 0.65rem auto 1.5rem;
+  max-width: 650px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.defence-day-offer p strong {
+  color: var(--color-text);
+}
+
+.defence-day-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.defence-day-time-box {
+  min-width: 82px;
+  padding: 0.8rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.defence-day-time-box span {
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.defence-day-time-box small {
+  margin-top: 0.4rem;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.defence-day-offer-note {
+  margin-top: 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 600px) {
+  .defence-day-offer-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .defence-day-offer h2 {
+    font-size: 1.3rem;
+  }
+
+  .defence-day-offer p {
+    font-size: 0.85rem;
+  }
+
+  .defence-day-countdown {
+    gap: 0.5rem;
+  }
+
+  .defence-day-time-box {
+    min-width: 68px;
+    padding: 0.7rem 0.5rem;
+  }
+
+  .defence-day-time-box span {
+    font-size: 1.35rem;
+  }
+
+  .defence-day-time-box small {
+    font-size: 0.6rem;
+  }
+}
