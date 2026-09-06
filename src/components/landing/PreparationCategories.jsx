@@ -52,11 +52,11 @@ const categories = [
     description:
       "Prepare intelligence tests, academics, interview and initial selection for Pakistan Air Force.",
     stats: "PAF Practice",
-    link: "/",
+    link: "/paf-initial-test-procedure",
   },
   {
-    icon: <FiAward />,
-    title: "Pakistan Navy",
+    icon: <FiAward />, 
+    title: "Pakistan Navy", 
     description:
       "Mock tests, intelligence practice, interview preparation and complete Pakistan Navy guidance.",
     stats: "Navy Preparation",
@@ -130,6 +130,10 @@ const searches = [
   {
     title: "Pointer Story Writing",
     link: "/issb-1",
+  },
+  {
+    title: "PAF Initial Test",
+    link: "/paf-initial-test-procedure",
   },
   
 ];

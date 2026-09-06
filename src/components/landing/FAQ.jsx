@@ -50,7 +50,7 @@ const faqs = [
     question: "Is EXAMITICS completely free to use?",
     answer: (
       <>
-        Yes. EXAMITICS is <strong>100% free</strong>. You can{" "}
+        Yes. EXAMITICS is <strong>free</strong>. You can{" "}
         <a href="#guides" style={{ color: "var(--color-text)" }}>
           <u>access preparation guides</u>
         </a>
@@ -186,7 +186,7 @@ const faqs = [
       <>
         Simply allow browser notifications when visiting EXAMITICS. We'll notify
         you whenever new mock tests, preparation guides, psychology tests, or
-        important updates are published—completely free.
+        important updates are published.
       </>
     ),
   },

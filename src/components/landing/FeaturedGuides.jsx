@@ -26,6 +26,21 @@ const guides = [
   },
 
   {
+    title: "PAF Initial Test Guide",
+    badge: "Most Popular",
+    image: "/images/paf-guide.png",
+
+    description:
+      "Complete PAF Initial Test preparation including verbal intelligence, non-verbal intelligence, academic tests, medical examination, physical tests and initial interview.",
+
+    readTime: "15 min",
+
+    category: "PAF",
+
+    link: "/paf-initial-test-procedure",
+  },
+
+  {
     title: "Complete ISSB Preparation Guide",
 
     badge: "Complete Guide",

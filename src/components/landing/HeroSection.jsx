@@ -38,7 +38,7 @@ const HeroSection = () => {
 
             <p className="hero-description">
               EXAMITICS helps candidates prepare for Pakistan Army, Pakistan Air
-              Force and Pakistan Navy selection through free mock tests,
+              Force and Pakistan Navy selection through mock tests,
               intelligence practice, psychology tests (WAT, TAT, SCT),
               interview preparation, study guides and performance analytics.
             </p>
@@ -48,7 +48,7 @@ const HeroSection = () => {
             <div className="hero-features">
               <div>
                 <FiCheckCircle />
-                <span>100% Free</span>
+                <span>Free Resources</span>
               </div>
 
               <div>

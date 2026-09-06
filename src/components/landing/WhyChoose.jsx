@@ -16,7 +16,7 @@ import "./WhyChoose.css";
 const features = [
   {
     icon: <FiShield />,
-    title: "100% Free Preparation",
+    title: "Free Resources",
     description:
       "Practice mock tests, psychology tests and study guides without subscriptions or hidden charges.",
   },
@@ -66,7 +66,7 @@ const stats = [
     label: "Exam Categories",
   },
   {
-    number: "100%",
+    number: "70%",
     label: "Free Platform",
   },
 ];
@@ -111,11 +111,11 @@ const WhyChoose = () => {
 
               <p>{feature.description}</p>
 
-              <div className="why-card-footer">
+              {/* <div className="why-card-footer">
                 <span>Learn More</span>
 
                 <FiArrowRight />
-              </div>
+              </div> */}
             </article>
           ))}
         </div>

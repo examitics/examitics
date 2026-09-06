@@ -37,7 +37,7 @@ const Home = () => {
       Primary SEO
   ========================= */}
         <title>
-          EXAMITICS | Free ISSB, PMA Long Course, Pakistan Army, PAF & Navy
+          EXAMITICS | ISSB, PMA Long Course, Pakistan Army, PAF & Navy
           Preparation
         </title>
 
