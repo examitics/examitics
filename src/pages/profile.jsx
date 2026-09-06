@@ -54,6 +54,10 @@ function Profile() {
   // =========================================================
   // LOAD PROFILE DATA
   // =========================================================
+const WHATSAPP_NUMBER = "923014709158";
+
+const whatsappMessage =
+  "Hello Examatics, I want to get premium access for PMA 159 preparation.";
 
   useEffect(() => {
     if (profile) {
@@ -387,6 +391,47 @@ function Profile() {
     });
   };
 
+  const formatSubscriptionPlan = (plan) => {
+  if (!plan) {
+    return "Premium";
+  }
+
+  if (plan === "monthly") {
+    return "Monthly";
+  }
+
+  if (plan === "yearly") {
+    return "Yearly";
+  }
+
+  if (plan === "lifetime") {
+    return "Lifetime";
+  }
+
+  return plan
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+};
+
+const formatSubscriptionDate = (date) => {
+  if (!date) {
+    return "—";
+  }
+
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
+const openWhatsApp = () => {
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    whatsappMessage,
+  )}`;
+
+  window.open(url, "_blank", "noopener,noreferrer");
+};
   // =========================================================
   // SCORE PROGRESS CHART DATA
   // =========================================================
@@ -585,6 +630,207 @@ function Profile() {
           </form>
         </div>
 
+
+{/* =================================================
+    SUBSCRIPTION
+================================================= */}
+
+<div className="profile-card profile-subscription-card">
+
+  <div className="profile-card-title">
+    <h2>Subscription</h2>
+
+    <p>
+      Manage your Examatics premium access and PMA 159 preparation.
+    </p>
+  </div>
+
+  {isPremium ? (
+    /* =================================================
+       PREMIUM USER
+    ================================================= */
+
+    <div className="profile-premium-status">
+
+      <div className="profile-subscription-header">
+
+        <div className="profile-subscription-icon profile-subscription-icon-premium">
+          ✓
+        </div>
+
+        <div>
+          <span className="profile-subscription-badge profile-subscription-badge-premium">
+            PREMIUM ACTIVE
+          </span>
+
+          <h3>
+            PMA 159 Premium Preparation
+          </h3>
+
+          <p>
+            Your premium access is currently active.
+          </p>
+        </div>
+
+      </div>
+
+      <div className="profile-subscription-details">
+
+        <div className="profile-subscription-detail">
+
+          <span>Plan</span>
+
+          <strong>
+            {formatSubscriptionPlan(subscription?.plan)}
+          </strong>
+
+        </div>
+
+        <div className="profile-subscription-detail">
+
+          <span>Status</span>
+
+          <strong className="profile-subscription-active">
+            Active
+          </strong>
+
+        </div>
+
+        <div className="profile-subscription-detail">
+
+          <span>Started</span>
+
+          <strong>
+            {formatSubscriptionDate(
+              subscription?.started_at,
+            )}
+          </strong>
+
+        </div>
+
+        <div className="profile-subscription-detail">
+
+          <span>Expires</span>
+
+          <strong>
+            {subscription?.plan === "lifetime"
+              ? "Lifetime"
+              : formatSubscriptionDate(
+                  subscription?.expires_at,
+                )}
+          </strong>
+
+        </div>
+
+      </div>
+
+      <div className="profile-subscription-benefits">
+
+        <h4>
+          Your Premium Benefits
+        </h4>
+
+        <ul>
+          <li>✓ Premium PMA 159 mock tests</li>
+          <li>✓ Premium question sets</li>
+          <li>✓ Advanced exam preparation content</li>
+          <li>✓ New premium content during your subscription</li>
+        </ul>
+
+      </div>
+
+    </div>
+  ) : (
+    /* =================================================
+       FREE USER
+    ================================================= */
+
+    <div className="profile-free-subscription">
+
+      <div className="profile-subscription-header">
+
+        <div className="profile-subscription-icon profile-subscription-icon-free">
+          🔓
+        </div>
+
+        <div>
+          <span className="profile-subscription-badge profile-subscription-badge-free">
+            FREE PLAN
+          </span>
+
+          <h3>
+            Free Examatics Account
+          </h3>
+
+          <p>
+            You currently have access to the free preparation resources.
+          </p>
+        </div>
+
+      </div>
+
+      <div className="profile-premium-promo">
+
+        <div className="profile-premium-promo-content">
+
+          <span className="profile-premium-promo-label">
+            PMA 159 INITIAL TEST
+          </span>
+
+          <h3>
+            Get Premium Preparation
+          </h3>
+
+          <p>
+            Prepare for the PMA 159 Long Course Initial Test
+            with premium mock tests, question sets and
+            dedicated preparation content.
+          </p>
+
+          <div className="profile-premium-promo-prices">
+
+            <div>
+              <span>Monthly</span>
+              <strong>Rs. 1,000</strong>
+            </div>
+
+            <div>
+              <span>Yearly</span>
+              <strong>Rs. 1,500</strong>
+            </div>
+
+            <div>
+              <span>Lifetime</span>
+              <strong>Rs. 2,500</strong>
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            className="profile-whatsapp-btn"
+            onClick={openWhatsApp}
+          >
+            <span className="profile-whatsapp-icon">
+              ☎
+            </span>
+
+            Contact on WhatsApp for Premium
+          </button>
+
+          <small className="profile-whatsapp-note">
+            Contact Examatics on WhatsApp to activate your
+            PMA 159 premium subscription.
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+  )}
+
+</div>
         {/* =================================================
             YOUR PROGRESS
         ================================================= */}
