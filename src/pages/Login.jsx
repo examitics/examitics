@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "../styles/Auth.css";
@@ -11,6 +12,7 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -73,7 +75,7 @@ function Login() {
             />
           </div>
 
-          <div className="auth-form-group">
+          {/* <div className="auth-form-group">
             <label htmlFor="login-password">
               Password
             </label>
@@ -87,7 +89,35 @@ function Login() {
               required
               autoComplete="current-password"
             />
-          </div>
+          </div> */}
+          <div className="auth-form-group">
+  <label htmlFor="login-password">
+    Password
+  </label>
+
+  <div className="password-input-wrapper">
+    <input
+      id="login-password"
+      type={showPassword ? "text" : "password"}
+      placeholder="Enter your password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+      autoComplete="current-password"
+    />
+
+    <button
+      type="button"
+      className="password-toggle-btn"
+      onClick={() => setShowPassword((prev) => !prev)}
+      aria-label={
+        showPassword ? "Hide password" : "Show password"
+      }
+    >
+      {showPassword ? <FiEyeOff /> : <FiEye />}
+    </button>
+  </div>
+</div>
 
           <div className="auth-forgot">
             <Link to="/forgot-password">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import "../styles/Auth.css";
@@ -8,6 +9,8 @@ function ResetPassword() {
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -112,7 +115,7 @@ function ResetPassword() {
         {!success && !error && (
           <form onSubmit={handleSubmit}>
 
-            <div className="auth-form-group">
+            {/* <div className="auth-form-group">
               <label htmlFor="new-password">
                 New Password
               </label>
@@ -128,9 +131,39 @@ function ResetPassword() {
                 required
                 autoComplete="new-password"
               />
-            </div>
-
+            </div> */}
             <div className="auth-form-group">
+  <label htmlFor="new-password">
+    New Password
+  </label>
+
+  <div className="password-input-wrapper">
+    <input
+      id="new-password"
+      type={showPassword ? "text" : "password"}
+      placeholder="Enter new password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+      autoComplete="new-password"
+    />
+
+    <button
+      type="button"
+      className="password-toggle-btn"
+      onClick={() => setShowPassword((prev) => !prev)}
+      aria-label={
+        showPassword ? "Hide password" : "Show password"
+      }
+    >
+      {showPassword ? <FiEyeOff /> : <FiEye />}
+    </button>
+  </div>
+</div>
+<p className="password-hint">
+  Use 8+ characters with uppercase, lowercase, a number, and a symbol.
+</p>
+            {/* <div className="auth-form-group">
               <label htmlFor="confirm-new-password">
                 Confirm New Password
               </label>
@@ -146,7 +179,39 @@ function ResetPassword() {
                 required
                 autoComplete="new-password"
               />
-            </div>
+            </div> */}
+            <div className="auth-form-group">
+  <label htmlFor="confirm-new-password">
+    Confirm New Password
+  </label>
+
+  <div className="password-input-wrapper">
+    <input
+      id="confirm-new-password"
+      type={showConfirmPassword ? "text" : "password"}
+      placeholder="Confirm new password"
+      value={confirmPassword}
+      onChange={(e) => setConfirmPassword(e.target.value)}
+      required
+      autoComplete="new-password"
+    />
+
+    <button
+      type="button"
+      className="password-toggle-btn"
+      onClick={() =>
+        setShowConfirmPassword((prev) => !prev)
+      }
+      aria-label={
+        showConfirmPassword
+          ? "Hide password"
+          : "Show password"
+      }
+    >
+      {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
+    </button>
+  </div>
+</div>
 
             <button
               type="submit"

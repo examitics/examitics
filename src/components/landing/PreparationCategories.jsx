@@ -59,10 +59,10 @@ const categories = [
     title: "Pakistan Navy", 
     description:
       "Mock tests, intelligence practice, interview preparation and complete Pakistan Navy guidance.",
-    stats: "Navy Preparation",
+    stats: "Comming Soon",
     link: "/",
   },
-];
+]; 
 
 // const searches = [
 //   "PMA Initial Test",
