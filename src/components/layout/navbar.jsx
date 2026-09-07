@@ -300,7 +300,7 @@ const cancelDropdownClose = () => {
       scheduleDropdownClose();
     }
   }}
->
+>   
               <button
                 type="button"
                 className="exa-dropdown-btn"
@@ -403,7 +403,15 @@ const cancelDropdownClose = () => {
                 </span> */}
 
                 {/* LOGOUT */}
-
+{profile?.role === "admin" && (
+  <Link
+    to="/admin"
+    className="exa-admin-btn"
+    onClick={handleNavigation}
+  >
+    Admin
+  </Link>
+)}
                 <button
                   type="button"
                   className="exa-logout-btn"
