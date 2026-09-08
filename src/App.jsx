@@ -173,7 +173,7 @@ function App() {
 
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
-========================================== */
+========================================== */}
 
         <Route
           path="/mock/english/set2"
@@ -186,7 +186,7 @@ function App() {
 
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 3
-========================================== */
+========================================== */}
 
         <Route
           path="/mock/english/set3"
@@ -308,7 +308,7 @@ function App() {
         />
         <Route
           path="/knowledge/general-knowledge/lakes-of-pakistan"
-          element={<LakesOfPakistan />
+          element={<LakesOfPakistan />}
         />
         <Route
           path="/knowledge/general-knowledge/mountains-of-pakistan"
