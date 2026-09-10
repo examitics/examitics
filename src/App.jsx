@@ -36,7 +36,7 @@ import PremiumTest from "./pages/PremiumTest";
 import PremiumPlans from "./pages/PremiumPlans";
 
 import KnowledgeHub from "./pages/KnowledgeHub";
-import NotesHub from "./pages/NotesHub";
+// import NotesHub from "./pages/NotesHub";
 import MotorwaysOfPakistan from "./pages/knowledge/general-knowledge/MotorwaysOfPakistan";
 import NationalHighwaysOfPakistan from "./pages/knowledge/general-knowledge/NationalHighwaysOfPakistan";
 import RiversOfPakistan from "./pages/knowledge/general-knowledge/RiversOfPakistan";
@@ -84,8 +84,8 @@ function App() {
   return (
     <>
       {/* <AuthTest /> */}
-      {/* <SecurityToast />  
-      <SecurityProtection />  */}
+      <SecurityToast />  
+      <SecurityProtection /> 
 
       <ScrollToTop />
 
@@ -349,7 +349,7 @@ function App() {
         {/* =================================
         Notes Hub
         ================================= */}
-        <Route path="/notes" element={<NotesHub />} />
+        {/* <Route path="/notes" element={<NotesHub />} /> */}
 
         {/* ===============================
          general-Knowledge topics pages 
