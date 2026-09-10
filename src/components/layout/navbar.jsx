@@ -69,29 +69,29 @@ const Navbar = () => {
      ========================================================= */
 
   const closeAllDropdowns = () => {
-  setPmaDropdown(false);
-  setPafDropdown(false);
-  setIssbDropdown(false);
-};
+    setPmaDropdown(false);
+    setPafDropdown(false);
+    setIssbDropdown(false);
+  };
 
-const scheduleDropdownClose = () => {
-  if (dropdownCloseTimer) {
-    clearTimeout(dropdownCloseTimer);
-  }
+  const scheduleDropdownClose = () => {
+    if (dropdownCloseTimer) {
+      clearTimeout(dropdownCloseTimer);
+    }
 
-  const timer = setTimeout(() => {
-    closeAllDropdowns();
-  }, 200);
+    const timer = setTimeout(() => {
+      closeAllDropdowns();
+    }, 200);
 
-  setDropdownCloseTimer(timer);
-};
+    setDropdownCloseTimer(timer);
+  };
 
-const cancelDropdownClose = () => {
-  if (dropdownCloseTimer) {
-    clearTimeout(dropdownCloseTimer);
-    setDropdownCloseTimer(null);
-  }
-};
+  const cancelDropdownClose = () => {
+    if (dropdownCloseTimer) {
+      clearTimeout(dropdownCloseTimer);
+      setDropdownCloseTimer(null);
+    }
+  };
 
   /* =========================================================
      OPEN PMA DROPDOWN
@@ -239,19 +239,19 @@ const cancelDropdownClose = () => {
             ================================================= */}
 
             <div
-  className="exa-dropdown"
-  onMouseEnter={() => {
-    if (window.innerWidth > 992) {
-      cancelDropdownClose();
-      openPmaDropdown();
-    }
-  }}
-  onMouseLeave={() => {
-    if (window.innerWidth > 992) {
-      scheduleDropdownClose();
-    }
-  }}
->
+              className="exa-dropdown"
+              onMouseEnter={() => {
+                if (window.innerWidth > 992) {
+                  cancelDropdownClose();
+                  openPmaDropdown();
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth > 992) {
+                  scheduleDropdownClose();
+                }
+              }}
+            >
               <button
                 type="button"
                 className="exa-dropdown-btn"
@@ -288,19 +288,19 @@ const cancelDropdownClose = () => {
             ================================================= */}
 
             <div
-  className="exa-dropdown"
-  onMouseEnter={() => {
-    if (window.innerWidth > 992) {
-      cancelDropdownClose();
-      openPafDropdown();
-    }
-  }}
-  onMouseLeave={() => {
-    if (window.innerWidth > 992) {
-      scheduleDropdownClose();
-    }
-  }}
->   
+              className="exa-dropdown"
+              onMouseEnter={() => {
+                if (window.innerWidth > 992) {
+                  cancelDropdownClose();
+                  openPafDropdown();
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.innerWidth > 992) {
+                  scheduleDropdownClose();
+                }
+              }}
+            >
               <button
                 type="button"
                 className="exa-dropdown-btn"
@@ -327,6 +327,10 @@ const cancelDropdownClose = () => {
 
             <Link to="/knowledgehub" onClick={handleNavigation}>
               Knowledge Hub
+            </Link>
+
+            <Link to="/notes" onClick={handleNavigation}>
+              Notes Hub 
             </Link>
           </nav>
 
@@ -403,15 +407,15 @@ const cancelDropdownClose = () => {
                 </span> */}
 
                 {/* LOGOUT */}
-{profile?.role === "admin" && (
-  <Link
-    to="/admin"
-    className="exa-admin-btn"
-    onClick={handleNavigation}
-  >
-    Admin
-  </Link>
-)}
+                {profile?.role === "admin" && (
+                  <Link
+                    to="/admin"
+                    className="exa-admin-btn"
+                    onClick={handleNavigation}
+                  >
+                    Admin
+                  </Link>
+                )}
                 <button
                   type="button"
                   className="exa-logout-btn"

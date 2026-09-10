@@ -28,6 +28,8 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 // import AuthTestPage from "./pages/AuthTestPage";
 import ProfileTest from "./components/auth/ProfileTest";
 import Premium from "./pages/Premium";
+import NotesHub from "./pages/NotesHub";
+
 
 import PremiumRoute from "./components/auth/PremiumRoute";
 import PremiumTest from "./pages/PremiumTest";
@@ -50,6 +52,19 @@ import PakistanCurrentAffairs from "./pages/knowledge/current-affairs/PakistanCu
 import InternationalCurrentAffairs from "./pages/knowledge/current-affairs/InternationalCurrentAffairs";
 import SportsCurrentAffairs from "./pages/knowledge/current-affairs/SportsCurrentAffairs";
 
+import Synonyms from "./pages/notes/synonyms";
+import Antonyms from "./pages/notes/Antonyms";
+import Analogies from "./pages/notes/Analogies";
+import CodingDecoding from "./pages/notes/CodingDecoding";
+import Vocabulary from "./pages/notes/Vocabulary";
+import SeriesCompletion from "./pages/notes/SeriesCompletion";
+import DaysDates from "./pages/notes/DaysAndDates";
+import DirectionSense from "./pages/notes/DirectionSense";
+import Classification from "./pages/notes/Classification";
+import BloodRelations from "./pages/notes/BloodRelations";
+import JumbledWordsLetters from "./pages/notes/JumbledWords";
+import CommonSenseGeneralLogic from "./pages/notes/GeneralLogic";
+
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
 import { usePageTracking } from "./analytics/usePageTracking";
@@ -61,7 +76,6 @@ import Admin from "./pages/Admin";
 import AdminRoute from "./components/auth/AdminRoute";
 
 import "./styles/globals.css";
-
 import DefenceDayOfferPopup from "./components/DefenceDayOfferPopup";
 // import AuthTest from "./components/AuthTest";
 function App() {
@@ -78,7 +92,54 @@ function App() {
       <Routes>
         {/* HOME PAGE */}
         <Route path="/" element={<Home />} />
-
+<Route
+  path="/notes/verbal/synonyms"
+  element={<Synonyms />}
+/>
+<Route
+  path="/notes/verbal/antonyms"
+  element={<Antonyms />}
+/>
+<Route
+  path="/notes/verbal/analogies"
+  element={<Analogies />}
+/>
+<Route
+  path="/notes/verbal/coding-decoding"
+  element={<CodingDecoding />}
+/>
+<Route
+  path="/notes/verbal/vocabulary"
+  element={<Vocabulary />}
+/>
+<Route
+  path="/notes/verbal/series-completion"
+  element={<SeriesCompletion />}
+/> 
+<Route
+  path="/notes/verbal/days-dates"
+  element={<DaysDates />}
+/>
+<Route
+  path="/notes/verbal/direction-sense"
+  element={<DirectionSense />}
+/>
+<Route
+  path="/notes/verbal/classification"
+  element={<Classification />}
+/>
+<Route
+  path="/notes/verbal/blood-relations"
+  element={<BloodRelations />}
+/>
+<Route
+  path="/notes/verbal/jumbled-words-letters"
+  element={<JumbledWordsLetters />}
+/>
+<Route
+  path="/notes/verbal/common-sense-general-logic"
+  element={<CommonSenseGeneralLogic />}
+/>
         {/* AUTH PAGES */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -241,6 +302,9 @@ function App() {
 
         {/* MOCK PAGE */}
         <Route path="/mock" element={<MOCK />} />
+
+        {/* NOTES HUB PAGE */}
+        <Route path="/notes" element={<NotesHub />} />
 
         {/* ISSB-1 PAGE */}
         <Route path="/issb-1" element={<ISSBa />} />
