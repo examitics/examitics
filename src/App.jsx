@@ -52,7 +52,7 @@ import PakistanCurrentAffairs from "./pages/knowledge/current-affairs/PakistanCu
 import InternationalCurrentAffairs from "./pages/knowledge/current-affairs/InternationalCurrentAffairs";
 import SportsCurrentAffairs from "./pages/knowledge/current-affairs/SportsCurrentAffairs";
 
-import Synonyms from "./pages/notes/synonyms";
+import Synonyms from "./pages/notes/Synonyms";
 import Antonyms from "./pages/notes/Antonyms";
 import Analogies from "./pages/notes/Analogies";
 import CodingDecoding from "./pages/notes/CodingDecoding";
