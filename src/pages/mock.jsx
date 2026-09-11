@@ -6,6 +6,7 @@ import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 import PMAMockSection from "../components/mock/pmamocksection";
 import PAFMockSection from "../components/mock/pafmocksection";
+import { FiClock, FiMonitor, FiCheckCircle } from "react-icons/fi";
 
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
@@ -108,7 +109,51 @@ const MOCK = () => {
                 real exam conditions.
               </p>
             </section>
+<div className="mock-rules-grid">
 
+        <div className="mock-rule-card">
+
+          <FiClock className="mock-rule-icon" />
+
+          <div>
+            <h4>Timed Tests</h4>
+
+            <p>
+              Each mock follows real exam timing.
+            </p>
+          </div>
+
+        </div>
+
+        <div className="mock-rule-card">
+
+          <FiMonitor className="mock-rule-icon" />
+
+          <div>
+            <h4>No Refresh</h4>
+
+            <p>
+              Avoid refreshing during attempts.
+            </p>
+          </div>
+
+        </div>
+
+        <div className="mock-rule-card">
+
+          <FiCheckCircle className="mock-rule-icon" />
+
+          <div>
+            <h4>Instant Result</h4>
+
+            <p>
+              Get score immediately after submission.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
             {/* PMA LC SECTION */}
             <PMAMockSection title="PMA LONG COURSE" examCode="pma-lc" />
 <div style={{margin: "20px"}}></div>

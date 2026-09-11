@@ -4,12 +4,12 @@
 
 .exa-navbar {
   position: sticky;
-  top: 0;
+  /* top: 0; */
+  top: var(--announcement-height, 0px);
   z-index: 999;
 
   width: 100%;
   height: var(--navbar-height);
-
   background: color-mix(
     in srgb,
     var(--color-card) 82%,

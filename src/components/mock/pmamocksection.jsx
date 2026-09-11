@@ -23,7 +23,7 @@ const MockSection = ({ title, examCode }) => {
       </div>
 
       {/* RULES */}
-      <div className="mock-rules-grid">
+      {/* <div className="mock-rules-grid">
 
         <div className="mock-rule-card">
 
@@ -67,7 +67,7 @@ const MockSection = ({ title, examCode }) => {
 
         </div>
 
-      </div>
+      </div> */}
 
       {/* TABLE */}
       <MockTable examCode={examCode} />

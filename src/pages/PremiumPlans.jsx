@@ -125,9 +125,9 @@ function PremiumPlans() {
 
   <div className="premium-current-price">
     <span className="premium-currency">Rs.</span>
-    <strong>1,000</strong>
+    <strong>1,500</strong>
     <span className="premium-period">/ month</span>
-  </div>
+  </div> 
 </div>
 
             <p className="premium-plan-description">
@@ -213,7 +213,7 @@ function PremiumPlans() {
 
   <div className="premium-current-price">
     <span className="premium-currency">Rs.</span>
-    <strong>1,500</strong>
+    <strong>2,000</strong>
     <span className="premium-period">/ year</span>
   </div>
 </div>
@@ -304,12 +304,12 @@ function PremiumPlans() {
 
            <div className="premium-plan-price">
   <span className="premium-original-price">
-    Rs. 3,500
+    Rs. 4,500
   </span>
 
   <div className="premium-current-price">
     <span className="premium-currency">Rs.</span>
-    <strong>2,500</strong>
+    <strong>3,500</strong>
     <span className="premium-period">
       one-time
     </span>

@@ -30,7 +30,6 @@ import ProfileTest from "./components/auth/ProfileTest";
 import Premium from "./pages/Premium";
 import NotesHub from "./pages/NotesHub";
 
-
 import PremiumRoute from "./components/auth/PremiumRoute";
 import PremiumTest from "./pages/PremiumTest";
 import PremiumPlans from "./pages/PremiumPlans";
@@ -74,7 +73,7 @@ import SecurityToast from "./components/SecurityToast";
 
 import Admin from "./pages/Admin";
 import AdminRoute from "./components/auth/AdminRoute";
-
+import AnnouncementBar from "./components/layout/AnnouncementBar";
 import "./styles/globals.css";
 import DefenceDayOfferPopup from "./components/DefenceDayOfferPopup";
 // import AuthTest from "./components/AuthTest";
@@ -84,62 +83,47 @@ function App() {
   return (
     <>
       {/* <AuthTest /> */}
-      <SecurityToast />  
-      <SecurityProtection /> 
-
+      <SecurityToast />
+      <SecurityProtection />
+      <AnnouncementBar />
       <ScrollToTop />
 
       <Routes>
         {/* HOME PAGE */}
         <Route path="/" element={<Home />} />
-<Route
-  path="/notes/verbal/synonyms"
-  element={<Synonyms />}
-/>
-<Route
-  path="/notes/verbal/antonyms"
-  element={<Antonyms />}
-/>
-<Route
-  path="/notes/verbal/analogies"
-  element={<Analogies />}
-/>
-<Route
-  path="/notes/verbal/coding-decoding"
-  element={<CodingDecoding />}
-/>
-<Route
-  path="/notes/verbal/vocabulary"
-  element={<Vocabulary />}
-/>
-<Route
-  path="/notes/verbal/series-completion"
-  element={<SeriesCompletion />}
-/> 
-<Route
-  path="/notes/verbal/days-dates"
-  element={<DaysDates />}
-/>
-<Route
-  path="/notes/verbal/direction-sense"
-  element={<DirectionSense />}
-/>
-<Route
-  path="/notes/verbal/classification"
-  element={<Classification />}
-/>
-<Route
-  path="/notes/verbal/blood-relations"
-  element={<BloodRelations />}
-/>
-<Route
-  path="/notes/verbal/jumbled-words-letters"
-  element={<JumbledWordsLetters />}
-/>
-<Route
-  path="/notes/verbal/common-sense-general-logic"
-  element={<CommonSenseGeneralLogic />}
-/>
+        <Route path="/notes/verbal/synonyms" element={<Synonyms />} />
+        <Route path="/notes/verbal/antonyms" element={<Antonyms />} />
+        <Route path="/notes/verbal/analogies" element={<Analogies />} />
+        <Route
+          path="/notes/verbal/coding-decoding"
+          element={<CodingDecoding />}
+        />
+        <Route path="/notes/verbal/vocabulary" element={<Vocabulary />} />
+        <Route
+          path="/notes/verbal/series-completion"
+          element={<SeriesCompletion />}
+        />
+        <Route path="/notes/verbal/days-dates" element={<DaysDates />} />
+        <Route
+          path="/notes/verbal/direction-sense"
+          element={<DirectionSense />}
+        />
+        <Route
+          path="/notes/verbal/classification"
+          element={<Classification />}
+        />
+        <Route
+          path="/notes/verbal/blood-relations"
+          element={<BloodRelations />}
+        />
+        <Route
+          path="/notes/verbal/jumbled-words-letters"
+          element={<JumbledWordsLetters />}
+        />
+        <Route
+          path="/notes/verbal/common-sense-general-logic"
+          element={<CommonSenseGeneralLogic />}
+        />
         {/* AUTH PAGES */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -413,6 +397,7 @@ function App() {
         {/* Add more routes for other exams as needed */}
       </Routes>
       <FloatingFeedback />
+      <AnnouncementBar />
       <DefenceDayOfferPopup />
     </>
   );

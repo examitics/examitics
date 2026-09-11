@@ -1,0 +1,649 @@
+/* =========================================
+   EXAMITICS ANNOUNCEMENT BAR
+========================================= */
+
+.announcement-bar {
+  --announcement-height: 44px;
+
+  width: 100%;
+  height: var(--announcement-height);
+
+  position: sticky;
+top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+
+  background: var(--color-card);
+  color: var(--color-text);
+
+  border-bottom: 1px solid var(--color-border);
+
+  overflow: hidden;
+}
+
+
+
+/* =========================================
+   VIEWPORT
+========================================= */
+
+.announcement-viewport {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding-right: 44px;
+}
+
+
+/* =========================================
+   MOVING TRACK
+========================================= */
+
+.announcement-track {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+  min-width: max-content;
+
+  /*
+    Two identical groups are placed inside
+    the track. Moving exactly 50% gives us
+    a continuous marquee loop.
+  */
+  animation: examitics-announcement-scroll 30s linear infinite;
+
+  will-change: transform;
+}
+
+
+/* Pause when user hovers */
+.announcement-bar:hover .announcement-track {
+  animation-play-state: paused;
+}
+
+
+/* =========================================
+   ANNOUNCEMENT GROUP
+========================================= */
+
+.announcement-group {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   MAIN ANNOUNCEMENT ITEM
+========================================= */
+
+.announcement-item {
+  height: var(--announcement-height);
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 18px;
+
+  white-space: nowrap;
+
+  color: var(--color-text);
+
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  line-height: 1;
+}
+
+
+/* =========================================
+   WHATSAPP / MESSAGE BADGE
+========================================= */
+
+.announcement-badge {
+  width: 26px;
+  height: 26px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: color-mix(
+    in srgb,
+    var(--color-success) 12%,
+    transparent
+  );
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--color-success) 25%,
+    var(--color-border)
+  );
+
+  color: var(--color-success);
+
+  font-size: 14px;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.announcement-item:hover .announcement-badge {
+  transform: scale(1.08);
+
+  background: color-mix(
+    in srgb,
+    var(--color-success) 18%,
+    transparent
+  );
+}
+
+
+/* =========================================
+   COURSE LABEL
+========================================= */
+
+.announcement-label {
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-bold);
+
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.announcement-message {
+  color: var(--color-text-muted);
+
+  font-weight: var(--font-weight-medium);
+}
+
+
+/* =========================================
+   WHATSAPP CTA
+========================================= */
+
+.announcement-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-left: 5px;
+
+  min-height: 30px;
+
+  padding: 0 12px;
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--color-success) 40%,
+    var(--color-border)
+  );
+
+  border-radius: var(--radius-sm);
+
+  background: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    transparent
+  );
+
+  color: var(--color-success);
+
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+
+/* CTA hover */
+
+.announcement-cta:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-success) 17%,
+    transparent
+  );
+
+  border-color: color-mix(
+    in srgb,
+    var(--color-success) 60%,
+    var(--color-border)
+  );
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* CTA icon */
+
+.announcement-cta svg {
+  width: 14px;
+  height: 14px;
+
+  flex-shrink: 0;
+
+  transition: transform var(--transition-fast);
+}
+
+
+/* Move arrow on hover */
+
+.announcement-cta:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   HIGHLIGHT MESSAGE
+========================================= */
+
+.announcement-highlight {
+  padding-left: 12px;
+  padding-right: 12px;
+
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-semibold);
+
+  opacity: 0.85;
+}
+
+
+/* =========================================
+   STATUS DOT
+========================================= */
+
+.announcement-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-success);
+
+  box-shadow:
+    0 0 0 3px color-mix(
+      in srgb,
+      var(--color-success) 10%,
+      transparent
+    );
+}
+
+
+/* =========================================
+   SEPARATOR
+========================================= */
+
+.announcement-separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+
+  color: var(--color-text-muted);
+
+  opacity: 0.35;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   EDGE FADES
+========================================= */
+
+.announcement-fade {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 60px;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* Left fade */
+
+.announcement-fade-left {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    var(--color-card) 0%,
+    transparent 100%
+  );
+}
+
+
+/* Right fade */
+
+.announcement-fade-right {
+  right: 44px;
+
+  background: linear-gradient(
+    to left,
+    var(--color-card) 0%,
+    transparent 100%
+  );
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.announcement-close {
+  position: absolute;
+
+  right: 9px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 50%;
+
+  background: var(--color-card);
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  opacity: 0.8;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+
+/* Close hover */
+
+.announcement-close:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-primary) 8%,
+    var(--color-card)
+  );
+
+  color: var(--color-text);
+
+  border-color: color-mix(
+    in srgb,
+    var(--color-primary) 30%,
+    var(--color-border)
+  );
+
+  opacity: 1;
+
+  transform: translateY(-50%) rotate(90deg);
+}
+
+
+/* Close icon */
+
+.announcement-close svg {
+  width: 15px;
+  height: 15px;
+}
+
+
+/* =========================================
+   SEAMLESS MARQUEE LOOP
+========================================= */
+
+@keyframes examitics-announcement-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .announcement-bar {
+    --announcement-height: 42px;
+  }
+
+  .announcement-track {
+    animation-duration: 27s;
+  }
+
+  .announcement-item {
+    gap: 8px;
+
+    padding-left: 14px;
+    padding-right: 14px;
+
+    font-size: var(--font-size-xs);
+  }
+
+  .announcement-message {
+    opacity: 0.75;
+  }
+
+  .announcement-cta {
+    min-height: 29px;
+
+    padding: 0 10px;
+  }
+
+  .announcement-fade {
+    width: 45px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .announcement-bar {
+    --announcement-height: 42px;
+  }
+
+  .announcement-viewport {
+    padding-right: 40px;
+  }
+
+  /*
+    Slightly faster on mobile because the
+    content is shorter.
+  */
+  .announcement-track {
+    animation-duration: 23s;
+  }
+
+  .announcement-item {
+    gap: 7px;
+
+    padding-left: 11px;
+    padding-right: 11px;
+
+    font-size: 11px;
+  }
+
+  .announcement-badge {
+    width: 23px;
+    height: 23px;
+
+    font-size: 13px;
+  }
+
+  /*
+    Hide supporting text on smaller screens
+    so the important CTA remains visible.
+  */
+  .announcement-message {
+    display: none;
+  }
+
+  .announcement-cta {
+    min-height: 28px;
+
+    margin-left: 3px;
+
+    padding: 0 9px;
+
+    font-size: 10px;
+
+    gap: 4px;
+  }
+
+  .announcement-cta svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .announcement-highlight {
+    padding-left: 9px;
+    padding-right: 9px;
+
+    font-size: 10.5px;
+  }
+
+  .announcement-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .announcement-separator {
+    width: 12px;
+
+    font-size: 12px;
+  }
+
+  .announcement-fade {
+    width: 30px;
+  }
+
+  .announcement-fade-right {
+    right: 40px;
+  }
+
+  .announcement-close {
+    right: 6px;
+
+    width: 25px;
+    height: 25px;
+  }
+
+  .announcement-close svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .announcement-track {
+    animation-duration: 21s;
+  }
+
+  .announcement-item {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .announcement-label {
+    font-size: 10.5px;
+  }
+
+  .announcement-cta {
+    padding: 0 8px;
+
+    font-size: 9.5px;
+  }
+
+  .announcement-highlight {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+  }
+
+  .announcement-cta,
+  .announcement-close,
+  .announcement-badge {
+    transition: none;
+  }
+}
