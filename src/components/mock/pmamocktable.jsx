@@ -80,7 +80,7 @@ const MockTable = ({ examCode }) => {
                 to={`/mock/${examCode}/nonverbal-2`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
 
@@ -105,12 +105,17 @@ const MockTable = ({ examCode }) => {
 
           <tr>
             <td>
-              <Link
-                to={`/mock/${examCode}/verbal-3`}
-                className="mock-table-btn"
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() => handlePremiumClick("/mock/verbal/set3")}
               >
-                Comming Soon 
-              </Link>
+                <span>Verbal Mock 3</span>
+                <span className="mock-premium-diamond">◆</span>
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
             </td>
 
             <td>
@@ -119,7 +124,7 @@ const MockTable = ({ examCode }) => {
                 className="mock-table-btn"
                 aria-disabled="true"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
 
@@ -142,16 +147,20 @@ const MockTable = ({ examCode }) => {
             </td>
           </tr>
 
-          
           <tr>
             <td>
-              <Link
-                to={`/mock/${examCode}/verbal-3`}
-                className="mock-table-btn"
-              >
-                Comming Soon 
-              </Link>
-            </td>
+  <button
+    type="button"
+    className="mock-table-btn mock-premium-btn"
+    onClick={() => handlePremiumClick("/mock/verbal/set4")}
+  >
+    <span>Verbal Mock 4</span>
+    <span className="mock-premium-diamond">◆</span>
+    {!isPremium && (
+      <span className="mock-premium-label">PREMIUM</span>
+    )}
+  </button>
+</td>
 
             <td>
               <Link
@@ -159,7 +168,7 @@ const MockTable = ({ examCode }) => {
                 className="mock-table-btn"
                 aria-disabled="true"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
 

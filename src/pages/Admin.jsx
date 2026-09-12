@@ -9,6 +9,7 @@ import {
   FiSettings,
   FiLogOut,
   FiShield,
+  FiMail,
 } from "react-icons/fi";
 
 import { useAuth } from "../context/AuthContext";

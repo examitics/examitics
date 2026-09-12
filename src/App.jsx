@@ -217,6 +217,32 @@ function App() {
         />
 
         {/* ==========================================
+PREMIUM PMA VERBAL MOCK TEST 3
+========================================== */}
+
+<Route
+  path="/mock/verbal/set3"
+  element={
+    <PremiumRoute>
+      <MockTest exam="pma-lc" category="verbal" setId="set3" />
+    </PremiumRoute>
+  }
+/>
+
+{/* ==========================================
+PREMIUM PMA VERBAL MOCK TEST 4
+========================================== */}
+
+<Route
+  path="/mock/verbal/set4"
+  element={
+    <PremiumRoute>
+      <MockTest exam="pma-lc" category="verbal" setId="set4" />
+    </PremiumRoute>
+  }
+/>
+
+        {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
 ========================================== */}
 

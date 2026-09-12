@@ -309,10 +309,10 @@ const [submitError, setSubmitError] = useState("");
     category === "academic" &&
     ["set2", "set3", "set4"].includes(setId)) ||
 
-  // Verbal Set 2
-  (exam === "pma-lc" &&
-    category === "verbal" &&
-    setId === "set2") ||
+// Verbal Set 2, 3 & 4
+(exam === "pma-lc" &&
+  category === "verbal" &&
+  ["set2", "set3", "set4"].includes(setId)) ||
 
   // ==========================================
   // PAF PREMIUM MOCK TESTS
