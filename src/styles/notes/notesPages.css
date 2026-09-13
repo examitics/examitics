@@ -1218,3 +1218,283 @@
     font-size: 13px;
   }
 }
+
+/* =========================================================
+   NON-VERBAL SERIES IMAGES
+========================================================= */
+
+/* =========================
+   SERIES EXAMPLES
+========================= */
+
+.series-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.series-example-card {
+  padding: var(--space-xl);
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition-normal);
+}
+
+.series-example-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.series-example-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  color: var(--color-info);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+
+  letter-spacing: 0.08em;
+}
+
+.series-example-header svg {
+  font-size: 18px;
+}
+
+.series-example-card h3 {
+  margin: 0 0 var(--space-lg);
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-lg);
+}
+
+/* =========================
+   EXAMPLE IMAGE
+========================= */
+
+.series-example-image {
+  display: block;
+
+  width: 100%;
+  max-height: 360px;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: var(--color-card-secondary);
+
+  padding: 8px;
+}
+
+/* =========================
+   EXAMPLE ANSWER
+========================= */
+
+.series-example-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+
+  margin-top: var(--space-lg);
+
+  padding: var(--space-lg);
+
+  border-left: 3px solid #22c55e;
+  border-radius: var(--radius-sm);
+
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.series-example-answer > svg {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #22c55e;
+
+  font-size: 20px;
+}
+
+.series-example-answer strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #16a34a;
+
+  font-size: var(--font-size-sm);
+}
+
+.series-example-answer p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   READING QUESTION IMAGE
+========================================================= */
+
+.reading-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  margin: 0 0 var(--space-lg);
+
+  padding: var(--space-lg);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: var(--color-card-secondary);
+
+  overflow: hidden;
+}
+
+.reading-question-image {
+  display: block;
+
+  width: 100%;
+  max-width: 720px;
+
+  max-height: 500px;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTERACTIVE QUESTION IMAGE
+========================================================= */
+
+.mcq-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  margin: 0 0 var(--space-xl);
+
+  padding: var(--space-lg);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-card-secondary);
+
+  overflow: hidden;
+}
+
+.mcq-question-image {
+  display: block;
+
+  width: 100%;
+
+  max-width: 760px;
+
+  max-height: 520px;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   NON-VERBAL OPTION LABELS
+========================================================= */
+
+.reading-option .option-label,
+.mcq-option .option-letter {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE - SERIES EXAMPLES
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .series-example-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - READING IMAGES
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .reading-image-wrapper,
+  .mcq-image-wrapper {
+    padding: var(--space-md);
+  }
+
+  .reading-question-image,
+  .mcq-question-image {
+    max-height: 420px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .series-example-card {
+    padding: var(--space-lg);
+  }
+
+  .series-example-image {
+    max-height: 280px;
+
+    padding: 5px;
+  }
+
+  .reading-image-wrapper,
+  .mcq-image-wrapper {
+    padding: 10px;
+
+    margin-bottom: var(--space-md);
+  }
+
+  .reading-question-image,
+  .mcq-question-image {
+    width: 100%;
+    max-height: 300px;
+  }
+
+}

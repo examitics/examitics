@@ -63,6 +63,7 @@ import Classification from "./pages/notes/Classification";
 import BloodRelations from "./pages/notes/BloodRelations";
 import JumbledWordsLetters from "./pages/notes/JumbledWords";
 import CommonSenseGeneralLogic from "./pages/notes/GeneralLogic";
+import Series from "./pages/notes/Series";
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
@@ -124,6 +125,7 @@ function App() {
           path="/notes/verbal/common-sense-general-logic"
           element={<CommonSenseGeneralLogic />}
         />
+        <Route path="/notes/non-verbal/series" element={<Series />} />
         {/* AUTH PAGES */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -220,28 +222,43 @@ function App() {
 PREMIUM PMA VERBAL MOCK TEST 3
 ========================================== */}
 
-<Route
-  path="/mock/verbal/set3"
-  element={
-    <PremiumRoute>
-      <MockTest exam="pma-lc" category="verbal" setId="set3" />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/verbal/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="verbal" setId="set3" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
 PREMIUM PMA VERBAL MOCK TEST 4
 ========================================== */}
 
+        <Route
+          path="/mock/verbal/set4"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="verbal" setId="set4" />
+            </PremiumRoute>
+          }
+        />
+{/* ==========================================
+    PREMIUM PMA NON-VERBAL MOCK TEST 2
+========================================== */}
+
 <Route
-  path="/mock/verbal/set4"
+  path="/mock/nonverbal/set2"
   element={
     <PremiumRoute>
-      <MockTest exam="pma-lc" category="verbal" setId="set4" />
+      <MockTest
+        exam="pma-lc"
+        category="nonverbal"
+        setId="set2"
+      />
     </PremiumRoute>
   }
 />
-
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
 ========================================== */}

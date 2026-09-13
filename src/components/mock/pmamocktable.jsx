@@ -76,13 +76,18 @@ const MockTable = ({ examCode }) => {
             </td>
 
             <td>
-              <Link
-                to={`/mock/${examCode}/nonverbal-2`}
-                className="mock-table-btn"
-              >
-                Comming Soon
-              </Link>
-            </td>
+  <button
+    type="button"
+    className="mock-table-btn mock-premium-btn"
+    onClick={() => handlePremiumClick("/mock/nonverbal/set2")}
+  >
+    <span>Non-Verbal Mock 2</span>
+    <span className="mock-premium-diamond">◆</span>
+    {!isPremium && (
+      <span className="mock-premium-label">PREMIUM</span>
+    )}
+  </button>
+</td>
 
             <td>
               {/* <Link to="/mock/academic/set2" className="mock-table-btn">

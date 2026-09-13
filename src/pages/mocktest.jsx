@@ -11,6 +11,8 @@ import verbalSet1 from "../data/mcqs/verbal/set1";
 import academicSet1 from "../data/mcqs/academic/set1";
 
 import nonVerbalSet1 from "../data/mcqs/nonverbal/set1";
+// import nonVerbalSet2 from "../data/mcqs/nonverbal/set2";
+
 import MAT from "../data/mcqs/mat/set1";
 
 import "../styles/mocktest.css";
@@ -58,6 +60,7 @@ const questionBank = {
 
   nonverbal: {
     set1: nonVerbalSet1,
+    // set2: nonVerbalSet2,
   },
 
   mat: {
@@ -314,6 +317,10 @@ const [submitError, setSubmitError] = useState("");
   category === "verbal" &&
   ["set2", "set3", "set4"].includes(setId)) ||
 
+  // Non-Verbal Set 2
+(exam === "pma-lc" &&
+  category === "nonverbal" &&
+  setId === "set2") ||
   // ==========================================
   // PAF PREMIUM MOCK TESTS
   // ==========================================
@@ -684,11 +691,24 @@ const handleSubmit = async () => {
       ) ||
 
       // PMA Verbal
-      (
-        exam === "pma-lc" &&
-        category === "verbal" &&
-        setId === "set2"
-      ) ||
+      // (
+      //   exam === "pma-lc" &&
+      //   category === "verbal" &&
+      //   setId === "set2"
+      // ) ||
+      // PMA Verbal
+(
+  exam === "pma-lc" &&
+  category === "verbal" &&
+  ["set2", "set3", "set4"].includes(setId)
+) ||
+
+// PMA Non-Verbal
+(
+  exam === "pma-lc" &&
+  category === "nonverbal" &&
+  setId === "set2"
+) ||
 
       // PAF English
       (
