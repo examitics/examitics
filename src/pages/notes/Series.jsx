@@ -21,7 +21,7 @@ import "../../styles/notes/notesPages.css";
 const mcqs = [
   {
     question: "Which figure should replace the question mark?",
-    image: "/images/nonverbal-question-pic/q3.PNG",
+    image: "/images/nonverbal-set1-pic/q3.PNG",
     options: ["A", "B", "C"],
     correct: 1,
     explanation:
@@ -30,7 +30,7 @@ const mcqs = [
 
   {
     question: "Which figure should replace the question mark?",
-    image: "/images/nonverbal-question-pic/q1.PNG",
+    image: "/images/nonverbal-set1-pic/q1.PNG",
     options: ["A", "B", "C"],
     correct: 1,
     explanation:
@@ -39,7 +39,7 @@ const mcqs = [
 
   {
     question: "Study the figure carefully and select the figure that continues the series.",
-    image: "/images/nonverbal-question-pic/q4.PNG",
+    image: "/images/nonverbal-set1-pic/q4.PNG",
     options: ["A", "B", "C"],
     correct: 2,
     explanation:
@@ -48,7 +48,7 @@ const mcqs = [
 
   {
     question: "Which figure comes next in the series?",
-    image: "/images/nonverbal-question-pic/q5.PNG",
+    image: "/images/nonverbal-set1-pic/q5.PNG",
     options: ["A", "B", "C"],
     correct: 0,
     explanation:
@@ -57,7 +57,7 @@ const mcqs = [
 
   {
     question: "Select the figure that logically completes the series.",
-    image: "/images/nonverbal-question-pic/q6.PNG",
+    image: "/images/nonverbal-set1-pic/q6.PNG",
     options: ["A", "B", "C"],
     correct: 0,
     explanation:
@@ -66,7 +66,7 @@ const mcqs = [
 
   {
     question: "Which figure should come next?",
-    image: "/images/nonverbal-question-pic/q7.PNG",
+    image: "/images/nonverbal-set1-pic/q7.PNG",
     options: ["A", "B", "C"],
     correct: 2,
     explanation:
@@ -75,7 +75,7 @@ const mcqs = [
 
   {
     question: "Find the missing figure in the series.",
-    image: "/images/nonverbal-question-pic/q8.PNG",
+    image: "/images/nonverbal-set1-pic/q8.PNG",
     options: ["A", "B", "C"],
     correct: 1,
     explanation:
@@ -84,7 +84,7 @@ const mcqs = [
 
   {
     question: "Which option completes the figure series?",
-    image: "/images/nonverbal-question-pic/q9.PNG",
+    image: "/images/nonverbal-set1-pic/q9.PNG",
     options: ["A", "B", "C"],
     correct: 2,
     explanation:
@@ -93,7 +93,7 @@ const mcqs = [
 
   {
     question: "What should replace the question mark?",
-    image: "/images/nonverbal-question-pic/q10.PNG",
+    image: "/images/nonverbal-set1-pic/q10.PNG",
     options: ["A", "B", "C"],
     correct: 0,
     explanation:
@@ -102,7 +102,7 @@ const mcqs = [
 
   {
     question: "Which figure comes next?",
-    image: "/images/nonverbal-question-pic/q11.PNG",
+    image: "/images/nonverbal-set1-pic/q11.PNG",
     options: ["A", "B", "C"],
     correct: 0,
     explanation:
@@ -111,7 +111,7 @@ const mcqs = [
 
   {
     question: "Select the correct continuation of the series.",
-    image: "/images/nonverbal-question-pic/q12.PNG",
+    image: "/images/nonverbal-set1-pic/q12.PNG",
     options: ["A", "B", "C"],
     correct: 0,
     explanation:
@@ -120,7 +120,7 @@ const mcqs = [
 
   {
     question: "Which figure completes the sequence?",
-    image: "/images/nonverbal-question-pic/q13.PNG",
+    image: "/images/nonverbal-set1-pic/q13.PNG",
     options: ["A", "B", "C", "D"],
     correct: 1,
     explanation:
@@ -222,7 +222,7 @@ const Series = () => {
 
           <FiArrowRight />
 
-          <strong>Series</strong>
+          <strong >Series</strong>
         </nav>
 
         {/* =================================================
@@ -479,7 +479,7 @@ const Series = () => {
               <h3>Division Pattern</h3>
 
               <img
-                src="/images/nonverbal-question-pic/q3.PNG"
+                src="/images/nonverbal-set1-pic/q3.PNG"
                 alt="Non-verbal series division pattern example"
                 className="series-example-image"
               />
@@ -510,7 +510,7 @@ const Series = () => {
               <h3>Shading Pattern</h3>
 
               <img
-                src="/images/nonverbal-question-pic/q1.PNG"
+                src="/images/nonverbal-set1-pic/q1.PNG"
                 alt="Non-verbal series shading pattern example"
                 className="series-example-image"
               />

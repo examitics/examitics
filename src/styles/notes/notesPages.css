@@ -122,7 +122,8 @@
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-extrabold);
 
-  color: var(--color-text);
+  /* color: var(--color-text); */
+  color: white;
 }
 
 .synonyms-hero p {
@@ -446,6 +447,7 @@
 
 .practice-header h2 {
   margin-top: 7px;
+  color: white;
 }
 
 .practice-header p {
