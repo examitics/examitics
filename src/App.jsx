@@ -64,6 +64,7 @@ import BloodRelations from "./pages/notes/BloodRelations";
 import JumbledWordsLetters from "./pages/notes/JumbledWords";
 import CommonSenseGeneralLogic from "./pages/notes/GeneralLogic";
 import Series from "./pages/notes/Series";
+import CurrentAffairsPakistan from "./pages/notes/CurrentAffairsPakistan";
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
@@ -126,6 +127,10 @@ function App() {
           element={<CommonSenseGeneralLogic />}
         />
         <Route path="/notes/non-verbal/series" element={<Series />} />
+        <Route
+          path="/notes/current-affairs/pakistan"
+          element={<CurrentAffairsPakistan />}
+        />
         {/* AUTH PAGES */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

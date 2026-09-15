@@ -1500,3 +1500,126 @@
   }
 
 }
+
+/* =========================================================
+   CURRENT AFFAIRS - FACT TABLES
+========================================================= */
+
+.facts-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-card-secondary);
+}
+
+.facts-table {
+  width: 100%;
+  min-width: 620px;
+
+  border-collapse: collapse;
+
+  color: var(--color-text);
+}
+
+.facts-table th {
+  padding: 15px 16px;
+
+  background: var(--color-card);
+
+  color: var(--color-text);
+
+  text-align: left;
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+
+  letter-spacing: 0.06em;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.facts-table td {
+  padding: 14px 16px;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-sm);
+
+  line-height: 1.6;
+
+  border-bottom: 1px solid var(--color-border);
+
+  vertical-align: top;
+}
+
+.facts-table td:first-child {
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.facts-table td:last-child {
+  color: var(--color-primary);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.facts-table tr:last-child td {
+  border-bottom: none;
+}
+
+.facts-table tbody tr {
+  transition: var(--transition-normal);
+}
+
+.facts-table tbody tr:hover {
+  background: var(--color-card);
+}
+
+
+/* =========================================================
+   CURRENT AFFAIRS UPDATE BOX
+========================================================= */
+
+.synonyms-page .info-box strong {
+  color: var(--color-text);
+}
+
+.synonyms-page .info-box p strong {
+  color: var(--color-primary);
+}
+
+
+/* =========================================================
+   CURRENT AFFAIRS - TABLE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .facts-table {
+    min-width: 560px;
+  }
+
+  .facts-table th,
+  .facts-table td {
+    padding: 12px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .facts-table {
+    min-width: 520px;
+  }
+
+  .facts-table th,
+  .facts-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+}
