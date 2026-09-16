@@ -317,10 +317,10 @@ const [submitError, setSubmitError] = useState("");
   category === "verbal" &&
   ["set2", "set3", "set4"].includes(setId)) ||
 
-// Non-Verbal Set 2 & 3
+// Non-Verbal Set 2, 3 & 4
 (exam === "pma-lc" &&
   category === "nonverbal" &&
-  ["set2", "set3"].includes(setId)) ||
+  ["set2", "set3", "set4"].includes(setId)) ||
   // ==========================================
   // PAF PREMIUM MOCK TESTS
   // ==========================================

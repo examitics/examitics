@@ -282,6 +282,23 @@ PREMIUM PMA VERBAL MOCK TEST 4
   }
 />
 
+{/* ==========================================
+    PREMIUM PMA NON-VERBAL MOCK TEST 4
+========================================== */}
+
+<Route
+  path="/mock/nonverbal/set4"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="pma-lc"
+        category="nonverbal"
+        setId="set4"
+      />
+    </PremiumRoute>
+  }
+/>
+
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
 ========================================== */}
