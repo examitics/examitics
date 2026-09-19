@@ -306,21 +306,20 @@ const [submitError, setSubmitError] = useState("");
   // ==========================================
   // PMA PREMIUM MOCK TESTS
   // ==========================================
+// Academic Set 2, 3, 4, 5 & 6
+(exam === "pma-lc" &&
+  category === "academic" &&
+  ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
 
-  // Academic Set 2 & 3
-  (exam === "pma-lc" &&
-    category === "academic" &&
-    ["set2", "set3", "set4"].includes(setId)) ||
-
-// Verbal Set 2, 3 & 4
+// Verbal Set 2, 3, 4 & 5
 (exam === "pma-lc" &&
   category === "verbal" &&
-  ["set2", "set3", "set4"].includes(setId)) ||
+  ["set2", "set3", "set4", "set5"].includes(setId)) ||
 
-// Non-Verbal Set 2, 3, 4 & 5
+// Non-Verbal Set 2, 3, 4, 5 & 6
 (exam === "pma-lc" &&
   category === "nonverbal" &&
-  ["set2", "set3", "set4", "set5"].includes(setId)) ||
+  ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
   // ==========================================
   // PAF PREMIUM MOCK TESTS
   // ==========================================
@@ -683,12 +682,13 @@ const handleSubmit = async () => {
     // ==========================================
 
     const isPremiumTest =
-      // PMA Academic
-      (
-        exam === "pma-lc" &&
-        category === "academic" &&
-        ["set2", "set3", "set4"].includes(setId)
-      ) ||
+     // PMA Academic
+// PMA Academic
+(
+  exam === "pma-lc" &&
+  category === "academic" &&
+  ["set2", "set3", "set4", "set5", "set6"].includes(setId)
+) ||
 
       // PMA Verbal
       // (
@@ -700,14 +700,14 @@ const handleSubmit = async () => {
 (
   exam === "pma-lc" &&
   category === "verbal" &&
-  ["set2", "set3", "set4"].includes(setId)
+  ["set2", "set3", "set4", "set5"].includes(setId)
 ) ||
 
 // PMA Non-Verbal
 (
   exam === "pma-lc" &&
   category === "nonverbal" &&
-  setId === "set2"
+  ["set2", "set3", "set4", "set5", "set6"].includes(setId)
 ) ||
 
       // PAF English

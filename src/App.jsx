@@ -210,6 +210,39 @@ function App() {
             </PremiumRoute>
           }
         />
+
+        {/* ==========================================
+    PREMIUM PMA ACADEMIC MOCK TEST 5
+========================================== */}
+
+<Route
+  path="/mock/academic/set5"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="pma-lc"
+        category="academic"
+        setId="set5"
+      />
+    </PremiumRoute>
+  }
+/>
+{/* ==========================================
+    PREMIUM PMA ACADEMIC MOCK TEST 6
+========================================== */}
+
+<Route
+  path="/mock/academic/set6"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="pma-lc"
+        category="academic"
+        setId="set6"
+      />
+    </PremiumRoute>
+  }
+/>
         {/* ==========================================
     PREMIUM PMA VERBAL MOCK TEST 2
 ========================================== */}
@@ -248,74 +281,86 @@ PREMIUM PMA VERBAL MOCK TEST 4
             </PremiumRoute>
           }
         />
-{/* ==========================================
+
+        {/* ==========================================
+    PREMIUM PMA VERBAL MOCK TEST 5
+========================================== */}
+
+        <Route
+          path="/mock/verbal/set5"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="verbal" setId="set5" />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
     PREMIUM PMA NON-VERBAL MOCK TEST 2
 ========================================== */}
 
-<Route
-  path="/mock/nonverbal/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="nonverbal"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/nonverbal/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="nonverbal" setId="set2" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM PMA NON-VERBAL MOCK TEST 3
 ========================================== */}
 
-<Route
-  path="/mock/nonverbal/set3"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="nonverbal"
-        setId="set3"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/nonverbal/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="nonverbal" setId="set3" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM PMA NON-VERBAL MOCK TEST 4
 ========================================== */}
 
-<Route
-  path="/mock/nonverbal/set4"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="nonverbal"
-        setId="set4"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/nonverbal/set4"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="nonverbal" setId="set4" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM PMA NON-VERBAL MOCK TEST 5
 ========================================== */}
 
+        <Route
+          path="/mock/nonverbal/set5"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="nonverbal" setId="set5" />
+            </PremiumRoute>
+          }
+        />
+{/* ==========================================
+    PREMIUM PMA NON-VERBAL MOCK TEST 6
+========================================== */}
+
 <Route
-  path="/mock/nonverbal/set5"
+  path="/mock/nonverbal/set6"
   element={
     <PremiumRoute>
       <MockTest
         exam="pma-lc"
         category="nonverbal"
-        setId="set5"
+        setId="set6"
       />
     </PremiumRoute>
   }
 />
-
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
 ========================================== */}

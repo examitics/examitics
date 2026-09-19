@@ -209,9 +209,13 @@ const MockTable = ({ examCode }) => {
               <button
                 type="button"
                 className="mock-table-btn mock-premium-btn"
-                // onClick={() => handlePremiumClick("/mock/nonverbal/set5")}
+                onClick={() => handlePremiumClick("/mock/verbal/set5")}
               >
-                <span>Comming Soon</span>
+                <span>Verbal Mock 5</span>
+                <span className="mock-premium-diamond">◆</span>
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
               </button>
             </td>
 
@@ -229,13 +233,56 @@ const MockTable = ({ examCode }) => {
               </button>
             </td>
 
-            <td>{/* Reserved for Academic Mock 5 */}
+            <td>
               <button
                 type="button"
                 className="mock-table-btn mock-premium-btn"
-                // onClick={() => handlePremiumClick("/mock/nonverbal/set5")}
+                onClick={() => handlePremiumClick("/mock/academic/set5")}
+              >
+                <span>Academic Mock 5</span>
+                <span className="mock-premium-diamond">◆</span>
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                // Verbal Mock 6 will be activated when its set is ready
               >
                 <span>Comming Soon</span>
+              </button>
+            </td>
+
+            <td>
+    <button
+      type="button"
+      className="mock-table-btn mock-premium-btn"
+      onClick={() => handlePremiumClick("/mock/nonverbal/set6")}
+    >
+      <span>Non-Verbal Mock 6</span>
+      <span className="mock-premium-diamond">◆</span>
+      {!isPremium && (
+        <span className="mock-premium-label">PREMIUM</span>
+      )}
+    </button>
+  </td>
+
+            <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() => handlePremiumClick("/mock/academic/set6")}
+              >
+                <span>Academic Mock 6</span>
+                <span className="mock-premium-diamond">◆</span>
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
               </button>
             </td>
           </tr>
