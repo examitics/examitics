@@ -424,9 +424,9 @@ const verbalQuestions5 = [
   },
   {
     id: 69,
-    question: "If 12 men can complete a job in 8 days, how many man-days are required?",
-    options: ["80", "96", "100", "108"],
-    correctAnswer: "96"
+    question: "If 12 men can complete a job in 8 days, how many days will 16 men take to complete the same job, assuming all men work at the same rate?",
+    options: ["4 days", "6 days", "8 days", "10 days"],
+    correctAnswer: "6 days"
   },
   {
     id: 70,

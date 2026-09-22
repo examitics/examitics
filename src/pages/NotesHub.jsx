@@ -1,24 +1,13 @@
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import {
-//   FiBookOpen,
-//   FiCpu,
-//   FiGrid,
-//   FiHash,
-//   FiGlobe,
-//   FiActivity,
-//   FiFlag,
-//   FiUsers,
-//   FiArrowRight,
-// } from "react-icons/fi";
+
 import {
   FiBookOpen,
-  FiCpu,
   FiGrid,
   FiHash,
   FiGlobe,
   FiActivity,
-  FiFlag,
   FiUsers,
   FiArrowRight,
   FiLock,
@@ -88,128 +77,25 @@ const noteCategories = [
   },
 
   {
-    title: "Mathematics",
+    title: "Academics",
     description:
-      "Revise mathematical concepts commonly tested in academic and initial tests.",
-    icon: FiHash,
-    topics: [
-      "Percentages",
-      "Ratio & Proportion",
-      "Average",
-      "Profit & Loss",
-      "Speed, Time & Distance",
-    ],
-    links: [
-      "/notes/mathematics/percentages",
-      "/notes/mathematics/ratio-proportion",
-      "/notes/mathematics/average",
-      "/notes/mathematics/profit-loss",
-      "/notes/mathematics/speed-time-distance",
-    ],
-  },
-
-  {
-    title: "English",
-    description:
-      "Strengthen grammar, vocabulary and sentence skills for English tests.",
+      "Revise important academic subjects commonly tested in armed forces initial tests.",
     icon: FiBookOpen,
     topics: [
-      "Parts of Speech",
-      "Tenses",
-      "Articles",
-      "Prepositions",
-      "Sentence Correction",
+      "Mathematics",
+      "English",
+      "Physics",
+      "General Knowledge",
+      "Current Affairs",
+      "Pakistan Affairs",
     ],
     links: [
-      "/notes/english/parts-of-speech",
-      "/notes/english/tenses",
-      "/notes/english/articles",
-      "/notes/english/prepositions",
-      "/notes/english/sentence-correction",
-    ],
-  },
-
-  {
-    title: "Physics",
-    description:
-      "Review essential physics concepts for PAF and other academic tests.",
-    icon: FiActivity,
-    topics: [
-      "Motion",
-      "Force",
-      "Work & Energy",
-      "Electricity",
-      "Waves & Optics",
-    ],
-    links: [
-      "/notes/physics/motion",
-      "/notes/physics/force",
-      "/notes/physics/work-energy",
-      "/notes/physics/electricity",
-      "/notes/physics/waves-optics",
-    ],
-  },
-
-  {
-    title: "General Knowledge",
-    description:
-      "Prepare important Pakistan and world general knowledge topics.",
-    icon: FiGlobe,
-    topics: [
-      "Pakistan GK",
-      "World GK",
-      "Geography",
-      "Organizations",
-      "Capitals & Currencies",
-    ],
-    links: [
-      "/notes/general-knowledge/pakistan-gk",
-      "/notes/general-knowledge/world-gk",
-      "/notes/general-knowledge/geography",
-      "/notes/general-knowledge/organizations",
-      "/notes/general-knowledge/capitals-currencies",
-    ],
-  },
-
-  {
-    title: "Current Affairs",
-    description:
-      "Stay prepared with important Pakistan, international, defence and sports developments.",
-    icon: FiGlobe,
-    topics: [
-      "Pakistan",
-      "International",
-      "Defence",
-      "Economy",
-      "Sports",
-    ],
-    links: [
-      "/notes/current-affairs/pakistan",
-      "/notes/current-affairs/international",
-      "/notes/current-affairs/defence",
-      "/notes/current-affairs/economy",
-      "/notes/current-affairs/sports",
-    ],
-  },
-
-  {
-    title: "Pakistan Affairs",
-    description:
-      "Study important events, institutions and facts about Pakistan.",
-    icon: FiFlag,
-    topics: [
-      "Pakistan Movement",
-      "Constitution",
-      "History",
-      "Geography",
-      "National Symbols",
-    ],
-    links: [
-      "/notes/pakistan-affairs/pakistan-movement",
-      "/notes/pakistan-affairs/constitution",
-      "/notes/pakistan-affairs/history",
-      "/notes/pakistan-affairs/geography",
-      "/notes/pakistan-affairs/national-symbols",
+      "/notes/academics/mathematics",
+      "/notes/academics/english",
+      "/notes/academics/physics",
+      "/notes/academics/general-knowledge",
+      "/notes/academics/global-current-affairs",
+      "/notes/academics/pakistan-affairs",
     ],
   },
 
@@ -342,10 +228,11 @@ function NotesHub() {
                     </div>
 
                     <span className="notes-topic-count">
-                      {category.title === "Verbal Intelligence"
-                        ? "Uploaded"
-                        : "Coming Soon"}
-                    </span>
+  {category.title === "Verbal Intelligence" ||
+  category.title === "Academics"
+    ? "Uploaded"
+    : "Coming Soon"}
+</span>
 
                   </div>
 
@@ -397,6 +284,7 @@ function NotesHub() {
           PREMIUM ACCESS OVERLAY
       ========================= */}
       {!loading && !hasPremiumAccess && (
+
         <div className="notes-premium-overlay">
 
           <div
@@ -499,6 +387,7 @@ function NotesHub() {
           </div>
 
         </div>
+
       )}
 
     </main>
@@ -506,3 +395,4 @@ function NotesHub() {
 }
 
 export default NotesHub;
+

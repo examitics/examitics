@@ -96,23 +96,31 @@ const Footer = () => {
 
             {/* SOCIALS */}
 
-            {/* <div className="footer-socials">
-              <a href="#">
+            <div className="footer-socials">
+              <a
+                href="https://www.facebook.com/profile.php?id=61593908024099"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FiFacebook />
               </a>
 
-              <a href="#">
+              <a
+                href="https://www.instagram.com/examitics/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FiInstagram />
               </a>
 
-              <a href="#">
+              {/* <a href="#">
                 <FiTwitter />
-              </a>
+              </a> */}
 
-              <a href="#">
+              {/* <a href="#">
                 <FiLinkedin />
-              </a>
-            </div> */}
+              </a> */}
+            </div>
           </div>
 
           {/* LINKS */}
@@ -151,7 +159,6 @@ const Footer = () => {
               <a href="/mock">Practice MCQs</a>
               <a href="/opi">OPI Test</a>
               <a href="/knowledgehub">Knowledge Hub</a>
-
             </div>
           </div>
         </div>
@@ -184,7 +191,10 @@ const Footer = () => {
             Feedback
         ===================================== */}
 
-        <div className="footer-newsletter feedback-section" id="feedback-section">
+        <div
+          className="footer-newsletter feedback-section"
+          id="feedback-section"
+        >
           <div>
             <h3>Share your Feedback with Examitics</h3>
 

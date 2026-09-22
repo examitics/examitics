@@ -65,6 +65,17 @@ import JumbledWordsLetters from "./pages/notes/JumbledWords";
 import CommonSenseGeneralLogic from "./pages/notes/GeneralLogic";
 import Series from "./pages/notes/Series";
 import CurrentAffairsPakistan from "./pages/notes/CurrentAffairsPakistan";
+import Mathematics from "./pages/notes/Mathematics";
+import English from "./pages/notes/English";
+import Physics from "./pages/notes/Physics";
+import GeneralKnowledge from "./pages/notes/GeneralKnowledge";
+import GlobalCurrentAffairs from "./pages/notes/GlobalCurrentAffairs";
+import PakistanAffairs from "./pages/notes/PakistanAffairs";
+
+
+
+
+
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
@@ -130,6 +141,30 @@ function App() {
         <Route
           path="/notes/current-affairs/pakistan"
           element={<CurrentAffairsPakistan />}
+        />
+        <Route
+          path="/notes/academics/mathematics"
+          element={<Mathematics />}
+        />
+        <Route
+          path="/notes/academics/english"
+          element={<English />}
+        />
+        <Route
+          path="/notes/academics/physics"
+          element={<Physics />}
+        />
+        <Route
+          path="/notes/academics/general-knowledge"
+          element={<GeneralKnowledge />}
+        />
+        <Route
+          path="/notes/academics/global-current-affairs"
+          element={<GlobalCurrentAffairs />}
+        />
+        <Route
+          path="/notes/academics/pakistan-affairs"
+          element={<PakistanAffairs />}
         />
         {/* AUTH PAGES */}
         <Route path="/signup" element={<Signup />} />
