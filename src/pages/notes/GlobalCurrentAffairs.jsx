@@ -3447,6 +3447,1581 @@ import "../../styles/notes/notesPages.css";
     explanation:
       "Pakistan, Türkiye and Saudi Arabia signed the Makkah Joint Defence Agreement on 7 August 2026.",
   },
+  // ==================== ADDITIONAL CURRENT AFFAIRS ====================
+
+{
+  id: 146,
+  source: "Global Current Affairs",
+  question: "Who was the Foreign Minister of Pakistan in 2025?",
+  options: [
+    "Khawaja Asif",
+    "Muhammad Aurangzeb",
+    "Ishaq Dar",
+    "Ayaz Sadiq",
+  ],
+  correct: 2,
+  explanation:
+    "Senator Mohammad Ishaq Dar served as Pakistan's Foreign Minister in 2025.",
+},
+
+{
+  id: 147,
+  source: "Global Current Affairs",
+  question: "Who was the first woman to serve as Governor of Sindh?",
+  options: [
+    "Begum Ra'ana Liaquat Ali Khan",
+    "Fatima Jinnah",
+    "Benazir Bhutto",
+    "Begum Nusrat Bhutto",
+  ],
+  correct: 0,
+  explanation:
+    "Begum Ra'ana Liaquat Ali Khan was the first woman Governor of Sindh.",
+},
+
+{
+  id: 148,
+  source: "Global Current Affairs",
+  question: "Which country criminalized the public desecration of religious texts in 2023?",
+  options: [
+    "Norway",
+    "Denmark",
+    "Sweden",
+    "Finland",
+  ],
+  correct: 1,
+  explanation:
+    "Denmark introduced legislation in 2023 making the public desecration of religious texts a criminal offence.",
+},
+
+{
+  id: 149,
+  source: "Global Current Affairs",
+  question: "Which fighter aircraft is operated by Pakistan after being acquired from China?",
+  options: [
+    "Rafale",
+    "F-16",
+    "Eurofighter Typhoon",
+    "J-10C",
+  ],
+  correct: 3,
+  explanation:
+    "Pakistan operates the Chinese-made J-10C fighter aircraft.",
+},
+
+{
+  id: 150,
+  source: "Global Current Affairs",
+  question: "Which country hosted the 2023 Cricket World Cup?",
+  options: [
+    "India",
+    "Australia",
+    "England",
+    "South Africa",
+  ],
+  correct: 0,
+  explanation:
+    "The 2023 ICC Cricket World Cup was hosted by India.",
+},
+
+{
+  id: 151,
+  source: "Global Current Affairs",
+  question: "Which country won the ICC Champions Trophy 2025?",
+  options: [
+    "Australia",
+    "New Zealand",
+    "India",
+    "Pakistan",
+  ],
+  correct: 2,
+  explanation:
+    "India won the ICC Champions Trophy 2025.",
+},
+
+{
+  id: 152,
+  source: "Global Current Affairs",
+  question: "Who was the Governor of Sindh in 2025?",
+  options: [
+    "Kamran Khan Tessori",
+    "Imran Ismail",
+    "Muhammad Zubair",
+    "Ishrat-ul-Ibad",
+  ],
+  correct: 0,
+  explanation:
+    "Kamran Khan Tessori served as Governor of Sindh in 2025.",
+},
+
+{
+  id: 153,
+  source: "Global Current Affairs",
+  question: "Who served as the Chief Adviser of Bangladesh's interim government in 2025?",
+  options: [
+    "Sheikh Hasina",
+    "Muhammad Yunus",
+    "Khaleda Zia",
+    "Abdul Hamid",
+  ],
+  correct: 1,
+  explanation:
+    "Muhammad Yunus served as Chief Adviser of Bangladesh's interim government.",
+},
+
+{
+  id: 154,
+  source: "Global Current Affairs",
+  question: "Who was the Chairman of the Senate of Pakistan in 2025?",
+  options: [
+    "Sadiq Sanjrani",
+    "Ayaz Sadiq",
+    "Yousaf Raza Gilani",
+    "Ishaq Dar",
+  ],
+  correct: 2,
+  explanation:
+    "Syed Yousaf Raza Gilani was Chairman of the Senate in 2025.",
+},
+
+{
+  id: 155,
+  source: "Global Current Affairs",
+  question: "Who was the President of France in 2025?",
+  options: [
+    "Emmanuel Macron",
+    "François Hollande",
+    "Nicolas Sarkozy",
+    "Marine Le Pen",
+  ],
+  correct: 0,
+  explanation:
+    "Emmanuel Macron was President of France in 2025.",
+},
+
+{
+  id: 156,
+  source: "Global Current Affairs",
+  question: "Who was the Chief Minister of Balochistan in 2025?",
+  options: [
+    "Jam Kamal Khan",
+    "Sarfraz Ahmed Bugti",
+    "Abdul Quddus Bizenjo",
+    "Mir Abdul Qudoos",
+  ],
+  correct: 1,
+  explanation:
+    "Sarfraz Ahmed Bugti served as Chief Minister of Balochistan in 2025.",
+},
+
+{
+  id: 157,
+  source: "Global Current Affairs",
+  question: "Who was the Chief Minister of Sindh in 2025?",
+  options: [
+    "Murad Ali Shah",
+    "Qaim Ali Shah",
+    "Nasir Hussain Shah",
+    "Kamran Tessori",
+  ],
+  correct: 0,
+  explanation:
+    "Syed Murad Ali Shah was Chief Minister of Sindh in 2025.",
+},
+
+{
+  id: 158,
+  source: "Global Current Affairs",
+  question: "Who was the President of Iran in 2025?",
+  options: [
+    "Hassan Rouhani",
+    "Ebrahim Raisi",
+    "Masoud Pezeshkian",
+    "Ali Khamenei",
+  ],
+  correct: 2,
+  explanation:
+    "Masoud Pezeshkian was President of Iran in 2025.",
+},
+
+{
+  id: 159,
+  source: "Global Current Affairs",
+  question: "Which city hosted Expo 2025?",
+  options: [
+    "Tokyo",
+    "Kyoto",
+    "Osaka",
+    "Nagoya",
+  ],
+  correct: 2,
+  explanation:
+    "Expo 2025 was held in Osaka, Japan.",
+},
+
+{
+  id: 160,
+  source: "Global Current Affairs",
+  question: "Who was the Chief Minister of Punjab in 2025?",
+  options: [
+    "Usman Buzdar",
+    "Maryam Nawaz Sharif",
+    "Hamza Shehbaz",
+    "Parvez Elahi",
+  ],
+  correct: 1,
+  explanation:
+    "Maryam Nawaz Sharif served as Chief Minister of Punjab in 2025.",
+},
+
+{
+  id: 161,
+  source: "Global Current Affairs",
+  question: "Who was the Defence Minister of Pakistan in 2025?",
+  options: [
+    "Khawaja Muhammad Asif",
+    "Ishaq Dar",
+    "Azam Nazeer Tarar",
+    "Ahsan Iqbal",
+  ],
+  correct: 0,
+  explanation:
+    "Khawaja Muhammad Asif served as Pakistan's Defence Minister in 2025.",
+},
+
+{
+  id: 162,
+  source: "Global Current Affairs",
+  question: "Who was the Chief of Army Staff of Pakistan in 2025?",
+  options: [
+    "General Qamar Javed Bajwa",
+    "General Raheel Sharif",
+    "General Asim Munir",
+    "General Sahir Shamshad Mirza",
+  ],
+  correct: 2,
+  explanation:
+    "General Syed Asim Munir served as Chief of Army Staff in 2025.",
+},
+
+{
+  id: 163,
+  source: "Global Current Affairs",
+  question: "Who was the President of the United States in 2025?",
+  options: [
+    "Joe Biden",
+    "Donald Trump",
+    "Barack Obama",
+    "Kamala Harris",
+  ],
+  correct: 1,
+  explanation:
+    "Donald Trump became President of the United States in January 2025.",
+},
+
+{
+  id: 164,
+  source: "Global Current Affairs",
+  question: "Who was the Prime Minister of the United Kingdom in 2025?",
+  options: [
+    "Rishi Sunak",
+    "Boris Johnson",
+    "David Cameron",
+    "Keir Starmer",
+  ],
+  correct: 3,
+  explanation:
+    "Keir Starmer served as Prime Minister of the United Kingdom in 2025.",
+},
+
+{
+  id: 165,
+  source: "Global Current Affairs",
+  question: "Who was the President of Russia in 2025?",
+  options: [
+    "Vladimir Putin",
+    "Dmitry Medvedev",
+    "Mikhail Gorbachev",
+    "Boris Yeltsin",
+  ],
+  correct: 0,
+  explanation:
+    "Vladimir Putin was President of Russia in 2025.",
+},
+
+{
+  id: 166,
+  source: "Global Current Affairs",
+  question: "Who was the Prime Minister of India in 2025?",
+  options: [
+    "Rahul Gandhi",
+    "Amit Shah",
+    "Narendra Modi",
+    "Manmohan Singh",
+  ],
+  correct: 2,
+  explanation:
+    "Narendra Modi was Prime Minister of India in 2025.",
+},
+
+{
+  id: 167,
+  source: "Global Current Affairs",
+  question: "Who became Prime Minister of Canada in 2025?",
+  options: [
+    "Justin Trudeau",
+    "Pierre Poilievre",
+    "Mark Carney",
+    "Jagmeet Singh",
+  ],
+  correct: 2,
+  explanation:
+    "Mark Carney became Prime Minister of Canada in March 2025.",
+},
+
+{
+  id: 168,
+  source: "Global Current Affairs",
+  question: "Who was the President of Türkiye in 2025?",
+  options: [
+    "Abdullah Gül",
+    "Recep Tayyip Erdoğan",
+    "Kemal Kılıçdaroğlu",
+    "Ahmet Davutoğlu",
+  ],
+  correct: 1,
+  explanation:
+    "Recep Tayyip Erdoğan was President of Türkiye in 2025.",
+},
+
+{
+  id: 169,
+  source: "Global Current Affairs",
+  question: "Who was the Secretary General of NATO in 2025?",
+  options: [
+    "Jens Stoltenberg",
+    "Mark Rutte",
+    "António Guterres",
+    "Josep Borrell",
+  ],
+  correct: 1,
+  explanation:
+    "Mark Rutte became NATO Secretary General in October 2024 and served in 2025.",
+},
+
+{
+  id: 170,
+  source: "Global Current Affairs",
+  question: "Who was the Managing Director of the IMF in 2025?",
+  options: [
+    "Christine Lagarde",
+    "Ajay Banga",
+    "Kristalina Georgieva",
+    "Ngozi Okonjo-Iweala",
+  ],
+  correct: 2,
+  explanation:
+    "Kristalina Georgieva was Managing Director of the IMF in 2025.",
+},
+
+{
+  id: 171,
+  source: "Global Current Affairs",
+  question: "Who was the President of the World Bank in 2025?",
+  options: [
+    "Ajay Banga",
+    "David Malpass",
+    "Jim Yong Kim",
+    "Kristalina Georgieva",
+  ],
+  correct: 0,
+  explanation:
+    "Ajay Banga served as President of the World Bank in 2025.",
+},
+
+{
+  id: 172,
+  source: "Global Current Affairs",
+  question: "Who was the Director-General of the World Health Organization in 2025?",
+  options: [
+    "Tedros Adhanom Ghebreyesus",
+    "António Guterres",
+    "Ajay Banga",
+    "Mark Rutte",
+  ],
+  correct: 0,
+  explanation:
+    "Dr. Tedros Adhanom Ghebreyesus was WHO Director-General in 2025.",
+},
+
+{
+  id: 173,
+  source: "Global Current Affairs",
+  question: "Who was the Secretary General of the Organization of Islamic Cooperation in 2025?",
+  options: [
+    "Hissein Brahim Taha",
+    "Nayef Falah Al-Hajraf",
+    "Yousef Al-Othaimeen",
+    "Ekmeleddin İhsanoğlu",
+  ],
+  correct: 0,
+  explanation:
+    "Hissein Brahim Taha served as Secretary General of the OIC.",
+},
+
+{
+  id: 174,
+  source: "Global Current Affairs",
+  question: "Who was the President of China in 2025?",
+  options: [
+    "Li Qiang",
+    "Xi Jinping",
+    "Hu Jintao",
+    "Wang Yi",
+  ],
+  correct: 1,
+  explanation:
+    "Xi Jinping was President of China in 2025.",
+},
+
+{
+  id: 175,
+  source: "Global Current Affairs",
+  question: "Who became Chancellor of Germany in 2025?",
+  options: [
+    "Olaf Scholz",
+    "Angela Merkel",
+    "Friedrich Merz",
+    "Frank-Walter Steinmeier",
+  ],
+  correct: 2,
+  explanation:
+    "Friedrich Merz became Chancellor of Germany in May 2025.",
+},
+
+{
+  id: 176,
+  source: "Global Current Affairs",
+  question: "Which country won the 2023 ICC Cricket World Cup?",
+  options: [
+    "India",
+    "Australia",
+    "New Zealand",
+    "South Africa",
+  ],
+  correct: 1,
+  explanation:
+    "Australia defeated India in the final to win the 2023 Cricket World Cup.",
+},
+
+{
+  id: 177,
+  source: "Global Current Affairs",
+  question: "Which country won the ICC Men's T20 World Cup 2024?",
+  options: [
+    "South Africa",
+    "Australia",
+    "India",
+    "England",
+  ],
+  correct: 2,
+  explanation:
+    "India won the 2024 ICC Men's T20 World Cup.",
+},
+
+{
+  id: 178,
+  source: "Global Current Affairs",
+  question: "Which city hosted the 2024 Summer Olympics?",
+  options: [
+    "Los Angeles",
+    "Paris",
+    "Tokyo",
+    "London",
+  ],
+  correct: 1,
+  explanation:
+    "The 2024 Summer Olympics were held in Paris, France.",
+},
+
+{
+  id: 179,
+  source: "Global Current Affairs",
+  question: "Who won the men's javelin throw gold medal for Pakistan at the 2024 Olympics?",
+  options: [
+    "Arshad Nadeem",
+    "Neeraj Chopra",
+    "Babar Azam",
+    "Abdul Rehman",
+  ],
+  correct: 0,
+  explanation:
+    "Arshad Nadeem won Pakistan's Olympic gold medal in men's javelin throw at Paris 2024.",
+},
+
+{
+  id: 180,
+  source: "Global Current Affairs",
+  question: "What happened to the Kakhovka Dam in Ukraine in June 2023?",
+  options: [
+    "It was rebuilt",
+    "It was expanded",
+    "It was destroyed/collapsed",
+    "It was sold",
+  ],
+  correct: 2,
+  explanation:
+    "The Kakhovka Dam was destroyed in June 2023, causing major flooding and other humanitarian and environmental effects.",
+},
+
+{
+  id: 181,
+  source: "Global Current Affairs",
+  question: "Which country became a major European supplier of natural gas after Russia's gas supplies declined?",
+  options: [
+    "Norway",
+    "Brazil",
+    "India",
+    "Japan",
+  ],
+  correct: 0,
+  explanation:
+    "Norway became a major supplier of natural gas to Europe after Russian pipeline gas supplies declined.",
+},
+
+{
+  id: 182,
+  source: "Global Current Affairs",
+  question: "When did Finland become a member of NATO?",
+  options: [
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+  ],
+  correct: 2,
+  explanation:
+    "Finland joined NATO on 4 April 2023.",
+},
+
+{
+  id: 183,
+  source: "Global Current Affairs",
+  question: "When did Sweden become a member of NATO?",
+  options: [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+  ],
+  correct: 2,
+  explanation:
+    "Sweden joined NATO on 7 March 2024.",
+},
+
+{
+  id: 184,
+  source: "Global Current Affairs",
+  question: "What was the Wagner Group rebellion in Russia in 2023?",
+  options: [
+    "A sports event",
+    "A short-lived armed mutiny",
+    "A presidential election",
+    "A trade agreement",
+  ],
+  correct: 1,
+  explanation:
+    "In June 2023, the Wagner Group carried out a short-lived armed mutiny against Russia's military leadership.",
+},
+
+{
+  id: 185,
+  source: "Global Current Affairs",
+  question: "When did Russia launch its full-scale invasion of Ukraine?",
+  options: [
+    "24 February 2022",
+    "24 February 2021",
+    "1 January 2022",
+    "14 March 2022",
+  ],
+  correct: 0,
+  explanation:
+    "Russia launched its full-scale invasion of Ukraine on 24 February 2022.",
+},
+
+{
+  id: 186,
+  source: "Global Current Affairs",
+  question: "When did Russia annex Crimea?",
+  options: [
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+  ],
+  correct: 2,
+  explanation:
+    "Russia annexed Crimea in March 2014 after the disputed referendum and subsequent military takeover.",
+},
+
+{
+  id: 187,
+  source: "Global Current Affairs",
+  question: "Which country mediated the restoration of diplomatic relations between Saudi Arabia and Iran in 2023?",
+  options: [
+    "United States",
+    "China",
+    "Russia",
+    "Türkiye",
+  ],
+  correct: 1,
+  explanation:
+    "China mediated the 2023 agreement between Saudi Arabia and Iran to restore diplomatic relations.",
+},
+
+{
+  id: 188,
+  source: "Global Current Affairs",
+  question: "Which country had the world's largest installed solar power capacity in recent years?",
+  options: [
+    "Germany",
+    "United States",
+    "China",
+    "Japan",
+  ],
+  correct: 2,
+  explanation:
+    "China has the world's largest installed solar power capacity.",
+},
+
+{
+  id: 189,
+  source: "Global Current Affairs",
+  question: "Who won the 2023 Ballon d'Or?",
+  options: [
+    "Cristiano Ronaldo",
+    "Erling Haaland",
+    "Kylian Mbappé",
+    "Lionel Messi",
+  ],
+  correct: 3,
+  explanation:
+    "Lionel Messi won the 2023 Ballon d'Or.",
+},
+
+{
+  id: 190,
+  source: "Global Current Affairs",
+  question: "Which country won the FIFA Women's World Cup 2023?",
+  options: [
+    "England",
+    "Spain",
+    "Australia",
+    "United States",
+  ],
+  correct: 1,
+  explanation:
+    "Spain won the FIFA Women's World Cup 2023.",
+},
+
+{
+  id: 191,
+  source: "Global Current Affairs",
+  question: "Which countries hosted the FIFA Women's World Cup 2023?",
+  options: [
+    "France and Germany",
+    "Brazil and Argentina",
+    "Australia and New Zealand",
+    "Spain and Portugal",
+  ],
+  correct: 2,
+  explanation:
+    "Australia and New Zealand jointly hosted the 2023 FIFA Women's World Cup.",
+},
+
+{
+  id: 192,
+  source: "Global Current Affairs",
+  question: "Which team won the Pakistan Super League 2025?",
+  options: [
+    "Quetta Gladiators",
+    "Lahore Qalandars",
+    "Islamabad United",
+    "Multan Sultans",
+  ],
+  correct: 1,
+  explanation:
+    "Lahore Qalandars won PSL X in 2025.",
+},
+
+{
+  id: 193,
+  source: "Global Current Affairs",
+  question: "Who was the Chairman of the Pakistan Cricket Board in 2025?",
+  options: [
+    "Ramiz Raja",
+    "Najam Sethi",
+    "Mohsin Naqvi",
+    "Zaka Ashraf",
+  ],
+  correct: 2,
+  explanation:
+    "Mohsin Naqvi was Chairman of the Pakistan Cricket Board in 2025.",
+},
+
+{
+  id: 194,
+  source: "Global Current Affairs",
+  question: "Which country hosted the SCO Summit in 2025?",
+  options: [
+    "Pakistan",
+    "India",
+    "China",
+    "Russia",
+  ],
+  correct: 2,
+  explanation:
+    "China hosted the Shanghai Cooperation Organisation Summit in 2025.",
+},
+
+{
+  id: 195,
+  source: "Global Current Affairs",
+  question: "Who served as Director General ISPR in 2025?",
+  options: [
+    "Lt Gen Ahmed Sharif Chaudhry",
+    "Lt Gen Asim Malik",
+    "Lt Gen Nadeem Anjum",
+    "Lt Gen Faiz Hameed",
+  ],
+  correct: 0,
+  explanation:
+    "Lt Gen Ahmed Sharif Chaudhry served as Director General ISPR in 2025.",
+},
+
+{
+  id: 196,
+  source: "Global Current Affairs",
+  question: "Who was appointed Director General ISI in September 2025?",
+  options: [
+    "Lt Gen Ahmed Sharif Chaudhry",
+    "Lt Gen Muhammad Asim Malik",
+    "Lt Gen Nadeem Anjum",
+    "Lt Gen Faiz Hameed",
+  ],
+  correct: 1,
+  explanation:
+    "Lt Gen Muhammad Asim Malik was appointed Director General ISI in September 2025.",
+},
+
+{
+  id: 197,
+  source: "Global Current Affairs",
+  question: "What was the total outlay of Pakistan's Federal Budget 2025–26?",
+  options: [
+    "Rs 12.5 trillion",
+    "Rs 15.2 trillion",
+    "Rs 17.573 trillion",
+    "Rs 20.8 trillion",
+  ],
+  correct: 2,
+  explanation:
+    "Pakistan's Federal Budget 2025–26 had a total outlay of about Rs 17.573 trillion.",
+},
+
+{
+  id: 198,
+  source: "Global Current Affairs",
+  question: "Which country is Pakistan's largest overall trading partner?",
+  options: [
+    "United Kingdom",
+    "China",
+    "Saudi Arabia",
+    "Germany",
+  ],
+  correct: 1,
+  explanation:
+    "China is Pakistan's largest overall trading partner.",
+},
+
+{
+  id: 199,
+  source: "Global Current Affairs",
+  question: "What is a major focus of CPEC Phase-II?",
+  options: [
+    "Only tourism",
+    "Industrialization and economic cooperation",
+    "Only sports development",
+    "Only defence production",
+  ],
+  correct: 1,
+  explanation:
+    "CPEC Phase-II focuses strongly on industrialization, economic cooperation, exports, agriculture and people-centred development.",
+},
+
+{
+  id: 200,
+  source: "Global Current Affairs",
+  question: "Pakistan celebrated its 78th Independence Day in which year?",
+  options: [
+    "2023",
+    "2024",
+    "2025",
+    "2026",
+  ],
+  correct: 2,
+  explanation:
+    "Pakistan celebrated its 78th Independence Day on 14 August 2025.",
+},
+
+{
+  id: 201,
+  source: "Global Current Affairs",
+  question: "Who was the Finance Minister of Pakistan in 2025?",
+  options: [
+    "Ishaq Dar",
+    "Muhammad Aurangzeb",
+    "Khawaja Asif",
+    "Ahsan Iqbal",
+  ],
+  correct: 1,
+  explanation:
+    "Muhammad Aurangzeb served as Federal Minister for Finance and Revenue in 2025.",
+},
+
+{
+  id: 202,
+  source: "Global Current Affairs",
+  question: "Who was the Governor of Punjab in 2025?",
+  options: [
+    "Sardar Saleem Haider Khan",
+    "Baligh Ur Rehman",
+    "Chaudhry Sarwar",
+    "Omar Sarfraz Cheema",
+  ],
+  correct: 0,
+  explanation:
+    "Sardar Saleem Haider Khan was Governor of Punjab in 2025.",
+},
+
+{
+  id: 203,
+  source: "Global Current Affairs",
+  question: "Who was the Governor of Khyber Pakhtunkhwa in 2025?",
+  options: [
+    "Shah Farman",
+    "Haji Ghulam Ali",
+    "Faisal Karim Kundi",
+    "Mehmood Khan",
+  ],
+  correct: 2,
+  explanation:
+    "Faisal Karim Kundi served as Governor of Khyber Pakhtunkhwa in 2025.",
+},
+
+{
+  id: 204,
+  source: "Global Current Affairs",
+  question: "Who was the Governor of Balochistan in 2025?",
+  options: [
+    "Jaffar Khan Mandokhail",
+    "Sarfraz Bugti",
+    "Abdul Quddus Bizenjo",
+    "Jam Kamal Khan",
+  ],
+  correct: 0,
+  explanation:
+    "Jaffar Khan Mandokhail served as Governor of Balochistan in 2025.",
+},
+
+{
+  id: 205,
+  source: "Global Current Affairs",
+  question: "Who was the Speaker of the National Assembly of Pakistan in 2025?",
+  options: [
+    "Raja Pervaiz Ashraf",
+    "Sardar Ayaz Sadiq",
+    "Yousaf Raza Gilani",
+    "Asad Qaiser",
+  ],
+  correct: 1,
+  explanation:
+    "Sardar Ayaz Sadiq was Speaker of the National Assembly in 2025.",
+},
+
+{
+  id: 206,
+  source: "Global Current Affairs",
+  question: "Who was the Chief Justice of Pakistan in 2025?",
+  options: [
+    "Qazi Faez Isa",
+    "Umar Ata Bandial",
+    "Yahya Afridi",
+    "Saqib Nisar",
+  ],
+  correct: 2,
+  explanation:
+    "Justice Yahya Afridi served as Chief Justice of Pakistan in 2025.",
+},
+
+{
+  id: 207,
+  source: "Global Current Affairs",
+  question: "Who was the President of Pakistan in 2025?",
+  options: [
+    "Arif Alvi",
+    "Asif Ali Zardari",
+    "Mamnoon Hussain",
+    "Shehbaz Sharif",
+  ],
+  correct: 1,
+  explanation:
+    "Asif Ali Zardari was President of Pakistan in 2025.",
+},
+
+{
+  id: 208,
+  source: "Global Current Affairs",
+  question: "Who was the Prime Minister of Pakistan in 2025?",
+  options: [
+    "Imran Khan",
+    "Nawaz Sharif",
+    "Shehbaz Sharif",
+    "Anwaar-ul-Haq Kakar",
+  ],
+  correct: 2,
+  explanation:
+    "Muhammad Shehbaz Sharif was Prime Minister of Pakistan in 2025.",
+},
+
+{
+  id: 209,
+  source: "Global Current Affairs",
+  question: "Who was the Chairman of the Pakistan Peoples Party in 2025?",
+  options: [
+    "Asif Ali Zardari",
+    "Bilawal Bhutto Zardari",
+    "Yousaf Raza Gilani",
+    "Raja Pervez Ashraf",
+  ],
+  correct: 1,
+  explanation:
+    "Bilawal Bhutto Zardari was Chairman of the Pakistan Peoples Party in 2025.",
+},
+
+{
+  id: 210,
+  source: "Global Current Affairs",
+  question: "Which country purchased Gwadar from Oman in 1958?",
+  options: [
+    "Iran",
+    "Pakistan",
+    "Saudi Arabia",
+    "United Arab Emirates",
+  ],
+  correct: 1,
+  explanation:
+    "Pakistan purchased Gwadar from Oman in 1958.",
+},
+
+{
+  id: 211,
+  source: "Global Current Affairs",
+  question: "Who owns X, formerly known as Twitter?",
+  options: [
+    "Mark Zuckerberg",
+    "Jeff Bezos",
+    "Elon Musk",
+    "Bill Gates",
+  ],
+  correct: 2,
+  explanation:
+    "Elon Musk owns X, formerly known as Twitter.",
+},
+
+{
+  id: 212,
+  source: "Global Current Affairs",
+  question: "The Black Summer bushfires in Australia mainly occurred during which period?",
+  options: [
+    "2015–16",
+    "2017–18",
+    "2019–20",
+    "2021–22",
+  ],
+  correct: 2,
+  explanation:
+    "Australia's severe Black Summer bushfire season occurred mainly during 2019–20.",
+},
+{
+  id: 213,
+  source: "Global Current Affairs",
+  question: "Which country was the world's largest producer of palladium in recent years?",
+  options: [
+    "Canada",
+    "Russia",
+    "Australia",
+    "Brazil",
+  ],
+  correct: 1,
+  explanation:
+    "Russia has been one of the world's leading producers and exporters of palladium.",
+},
+
+{
+  id: 214,
+  source: "Global Current Affairs",
+  question: "Which country has been a major exporter of palladium used in automobiles and electronics?",
+  options: [
+    "Russia",
+    "Pakistan",
+    "Egypt",
+    "Argentina",
+  ],
+  correct: 0,
+  explanation:
+    "Russia is a major global source and exporter of palladium, an important metal for catalytic converters and other technologies.",
+},
+
+{
+  id: 215,
+  source: "Global Current Affairs",
+  question: "What was one major cause of the global inflation surge during 2022–23?",
+  options: [
+    "A worldwide decrease in energy prices",
+    "Global supply disruptions and higher energy and food prices",
+    "A complete end to international trade",
+    "A worldwide fall in transportation costs",
+  ],
+  correct: 1,
+  explanation:
+    "Global inflation was driven by supply-chain disruptions, higher energy and food prices, strong demand and the effects of the Russia-Ukraine war.",
+},
+
+{
+  id: 216,
+  source: "Global Current Affairs",
+  question: "Which organization is headquartered in Geneva and deals with international trade rules?",
+  options: [
+    "IMF",
+    "WHO",
+    "WTO",
+    "UNESCO",
+  ],
+  correct: 2,
+  explanation:
+    "The World Trade Organization (WTO) is headquartered in Geneva, Switzerland.",
+},
+
+{
+  id: 217,
+  source: "Global Current Affairs",
+  question: "Which city is the headquarters of the International Monetary Fund?",
+  options: [
+    "Geneva",
+    "New York",
+    "Washington, D.C.",
+    "Paris",
+  ],
+  correct: 2,
+  explanation:
+    "The headquarters of the IMF is in Washington, D.C., United States.",
+},
+
+{
+  id: 218,
+  source: "Global Current Affairs",
+  question: "Which city is the headquarters of the World Health Organization?",
+  options: [
+    "Geneva",
+    "Rome",
+    "Vienna",
+    "London",
+  ],
+  correct: 0,
+  explanation:
+    "The headquarters of the World Health Organization is in Geneva, Switzerland.",
+},
+
+{
+  id: 219,
+  source: "Global Current Affairs",
+  question: "Which organization sets international standards and regulations for civil aviation?",
+  options: [
+    "IMO",
+    "ICAO",
+    "IATA",
+    "WTO",
+  ],
+  correct: 1,
+  explanation:
+    "The International Civil Aviation Organization (ICAO) develops international standards and recommended practices for civil aviation.",
+},
+
+{
+  id: 220,
+  source: "Global Current Affairs",
+  question: "Where is the headquarters of the International Civil Aviation Organization (ICAO)?",
+  options: [
+    "Montreal",
+    "Geneva",
+    "New York",
+    "Brussels",
+  ],
+  correct: 0,
+  explanation:
+    "ICAO is headquartered in Montreal, Canada.",
+},
+
+{
+  id: 221,
+  source: "Global Current Affairs",
+  question: "Which organization is responsible for international maritime safety and shipping regulations?",
+  options: [
+    "ICAO",
+    "IMO",
+    "WHO",
+    "WMO",
+  ],
+  correct: 1,
+  explanation:
+    "The International Maritime Organization (IMO) works on international maritime safety, security and environmental regulations.",
+},
+
+{
+  id: 222,
+  source: "Global Current Affairs",
+  question: "Which organization promotes international cooperation on weather, climate and water-related matters?",
+  options: [
+    "WMO",
+    "WTO",
+    "IMF",
+    "ICAO",
+  ],
+  correct: 0,
+  explanation:
+    "The World Meteorological Organization (WMO) promotes international cooperation in weather, climate and water sciences.",
+},
+
+{
+  id: 223,
+  source: "Global Current Affairs",
+  question: "Which organization is responsible for international nuclear safeguards and nuclear safety cooperation?",
+  options: [
+    "IAEA",
+    "NATO",
+    "WHO",
+    "WTO",
+  ],
+  correct: 0,
+  explanation:
+    "The International Atomic Energy Agency (IAEA) works on nuclear safeguards, safety and peaceful uses of nuclear energy.",
+},
+
+{
+  id: 224,
+  source: "Global Current Affairs",
+  question: "Which country hosted the G20 Leaders' Summit in 2023?",
+  options: [
+    "Brazil",
+    "India",
+    "Indonesia",
+    "South Africa",
+  ],
+  correct: 1,
+  explanation:
+    "India hosted the G20 Leaders' Summit in New Delhi in 2023.",
+},
+
+{
+  id: 225,
+  source: "Global Current Affairs",
+  question: "In which city was the G20 Leaders' Summit 2023 held?",
+  options: [
+    "Mumbai",
+    "Bengaluru",
+    "New Delhi",
+    "Chennai",
+  ],
+  correct: 2,
+  explanation:
+    "The 2023 G20 Leaders' Summit was held in New Delhi, India.",
+},
+
+{
+  id: 226,
+  source: "Global Current Affairs",
+  question: "Which country hosted the G20 Leaders' Summit in 2025?",
+  options: [
+    "South Africa",
+    "Brazil",
+    "India",
+    "Indonesia",
+  ],
+  correct: 0,
+  explanation:
+    "South Africa held the G20 presidency and hosted the Leaders' Summit in 2025.",
+},
+
+{
+  id: 227,
+  source: "Global Current Affairs",
+  question: "Which country became the first African country to hold the G20 presidency?",
+  options: [
+    "Egypt",
+    "Nigeria",
+    "South Africa",
+    "Kenya",
+  ],
+  correct: 2,
+  explanation:
+    "South Africa became the first African country to hold the G20 presidency in 2025.",
+},
+
+{
+  id: 228,
+  source: "Global Current Affairs",
+  question: "Which country hosted the 2025 World Expo?",
+  options: [
+    "China",
+    "Japan",
+    "South Korea",
+    "Singapore",
+  ],
+  correct: 1,
+  explanation:
+    "Expo 2025 was held in Osaka, Japan.",
+},
+
+{
+  id: 229,
+  source: "Global Current Affairs",
+  question: "Which country won the 2024 ICC Men's T20 World Cup?",
+  options: [
+    "India",
+    "South Africa",
+    "Australia",
+    "England",
+  ],
+  correct: 0,
+  explanation:
+    "India won the ICC Men's T20 World Cup 2024.",
+},
+
+{
+  id: 230,
+  source: "Global Current Affairs",
+  question: "Which country hosted the 2024 Summer Olympics?",
+  options: [
+    "Japan",
+    "France",
+    "United Kingdom",
+    "United States",
+  ],
+  correct: 1,
+  explanation:
+    "France hosted the 2024 Summer Olympics in Paris.",
+},
+
+{
+  id: 231,
+  source: "Global Current Affairs",
+  question: "Which country won the men's football World Cup in 2022?",
+  options: [
+    "France",
+    "Brazil",
+    "Argentina",
+    "Germany",
+  ],
+  correct: 2,
+  explanation:
+    "Argentina won the 2022 FIFA World Cup in Qatar.",
+},
+
+{
+  id: 232,
+  source: "Global Current Affairs",
+  question: "Which country won the FIFA Women's World Cup in 2023?",
+  options: [
+    "Spain",
+    "England",
+    "United States",
+    "Australia",
+  ],
+  correct: 0,
+  explanation:
+    "Spain won the FIFA Women's World Cup 2023.",
+},
+
+{
+  id: 233,
+  source: "Global Current Affairs",
+  question: "Which countries jointly hosted the FIFA Women's World Cup 2023?",
+  options: [
+    "France and Germany",
+    "Australia and New Zealand",
+    "Spain and Portugal",
+    "Brazil and Argentina",
+  ],
+  correct: 1,
+  explanation:
+    "Australia and New Zealand jointly hosted the 2023 FIFA Women's World Cup.",
+},
+
+{
+  id: 234,
+  source: "Global Current Affairs",
+  question: "Who won the 2023 Ballon d'Or?",
+  options: [
+    "Kylian Mbappé",
+    "Erling Haaland",
+    "Lionel Messi",
+    "Cristiano Ronaldo",
+  ],
+  correct: 2,
+  explanation:
+    "Lionel Messi won the 2023 Ballon d'Or.",
+},
+
+{
+  id: 235,
+  source: "Global Current Affairs",
+  question: "Which team won the Pakistan Super League 2025?",
+  options: [
+    "Quetta Gladiators",
+    "Lahore Qalandars",
+    "Islamabad United",
+    "Peshawar Zalmi",
+  ],
+  correct: 1,
+  explanation:
+    "Lahore Qalandars won PSL 2025.",
+},
+
+{
+  id: 236,
+  source: "Global Current Affairs",
+  question: "Which country hosted the ICC Champions Trophy 2025, with some matches played in the UAE?",
+  options: [
+    "India",
+    "Pakistan",
+    "Sri Lanka",
+    "Bangladesh",
+  ],
+  correct: 1,
+  explanation:
+    "Pakistan was the main host of the 2025 Champions Trophy, while five matches were played in Dubai, UAE.",
+},
+
+{
+  id: 237,
+  source: "Global Current Affairs",
+  question: "Which country hosted the 2025 SCO Summit?",
+  options: [
+    "Pakistan",
+    "China",
+    "Russia",
+    "India",
+  ],
+  correct: 1,
+  explanation:
+    "China hosted the Shanghai Cooperation Organisation Summit in 2025.",
+},
+
+{
+  id: 238,
+  source: "Global Current Affairs",
+  question: "Which country conducted the military exercise 'Warrior-VIII' with Pakistan in 2024?",
+  options: [
+    "China",
+    "Türkiye",
+    "Saudi Arabia",
+    "Azerbaijan",
+  ],
+  correct: 0,
+  explanation:
+    "Pakistan and China conducted the Warrior-VIII air exercise in 2024.",
+},
+
+{
+  id: 239,
+  source: "Global Current Affairs",
+  question: "Which institution publishes Pakistan's annual federal budget?",
+  options: [
+    "Ministry of Finance",
+    "State Bank of Pakistan",
+    "Election Commission",
+    "Ministry of Defence",
+  ],
+  correct: 0,
+  explanation:
+    "Pakistan's federal budget is prepared and presented by the Ministry of Finance.",
+},
+
+{
+  id: 240,
+  source: "Global Current Affairs",
+  question: "What was Pakistan's approximate GDP growth rate in fiscal year 2024–25?",
+  options: [
+    "1.2%",
+    "2.7%",
+    "5.8%",
+    "7.1%",
+  ],
+  correct: 1,
+  explanation:
+    "Pakistan's GDP growth for fiscal year 2024–25 was approximately 2.7%.",
+},
+
+{
+  id: 241,
+  source: "Global Current Affairs",
+  question: "Which country is Pakistan's largest trading partner?",
+  options: [
+    "China",
+    "United States",
+    "Saudi Arabia",
+    "United Kingdom",
+  ],
+  correct: 0,
+  explanation:
+    "China is Pakistan's largest overall trading partner.",
+},
+
+{
+  id: 242,
+  source: "Global Current Affairs",
+  question: "What is a major objective of CPEC Phase-II?",
+  options: [
+    "Ending all foreign trade",
+    "Industrialization, investment and economic cooperation",
+    "Only military expansion",
+    "Only tourism",
+  ],
+  correct: 1,
+  explanation:
+    "CPEC Phase-II emphasizes industrialization, investment, exports, agriculture, technology and broader economic cooperation.",
+},
+
+{
+  id: 243,
+  source: "Global Current Affairs",
+  question: "Pakistan's 78th Independence Day was celebrated on which date?",
+  options: [
+    "23 March 2025",
+    "14 August 2025",
+    "6 September 2025",
+    "25 December 2025",
+  ],
+  correct: 1,
+  explanation:
+    "Pakistan celebrated its 78th Independence Day on 14 August 2025.",
+},
+
+{
+  id: 244,
+  source: "Global Current Affairs",
+  question: "Who was the Finance Minister of Pakistan during 2025?",
+  options: [
+    "Ishaq Dar",
+    "Muhammad Aurangzeb",
+    "Khawaja Asif",
+    "Ahsan Iqbal",
+  ],
+  correct: 1,
+  explanation:
+    "Muhammad Aurangzeb served as Pakistan's Federal Minister for Finance and Revenue in 2025.",
+},
+
+{
+  id: 245,
+  source: "Global Current Affairs",
+  question: "Who was the Governor of Punjab in 2025?",
+  options: [
+    "Baligh Ur Rehman",
+    "Chaudhry Sarwar",
+    "Sardar Saleem Haider Khan",
+    "Omar Sarfraz Cheema",
+  ],
+  correct: 2,
+  explanation:
+    "Sardar Saleem Haider Khan served as Governor of Punjab in 2025.",
+},
+
+{
+  id: 246,
+  source: "Global Current Affairs",
+  question: "Who was the Governor of Khyber Pakhtunkhwa in 2025?",
+  options: [
+    "Faisal Karim Kundi",
+    "Haji Ghulam Ali",
+    "Shah Farman",
+    "Mahmood Khan",
+  ],
+  correct: 0,
+  explanation:
+    "Faisal Karim Kundi served as Governor of Khyber Pakhtunkhwa in 2025.",
+},
+
+{
+  id: 247,
+  source: "Global Current Affairs",
+  question: "Who was the Governor of Balochistan in 2025?",
+  options: [
+    "Sarfraz Bugti",
+    "Jaffar Khan Mandokhail",
+    "Jam Kamal Khan",
+    "Abdul Quddus Bizenjo",
+  ],
+  correct: 1,
+  explanation:
+    "Jaffar Khan Mandokhail served as Governor of Balochistan in 2025.",
+},
+
+{
+  id: 248,
+  source: "Global Current Affairs",
+  question: "Who was the Speaker of Pakistan's National Assembly in 2025?",
+  options: [
+    "Asad Qaiser",
+    "Raja Pervaiz Ashraf",
+    "Sardar Ayaz Sadiq",
+    "Yousaf Raza Gilani",
+  ],
+  correct: 2,
+  explanation:
+    "Sardar Ayaz Sadiq was Speaker of the National Assembly in 2025.",
+},
+
+{
+  id: 249,
+  source: "Global Current Affairs",
+  question: "Who served as Chief Justice of Pakistan in 2025?",
+  options: [
+    "Justice Qazi Faez Isa",
+    "Justice Yahya Afridi",
+    "Justice Umar Ata Bandial",
+    "Justice Gulzar Ahmed",
+  ],
+  correct: 1,
+  explanation:
+    "Justice Yahya Afridi served as Chief Justice of Pakistan in 2025.",
+},
+
+{
+  id: 250,
+  source: "Global Current Affairs",
+  question: "Who was the Prime Minister of Pakistan in 2025?",
+  options: [
+    "Anwaar-ul-Haq Kakar",
+    "Imran Khan",
+    "Nawaz Sharif",
+    "Muhammad Shehbaz Sharif",
+  ],
+  correct: 3,
+  explanation:
+    "Muhammad Shehbaz Sharif served as Prime Minister of Pakistan in 2025.",
+},
 ];
 
 /*

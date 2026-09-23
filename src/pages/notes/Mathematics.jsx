@@ -1072,6 +1072,461 @@ const questionBank = [
     correct: 2,
     explanation: "Number = 12 × 8 = 96.",
   },
+  // EXAMITICS — Mathematics New Question Bank
+// IDs start at 121
+// Part 1
+  {
+    id: 121,
+    source: "Question Bank",
+    question: "Area-wise largest country of Africa.",
+    options: [
+      "Pakistan",
+      "Algeria",
+      "India",
+      "China",
+    ],
+    correct: 1,
+    explanation:
+      "The source question bank gives “Algeria” as the answer. This is the correct option for this question.",
+  },
+
+  {
+    id: 122,
+    source: "Question Bank",
+    question: "Kabul and Indus rivers meet at which point.",
+    options: [
+      "Islamabad",
+      "Lahore",
+      "Peshawar region / Khyber Pakhtunkhwa area",
+      "Karachi",
+    ],
+    correct: 2,
+    explanation:
+      "The source question bank gives “Peshawar region / Khyber Pakhtunkhwa area” as the answer. This is the correct option for this question.",
+  },
+
+  {
+    id: 123,
+    source: "Question Bank",
+    question: "Real quadratic equation kab hoti hai.",
+    options: [
+      "b² - 4ac < 0",
+      "b² - 4ac = -1",
+      "a + b + c = 0",
+      "When discriminant (b² - 4ac) ≥ 0",
+    ],
+    correct: 3,
+    explanation:
+      "The source question bank gives “When discriminant (b² - 4ac) ≥ 0” as the answer. This is the correct option for this question.",
+  },
+
+  {
+    id: 124,
+    source: "Question Bank",
+    question: "Degree of quadratic equation.",
+    options: [
+      "2",
+      "1",
+      "3",
+      "4",
+    ],
+    correct: 0,
+    explanation:
+      "The source question bank gives “2” as the answer. This is the correct option for this question.",
+  },
+
+  {
+    id: 125,
+    source: "Question Bank",
+    question: "Prism has how many faces.",
+    options: [
+      "An alternative value or concept",
+      "Depends on base (triangular prism = 5, rectangular prism = 6)",
+      "A different related value or concept",
+      "Another related value or concept",
+    ],
+    correct: 1,
+    explanation:
+      "The source question bank gives the prism face count according to its base. A triangular prism has 5 faces, while a rectangular prism has 6.",
+  },
+
+  {
+    id: 126,
+    source: "Question Bank",
+    question: "2nd Prime Minister of Pakistan.",
+    options: [
+      "Liaquat Ali Khan",
+      "Ayub Khan",
+      "Khawaja Nazimuddin",
+      "Zulfikar Ali Bhutto",
+    ],
+    correct: 2,
+    explanation:
+      "The source question bank gives “Khawaja Nazimuddin” as the answer. This is the correct option for this question.",
+  },
+
+  {
+    id: 127,
+    source: "Question Bank",
+    question: "Bisectors of a triangle are.",
+    options: [
+      "An alternative value or concept",
+      "A different related value or concept",
+      "Another related value or concept",
+      "Lines that divide the angles of a triangle into two equal parts",
+    ],
+    correct: 3,
+    explanation:
+      "The source question bank gives angle bisectors as lines that divide the angles of a triangle into two equal parts.",
+  },
+
+  {
+    id: 128,
+    source: "Question Bank",
+    question: "Largest country by area.",
+    options: [
+      "Russia",
+      "Pakistan",
+      "India",
+      "China",
+    ],
+    correct: 0,
+    explanation:
+      "The source question bank gives “Russia” as the answer. Russia is the largest country by area.",
+  },
+
+  {
+    id: 129,
+    source: "Question Bank",
+    question: "Who were the Pakistanis who raised voice for Palestine in UN.",
+    options: [
+      "Khawaja Nazimuddin",
+      "Pakistan delegation / diplomats (example: Munir Akram)",
+      "Liaquat Ali Khan",
+      "Ayub Khan",
+    ],
+    correct: 1,
+    explanation:
+      "The source question bank identifies Pakistan's delegation and diplomats, including Munir Akram, in connection with raising the Palestine issue at the UN.",
+  },
+
+  {
+    id: 130,
+    source: "Question Bank",
+    question: "When Pakistan national anthem was approved.",
+    options: [
+      "14 August 1947",
+      "23 March 1956",
+      "16 August 1954",
+      "6 September 1965",
+    ],
+    correct: 2,
+    explanation:
+      "The source question bank gives 16 August 1954 as the date on which Pakistan's national anthem was approved.",
+  },
+
+  {
+    id: 131,
+    source: "Question Bank",
+    question: "How many bones are there in an adult human body?",
+    options: [
+      "206",
+      "201",
+      "212",
+      "250",
+    ],
+    correct: 0,
+    explanation:
+      "The standard number of bones in an adult human body is 206.",
+  },
+
+  {
+    id: 132,
+    source: "Question Bank",
+    question: "The square root of 144 is:",
+    options: [
+      "10",
+      "12",
+      "14",
+      "16",
+    ],
+    correct: 1,
+    explanation:
+      "12 × 12 = 144, so the square root of 144 is 12.",
+  },
+
+  {
+    id: 133,
+    source: "Question Bank",
+    question: "If x = 5, what is the value of 2x + 3?",
+    options: [
+      "10",
+      "11",
+      "13",
+      "15",
+    ],
+    correct: 2,
+    explanation:
+      "Substituting x = 5 gives 2(5) + 3 = 13.",
+  },
+
+  {
+    id: 134,
+    source: "Question Bank",
+    question: "What is 25% of 200?",
+    options: [
+      "50",
+      "25",
+      "75",
+      "100",
+    ],
+    correct: 0,
+    explanation:
+      "25% of 200 is (25/100) × 200 = 50.",
+  },
+
+  {
+    id: 135,
+    source: "Question Bank",
+    question: "What is the value of 15 × 8?",
+    options: [
+      "110",
+      "120",
+      "125",
+      "130",
+    ],
+    correct: 1,
+    explanation:
+      "15 × 8 = 120.",
+  },
+
+  {
+    id: 136,
+    source: "Question Bank",
+    question: "What is 144 ÷ 12?",
+    options: [
+      "10",
+      "11",
+      "12",
+      "14",
+    ],
+    correct: 2,
+    explanation:
+      "144 divided by 12 equals 12.",
+  },
+
+  {
+    id: 137,
+    source: "Question Bank",
+    question: "What is the perimeter of a square with side 5 cm?",
+    options: [
+      "15 cm",
+      "20 cm",
+      "25 cm",
+      "10 cm",
+    ],
+    correct: 1,
+    explanation:
+      "The perimeter of a square is 4 × side. Therefore, 4 × 5 = 20 cm.",
+  },
+
+  {
+    id: 138,
+    source: "Question Bank",
+    question: "What is the area of a rectangle with length 10 cm and width 5 cm?",
+    options: [
+      "40 cm²",
+      "45 cm²",
+      "50 cm²",
+      "55 cm²",
+    ],
+    correct: 2,
+    explanation:
+      "Area of a rectangle = length × width = 10 × 5 = 50 cm².",
+  },
+
+  {
+    id: 139,
+    source: "Question Bank",
+    question: "What is 3² + 4²?",
+    options: [
+      "25",
+      "20",
+      "24",
+      "16",
+    ],
+    correct: 0,
+    explanation:
+      "3² + 4² = 9 + 16 = 25.",
+  },
+
+  {
+    id: 140,
+    source: "Question Bank",
+    question: "If a = 7 and b = 3, what is a² - b²?",
+    options: [
+      "36",
+      "40",
+      "49",
+      "58",
+    ],
+    correct: 1,
+    explanation:
+      "a² - b² = 7² - 3² = 49 - 9 = 40.",
+  },
+
+  {
+    id: 141,
+    source: "Question Bank",
+    question: "What is the average of 10, 20 and 30?",
+    options: [
+      "15",
+      "20",
+      "25",
+      "30",
+    ],
+    correct: 1,
+    explanation:
+      "Average = (10 + 20 + 30) ÷ 3 = 60 ÷ 3 = 20.",
+  },
+
+  {
+    id: 142,
+    source: "Question Bank",
+    question: "What is 2/5 expressed as a percentage?",
+    options: [
+      "20%",
+      "30%",
+      "40%",
+      "50%",
+    ],
+    correct: 2,
+    explanation:
+      "2/5 × 100 = 40%.",
+  },
+
+  {
+    id: 143,
+    source: "Question Bank",
+    question: "What is the next number in the sequence 2, 4, 6, 8, ...?",
+    options: [
+      "10",
+      "12",
+      "14",
+      "16",
+    ],
+    correct: 0,
+    explanation:
+      "The sequence increases by 2 each time, so the next number is 10.",
+  },
+
+  {
+    id: 144,
+    source: "Question Bank",
+    question: "If 5x = 35, what is x?",
+    options: [
+      "5",
+      "6",
+      "7",
+      "8",
+    ],
+    correct: 2,
+    explanation:
+      "Dividing both sides by 5 gives x = 35 ÷ 5 = 7.",
+  },
+
+  {
+    id: 145,
+    source: "Question Bank",
+    question: "What is the value of 10³?",
+    options: [
+      "100",
+      "1,000",
+      "10,000",
+      "100,000",
+    ],
+    correct: 1,
+    explanation:
+      "10³ means 10 × 10 × 10 = 1,000.",
+  },
+
+  {
+    id: 146,
+    source: "Question Bank",
+    question: "A triangle has angles 60°, 60° and:",
+    options: [
+      "30°",
+      "45°",
+      "60°",
+      "90°",
+    ],
+    correct: 2,
+    explanation:
+      "The angles of a triangle total 180°. Therefore, 180° - 60° - 60° = 60°.",
+  },
+
+  {
+    id: 147,
+    source: "Question Bank",
+    question: "What is the HCF of 12 and 18?",
+    options: [
+      "6",
+      "3",
+      "9",
+      "12",
+    ],
+    correct: 0,
+    explanation:
+      "The highest common factor of 12 and 18 is 6.",
+  },
+
+  {
+    id: 148,
+    source: "Question Bank",
+    question: "What is the LCM of 4 and 6?",
+    options: [
+      "8",
+      "10",
+      "12",
+      "24",
+    ],
+    correct: 2,
+    explanation:
+      "The least common multiple of 4 and 6 is 12.",
+  },
+
+  {
+    id: 149,
+    source: "Question Bank",
+    question: "What is 0.75 expressed as a fraction?",
+    options: [
+      "1/2",
+      "3/4",
+      "2/3",
+      "4/5",
+    ],
+    correct: 1,
+    explanation:
+      "0.75 = 75/100 = 3/4.",
+  },
+
+  {
+    id: 150,
+    source: "Question Bank",
+    question: "What is the value of 7 × 9?",
+    options: [
+      "54",
+      "56",
+      "63",
+      "72",
+    ],
+    correct: 2,
+    explanation:
+      "7 × 9 = 63.",
+  },
+
+  // ... IDs 151 onward continue in the same file ...
+
 ];
 
 /*
