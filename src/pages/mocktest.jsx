@@ -7,7 +7,6 @@ import { FiX, FiClock } from "react-icons/fi";
 import { supabase } from "../lib/supabase";
 
 import verbalSet1 from "../data/mcqs/verbal/set1";
-import verbalSet6 from "../data/mcqs/verbal/set6";
 
 import academicSet1 from "../data/mcqs/academic/set1";
 
@@ -53,7 +52,6 @@ const shuffleArray = (array) => {
 const questionBank = {
   verbal: {
     set1: verbalSet1,
-    set6: verbalSet6,
   },
 
   academic: {
@@ -313,7 +311,7 @@ const [submitError, setSubmitError] = useState("");
   category === "academic" &&
   ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
 
-// Verbal Set 2, 3, 4, 5 & 6
+// Verbal Set 2, 3, 4 & 5
 (exam === "pma-lc" &&
   category === "verbal" &&
   ["set2", "set3", "set4", "set5"].includes(setId)) ||
