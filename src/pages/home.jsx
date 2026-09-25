@@ -104,12 +104,12 @@ const Home = () => {
 
         <meta
           name="twitter:title"
-          content="EXAMITICS | Free ISSB, PMA Long Course, Pakistan Army, PAF & Navy Preparation"
+          content="EXAMITICS | ISSB, PMA Long Course, Pakistan Army, PAF & Navy Preparation"
         />
 
         <meta
           name="twitter:description"
-          content="Free preparation platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Air Force and Pakistan Navy with mock tests, intelligence tests, interview preparation and study guides."
+          content="Preparation platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Air Force and Pakistan Navy with mock tests, intelligence tests, interview preparation and study guides."
         />
 
         <meta
@@ -118,7 +118,7 @@ const Home = () => {
         />
         <meta
           name="twitter:image:alt"
-          content="EXAMITICS - Free ISSB and PMA Preparation Platform"
+          content="EXAMITICS - ISSB and PMA Preparation Platform"
         />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -129,7 +129,7 @@ const Home = () => {
             logo: "https://www.examitics.com/images/examitics-logo.png",
             image: "https://www.examitics.com/images/examitics-banner.png",
             description:
-              "Free online platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Navy and Pakistan Air Force preparation.",
+              "Online platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Navy and Pakistan Air Force preparation.",
           })}
         </script>
         <script type="application/ld+json">
@@ -153,7 +153,7 @@ const Home = () => {
             name: "EXAMITICS",
             url: "https://www.examitics.com",
             description:
-              "Free preparation platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Navy and Pakistan Air Force.",
+              "Preparation platform for ISSB, PMA Long Course, Pakistan Army, Pakistan Navy and Pakistan Air Force.",
             inLanguage: "en-PK",
             isPartOf: {
               "@type": "WebSite",

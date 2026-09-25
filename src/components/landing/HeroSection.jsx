@@ -32,7 +32,7 @@ const HeroSection = () => {
             </div>
 
             <h1>
-              Free <span>ISSB, PMA Long Course, PAF & Navy</span> Preparation
+              Best <span>ISSB, PMA Long Course, PAF & Navy</span> Preparation
               Platform
             </h1>
 

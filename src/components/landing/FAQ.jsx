@@ -47,7 +47,7 @@ import "./FAQ.css";
 
 const faqs = [
   {
-    question: "Is EXAMITICS completely free to use?",
+    question: "Is EXAMITICS free to use?",
     answer: (
       <>
         Yes. EXAMITICS is <strong>free</strong>. You can{" "}
