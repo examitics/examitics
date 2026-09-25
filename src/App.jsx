@@ -330,6 +330,19 @@ PREMIUM PMA VERBAL MOCK TEST 4
           }
         />
         {/* ==========================================
+    PREMIUM PMA VERBAL MOCK TEST 6
+========================================== */}
+
+        <Route
+          path="/mock/verbal/set6"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="verbal" setId="set6" />
+            </PremiumRoute>
+          }
+        />
+
+        {/* ==========================================
     PREMIUM PMA NON-VERBAL MOCK TEST 2
 ========================================== */}
 
