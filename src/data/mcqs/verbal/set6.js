@@ -511,9 +511,9 @@ const verbalQuestions6 = [
   },
   {
     id: 84,
-    question: "Arrange the letters 'LNEPA' to form the name of an:",
-    options: ["Animal", "Fruit", "Country", "Instrument"],
-    correctAnswer: "Planet"
+    question: "Arrange the letters 'YOKOT' to form the name of a:",
+    options: ["Country", "City", "Animal", "Fruit"],
+    correctAnswer: "City"
   }
 ];
 
