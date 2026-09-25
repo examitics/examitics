@@ -252,9 +252,13 @@ const MockTable = ({ examCode }) => {
               <button
                 type="button"
                 className="mock-table-btn mock-premium-btn"
-                // Verbal Mock 6 will be activated when its set is ready
+                onClick={() => handlePremiumClick("/mock/verbal/set6")}
               >
-                <span>Comming Soon</span>
+                <span>Verbal Mock 6</span>
+                <span className="mock-premium-diamond">◆</span>
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
               </button>
             </td>
 
