@@ -2,8 +2,8 @@ const verbalQuestions6 = [
   {
     id: 1,
     question: "A father is 24 years older than his son. After 4 years, the father will be twice the son's age. What is the son's present age?",
-    options: ["16", "18", "20", "22"],
-    correctAnswer: "20"
+    options: ["14", "16", "18", "20"],
+    correctAnswer: "16"
   },
   {
     id: 2,
@@ -20,8 +20,8 @@ const verbalQuestions6 = [
   {
     id: 4,
     question: "A man is 6 years older than his sister. In 6 years, their combined age will be 54. What is the man's present age?",
-    options: ["24", "27", "30", "33"],
-    correctAnswer: "27"
+    options: ["21", "24", "27", "30"],
+    correctAnswer: "24"
   },
   {
     id: 5,
@@ -315,7 +315,7 @@ const verbalQuestions6 = [
   {
     id: 52,
     question: "If PEN is coded as 123 and DEN is coded as 423, what is the code for PEP?",
-    options: ["121", "123", "121", "323"],
+    options: ["121", "123", "124", "323"],
     correctAnswer: "121"
   },
   {
@@ -511,9 +511,9 @@ const verbalQuestions6 = [
   },
   {
     id: 84,
-    question: "Arrange the letters 'NADCA' to form the name of a:",
-    options: ["Country", "City", "Animal", "Fruit"],
-    correctAnswer: "Country"
+    question: "Arrange the letters 'LNEPA' to form the name of an:",
+    options: ["Animal", "Fruit", "Country", "Instrument"],
+    correctAnswer: "Planet"
   }
 ];
 
