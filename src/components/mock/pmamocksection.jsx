@@ -8,18 +8,13 @@ import MockTable from "./pmamocktable";
 const MockSection = ({ title, examCode }) => {
   return (
     <section className="mock-section exa-card">
-
       {/* HEADER */}
       <div className="mock-section-header">
-
         <div>
-          <span className="mock-section-tag">
-            MOCK TEST SERIES
-          </span>
+          <span className="mock-section-tag">MOCK TEST SERIES</span>
 
           <h2>{title}</h2>
         </div>
-
       </div>
 
       {/* RULES */}
@@ -75,14 +70,14 @@ const MockSection = ({ title, examCode }) => {
       {/* <div className="desktop-ad">
           <Adsterra728x90 />
         </div> */}
-        <div className="desktop-ad">
-                  <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
-                  <Adsterra728x90 />
-                </div>
-                <div className="mobile-ad"> 
-                  <h6 style={{display: "grid", placeItems: "center"}}>Advertisement</h6>
-                  <Adsterra300x250/>
-                 </div>
+      {/* <div className="desktop-ad">
+        <h6 style={{ display: "grid", placeItems: "center" }}>Advertisement</h6>
+        <Adsterra728x90 />
+      </div>
+      <div className="mobile-ad">
+        <h6 style={{ display: "grid", placeItems: "center" }}>Advertisement</h6>
+        <Adsterra300x250 />
+      </div> */}
 
       {/* FULL MOCK */}
       {/* <div className="full-mock-box">
@@ -112,7 +107,6 @@ const MockSection = ({ title, examCode }) => {
         </a>
 
       </div> */}
-
     </section>
   );
 };

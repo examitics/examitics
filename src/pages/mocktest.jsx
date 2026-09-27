@@ -25,6 +25,9 @@ import pafMathSet1 from "../data/paf-mcqs/math/pafMath-Set1";
 
 import pafPhysicsSet1 from "../data/paf-mcqs/physics/pafPhysics-Set1";
 
+import AfnsAcademicsSet1 from "../data/afns-mcqs/academics/set1";
+
+
 // ==========================================
 // SHUFFLE FUNCTION
 // ==========================================
@@ -81,6 +84,10 @@ const questionBank = {
 
   physics: {
     "physics-set1": pafPhysicsSet1,
+  },
+
+  "afns-academic": {
+    set1: AfnsAcademicsSet1,
   },
 };
 
@@ -262,46 +269,7 @@ const [submitError, setSubmitError] = useState("");
 
         return;
       }
-      // ==========================================
-      // PREMIUM ACADEMIC SET 2
-      // ==========================================
-      //
-      // These questions are stored in Supabase.
-      //
-      // RLS allows:
-      //
-      // Free user  -> blocked
-      // Premium    -> allowed
-      //
-      // PremiumRoute already protects the page,
-      // but RLS also protects the actual database.
-      //
-
-      // if (category === "academic" && setId === "set2") {
-      // ==========================================
-      // PREMIUM SUPABASE MOCK TESTS
-      // ==========================================
-      //
-      // PMA:
-      //   Academic Set 2
-      //   Academic Set 3
-      //   Verbal Set 2
-      //
-      // PAF:
-      //   English Set 2
-      //   English Set 3
-      //
-      // These questions are stored in Supabase.
-      //
-
-      // const premiumMock =
-      //   (exam === "pma-lc" &&
-      //     category === "academic" &&
-      //     ["set2", "set3"].includes(setId)) ||
-      //   (exam === "pma-lc" && category === "verbal" && setId === "set2") ||
-      //   (exam === "paf" &&
-      //     category === "english" &&
-      //     ["set2", "set3"].includes(setId));
+      
       const premiumMock =
   // ==========================================
   // PMA PREMIUM MOCK TESTS
@@ -320,6 +288,14 @@ const [submitError, setSubmitError] = useState("");
 (exam === "pma-lc" &&
   category === "nonverbal" &&
   ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+
+  // ==========================================
+// AFNS PREMIUM MOCK TESTS
+// ==========================================
+
+  (exam === "afns" &&
+    category === "academic" &&
+    ["set2", "set3", "set4", "Set5", "set6", "set7"].includes(setId)) ||
   // ==========================================
   // PAF PREMIUM MOCK TESTS
   // ==========================================
@@ -709,7 +685,10 @@ const handleSubmit = async () => {
   category === "nonverbal" &&
   ["set2", "set3", "set4", "set5", "set6"].includes(setId)
 ) ||
-
+// AFNS Academic Set 2
+  (exam === "afns" &&
+    category === "academic" &&
+    ["set2", "set3", "set4", "Set5", "set6", "set7"].includes(setId))||
       // PAF English
       (
         exam === "paf" &&
@@ -956,9 +935,16 @@ const handleSubmit = async () => {
               ? "PAF ENGLISH Mock Test"
               : `PMA ${category.toUpperCase()} Mock Test`}
           </h2> */}
-          <h2>
+          {/* <h2>
   {exam === "paf"
     ? `PAF ${category.toUpperCase()} Mock Test`
+    : `PMA ${category.toUpperCase()} Mock Test`}
+</h2> */}
+<h2>
+  {exam === "paf"
+    ? `PAF ${category.toUpperCase()} Mock Test`
+    : exam === "afns"
+    ? `AFNS ${category.toUpperCase()} Mock Test`
     : `PMA ${category.toUpperCase()} Mock Test`}
 </h2>
 

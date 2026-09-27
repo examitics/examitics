@@ -68,6 +68,9 @@ import CurrentAffairsPakistan from "./pages/notes/CurrentAffairsPakistan";
 import Mathematics from "./pages/notes/Mathematics";
 import English from "./pages/notes/English";
 import Physics from "./pages/notes/Physics";
+import Biology from "./pages/notes/Biology";
+import Chemistry from "./pages/notes/chemistry";
+
 import GeneralKnowledge from "./pages/notes/GeneralKnowledge";
 import GlobalCurrentAffairs from "./pages/notes/GlobalCurrentAffairs";
 import PakistanAffairs from "./pages/notes/PakistanAffairs";
@@ -96,8 +99,8 @@ function App() {
   return (
     <>
       {/* <AuthTest /> */}
-      <SecurityToast />
-      <SecurityProtection />
+      {/* <SecurityToast />
+      <SecurityProtection /> */}
       <AnnouncementBar />
       <ScrollToTop />
 
@@ -146,6 +149,7 @@ function App() {
           path="/notes/academics/mathematics"
           element={<Mathematics />}
         />
+
         <Route
           path="/notes/academics/english"
           element={<English />}
@@ -153,6 +157,14 @@ function App() {
         <Route
           path="/notes/academics/physics"
           element={<Physics />}
+        />
+        <Route
+          path="/notes/academics/biology"
+          element={<Biology />}
+        />
+        <Route
+          path="/notes/academics/chemistry"
+          element={<Chemistry />}
         />
         <Route
           path="/notes/academics/general-knowledge"
@@ -412,6 +424,85 @@ PREMIUM PMA VERBAL MOCK TEST 4
     </PremiumRoute>
   }
 />
+{/* ==========================================
+    PREMIUM AFNS ACADEMIC MOCK TEST 2
+========================================== */}
+
+<Route
+  path="/mock/afns/academic/set2"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="afns"
+        category="academic"
+        setId="set2"
+      />
+    </PremiumRoute>
+  }
+/>
+<Route
+  path="/mock/afns/academic/set3"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="afns"
+        category="academic"
+        setId="set3"
+      />
+    </PremiumRoute>
+  }
+/>
+<Route
+  path="/mock/afns/academic/set4"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="afns"
+        category="academic"
+        setId="set4"
+      />
+    </PremiumRoute>
+  }
+/>
+
+<Route
+  path="/mock/afns/academic/set5"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="afns"
+        category="academic"
+        setId="set5"
+      />
+    </PremiumRoute>
+  }
+/>
+
+<Route
+  path="/mock/afns/academic/set6"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="afns"
+        category="academic"
+        setId="set6"
+      />
+    </PremiumRoute>
+  }
+/>
+<Route
+  path="/mock/afns/academic/set7"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="afns"
+        category="academic"
+        setId="set7"
+      />
+    </PremiumRoute>
+  }
+/>
+
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
 ========================================== */}

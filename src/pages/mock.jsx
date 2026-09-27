@@ -6,8 +6,9 @@ import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 import PMAMockSection from "../components/mock/pmamocksection";
 import PAFMockSection from "../components/mock/pafmocksection";
-import { FiClock, FiMonitor, FiCheckCircle } from "react-icons/fi";
+import AFNSMockSection from "../components/mock/afnsmocksection";
 
+import { FiClock, FiMonitor, FiCheckCircle } from "react-icons/fi";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
@@ -109,56 +110,45 @@ const MOCK = () => {
                 real exam conditions.
               </p>
             </section>
-<div className="mock-rules-grid">
+            <div className="mock-rules-grid">
+              <div className="mock-rule-card">
+                <FiClock className="mock-rule-icon" />
 
-        <div className="mock-rule-card">
+                <div>
+                  <h4>Timed Tests</h4>
 
-          <FiClock className="mock-rule-icon" />
+                  <p>Each mock follows real exam timing.</p>
+                </div>
+              </div>
 
-          <div>
-            <h4>Timed Tests</h4>
+              <div className="mock-rule-card">
+                <FiMonitor className="mock-rule-icon" />
 
-            <p>
-              Each mock follows real exam timing.
-            </p>
-          </div>
+                <div>
+                  <h4>No Refresh</h4>
 
-        </div>
+                  <p>Avoid refreshing during attempts.</p>
+                </div>
+              </div>
 
-        <div className="mock-rule-card">
+              <div className="mock-rule-card">
+                <FiCheckCircle className="mock-rule-icon" />
 
-          <FiMonitor className="mock-rule-icon" />
+                <div>
+                  <h4>Instant Result</h4>
 
-          <div>
-            <h4>No Refresh</h4>
-
-            <p>
-              Avoid refreshing during attempts.
-            </p>
-          </div>
-
-        </div>
-
-        <div className="mock-rule-card">
-
-          <FiCheckCircle className="mock-rule-icon" />
-
-          <div>
-            <h4>Instant Result</h4>
-
-            <p>
-              Get score immediately after submission.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
+                  <p>Get score immediately after submission.</p>
+                </div>
+              </div>
+            </div>
             {/* PMA LC SECTION */}
             <PMAMockSection title="PMA LONG COURSE" examCode="pma-lc" />
-<div style={{margin: "20px"}}></div>
+            <div style={{ margin: "20px" }}></div>
+            {/* AFNS SECTION */}
+            <AFNSMockSection title="AFNS" examCode="afns" />
+            <div style={{ margin: "20px" }}></div>
             {/* PAF SECTION */}
-            <PAFMockSection title="PAF INITIAL TEST" examCode="paf-initial"/>
+            <PAFMockSection title="PAF INITIAL TEST" examCode="paf-initial" />
           </div>
         </main>
       </div>
