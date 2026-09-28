@@ -1,112 +1,68 @@
-import React from "react";
-import { FiClock, FiMonitor, FiCheckCircle } from "react-icons/fi";
+import React, { useState } from "react";
+import { FiBookOpen, FiX } from "react-icons/fi";
 
-import Adsterra728x90 from "../Adsterra728x90";
-import Adsterra300x250 from "../Adsterra300x250";
 import MockTable from "./pmamocktable";
+import "../../styles/mock.css";
 
 const MockSection = ({ title, examCode }) => {
+  const [showSyllabus, setShowSyllabus] = useState(false);
+
   return (
     <section className="mock-section exa-card">
+
       {/* HEADER */}
       <div className="mock-section-header">
         <div>
-          <span className="mock-section-tag">MOCK TEST SERIES</span>
+          <span className="mock-section-tag">
+            MOCK TEST SERIES
+          </span>
 
           <h2>{title}</h2>
         </div>
+
+        <button
+          type="button"
+          className="afns-syllabus-trigger"
+          onClick={() => setShowSyllabus(true)}
+        >
+          <FiBookOpen />
+          <span>PMA LC Initial Test Syllabus</span>
+        </button>
       </div>
-
-      {/* RULES */}
-      {/* <div className="mock-rules-grid">
-
-        <div className="mock-rule-card">
-
-          <FiClock className="mock-rule-icon" />
-
-          <div>
-            <h4>Timed Tests</h4>
-
-            <p>
-              Each mock follows real exam timing.
-            </p>
-          </div>
-
-        </div>
-
-        <div className="mock-rule-card">
-
-          <FiMonitor className="mock-rule-icon" />
-
-          <div>
-            <h4>No Refresh</h4>
-
-            <p>
-              Avoid refreshing during attempts.
-            </p>
-          </div>
-
-        </div>
-
-        <div className="mock-rule-card">
-
-          <FiCheckCircle className="mock-rule-icon" />
-
-          <div>
-            <h4>Instant Result</h4>
-
-            <p>
-              Get score immediately after submission.
-            </p>
-          </div>
-
-        </div>
-
-      </div> */}
 
       {/* TABLE */}
-      <MockTable examCode={examCode} />
+      {/* <MockTable examCode={examCode} /> */}
 
-      {/* <div className="desktop-ad">
-          <Adsterra728x90 />
-        </div> */}
-      {/* <div className="desktop-ad">
-        <h6 style={{ display: "grid", placeItems: "center" }}>Advertisement</h6>
-        <Adsterra728x90 />
-      </div>
-      <div className="mobile-ad">
-        <h6 style={{ display: "grid", placeItems: "center" }}>Advertisement</h6>
-        <Adsterra300x250 />
-      </div> */}
-
-      {/* FULL MOCK */}
-      {/* <div className="full-mock-box">
-
-        <div>
-
-          <span className="mock-section-tag">
-            COMPLETE TEST
-          </span>
-
-          <h3>
-            Full Combined Mock Test
-          </h3>
-
-          <p>
-            Attempt a complete PMA-style mock test including
-            Verbal, Non-Verbal, and Academic sections together.
-          </p>
-
-        </div>
-
-        <a
-          href="/mock/full-test"
-          className="exa-btn exa-btn-primary"
+      {/* AFNS SYLLABUS IMAGE */}
+      {showSyllabus && (
+        <div
+          className="afns-syllabus-image-overlay"
+          onClick={() => setShowSyllabus(false)}
         >
-          Start Full Mock
-        </a>
+          <div
+            className="afns-syllabus-image-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="afns-syllabus-image-close "
+              onClick={() => setShowSyllabus(false)}
+              aria-label="Close AFNS syllabus"
+            >
+              <FiX />
+            </button>
 
-      </div> */}
+            <img
+              src="/images/pma-syllabus.png"
+              alt="AFNS Initial Test Syllabus"
+              className="afns-syllabus-image"
+            />
+          </div>
+        </div>
+      )}
+      <div style={{marginBottom: "20px"}}></div>
+       {/* TABLE */}
+      <MockTable examCode={examCode} />
     </section>
   );
 };

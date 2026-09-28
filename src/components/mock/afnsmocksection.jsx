@@ -60,6 +60,7 @@ const MockSection = ({ title, examCode }) => {
           </div>
         </div>
       )}
+      <div style={{marginBottom: "20px"}}></div>
        {/* TABLE */}
       <MockTable examCode={examCode} />
     </section>
