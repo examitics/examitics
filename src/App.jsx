@@ -99,8 +99,8 @@ function App() {
   return (
     <>
       {/* <AuthTest /> */}
-      <SecurityToast />
-      <SecurityProtection />
+      {/* <SecurityToast />
+      <SecurityProtection /> */}
       <AnnouncementBar />
       <ScrollToTop />
 
