@@ -25,7 +25,7 @@ import pafMathSet1 from "../data/paf-mcqs/math/pafMath-Set1";
 
 import pafPhysicsSet1 from "../data/paf-mcqs/physics/pafPhysics-Set1";
 
-import AfnsAcademicsSet1 from "../data/afns-mcqs/academics/set1";
+import AfnsAcademicsSet1 from "../data/afns-mcqs/academics/Set-1";
 
 
 // ==========================================
