@@ -8,26 +8,28 @@ const WHATSAPP_NUMBER = "923014709158";
 const AnnouncementBar = () => {
   const { user, isPremium, loading } = useAuth();
   const [visible, setVisible] = React.useState(true);
-React.useEffect(() => {
-  if (loading || (user && isPremium) || !visible) {
-    document.documentElement.style.setProperty(
-      "--announcement-height",
-      "0px"
-    );
-  } else {
-    document.documentElement.style.setProperty(
-      "--announcement-height",
-      "44px"
-    );
-  }
 
-  return () => {
-    document.documentElement.style.setProperty(
-      "--announcement-height",
-      "0px"
-    );
-  };
-}, [loading, user, isPremium, visible]);
+  React.useEffect(() => {
+    if (loading || (user && isPremium) || !visible) {
+      document.documentElement.style.setProperty(
+        "--announcement-height",
+        "0px"
+      );
+    } else {
+      document.documentElement.style.setProperty(
+        "--announcement-height",
+        "44px"
+      );
+    }
+
+    return () => {
+      document.documentElement.style.setProperty(
+        "--announcement-height",
+        "0px"
+      );
+    };
+  }, [loading, user, isPremium, visible]);
+
   // Prevent the bar from flashing while authentication is loading
   if (loading) {
     return null;
@@ -43,7 +45,7 @@ React.useEffect(() => {
   }
 
   const whatsappMessage = encodeURIComponent(
-    "Assalam o Alaikum, I want complete preparation and guidance for PMA 159 Long Course."
+    "Hello Examitics, I want to get the 1-Month Premium subscription for PMA Long Course / AFNS under the limited-time Rs. 500 offer."
   );
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
@@ -59,11 +61,11 @@ React.useEffect(() => {
         </span>
 
         <span className="announcement-label">
-          PMA 159 Long Course
+          🔥 7-DAY PREMIUM OFFER
         </span>
 
         <span className="announcement-message">
-          Preparation is ON — Complete preparation, guidance & support
+          1-Month Premium for PMA Long Course & AFNS — Only Rs. 500
         </span>
 
         <a
@@ -73,7 +75,7 @@ React.useEffect(() => {
           className="announcement-cta"
           tabIndex={duplicate ? -1 : undefined}
         >
-          <span>Get Guidance</span>
+          <span>GET OFFER</span>
           <FiArrowRight />
         </a>
       </div>
@@ -82,7 +84,9 @@ React.useEffect(() => {
 
       <div className="announcement-item announcement-highlight">
         <span className="announcement-dot" />
-        <strong>Prepare Smart. Practice More. Get Ready.</strong>
+        <strong>
+          Valid until 5 October 2026, 11:59 PM • 1-Month Premium • Rs. 500
+        </strong>
       </div>
 
       <span className="announcement-separator">•</span>
@@ -92,7 +96,6 @@ React.useEffect(() => {
   return (
     <div className="announcement-bar">
       <div className="announcement-viewport">
-
         {/* Left fade */}
         <div className="announcement-fade announcement-fade-left" />
 
