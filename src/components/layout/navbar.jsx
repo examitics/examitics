@@ -332,6 +332,15 @@ const Navbar = () => {
             <Link to="/notes" onClick={handleNavigation}>
               Notes Hub 
             </Link>
+
+            <Link
+  to="/more"
+  className="exa-more-tools-link"
+  onClick={handleNavigation}
+>
+  More Tools
+  <span className="exa-new-badge">NEW</span>
+</Link>
           </nav>
 
           {/* =================================================
@@ -343,11 +352,11 @@ const Navbar = () => {
                 SEARCH
             ================================================= */}
 
-            <div className="exa-search-box">
+            {/* <div className="exa-search-box">
               <FiSearch className="search-icon" />
 
               <input type="text" placeholder="Search..." />
-            </div>
+            </div> */}
 
             {/* =================================================
                 NOTIFICATIONS

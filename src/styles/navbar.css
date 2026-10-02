@@ -117,6 +117,47 @@ body.dark-theme .exa-navbar {
 .exa-nav-links > a:hover {
   color: var(--color-primary);
 }
+/* =========================================================
+   MORE TOOLS — NEW BADGE
+   ========================================================= */
+
+.exa-more-tools-link {
+  display: inline-flex !important;
+  align-items: center;
+
+  gap: 0px;
+}
+
+.exa-new-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 17px;
+
+  padding: 2px 6px;
+
+  border-radius: 999px;
+
+  background: var(--color-primary);
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: var(--font-weight-bold);
+
+  line-height: 1;
+
+  letter-spacing: 0.3px;
+
+  transform: translateY(-7px);
+
+
+  box-shadow: var(--shadow-sm);
+
+  white-space: nowrap;
+}
 
 
 /* =========================================================

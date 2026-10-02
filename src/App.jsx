@@ -29,6 +29,12 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import ProfileTest from "./components/auth/ProfileTest";
 import Premium from "./pages/Premium";
 import NotesHub from "./pages/NotesHub";
+import More from "./pages/more";
+import AgeCalculator from "./pages/age-calculator";
+import BMICalculator from "./pages/bmi-calculator";
+import UnitConverter from "./pages/unit-converter"; 
+import GPACalculator from "./pages/gpa-calculator";
+import PercentageCalculator from "./pages/percentage-calculator";
 
 import PremiumRoute from "./components/auth/PremiumRoute";
 import PremiumTest from "./pages/PremiumTest";
@@ -580,6 +586,24 @@ PREMIUM PMA VERBAL MOCK TEST 4
         {/* ISSB-1 PAGE */}
         <Route path="/issb-1" element={<ISSBa />} />
 
+<Route path="/more" element={<More />} />
+<Route path="/more/age-calculator" element={<AgeCalculator />} />
+<Route
+  path="/more/bmi-calculator"
+  element={<BMICalculator />}
+/>
+<Route
+  path="/more/unit-converter"
+  element={<UnitConverter />}
+/>
+<Route
+  path="/more/gpa-calculator"
+  element={<GPACalculator />}
+/>
+<Route
+  path="/more/percentage-calculator"
+  element={<PercentageCalculator />}
+/>
         {/* QUICK MATH PAGE */}
         <Route path="/quick-math" element={<QuickMath />} />
         <Route path="/quick-math/setup" element={<QuickMathSetup />} />
