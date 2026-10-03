@@ -277,7 +277,7 @@ const [submitError, setSubmitError] = useState("");
 // Academic Set 2, 3, 4, 5 & 6
 (exam === "pma-lc" &&
   category === "academic" &&
-  ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+  ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
 
 // Verbal Set 2, 3, 4 & 5
 (exam === "pma-lc" &&
@@ -663,7 +663,7 @@ const handleSubmit = async () => {
 (
   exam === "pma-lc" &&
   category === "academic" &&
-  ["set2", "set3", "set4", "set5", "set6"].includes(setId)
+  ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)
 ) ||
 
       // PMA Verbal

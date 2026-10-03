@@ -290,6 +290,29 @@ const MockTable = ({ examCode }) => {
               </button>
             </td>
           </tr>
+          <tr>
+  <td>
+    {/* Keep empty for now */}
+  </td>
+
+  <td>
+    {/* Keep empty for now */}
+  </td>
+
+  <td>
+    <button
+      type="button"
+      className="mock-table-btn mock-premium-btn"
+      onClick={() => handlePremiumClick("/mock/academic/set7")}
+    >
+      <span>Academic Mock 7</span>
+      <span className="mock-premium-diamond">◆</span>
+      {!isPremium && (
+        <span className="mock-premium-label">PREMIUM</span>
+      )}
+    </button>
+  </td>
+</tr>
         </tbody>
       </table>
     </div>
