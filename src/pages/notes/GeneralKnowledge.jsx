@@ -3182,6 +3182,1210 @@ const questionBank = [
     explanation:
       "Karachi is Pakistan's largest city by population.",
   },
+  // ========================================================================
+// ADDITIONAL QUESTIONS — PMA 159 LC STUDY GUIDE
+// Options shuffled to distribute correct answers
+// ========================================================================
+
+{
+  id: 221,
+  source: "PMA 159 LC Study Guide",
+  question: "Which country shares Pakistan's shortest land border?",
+  options: [
+    "India",
+    "Afghanistan",
+    "Iran",
+    "China",
+  ],
+  correct: 3,
+  explanation:
+    "China shares Pakistan's shortest international land border, located in the north-east near the Khunjerab region.",
+},
+
+{
+  id: 222,
+  source: "PMA 159 LC Study Guide",
+  question: "Which line forms much of Pakistan's border with India?",
+  options: [
+    "Durand Line",
+    "McMahon Line",
+    "Line of Control",
+    "Radcliffe Line",
+  ],
+  correct: 3,
+  explanation:
+    "The Radcliffe Line forms much of the international boundary between Pakistan and India.",
+},
+
+{
+  id: 223,
+  source: "PMA 159 LC Study Guide",
+  question: "Which line separates Pakistan and Afghanistan?",
+  options: [
+    "Radcliffe Line",
+    "Durand Line",
+    "McMahon Line",
+    "Line of Control",
+  ],
+  correct: 1,
+  explanation:
+    "The Durand Line, established in 1893, is the traditional international boundary between Pakistan and Afghanistan.",
+},
+
+{
+  id: 224,
+  source: "PMA 159 LC Study Guide",
+  question: "Pakistan's coastline is approximately:",
+  options: [
+    "850 km",
+    "1,500 km",
+    "1,046 km",
+    "2,000 km",
+  ],
+  correct: 2,
+  explanation:
+    "Pakistan's coastline along the Arabian Sea is commonly given as approximately 1,046 km.",
+},
+
+{
+  id: 225,
+  source: "PMA 159 LC Study Guide",
+  question: "Why is Tajikistan not a direct land neighbour of Pakistan?",
+  options: [
+    "China separates them",
+    "The Arabian Sea separates them",
+    "The Karakoram Range separates them",
+    "The Wakhan Corridor of Afghanistan separates them",
+  ],
+  correct: 3,
+  explanation:
+    "Tajikistan is very close to Pakistan but is separated from Pakistan by the narrow Wakhan Corridor of Afghanistan.",
+},
+
+{
+  id: 226,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote the famous Punjabi folk romance 'Heer Ranjha'?",
+  options: [
+    "Mian Muhammad Bakhsh",
+    "Hashim Shah",
+    "Waris Shah",
+    "Fazal Shah",
+  ],
+  correct: 2,
+  explanation:
+    "Heer Ranjha is famously associated with the Punjabi poet Waris Shah.",
+},
+
+{
+  id: 227,
+  source: "PMA 159 LC Study Guide",
+  question: "Who is associated with the folk romance 'Sohni Mahiwal'?",
+  options: [
+    "Waris Shah",
+    "Fazal Shah",
+    "Pilu",
+    "Hashim Shah",
+  ],
+  correct: 1,
+  explanation:
+    "Sohni Mahiwal is associated with the poet Fazal Shah.",
+},
+
+{
+  id: 228,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote the Punjabi folk romance 'Sassi Punnun'?",
+  options: [
+    "Hashim Shah",
+    "Waris Shah",
+    "Mian Muhammad Bakhsh",
+    "Fazal Shah",
+  ],
+  correct: 0,
+  explanation:
+    "Sassi Punnun is associated with Hashim Shah.",
+},
+
+{
+  id: 229,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Saif-ul-Malook'?",
+  options: [
+    "Waris Shah",
+    "Hashim Shah",
+    "Shah Abdul Latif",
+    "Mian Muhammad Bakhsh",
+  ],
+  correct: 3,
+  explanation:
+    "Saif-ul-Malook is the famous work of Punjabi/Sufi poet Mian Muhammad Bakhsh.",
+},
+
+{
+  id: 230,
+  source: "PMA 159 LC Study Guide",
+  question: "Which of the following is one of the Seven Queens of Sindh?",
+  options: [
+    "Heer",
+    "Sassi Punnun",
+    "Marui",
+    "Sohni",
+  ],
+  correct: 2,
+  explanation:
+    "Marui is one of the Seven Queens associated with Shah Abdul Latif's Shah Jo Risalo.",
+},
+
+{
+  id: 231,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Bang-e-Dra'?",
+  options: [
+    "Faiz Ahmed Faiz",
+    "Allama Muhammad Iqbal",
+    "Hafeez Jalandhri",
+    "Sir Syed Ahmad Khan",
+  ],
+  correct: 1,
+  explanation:
+    "Bang-e-Dra is a famous Urdu poetry collection by Allama Muhammad Iqbal.",
+},
+
+{
+  id: 232,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Bal-e-Jibril'?",
+  options: [
+    "Mirza Ghalib",
+    "Faiz Ahmed Faiz",
+    "Maulana Rumi",
+    "Allama Muhammad Iqbal",
+  ],
+  correct: 3,
+  explanation:
+    "Bal-e-Jibril is a renowned poetry collection by Allama Muhammad Iqbal.",
+},
+
+{
+  id: 233,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'The Struggle for Pakistan'?",
+  options: [
+    "I.H. Qureshi",
+    "Ayub Khan",
+    "Stanley Wolpert",
+    "Liaquat Ali Khan",
+  ],
+  correct: 0,
+  explanation:
+    "The Struggle for Pakistan was written by I.H. Qureshi.",
+},
+
+{
+  id: 234,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'In the Line of Fire'?",
+  options: [
+    "Ayub Khan",
+    "Zulfikar Ali Bhutto",
+    "I.H. Qureshi",
+    "Pervez Musharraf",
+  ],
+  correct: 3,
+  explanation:
+    "In the Line of Fire is the autobiography of former Pakistani President General Pervez Musharraf.",
+},
+
+{
+  id: 235,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'The Republic'?",
+  options: [
+    "Aristotle",
+    "Plato",
+    "Socrates",
+    "Rousseau",
+  ],
+  correct: 1,
+  explanation:
+    "The Republic is a classical philosophical work attributed to Plato.",
+},
+
+{
+  id: 236,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'The Prince'?",
+  options: [
+    "Thomas Hobbes",
+    "Jean-Jacques Rousseau",
+    "Niccolò Machiavelli",
+    "Adam Smith",
+  ],
+  correct: 2,
+  explanation:
+    "The Prince was written by the Italian political philosopher Niccolò Machiavelli.",
+},
+
+{
+  id: 237,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Leviathan'?",
+  options: [
+    "John Locke",
+    "Plato",
+    "Adam Smith",
+    "Thomas Hobbes",
+  ],
+  correct: 3,
+  explanation:
+    "Leviathan is a major political philosophy work by Thomas Hobbes.",
+},
+
+{
+  id: 238,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'The Social Contract'?",
+  options: [
+    "Thomas Hobbes",
+    "John Locke",
+    "Karl Marx",
+    "Jean-Jacques Rousseau",
+  ],
+  correct: 3,
+  explanation:
+    "The Social Contract was written by Jean-Jacques Rousseau.",
+},
+
+{
+  id: 239,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'The Wealth of Nations'?",
+  options: [
+    "Karl Marx",
+    "Adam Smith",
+    "David Ricardo",
+    "John Maynard Keynes",
+  ],
+  correct: 1,
+  explanation:
+    "The Wealth of Nations was written by Scottish economist Adam Smith.",
+},
+
+{
+  id: 240,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Das Kapital'?",
+  options: [
+    "Adam Smith",
+    "Friedrich Engels",
+    "Max Weber",
+    "Karl Marx",
+  ],
+  correct: 3,
+  explanation:
+    "Das Kapital was written by Karl Marx.",
+},
+
+{
+  id: 241,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'On the Origin of Species'?",
+  options: [
+    "Isaac Newton",
+    "Albert Einstein",
+    "Charles Darwin",
+    "Gregor Mendel",
+  ],
+  correct: 2,
+  explanation:
+    "On the Origin of Species was published by Charles Darwin in 1859.",
+},
+
+{
+  id: 242,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'A Brief History of Time'?",
+  options: [
+    "Stephen Hawking",
+    "Albert Einstein",
+    "Isaac Newton",
+    "Carl Sagan",
+  ],
+  correct: 0,
+  explanation:
+    "A Brief History of Time was written by physicist Stephen Hawking.",
+},
+
+{
+  id: 243,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Gitanjali'?",
+  options: [
+    "Jawaharlal Nehru",
+    "Mahatma Gandhi",
+    "Bankim Chandra Chatterjee",
+    "Rabindranath Tagore",
+  ],
+  correct: 3,
+  explanation:
+    "Gitanjali is a famous collection of poems by Rabindranath Tagore.",
+},
+
+{
+  id: 244,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Discovery of India'?",
+  options: [
+    "Mahatma Gandhi",
+    "Rabindranath Tagore",
+    "Jawaharlal Nehru",
+    "Muhammad Ali Jinnah",
+  ],
+  correct: 2,
+  explanation:
+    "Discovery of India was written by Jawaharlal Nehru.",
+},
+
+{
+  id: 245,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Muqaddimah'?",
+  options: [
+    "Ibn Sina",
+    "Ibn Khaldun",
+    "Al-Biruni",
+    "Al-Ghazali",
+  ],
+  correct: 1,
+  explanation:
+    "Muqaddimah is the famous historical and sociological work of Ibn Khaldun.",
+},
+
+{
+  id: 246,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Al-Qanun fi'l-Tibb'?",
+  options: [
+    "Ibn Khaldun",
+    "Al-Biruni",
+    "Al-Razi",
+    "Ibn Sina",
+  ],
+  correct: 3,
+  explanation:
+    "Al-Qanun fi'l-Tibb, known as The Canon of Medicine, was written by Ibn Sina.",
+},
+
+{
+  id: 247,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Kitab ul Hind'?",
+  options: [
+    "Ibn Sina",
+    "Ibn Khaldun",
+    "Al-Farabi",
+    "Al-Biruni",
+  ],
+  correct: 3,
+  explanation:
+    "Kitab ul Hind was written by the renowned scholar Al-Biruni.",
+},
+
+{
+  id: 248,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Akbarnama'?",
+  options: [
+    "Babur",
+    "Akbar",
+    "Abul Fazl",
+    "Badauni",
+  ],
+  correct: 2,
+  explanation:
+    "Akbarnama was written by Abul Fazl, a court historian of Emperor Akbar.",
+},
+
+{
+  id: 249,
+  source: "PMA 159 LC Study Guide",
+  question: "Who wrote 'Tuzk-e-Babri'?",
+  options: [
+    "Abul Fazl",
+    "Akbar",
+    "Humayun",
+    "Babur",
+  ],
+  correct: 3,
+  explanation:
+    "Tuzk-e-Babri, also known as Baburnama, is the memoir of Babur.",
+},
+
+{
+  id: 250,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects Peshawar with Jalalabad and Kabul?",
+  options: [
+    "Bolan Pass",
+    "Khyber Pass",
+    "Gomal Pass",
+    "Tochi Pass",
+  ],
+  correct: 1,
+  explanation:
+    "The Khyber Pass historically connects the Peshawar region with Afghanistan toward Jalalabad and Kabul.",
+},
+
+{
+  id: 251,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects Quetta with Sibi?",
+  options: [
+    "Khojak Pass",
+    "Khyber Pass",
+    "Gomal Pass",
+    "Bolan Pass",
+  ],
+  correct: 3,
+  explanation:
+    "Bolan Pass provides an important route between Quetta and Sibi.",
+},
+
+{
+  id: 252,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects Quetta with Kandahar?",
+  options: [
+    "Bolan Pass",
+    "Khyber Pass",
+    "Khojak Pass",
+    "Lowari Pass",
+  ],
+  correct: 2,
+  explanation:
+    "Khojak Pass is an important route between the Quetta region and Kandahar.",
+},
+
+{
+  id: 253,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects North Waziristan with Ghazni?",
+  options: [
+    "Gomal Pass",
+    "Kurram Pass",
+    "Malakand Pass",
+    "Tochi Pass",
+  ],
+  correct: 3,
+  explanation:
+    "Tochi Pass provides a traditional route from North Waziristan toward Ghazni in Afghanistan.",
+},
+
+{
+  id: 254,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects South Waziristan and D.I. Khan with Ghazni?",
+  options: [
+    "Tochi Pass",
+    "Gomal Pass",
+    "Kurram Pass",
+    "Khojak Pass",
+  ],
+  correct: 1,
+  explanation:
+    "Gomal Pass provides a traditional route from the South Waziristan/D.I. Khan region toward Ghazni.",
+},
+
+{
+  id: 255,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects Parachinar with Kabul?",
+  options: [
+    "Gomal Pass",
+    "Bolan Pass",
+    "Kurram Pass",
+    "Malakand Pass",
+  ],
+  correct: 2,
+  explanation:
+    "Kurram Pass is associated with the route from Parachinar toward Kabul.",
+},
+
+{
+  id: 256,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects the Peshawar Valley with Swat and Dir?",
+  options: [
+    "Lowari Pass",
+    "Shandur Pass",
+    "Babusar Pass",
+    "Malakand Pass",
+  ],
+  correct: 3,
+  explanation:
+    "Malakand Pass provides an important route from the Peshawar Valley toward Swat and Dir.",
+},
+
+{
+  id: 257,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects Chitral with Gilgit?",
+  options: [
+    "Lowari Pass",
+    "Babusar Pass",
+    "Khunjerab Pass",
+    "Shandur Pass",
+  ],
+  correct: 3,
+  explanation:
+    "Shandur Pass connects the Chitral region with Gilgit and is famous for its polo festival.",
+},
+
+{
+  id: 258,
+  source: "PMA 159 LC Study Guide",
+  question: "Which pass connects Kaghan with Chilas?",
+  options: [
+    "Shandur Pass",
+    "Lowari Pass",
+    "Babusar Pass",
+    "Khunjerab Pass",
+  ],
+  correct: 2,
+  explanation:
+    "Babusar Pass provides a route between the Kaghan Valley and Chilas.",
+},
+
+{
+  id: 259,
+  source: "PMA 159 LC Study Guide",
+  question: "On which highway is Khunjerab Pass an important crossing?",
+  options: [
+    "Grand Trunk Road",
+    "Indus Highway",
+    "Karakoram Highway",
+    "Makran Coastal Highway",
+  ],
+  correct: 2,
+  explanation:
+    "Khunjerab Pass lies on the Karakoram Highway connecting Pakistan and China.",
+},
+
+{
+  id: 260,
+  source: "PMA 159 LC Study Guide",
+  question: "Who imposed martial law in Pakistan in October 1958?",
+  options: [
+    "Yahya Khan",
+    "Ayub Khan",
+    "Zia-ul-Haq",
+    "Pervez Musharraf",
+  ],
+  correct: 1,
+  explanation:
+    "General Ayub Khan became Chief Martial Law Administrator after martial law was imposed in October 1958.",
+},
+
+{
+  id: 261,
+  source: "PMA 159 LC Study Guide",
+  question: "Who imposed martial law on 25 March 1969?",
+  options: [
+    "Ayub Khan",
+    "Zia-ul-Haq",
+    "Pervez Musharraf",
+    "Yahya Khan",
+  ],
+  correct: 3,
+  explanation:
+    "General Yahya Khan imposed martial law on 25 March 1969 and assumed power from Ayub Khan.",
+},
+
+{
+  id: 262,
+  source: "PMA 159 LC Study Guide",
+  question: "Operation Fairplay was launched in 1977 by:",
+  options: [
+    "General Yahya Khan",
+    "General Ayub Khan",
+    "General Zia-ul-Haq",
+    "General Pervez Musharraf",
+  ],
+  correct: 2,
+  explanation:
+    "General Zia-ul-Haq launched Operation Fairplay on 5 July 1977.",
+},
+
+{
+  id: 263,
+  source: "PMA 159 LC Study Guide",
+  question: "Against whom was Operation Fairplay launched?",
+  options: [
+    "Nawaz Sharif",
+    "Benazir Bhutto",
+    "Yahya Khan",
+    "Zulfikar Ali Bhutto",
+  ],
+  correct: 3,
+  explanation:
+    "Operation Fairplay removed the government of Prime Minister Zulfikar Ali Bhutto in 1977.",
+},
+
+{
+  id: 264,
+  source: "PMA 159 LC Study Guide",
+  question: "Against which Prime Minister did Pervez Musharraf stage the 1999 military takeover?",
+  options: [
+    "Benazir Bhutto",
+    "Nawaz Sharif",
+    "Zulfikar Ali Bhutto",
+    "Muhammad Khan Junejo",
+  ],
+  correct: 1,
+  explanation:
+    "General Pervez Musharraf took control of the government on 12 October 1999 after removing Prime Minister Nawaz Sharif.",
+},
+
+{
+  id: 265,
+  source: "PMA 159 LC Study Guide",
+  question: "Which organization does the abbreviation FAO represent?",
+  options: [
+    "Federal Agriculture Organization",
+    "Food Administration Organization",
+    "Food and Agriculture Organization",
+    "Finance and Agriculture Office",
+  ],
+  correct: 2,
+  explanation:
+    "FAO stands for Food and Agriculture Organization of the United Nations.",
+},
+
+{
+  id: 266,
+  source: "PMA 159 LC Study Guide",
+  question: "What does WTO stand for?",
+  options: [
+    "World Transport Organization",
+    "World Tourism Organization",
+    "World Trade Organization",
+    "World Treaty Organization",
+  ],
+  correct: 2,
+  explanation:
+    "WTO stands for World Trade Organization.",
+},
+
+{
+  id: 267,
+  source: "PMA 159 LC Study Guide",
+  question: "What does SAARC stand for?",
+  options: [
+    "South Asian Alliance for Regional Countries",
+    "South Asian Association for Religious Cooperation",
+    "South Asian Association for Regional Cooperation",
+    "South Asian Administrative and Regional Council",
+  ],
+  correct: 2,
+  explanation:
+    "SAARC stands for South Asian Association for Regional Cooperation.",
+},
+
+{
+  id: 268,
+  source: "PMA 159 LC Study Guide",
+  question: "What does ECO stand for?",
+  options: [
+    "European Cooperation Organization",
+    "Economic Cooperation Organization",
+    "Economic Council Organization",
+    "Eastern Cooperation Organization",
+  ],
+  correct: 1,
+  explanation:
+    "ECO stands for Economic Cooperation Organization.",
+},
+
+{
+  id: 269,
+  source: "PMA 159 LC Study Guide",
+  question: "What does OIC stand for?",
+  options: [
+    "Organization of International Cooperation",
+    "Organisation of Islamic Countries",
+    "International Organization of Cooperation",
+    "Organisation of Islamic Cooperation",
+  ],
+  correct: 3,
+  explanation:
+    "OIC stands for Organisation of Islamic Cooperation.",
+},
+
+{
+  id: 270,
+  source: "PMA 159 LC Study Guide",
+  question: "What does NATO stand for?",
+  options: [
+    "National Atlantic Treaty Organization",
+    "North Asian Treaty Organization",
+    "North Atlantic Treaty Organization",
+    "North Atlantic Trade Organization",
+  ],
+  correct: 2,
+  explanation:
+    "NATO stands for North Atlantic Treaty Organization.",
+},
+
+{
+  id: 271,
+  source: "PMA 159 LC Study Guide",
+  question: "What does OPEC stand for?",
+  options: [
+    "Organization of Petroleum and Energy Countries",
+    "Oil Producing Economic Countries",
+    "Organization for Petroleum Export Cooperation",
+    "Organization of the Petroleum Exporting Countries",
+  ],
+  correct: 3,
+  explanation:
+    "OPEC stands for Organization of the Petroleum Exporting Countries.",
+},
+
+{
+  id: 272,
+  source: "PMA 159 LC Study Guide",
+  question: "What does CPEC stand for?",
+  options: [
+    "China-Pakistan Energy Cooperation",
+    "China-Pakistan Economic Corridor",
+    "Central Pakistan Economic Corridor",
+    "China-Pakistan Export Corridor",
+  ],
+  correct: 1,
+  explanation:
+    "CPEC stands for China-Pakistan Economic Corridor.",
+},
+
+{
+  id: 273,
+  source: "PMA 159 LC Study Guide",
+  question: "What does ISPR stand for?",
+  options: [
+    "Inter-Services Public Relations",
+    "Inter-Services Pakistan Regiment",
+    "International Services Public Relations",
+    "Inter-State Public Relations",
+  ],
+  correct: 0,
+  explanation:
+    "ISPR stands for Inter-Services Public Relations.",
+},
+
+{
+  id: 274,
+  source: "PMA 159 LC Study Guide",
+  question: "What does SUPARCO stand for?",
+  options: [
+    "Space and Universal Research Commission",
+    "Supreme Pakistan Research Commission",
+    "Space and Upper Atmosphere Research Commission",
+    "Space and Atmospheric Research Corporation",
+  ],
+  correct: 2,
+  explanation:
+    "SUPARCO stands for Space and Upper Atmosphere Research Commission.",
+},
+
+{
+  id: 275,
+  source: "PMA 159 LC Study Guide",
+  question: "What does NADRA stand for?",
+  options: [
+    "National Data and Revenue Authority",
+    "National Database and Registration Authority",
+    "National Database and Revenue Administration",
+    "National Development and Registration Authority",
+  ],
+  correct: 1,
+  explanation:
+    "NADRA stands for National Database and Registration Authority.",
+},
+
+{
+  id: 276,
+  source: "PMA 159 LC Study Guide",
+  question: "What does SBP stand for?",
+  options: [
+    "State Banking Pakistan",
+    "Security Bank of Pakistan",
+    "State Business Pakistan",
+    "State Bank of Pakistan",
+  ],
+  correct: 3,
+  explanation:
+    "SBP stands for State Bank of Pakistan.",
+},
+
+{
+  id: 277,
+  source: "PMA 159 LC Study Guide",
+  question: "What does FBR stand for?",
+  options: [
+    "Federal Banking Revenue",
+    "Finance Board of Pakistan",
+    "Federal Board of Revenue",
+    "Federal Budget Regulation",
+  ],
+  correct: 2,
+  explanation:
+    "FBR stands for Federal Board of Revenue.",
+},
+
+{
+  id: 278,
+  source: "PMA 159 LC Study Guide",
+  question: "What does FATF stand for?",
+  options: [
+    "Federal Anti-Terrorism Force",
+    "Financial Action Task Force",
+    "Financial Anti-Terrorism Forum",
+    "Foreign Action Task Force",
+  ],
+  correct: 1,
+  explanation:
+    "FATF stands for Financial Action Task Force.",
+},
+
+{
+  id: 279,
+  source: "PMA 159 LC Study Guide",
+  question: "What does NASA stand for?",
+  options: [
+    "National Air and Space Agency",
+    "North American Space Administration",
+    "National Aeronautics and Space Administration",
+    "National Aerospace Science Administration",
+  ],
+  correct: 2,
+  explanation:
+    "NASA stands for National Aeronautics and Space Administration.",
+},
+
+{
+  id: 280,
+  source: "PMA 159 LC Study Guide",
+  question: "Who defeated Raja Porus in the Battle of Hydaspes?",
+  options: [
+    "Muhammad bin Qasim",
+    "Mahmud Ghaznavi",
+    "Alexander the Great",
+    "Muhammad Ghori",
+  ],
+  correct: 2,
+  explanation:
+    "Alexander the Great defeated Raja Porus in the Battle of Hydaspes in 326 BC near the Jhelum River.",
+},
+
+{
+  id: 281,
+  source: "PMA 159 LC Study Guide",
+  question: "Who defeated Raja Dahir in 712 CE?",
+  options: [
+    "Mahmud Ghaznavi",
+    "Muhammad bin Qasim",
+    "Muhammad Ghori",
+    "Babur",
+  ],
+  correct: 1,
+  explanation:
+    "Muhammad bin Qasim defeated Raja Dahir in Sindh in 712 CE.",
+},
+
+{
+  id: 282,
+  source: "PMA 159 LC Study Guide",
+  question: "Who defeated Prithviraj Chauhan in the Second Battle of Tarain?",
+  options: [
+    "Babur",
+    "Sher Shah Suri",
+    "Mahmud Ghaznavi",
+    "Muhammad Ghori",
+  ],
+  correct: 3,
+  explanation:
+    "Muhammad Ghori defeated Prithviraj Chauhan in the Second Battle of Tarain in 1192.",
+},
+
+{
+  id: 283,
+  source: "PMA 159 LC Study Guide",
+  question: "Who defeated Ibrahim Lodhi in the First Battle of Panipat?",
+  options: [
+    "Akbar",
+    "Sher Shah Suri",
+    "Ahmad Shah Abdali",
+    "Babur",
+  ],
+  correct: 3,
+  explanation:
+    "Babur defeated Ibrahim Lodhi at the First Battle of Panipat in 1526, beginning Mughal rule in India.",
+},
+
+{
+  id: 284,
+  source: "PMA 159 LC Study Guide",
+  question: "The Battle of Khanwa was fought between Babur and:",
+  options: [
+    "Ibrahim Lodhi",
+    "Rana Sanga",
+    "Hemu",
+    "Rana Pratap",
+  ],
+  correct: 1,
+  explanation:
+    "The Battle of Khanwa in 1527 was fought between Babur and Rana Sanga.",
+},
+
+{
+  id: 285,
+  source: "PMA 159 LC Study Guide",
+  question: "Who defeated Humayun in the Battle of Chausa?",
+  options: [
+    "Babur",
+    "Akbar",
+    "Rana Sanga",
+    "Sher Shah Suri",
+  ],
+  correct: 3,
+  explanation:
+    "Sher Shah Suri defeated Humayun at the Battle of Chausa in 1539.",
+},
+
+{
+  id: 286,
+  source: "PMA 159 LC Study Guide",
+  question: "Who defeated the Marathas in the Third Battle of Panipat?",
+  options: [
+    "Babur",
+    "Sher Shah Suri",
+    "Ahmad Shah Abdali",
+    "Robert Clive",
+  ],
+  correct: 2,
+  explanation:
+    "Ahmad Shah Abdali defeated the Marathas in the Third Battle of Panipat in 1761.",
+},
+
+{
+  id: 287,
+  source: "PMA 159 LC Study Guide",
+  question: "Who was martyred in the Battle of Srirangapatna in 1799?",
+  options: [
+    "Siraj-ud-Daulah",
+    "Rana Pratap",
+    "Raja Dahir",
+    "Tipu Sultan",
+  ],
+  correct: 3,
+  explanation:
+    "Tipu Sultan was killed while defending Srirangapatna against British forces in 1799.",
+},
+
+{
+  id: 288,
+  source: "PMA 159 LC Study Guide",
+  question: "The Battle of Balakot in 1831 was associated with:",
+  options: [
+    "Tipu Sultan",
+    "Syed Ahmad Barelvi",
+    "Siraj-ud-Daulah",
+    "Ahmad Shah Abdali",
+  ],
+  correct: 1,
+  explanation:
+    "Syed Ahmad Barelvi fought against Sikh forces at Balakot in 1831.",
+},
+
+{
+  id: 289,
+  source: "PMA 159 LC Study Guide",
+  question: "Who was the first Pakistani Nobel laureate?",
+  options: [
+    "Malala Yousafzai",
+    "Abdul Sattar Edhi",
+    "Dr. A.Q. Khan",
+    "Dr. Abdus Salam",
+  ],
+  correct: 3,
+  explanation:
+    "Dr. Abdus Salam became the first Pakistani Nobel laureate when he received the Nobel Prize in Physics in 1979.",
+},
+
+{
+  id: 290,
+  source: "PMA 159 LC Study Guide",
+  question: "In which field did Dr. Abdus Salam receive the Nobel Prize?",
+  options: [
+    "Chemistry",
+    "Physics",
+    "Medicine",
+    "Peace",
+  ],
+  correct: 1,
+  explanation:
+    "Dr. Abdus Salam received the 1979 Nobel Prize in Physics.",
+},
+
+{
+  id: 291,
+  source: "PMA 159 LC Study Guide",
+  question: "Who received the Nobel Peace Prize in 2014?",
+  options: [
+    "Abdus Salam",
+    "Abdul Sattar Edhi",
+    "Malala Yousafzai",
+    "Benazir Bhutto",
+  ],
+  correct: 2,
+  explanation:
+    "Malala Yousafzai received the Nobel Peace Prize in 2014.",
+},
+
+{
+  id: 292,
+  source: "PMA 159 LC Study Guide",
+  question: "Who is known as Madar-e-Millat?",
+  options: [
+    "Benazir Bhutto",
+    "Begum Rana Liaquat Ali Khan",
+    "Begum Ra'ana Liaquat",
+    "Fatima Jinnah",
+  ],
+  correct: 3,
+  explanation:
+    "Fatima Jinnah is popularly known as Madar-e-Millat, meaning Mother of the Nation.",
+},
+
+{
+  id: 293,
+  source: "PMA 159 LC Study Guide",
+  question: "Who is credited with giving the idea of a separate homeland in the Allahabad Address of 1930?",
+  options: [
+    "Muhammad Ali Jinnah",
+    "Chaudhry Rahmat Ali",
+    "Allama Muhammad Iqbal",
+    "Sir Syed Ahmad Khan",
+  ],
+  correct: 2,
+  explanation:
+    "Allama Muhammad Iqbal presented his famous Allahabad Address in 1930, outlining the idea of a consolidated Muslim state in north-western India.",
+},
+
+{
+  id: 294,
+  source: "PMA 159 LC Study Guide",
+  question: "Who coined the name 'Pakistan' in 1933?",
+  options: [
+    "Allama Muhammad Iqbal",
+    "Chaudhry Rahmat Ali",
+    "Muhammad Ali Jinnah",
+    "Liaquat Ali Khan",
+  ],
+  correct: 1,
+  explanation:
+    "Chaudhry Rahmat Ali coined the name Pakistan in 1933.",
+},
+
+{
+  id: 295,
+  source: "PMA 159 LC Study Guide",
+  question: "Which fort is also known as Shahi Qila?",
+  options: [
+    "Rohtas Fort",
+    "Attock Fort",
+    "Lahore Fort",
+    "Derawar Fort",
+  ],
+  correct: 2,
+  explanation:
+    "Lahore Fort is commonly known as Shahi Qila.",
+},
+
+{
+  id: 296,
+  source: "PMA 159 LC Study Guide",
+  question: "Who built Rohtas Fort?",
+  options: [
+    "Akbar",
+    "Babur",
+    "Shah Jahan",
+    "Sher Shah Suri",
+  ],
+  correct: 3,
+  explanation:
+    "Rohtas Fort near Jhelum was constructed by Sher Shah Suri.",
+},
+
+{
+  id: 297,
+  source: "PMA 159 LC Study Guide",
+  question: "Which fort is known as the 'Great Wall of Sindh'?",
+  options: [
+    "Rohtas Fort",
+    "Ranikot Fort",
+    "Derawar Fort",
+    "Attock Fort",
+  ],
+  correct: 1,
+  explanation:
+    "Ranikot Fort in Sindh is popularly known as the Great Wall of Sindh.",
+},
+
+{
+  id: 298,
+  source: "PMA 159 LC Study Guide",
+  question: "Derawar Fort is located in which region?",
+  options: [
+    "Hunza",
+    "Skardu",
+    "Peshawar",
+    "Cholistan",
+  ],
+  correct: 3,
+  explanation:
+    "Derawar Fort is located in the Cholistan Desert near Bahawalpur.",
+},
+
+{
+  id: 299,
+  source: "PMA 159 LC Study Guide",
+  question: "Which desert is located in Balochistan?",
+  options: [
+    "Thar Desert",
+    "Thal Desert",
+    "Kharan Desert",
+    "Cholistan Desert",
+  ],
+  correct: 2,
+  explanation:
+    "Kharan Desert is located in Balochistan.",
+},
+
+{
+  id: 300,
+  source: "PMA 159 LC Study Guide",
+  question: "Which desert is located in Sindh and is shared with India?",
+  options: [
+    "Cholistan Desert",
+    "Thal Desert",
+    "Kharan Desert",
+    "Thar Desert",
+  ],
+  correct: 3,
+  explanation:
+    "The Thar Desert lies mainly in Sindh and extends across the Pakistan-India border.",
+}
 ];
 
 /*
