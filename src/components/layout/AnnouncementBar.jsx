@@ -13,19 +13,19 @@ const AnnouncementBar = () => {
     if (loading || (user && isPremium) || !visible) {
       document.documentElement.style.setProperty(
         "--announcement-height",
-        "0px"
+        "0px",
       );
     } else {
       document.documentElement.style.setProperty(
         "--announcement-height",
-        "44px"
+        "44px",
       );
     }
 
     return () => {
       document.documentElement.style.setProperty(
         "--announcement-height",
-        "0px"
+        "0px",
       );
     };
   }, [loading, user, isPremium, visible]);
@@ -45,7 +45,7 @@ const AnnouncementBar = () => {
   }
 
   const whatsappMessage = encodeURIComponent(
-    "Hello Examitics, I want to get the 1-Month Premium subscription for PMA Long Course / AFNS under the limited-time Rs. 500 offer."
+    "Hello Examitics, I want to get the 1-Month Premium subscription for PMA Long Course / AFNS under the limited-time Rs. 500 offer.",
   );
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
@@ -60,12 +60,10 @@ const AnnouncementBar = () => {
           <FiMessageCircle />
         </span>
 
-        <span className="announcement-label">
-          🔥 7-DAY PREMIUM OFFER
-        </span>
+        <span className="announcement-label">🔐 PMA 159 LC PREMIUM</span>
 
         <span className="announcement-message">
-          1-Month Premium for PMA Long Course & AFNS — Only Rs. 500
+          — 1-Month Premium Subscription • Rs. 1,500 {" "}
         </span>
 
         <a
@@ -75,7 +73,7 @@ const AnnouncementBar = () => {
           className="announcement-cta"
           tabIndex={duplicate ? -1 : undefined}
         >
-          <span>GET OFFER</span>
+          <span>GET PREMIUM</span>
           <FiArrowRight />
         </a>
       </div>
@@ -85,7 +83,8 @@ const AnnouncementBar = () => {
       <div className="announcement-item announcement-highlight">
         <span className="announcement-dot" />
         <strong>
-          Valid until 5 October 2026, 11:59 PM • 1-Month Premium • Rs. 500
+          • Get access to premium mock tests & preparation
+          resources{" "}
         </strong>
       </div>
 
@@ -121,4 +120,3 @@ const AnnouncementBar = () => {
 };
 
 export default AnnouncementBar;
-

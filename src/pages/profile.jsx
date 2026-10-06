@@ -791,19 +791,19 @@ const openWhatsApp = () => {
 
             <div>
               <span>Monthly</span>
-              <strong>Rs. 1,000</strong>
-            </div>
-
-            <div>
-              <span>Yearly</span>
               <strong>Rs. 1,500</strong>
             </div>
 
             <div>
-              <span>Lifetime</span>
-              <strong>Rs. 2,500</strong>
+              <span>Yearly</span>
+              <strong>Rs. 2,000</strong>
             </div>
 
+            <div>
+              <span>Lifetime</span>
+              <strong>Rs. 3,500</strong>
+            </div>
+ 
           </div>
 
           <button
