@@ -176,7 +176,7 @@ function PremiumPlans() {
               type="button"
               className="premium-plan-btn"
               onClick={() =>
-                handleWhatsApp("Monthly", "Rs. 1,000")
+                handleWhatsApp("Monthly", "Rs. 1,500")
               }
               disabled={isPremium}
             >
@@ -273,7 +273,7 @@ function PremiumPlans() {
               type="button"
               className="premium-plan-btn premium-plan-btn-featured"
               onClick={() =>
-                handleWhatsApp("Yearly", "Rs. 1,500")
+                handleWhatsApp("Yearly", "Rs. 2,000")
               }
               disabled={isPremium}
             >
@@ -371,7 +371,7 @@ function PremiumPlans() {
               type="button"
               className="premium-plan-btn"
               onClick={() =>
-                handleWhatsApp("Lifetime", "Rs. 2,500")
+                handleWhatsApp("Lifetime", "Rs. 3,500")
               }
               disabled={isPremium}
             >

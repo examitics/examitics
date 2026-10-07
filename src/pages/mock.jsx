@@ -37,7 +37,7 @@ const MOCK = () => {
     React.useState(true);
 
   const whatsappMessage = encodeURIComponent(
-    "Assalam o Alaikum, I want to get 1-Month EXAMITICS Premium for PMA 159 LC / AFNS under the limited-time Rs. 500 offer."
+   "Hello Examitics, I want to get 1-Month Premium access for PMA 159 LC for Rs. 1,500."
   );
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;

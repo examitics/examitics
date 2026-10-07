@@ -57,7 +57,7 @@ function Profile() {
 const WHATSAPP_NUMBER = "923014709158";
 
 const whatsappMessage =
-  "Hello Examatics, I want to get premium access for PMA 159 preparation.";
+  "Hello Examitics, I want to get premium access for PMA 159 preparation.";
 
   useEffect(() => {
     if (profile) {
@@ -641,7 +641,7 @@ const openWhatsApp = () => {
     <h2>Subscription</h2>
 
     <p>
-      Manage your Examatics premium access and PMA 159 preparation.
+      Manage your Examitics premium access and PMA 159 preparation.
     </p>
   </div>
 
@@ -759,7 +759,7 @@ const openWhatsApp = () => {
           </span>
 
           <h3>
-            Free Examatics Account
+            Free Examitics Account
           </h3>
 
           <p>
@@ -819,7 +819,7 @@ const openWhatsApp = () => {
           </button>
 
           <small className="profile-whatsapp-note">
-            Contact Examatics on WhatsApp to activate your
+            Contact Examitics on WhatsApp to activate your
             PMA 159 premium subscription.
           </small>
 

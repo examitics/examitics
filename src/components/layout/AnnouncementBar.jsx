@@ -45,7 +45,7 @@ const AnnouncementBar = () => {
   }
 
   const whatsappMessage = encodeURIComponent(
-    "Hello Examitics, I want to get the 1-Month Premium subscription for PMA Long Course / AFNS under the limited-time Rs. 500 offer.",
+    "Assalam o Alaikum, I want to get 1-Month EXAMITICS Premium for PMA 159 LC for Rs. 1,500.",
   );
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
@@ -63,7 +63,7 @@ const AnnouncementBar = () => {
         <span className="announcement-label">🔐 PMA 159 LC PREMIUM</span>
 
         <span className="announcement-message">
-          — 1-Month Premium Subscription • Rs. 1,500 {" "}
+          — 1-Month Premium Subscription • Rs. 1,500{" "}
         </span>
 
         <a
@@ -83,8 +83,7 @@ const AnnouncementBar = () => {
       <div className="announcement-item announcement-highlight">
         <span className="announcement-dot" />
         <strong>
-          • Get access to premium mock tests & preparation
-          resources{" "}
+          • Get access to premium mock tests & preparation resources{" "}
         </strong>
       </div>
 

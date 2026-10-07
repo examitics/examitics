@@ -240,7 +240,7 @@ function Admin() {
               <div className="admin-panel">
                 <div className="admin-panel-header">
                   <div>
-                    <h2>Welcome to Examatics Admin</h2>
+                    <h2>Welcome to Examitics Admin</h2>
                     <p>
                       Manage your platform from one place.
                     </p>
@@ -346,7 +346,7 @@ function Admin() {
             </div>
 
             <div>
-              <strong>EXAMATICS</strong>
+              <strong>EXAMAITICS</strong>
               <span>Admin Panel</span>
             </div>
           </div>
@@ -446,7 +446,7 @@ function Admin() {
               </h1>
 
               <p>
-                Examatics administration
+                Examitics administration
               </p>
             </div>
           </div>
