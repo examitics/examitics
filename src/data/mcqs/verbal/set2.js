@@ -153,7 +153,7 @@ const verbalQuestions2 = [
     id: 26,
     question: "If 4*5*2=524, 3*7*5=753 and 6*9*8=986, then 2*9*6=?",
     options: ["692", "269", "962", "926"],
-    correctAnswer: "692"
+    correctAnswer: "962"
   },
   {
     id: 27,
