@@ -53,7 +53,7 @@ const MockSection = ({ title, examCode }) => {
             </button>
 
             <img
-              src="/images/afns-syllabus.png"
+              src="/images/afns-syllabus.webp"
               alt="AFNS Initial Test Syllabus"
               className="afns-syllabus-image"
             />

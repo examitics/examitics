@@ -594,6 +594,10 @@ const openWhatsApp = () => {
                   PAF
                 </option>
 
+                <option value="AFNS">
+                  AFNS
+                </option>
+
                 <option value="ISSB">
                   ISSB
                 </option>
