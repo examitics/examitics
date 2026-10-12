@@ -1,0 +1,357 @@
+
+.reviews-section {
+  width: 100%;
+  padding: 52px 0;
+  color: var(--color-text);
+}
+
+.reviews-heading {
+  width: min(1120px, 92%);
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.reviews-eyebrow {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.reviews-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.reviews-heading p,
+.review-form-intro {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.reviews-heading > a,
+.review-access-note a {
+  color: var(--color-primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.reviews-track-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-track {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  width: max-content;
+  padding: 8px 4vw 18px;
+  animation: reviews-scroll 65s linear infinite;
+}
+
+.reviews-track-window:hover .reviews-track,
+.reviews-track-window:focus-within .reviews-track {
+  animation-play-state: paused;
+}
+
+.candidate-review-card {
+  width: min(340px, 82vw);
+  min-height: 180px;
+  padding: 22px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-card);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.candidate-review-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.candidate-review-name strong,
+.candidate-review-name span {
+  display: block;
+}
+
+.candidate-review-name > div > span {
+  margin-top: 3px;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.candidate-review-card p {
+  margin: 0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.candidate-review-card audio,
+.review-audio-preview audio {
+  width: 100%;
+  max-width: 100%;
+}
+
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.premium-review-form,
+.review-access-note {
+  width: min(100%, 760px);
+  margin: 32px auto;
+  padding: clamp(20px, 4vw, 36px);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  color: var(--color-text);
+}
+
+.premium-review-form h2 {
+  margin-top: 0;
+}
+
+.premium-review-form > label:not(.review-consent) {
+  display: block;
+  margin: 18px 0 7px;
+  font-weight: 650;
+}
+
+.premium-review-form input:not([type="checkbox"]),
+.premium-review-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-card-secondary);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.premium-review-form textarea {
+  resize: vertical;
+}
+
+.review-character-count {
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.review-recording-controls {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.review-recording-controls > button,
+.review-remove-audio {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-card-secondary);
+  color: var(--color-text);
+  padding: 11px 15px;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.review-audio-preview {
+  display: grid;
+  gap: 10px;
+}
+
+.review-remove-audio {
+  color: #b42318;
+}
+
+.review-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 22px 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.review-consent input {
+  margin-top: 4px;
+}
+
+.review-submit-btn {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  background: var(--gradient-primary);
+  color: #fff;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.review-submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.review-form-message {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-secondary);
+  overflow-wrap: anywhere;
+}
+
+.review-access-note {
+  text-align: center;
+}
+
+.review-list-page {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  padding: 42px 0 64px;
+}
+
+.review-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 18px;
+}
+
+.review-list-grid .candidate-review-card {
+  width: auto;
+}
+
+.review-list-grid .candidate-review-card audio {
+  margin-top: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .reviews-track > * {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .reviews-section {
+    padding: 36px 0;
+  }
+}
+
+/* =======================================================
+======================================================= */
+
+.admin-reviews-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-reviews-heading h2 {
+  margin-bottom: 6px;
+}
+
+.admin-reviews-heading p {
+  color: var(--color-text-muted);
+}
+
+.admin-reviews-heading button,
+.admin-review-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+  color: var(--color-text);
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.admin-review-list {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-review-item {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-card);
+}
+
+.admin-review-item p {
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.admin-review-item audio {
+  width: 100%;
+  max-width: 480px;
+}
+
+.admin-review-delete {
+  width: fit-content;
+  color: #b42318;
+}
+
+.admin-reviews-heading button:disabled,
+.admin-review-delete:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .admin-reviews-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

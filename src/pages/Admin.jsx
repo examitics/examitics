@@ -9,6 +9,7 @@ import {
   FiSettings,
   FiLogOut,
   FiShield,
+  FiMessageCircle,
   FiMail,
 } from "react-icons/fi";
 
@@ -18,6 +19,7 @@ import { supabase } from "../lib/supabase";
 import AdminUsers from "../components/admin/AdminUsers";
 import AdminSubscriptions from "../components/admin/AdminSubscriptions";
 import AdminMockTests from "../components/admin/AdminMockTests";
+import AdminReviews from "../components/admin/AdminReviews";
 
 import "../styles/Admin.css";
 
@@ -44,9 +46,7 @@ function Admin() {
       setDashboardLoading(true);
       setDashboardError("");
 
-      const { data, error } = await supabase.rpc(
-        "admin_get_dashboard_stats"
-      );
+      const { data, error } = await supabase.rpc("admin_get_dashboard_stats");
 
       if (error) {
         throw error;
@@ -55,20 +55,13 @@ function Admin() {
       setDashboardStats({
         total_users: Number(data?.total_users || 0),
         premium_users: Number(data?.premium_users || 0),
-        active_subscriptions: Number(
-          data?.active_subscriptions || 0
-        ),
+        active_subscriptions: Number(data?.active_subscriptions || 0),
         mock_questions: Number(data?.mock_questions || 0),
       });
     } catch (error) {
-      console.error(
-        "Error fetching dashboard statistics:",
-        error
-      );
+      console.error("Error fetching dashboard statistics:", error);
 
-      setDashboardError(
-        "Unable to load dashboard statistics."
-      );
+      setDashboardError("Unable to load dashboard statistics.");
     } finally {
       setDashboardLoading(false);
     }
@@ -117,6 +110,11 @@ function Admin() {
       icon: <FiFileText />,
     },
     {
+      id: "reviews",
+      label: "Reviews",
+      icon: <FiMessageCircle />,
+    },
+    {
       id: "settings",
       label: "Settings",
       icon: <FiSettings />,
@@ -134,14 +132,15 @@ function Admin() {
       case "mock-tests":
         return <AdminMockTests />;
 
+      case "reviews":
+        return <AdminReviews />;
+
       case "settings":
         return (
           <div className="admin-placeholder">
             <FiSettings />
             <h2>Admin Settings</h2>
-            <p>
-              Administrative settings will be added here.
-            </p>
+            <p>Administrative settings will be added here.</p>
           </div>
         );
 
@@ -150,9 +149,7 @@ function Admin() {
           <>
             {/* Dashboard error */}
             {dashboardError && (
-              <div className="admin-dashboard-error">
-                {dashboardError}
-              </div>
+              <div className="admin-dashboard-error">{dashboardError}</div>
             )}
 
             {/* Dashboard statistics */}
@@ -164,14 +161,10 @@ function Admin() {
                 </div>
 
                 <div>
-                  <span className="admin-stat-label">
-                    Total Users
-                  </span>
+                  <span className="admin-stat-label">Total Users</span>
 
                   <strong className="admin-stat-value">
-                    {dashboardLoading
-                      ? "..."
-                      : dashboardStats.total_users}
+                    {dashboardLoading ? "..." : dashboardStats.total_users}
                   </strong>
                 </div>
               </div>
@@ -183,14 +176,10 @@ function Admin() {
                 </div>
 
                 <div>
-                  <span className="admin-stat-label">
-                    Premium Users
-                  </span>
+                  <span className="admin-stat-label">Premium Users</span>
 
                   <strong className="admin-stat-value">
-                    {dashboardLoading
-                      ? "..."
-                      : dashboardStats.premium_users}
+                    {dashboardLoading ? "..." : dashboardStats.premium_users}
                   </strong>
                 </div>
               </div>
@@ -202,9 +191,7 @@ function Admin() {
                 </div>
 
                 <div>
-                  <span className="admin-stat-label">
-                    Active Subscriptions
-                  </span>
+                  <span className="admin-stat-label">Active Subscriptions</span>
 
                   <strong className="admin-stat-value">
                     {dashboardLoading
@@ -221,14 +208,10 @@ function Admin() {
                 </div>
 
                 <div>
-                  <span className="admin-stat-label">
-                    Mock Questions
-                  </span>
+                  <span className="admin-stat-label">Mock Questions</span>
 
                   <strong className="admin-stat-value">
-                    {dashboardLoading
-                      ? "..."
-                      : dashboardStats.mock_questions}
+                    {dashboardLoading ? "..." : dashboardStats.mock_questions}
                   </strong>
                 </div>
               </div>
@@ -241,9 +224,7 @@ function Admin() {
                 <div className="admin-panel-header">
                   <div>
                     <h2>Welcome to Examitics Admin</h2>
-                    <p>
-                      Manage your platform from one place.
-                    </p>
+                    <p>Manage your platform from one place.</p>
                   </div>
                 </div>
 
@@ -253,16 +234,11 @@ function Admin() {
                   </div>
 
                   <div>
-                    <h3>
-                      Admin access is active
-                    </h3>
+                    <h3>Admin access is active</h3>
 
                     <p>
                       You are signed in as{" "}
-                      <strong>
-                        {profile?.full_name || user?.email}
-                      </strong>
-                      .
+                      <strong>{profile?.full_name || user?.email}</strong>.
                     </p>
 
                     <span className="admin-role-badge">
@@ -277,18 +253,14 @@ function Admin() {
                 <div className="admin-panel-header">
                   <div>
                     <h2>Quick Actions</h2>
-                    <p>
-                      Common administrative tasks.
-                    </p>
+                    <p>Common administrative tasks.</p>
                   </div>
                 </div>
 
                 <div className="admin-quick-actions">
                   <button
                     type="button"
-                    onClick={() =>
-                      handleSectionChange("users")
-                    }
+                    onClick={() => handleSectionChange("users")}
                   >
                     <FiUsers />
                     Manage Users
@@ -296,9 +268,7 @@ function Admin() {
 
                   <button
                     type="button"
-                    onClick={() =>
-                      handleSectionChange("subscriptions")
-                    }
+                    onClick={() => handleSectionChange("subscriptions")}
                   >
                     <FiCreditCard />
                     Manage Subscriptions
@@ -306,9 +276,7 @@ function Admin() {
 
                   <button
                     type="button"
-                    onClick={() =>
-                      handleSectionChange("mock-tests")
-                    }
+                    onClick={() => handleSectionChange("mock-tests")}
                   >
                     <FiFileText />
                     Manage Mock Tests
@@ -323,7 +291,6 @@ function Admin() {
 
   return (
     <div className="admin-page">
-
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
@@ -334,12 +301,9 @@ function Admin() {
 
       {/* Sidebar */}
       <aside
-        className={`admin-sidebar ${
-          sidebarOpen ? "admin-sidebar-open" : ""
-        }`}
+        className={`admin-sidebar ${sidebarOpen ? "admin-sidebar-open" : ""}`}
       >
         <div className="admin-sidebar-top">
-
           <div className="admin-brand">
             <div className="admin-brand-icon">
               <FiShield />
@@ -362,26 +326,18 @@ function Admin() {
         </div>
 
         <nav className="admin-nav">
-          <span className="admin-nav-title">
-            MANAGEMENT
-          </span>
+          <span className="admin-nav-title">MANAGEMENT</span>
 
           {menuItems.map((item) => (
             <button
               key={item.id}
               type="button"
               className={`admin-nav-item ${
-                activeSection === item.id
-                  ? "admin-nav-item-active"
-                  : ""
+                activeSection === item.id ? "admin-nav-item-active" : ""
               }`}
-              onClick={() =>
-                handleSectionChange(item.id)
-              }
+              onClick={() => handleSectionChange(item.id)}
             >
-              <span className="admin-nav-icon">
-                {item.icon}
-              </span>
+              <span className="admin-nav-icon">{item.icon}</span>
 
               <span>{item.label}</span>
             </button>
@@ -391,21 +347,15 @@ function Admin() {
         <div className="admin-sidebar-bottom">
           <div className="admin-user-mini">
             <div className="admin-user-avatar">
-              {(profile?.full_name ||
-                user?.email ||
-                "A")
+              {(profile?.full_name || user?.email || "A")
                 .charAt(0)
                 .toUpperCase()}
             </div>
 
             <div className="admin-user-info">
-              <strong>
-                {profile?.full_name || "Admin"}
-              </strong>
+              <strong>{profile?.full_name || "Admin"}</strong>
 
-              <span>
-                {user?.email}
-              </span>
+              <span>{user?.email}</span>
             </div>
           </div>
 
@@ -422,7 +372,6 @@ function Admin() {
 
       {/* Main area */}
       <main className="admin-main">
-
         {/* Header */}
         <header className="admin-header">
           <div className="admin-header-left">
@@ -439,31 +388,22 @@ function Admin() {
               <h1>
                 {activeSection === "dashboard"
                   ? "Dashboard"
-                  : menuItems.find(
-                      (item) =>
-                        item.id === activeSection
-                    )?.label}
+                  : menuItems.find((item) => item.id === activeSection)?.label}
               </h1>
 
-              <p>
-                Examitics administration
-              </p>
+              <p>Examitics administration</p>
             </div>
           </div>
 
           <div className="admin-header-user">
             <div className="admin-header-avatar">
-              {(profile?.full_name ||
-                user?.email ||
-                "A")
+              {(profile?.full_name || user?.email || "A")
                 .charAt(0)
                 .toUpperCase()}
             </div>
 
             <div>
-              <strong>
-                {profile?.full_name || "Admin"}
-              </strong>
+              <strong>{profile?.full_name || "Admin"}</strong>
 
               <span>Administrator</span>
             </div>
@@ -471,10 +411,7 @@ function Admin() {
         </header>
 
         {/* Content */}
-        <section className="admin-content">
-          {renderContent()}
-        </section>
-
+        <section className="admin-content">{renderContent()}</section>
       </main>
     </div>
   );

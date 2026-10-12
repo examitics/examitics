@@ -9,6 +9,8 @@ import {
 import { useAuth } from "../context/AuthContext";
 import "../styles/Premium.css";
 
+import { PremiumReviewCarousel } from "../components/reviews/PremiumReviews";
+
 function Premium() {
   const { user, isPremium, subscription } = useAuth();
 
@@ -223,7 +225,7 @@ function Premium() {
           </p>
 
         </section>
-
+<PremiumReviewCarousel />
       </div>
     </main>
   );

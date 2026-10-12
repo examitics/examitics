@@ -14,6 +14,8 @@ import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
+
+import { PremiumReviewCarousel } from "../components/reviews/PremiumReviews";
 // import "../styles/home.css";
 
 // import AdsterraNativeBanner from "../components/AdsterraNativeBanner";
@@ -257,6 +259,14 @@ const Home = () => {
           </h6>
           <Adsterra300x250 />
         </div> */}
+
+
+<section id="candidate-reviews">
+  <PremiumReviewCarousel />
+</section>
+
+
+
         <section id="faq">
           <FAQ />
         </section>

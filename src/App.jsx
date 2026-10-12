@@ -21,6 +21,7 @@ import QuickMathPractice from "./pages/QuickMath/QuickMathPractice";
 import QuickMathResult from "./pages/QuickMath/QuickMathResult";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Review from "./pages/Review";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Profile from "./pages/profile";
@@ -189,7 +190,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/login" element={<Login />} />
-
+<Route path="/review" element={<Review />} />
         {/* PREMIUM PAGE */}
         <Route path="/premium" element={<Premium />} />
         <Route path="/premium/plans" element={<PremiumPlans />} />
