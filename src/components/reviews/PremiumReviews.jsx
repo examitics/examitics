@@ -1,7 +1,16 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiMic, FiSquare, FiTrash2, FiStar } from "react-icons/fi";
+import {
+  FiMic,
+  FiSquare,
+  FiTrash2,
+  FiPlay,
+  FiPause,
+  FiCheckCircle,
+  FiAlertCircle,
+  FiLoader,
+} from "react-icons/fi";
 
 import { supabase } from "../../lib/supabase";
 import { useAuth } from "../../context/AuthContext";
@@ -11,15 +20,188 @@ const BUCKET = "premium-review-audio";
 const MAX_RECORDING_MS = 90_000;
 const MAX_AUDIO_BYTES = 15 * 1024 * 1024;
 
+/* =========================================================
+   Custom audio player
+   Replaces native audio controls and the three-dot menu.
+========================================================= */
+
+export function ReviewAudioPlayer({ src }) {
+  const audioRef = useRef(null);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setDuration(0);
+    setHasError(false);
+
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [src]);
+
+  const formatTime = (seconds) => {
+    if (!Number.isFinite(seconds) || seconds < 0) {
+      return "0:00";
+    }
+
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+
+    return `${minutes}:${String(remainingSeconds).padStart(2, "0")}`;
+  };
+
+  const togglePlayback = async () => {
+    const audio = audioRef.current;
+
+    if (!audio || hasError) return;
+
+    if (audio.paused) {
+      if (
+        Number.isFinite(audio.duration) &&
+        audio.currentTime >= audio.duration
+      ) {
+        audio.currentTime = 0;
+      }
+
+      try {
+        await audio.play();
+      } catch (error) {
+        console.error("Review audio playback failed:", error);
+        setIsPlaying(false);
+      }
+    } else {
+      audio.pause();
+    }
+  };
+
+  const handleSeek = (event) => {
+    const audio = audioRef.current;
+
+    if (!audio || !Number.isFinite(audio.duration)) return;
+
+    const nextTime = Number(event.target.value);
+
+    audio.currentTime = nextTime;
+    setCurrentTime(nextTime);
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+    setCurrentTime(0);
+
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+    }
+  };
+
+  const progress =
+    duration > 0
+      ? Math.min(100, Math.max(0, (currentTime / duration) * 100))
+      : 0;
+
+  return (
+    <div className="review-audio-player">
+      <audio
+        ref={audioRef}
+        src={src}
+        preload="metadata"
+        onLoadedMetadata={(event) => {
+          const loadedDuration = event.currentTarget.duration;
+
+          setDuration(
+            Number.isFinite(loadedDuration) ? loadedDuration : 0
+          );
+        }}
+        onDurationChange={(event) => {
+          const loadedDuration = event.currentTarget.duration;
+
+          setDuration(
+            Number.isFinite(loadedDuration) ? loadedDuration : 0
+          );
+        }}
+        onTimeUpdate={(event) => {
+          setCurrentTime(event.currentTarget.currentTime || 0);
+        }}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={handleEnded}
+        onError={() => {
+          setHasError(true);
+          setIsPlaying(false);
+        }}
+      />
+
+      {hasError ? (
+        <p className="review-audio-error" role="status">
+          Audio is currently unavailable.
+        </p>
+      ) : (
+        <>
+          <button
+            type="button"
+            className="review-audio-play-btn"
+            onClick={togglePlayback}
+            aria-label={
+              isPlaying ? "Pause review audio" : "Play review audio"
+            }
+            title={isPlaying ? "Pause" : "Play"}
+          >
+            {isPlaying ? <FiPause /> : <FiPlay />}
+          </button>
+
+          <div className="review-audio-track">
+            <input
+              className="review-audio-range"
+              type="range"
+              min="0"
+              max={duration || 1}
+              step="0.1"
+              value={Math.min(currentTime, duration || 0)}
+              onChange={handleSeek}
+              disabled={!duration || hasError}
+              aria-label="Seek through review audio"
+              aria-valuetext={`${formatTime(currentTime)} of ${formatTime(
+                duration
+              )}`}
+              style={{
+                "--audio-progress": `${progress}%`,
+              }}
+            />
+
+            <div className="review-audio-times">
+              <span>{formatTime(currentTime)}</span>
+              <span>{formatTime(duration)}</span>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+/* =========================================================
+   Audio recording helpers
+========================================================= */
+
 function getAudioType() {
   if (!window.MediaRecorder) return "";
 
-  return [
-    "audio/webm;codecs=opus",
-    "audio/webm",
-    "audio/mp4",
-    "audio/ogg;codecs=opus",
-  ].find((type) => MediaRecorder.isTypeSupported(type)) || "";
+  return (
+    [
+      "audio/webm;codecs=opus",
+      "audio/webm",
+      "audio/mp4",
+      "audio/ogg;codecs=opus",
+    ].find((type) => MediaRecorder.isTypeSupported(type)) || ""
+  );
 }
 
 function extensionFor(type) {
@@ -27,6 +209,10 @@ function extensionFor(type) {
   if (type.includes("ogg")) return "ogg";
   return "webm";
 }
+
+/* =========================================================
+   Premium review submission form
+========================================================= */
 
 export function PremiumReviewForm() {
   const { user, profile, isPremium, loading } = useAuth();
@@ -39,11 +225,14 @@ export function PremiumReviewForm() {
   const [seconds, setSeconds] = useState(0);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
+  const [toast, setToast] = useState(null);
+
   const recorderRef = useRef(null);
   const streamRef = useRef(null);
   const chunksRef = useRef([]);
   const startedAtRef = useRef(0);
   const stopTimerRef = useRef(null);
+  const submittingRef = useRef(false);
 
   useEffect(() => {
     setDisplayName(profile?.full_name || "");
@@ -54,13 +243,30 @@ export function PremiumReviewForm() {
       if (stopTimerRef.current) {
         clearTimeout(stopTimerRef.current);
       }
+
       if (recorderRef.current?.state === "recording") {
         recorderRef.current.stop();
       }
+
       streamRef.current?.getTracks().forEach((track) => track.stop());
-      if (audioUrl) URL.revokeObjectURL(audioUrl);
+
+      if (audioUrl) {
+        URL.revokeObjectURL(audioUrl);
+      }
     };
   }, [audioUrl]);
+
+  // Automatically dismiss success and error notifications.
+  // Keep the submitting notification visible until the request finishes.
+  useEffect(() => {
+    if (!toast || toast.type === "loading") return;
+
+    const timeout = setTimeout(() => {
+      setToast(null);
+    }, 4500);
+
+    return () => clearTimeout(timeout);
+  }, [toast]);
 
   const releaseMic = () => {
     streamRef.current?.getTracks().forEach((track) => track.stop());
@@ -68,7 +274,10 @@ export function PremiumReviewForm() {
   };
 
   const clearRecording = () => {
-    if (audioUrl) URL.revokeObjectURL(audioUrl);
+    if (audioUrl) {
+      URL.revokeObjectURL(audioUrl);
+    }
+
     setAudioUrl("");
     setAudioBlob(null);
     setSeconds(0);
@@ -93,6 +302,7 @@ export function PremiumReviewForm() {
       chunksRef.current = [];
 
       const mimeType = getAudioType();
+
       const recorder = new MediaRecorder(
         stream,
         mimeType ? { mimeType } : undefined
@@ -102,7 +312,9 @@ export function PremiumReviewForm() {
       startedAtRef.current = Date.now();
 
       recorder.ondataavailable = (event) => {
-        if (event.data?.size) chunksRef.current.push(event.data);
+        if (event.data?.size) {
+          chunksRef.current.push(event.data);
+        }
       };
 
       recorder.onerror = () => {
@@ -124,24 +336,31 @@ export function PremiumReviewForm() {
         }
 
         if (blob.size > MAX_AUDIO_BYTES) {
-          setMessage("Recording is too large. Please record a shorter review.");
+          setMessage(
+            "Recording is too large. Please record a shorter review."
+          );
           clearRecording();
           return;
         }
 
         setAudioBlob(blob);
         setAudioUrl(URL.createObjectURL(blob));
-        setSeconds(Math.ceil((Date.now() - startedAtRef.current) / 1000));
+        setSeconds(
+          Math.ceil((Date.now() - startedAtRef.current) / 1000)
+        );
       };
 
       recorder.start();
       setRecording(true);
 
       stopTimerRef.current = setTimeout(() => {
-        if (recorder.state === "recording") recorder.stop();
+        if (recorder.state === "recording") {
+          recorder.stop();
+        }
       }, MAX_RECORDING_MS);
     } catch (error) {
       releaseMic();
+
       setMessage(
         error?.name === "NotAllowedError"
           ? "Please allow microphone access to record a review."
@@ -151,7 +370,10 @@ export function PremiumReviewForm() {
   };
 
   const stopRecording = () => {
-    if (stopTimerRef.current) clearTimeout(stopTimerRef.current);
+    if (stopTimerRef.current) {
+      clearTimeout(stopTimerRef.current);
+      stopTimerRef.current = null;
+    }
 
     if (recorderRef.current?.state === "recording") {
       recorderRef.current.stop();
@@ -160,7 +382,12 @@ export function PremiumReviewForm() {
 
   const submitReview = async (event) => {
     event.preventDefault();
+
+    // Prevent duplicate requests, including rapid repeated clicks.
+    if (submittingRef.current) return;
+
     setMessage("");
+    setToast(null);
 
     const cleanText = reviewText.trim();
     const cleanName = displayName.trim();
@@ -190,7 +417,14 @@ export function PremiumReviewForm() {
       return;
     }
 
+    submittingRef.current = true;
     setBusy(true);
+
+    setToast({
+      type: "loading",
+      text: "Submitting your review…",
+    });
+
     let uploadedPath = null;
 
     try {
@@ -224,11 +458,16 @@ export function PremiumReviewForm() {
 
       setReviewText("");
       clearRecording();
-      setMessage("Thank you! Your review is now published.");
+      setMessage("");
+
+      setToast({
+        type: "success",
+        text: "Review submitted successfully!",
+      });
     } catch (error) {
       console.error("Review submission failed:", error);
 
-      // Best-effort cleanup if upload succeeded but insertion failed.
+      // Best-effort cleanup if audio upload succeeded but insertion failed.
       if (uploadedPath) {
         const { error: cleanupError } = await supabase.storage
           .from(BUCKET)
@@ -239,21 +478,28 @@ export function PremiumReviewForm() {
         }
       }
 
-      setMessage(
-        error?.message ||
-          "Could not submit your review. Please try again."
-      );
+      setMessage("");
+
+      setToast({
+        type: "error",
+        text: "Unable to submit your review. Please try again.",
+      });
     } finally {
+      submittingRef.current = false;
       setBusy(false);
     }
   };
 
-  if (loading) return <p>Checking your account…</p>;
+  if (loading) {
+    return <p>Checking your account…</p>;
+  }
 
   if (!user) {
     return (
       <div className="review-access-note">
-        <p>Sign in with your EXAMITICS account to share your experience.</p>
+        <p>
+          Sign in with your EXAMITICS account to share your experience.
+        </p>
         <Link to="/login">Sign in</Link>
       </div>
     );
@@ -262,7 +508,10 @@ export function PremiumReviewForm() {
   if (!isPremium) {
     return (
       <div className="review-access-note">
-        <p>Review submission is available to candidates with active Premium access.</p>
+        <p>
+          Review submission is available to candidates with active Premium
+          access.
+        </p>
         <Link to="/premium">Explore Premium</Link>
       </div>
     );
@@ -270,10 +519,41 @@ export function PremiumReviewForm() {
 
   return (
     <form className="premium-review-form" onSubmit={submitReview}>
+      {toast && (
+        <div
+          className={`review-toast review-toast--${toast.type}`}
+          role={toast.type === "error" ? "alert" : "status"}
+          aria-live={toast.type === "error" ? "assertive" : "polite"}
+        >
+          <span className="review-toast-icon" aria-hidden="true">
+            {toast.type === "success" && <FiCheckCircle />}
+            {toast.type === "error" && <FiAlertCircle />}
+            {toast.type === "loading" && (
+              <FiLoader className="review-toast-spinner" />
+            )}
+          </span>
+
+          <span className="review-toast-text">{toast.text}</span>
+
+          {toast.type !== "loading" && (
+            <button
+              type="button"
+              className="review-toast-close"
+              onClick={() => setToast(null)}
+              aria-label="Dismiss notification"
+            >
+              ×
+            </button>
+          )}
+        </div>
+      )}
+
       <h2>Share your EXAMITICS experience</h2>
+
       <p className="review-form-intro">
-        Your review will be published immediately and visible to other visitors.
-        Do not include your email address, phone number, or other private details.
+        Your review will be published immediately and visible to other
+        visitors. Do not include your email address, phone number, or other
+        private details.
       </p>
 
       <label htmlFor="review-display-name">Display name</label>
@@ -294,51 +574,83 @@ export function PremiumReviewForm() {
         onChange={(event) => setReviewText(event.target.value)}
         placeholder="Tell other candidates how EXAMITICS helped you prepare…"
       />
+
       <span className="review-character-count">
         {reviewText.length}/2000
       </span>
 
       <div className="review-recording-controls">
         {!recording ? (
-          <button type="button" onClick={startRecording} disabled={busy}>
-            <FiMic /> {audioBlob ? "Record again" : "Record voice review"}
+          <button
+            type="button"
+            onClick={startRecording}
+            disabled={busy}
+          >
+            <FiMic />
+            {audioBlob ? "Record again" : "Record voice review"}
           </button>
         ) : (
           <button type="button" onClick={stopRecording}>
-            <FiSquare /> Stop recording
+            <FiSquare />
+            Stop recording
           </button>
         )}
 
-        {recording && <span>Recording… (maximum 90 seconds)</span>}
+        {recording && (
+          <span>
+            Recording… (maximum 90 seconds)
+          </span>
+        )}
 
         {audioBlob && !recording && (
           <div className="review-audio-preview">
-            <audio controls src={audioUrl} />
-            <button type="button" className="review-remove-audio" onClick={clearRecording}>
-              <FiTrash2 /> Remove recording
+            <ReviewAudioPlayer src={audioUrl} />
+
+            <span className="review-recording-duration">
+              Recording length: {seconds} seconds
+            </span>
+
+            <button
+              type="button"
+              className="review-remove-audio"
+              onClick={clearRecording}
+              disabled={busy}
+            >
+              <FiTrash2 />
+              Remove recording
             </button>
           </div>
         )}
       </div>
 
       {message && (
-        <p className="review-form-message" role="status">{message}</p>
+        <p className="review-form-message" role="status">
+          {message}
+        </p>
       )}
 
       <label className="review-consent">
         <input type="checkbox" required />
         <span>
-          I agree that my display name, written review and/or voice recording
-          may be shown publicly on EXAMITICS.
+          I agree that my display name, written review and/or voice
+          recording may be shown publicly on EXAMITICS.
         </span>
       </label>
 
-      <button className="review-submit-btn" type="submit" disabled={busy || recording}>
+      <button
+        className="review-submit-btn"
+        type="submit"
+        disabled={busy || recording}
+      >
         {busy ? "Publishing…" : "Publish review"}
       </button>
     </form>
   );
 }
+
+/* =========================================================
+   Published review carousel
+========================================================= */
 
 export function PremiumReviewCarousel() {
   const [reviews, setReviews] = useState([]);
@@ -358,14 +670,20 @@ export function PremiumReviewCarousel() {
 
       if (error) {
         console.error("Could not load reviews:", error);
-        if (!cancelled) setReviews([]);
-        if (!cancelled) setLoadingReviews(false);
+
+        if (!cancelled) {
+          setReviews([]);
+          setLoadingReviews(false);
+        }
+
         return;
       }
 
       const withAudio = await Promise.all(
         (data || []).map(async (review) => {
-          if (!review.audio_path) return { ...review, audioUrl: "" };
+          if (!review.audio_path) {
+            return { ...review, audioUrl: "" };
+          }
 
           const { data: signed, error: signedError } = await supabase.storage
             .from(BUCKET)
@@ -375,52 +693,83 @@ export function PremiumReviewCarousel() {
             console.error("Could not create audio URL:", signedError);
           }
 
-          return { ...review, audioUrl: signed?.signedUrl || "" };
+          return {
+            ...review,
+            audioUrl: signed?.signedUrl || "",
+          };
         })
       );
 
-      if (!cancelled) setReviews(withAudio);
-      if (!cancelled) setLoadingReviews(false);
+      if (!cancelled) {
+        setReviews(withAudio);
+        setLoadingReviews(false);
+      }
     }
 
     loadReviews();
-    return () => { cancelled = true; };
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  if (loadingReviews) return <section className="reviews-section"><p>Loading candidate reviews…</p></section>;
+  if (loadingReviews) {
+    return (
+      <section className="reviews-section">
+        <p>Loading candidate reviews…</p>
+      </section>
+    );
+  }
+
   if (!reviews.length) return null;
 
   return (
-    <section className="reviews-section" aria-label="Candidate reviews">
+    <section
+      className="reviews-section"
+      aria-label="Candidate reviews"
+    >
       <div className="reviews-heading">
         <div>
-          <span className="reviews-eyebrow">CANDIDATE EXPERIENCES</span>
+          <span className="reviews-eyebrow">
+            CANDIDATE EXPERIENCES
+          </span>
+
           <h2>What candidates say about EXAMITICS</h2>
-          <p>Experiences shared by our Premium candidates.</p>
+
+          <p>
+            Experiences shared by our Premium candidates.
+          </p>
         </div>
+
         <Link to="/review">View all reviews</Link>
       </div>
 
       <div className="reviews-track-window">
         <div className="reviews-track">
           {[...reviews, ...reviews].map((review, index) => (
-            <article className="candidate-review-card" key={`${review.id}-${index}`}>
+            <article
+              className="candidate-review-card"
+              key={`${review.id}-${index}`}
+            >
               <div className="candidate-review-name">
                 <span className="review-avatar">
-                  {(review.display_name || "C").charAt(0).toUpperCase()}
+                  {(review.display_name || "C")
+                    .charAt(0)
+                    .toUpperCase()}
                 </span>
+
                 <div>
                   <strong>{review.display_name}</strong>
                   <span>EXAMITICS candidate</span>
                 </div>
               </div>
 
-              {review.review_text && <p>{review.review_text}</p>}
+              {review.review_text && (
+                <p>{review.review_text}</p>
+              )}
 
               {review.audioUrl && (
-                <audio controls preload="none" src={review.audioUrl}>
-                  Your browser does not support audio playback.
-                </audio>
+                <ReviewAudioPlayer src={review.audioUrl} />
               )}
             </article>
           ))}

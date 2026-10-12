@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
-import { PremiumReviewForm } from "../components/reviews/PremiumReviews";
+import { PremiumReviewForm,ReviewAudioPlayer } from "../components/reviews/PremiumReviews";
 import { supabase } from "../lib/supabase";
 import "../styles/PremiumReviews.css";
 
@@ -113,7 +113,7 @@ function Review() {
 
                   {review.review_text && <p>{review.review_text}</p>}
 
-                  {review.audio_path && (
+                  {/* {review.audio_path && (
                     review.audioUrl ? (
                       <audio controls preload="none" src={review.audioUrl}>
                         Your browser does not support audio playback.
@@ -121,7 +121,10 @@ function Review() {
                     ) : (
                       <p>Voice recording is temporarily unavailable.</p>
                     )
-                  )}
+                  )} */}
+                  {review.audioUrl && (
+  <ReviewAudioPlayer src={review.audioUrl} />
+)}
                 </article>
               ))}
             </div>

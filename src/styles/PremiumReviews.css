@@ -243,7 +243,61 @@
   padding: 42px 0 64px;
 }
 
-.review-list-grid {
+/* Dedicated reviews page heading */
+.reviews-page-header {
+  max-width: 780px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.reviews-page-header h1 {
+  margin: 10px 0 12px;
+  color: var(--color-text);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.reviews-page-header p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.review-list-page > section > h2 {
+  margin: 34px 0 8px;
+  color: var(--color-text);
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+}
+
+.review-list-page > section > p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .review-list-page {
+    padding-top: 28px;
+    padding-bottom: 44px;
+  }
+
+  .reviews-page-header {
+    margin-bottom: 20px;
+  }
+
+  .reviews-page-header p {
+    font-size: 0.93rem;
+  }
+
+  .review-list-page > section > h2 {
+    margin-top: 26px;
+  }
+}
+
+
+/* .review-list-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 18px;
@@ -255,7 +309,109 @@
 
 .review-list-grid .candidate-review-card audio {
   margin-top: auto;
+} */
+ 
+
+/* Published reviews grid */
+.review-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+  margin-top: 20px;
 }
+
+.review-list-grid .candidate-review-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 18px;
+  gap: 12px;
+  overflow-wrap: anywhere;
+}
+
+.review-list-grid .candidate-review-name {
+  min-width: 0;
+  gap: 9px;
+}
+
+.review-list-grid .candidate-review-name > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.review-list-grid .candidate-review-name strong {
+  overflow-wrap: anywhere;
+}
+
+.review-list-grid .candidate-review-card p {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.review-list-grid .candidate-review-card audio {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: auto;
+}
+
+/* Tablet: 3 columns */
+@media (min-width: 700px) {
+  .review-list-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .review-list-grid .candidate-review-card {
+    padding: 20px;
+  }
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 1100px) {
+  .review-list-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  .review-list-grid {
+    gap: 8px;
+  }
+
+  .review-list-grid .candidate-review-card {
+    padding: 11px;
+    gap: 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .review-list-grid .review-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .review-list-grid .candidate-review-name {
+    gap: 7px;
+  }
+
+  .review-list-grid .candidate-review-name strong {
+    font-size: 0.82rem;
+  }
+
+  .review-list-grid .candidate-review-name > div > span {
+    font-size: 0.7rem;
+  }
+
+  .review-list-grid .candidate-review-card p {
+    font-size: 0.84rem;
+  }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .reviews-track {
@@ -353,5 +509,613 @@
   .admin-reviews-heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+
+/* =========================================
+   Review card audio player
+========================================= */
+
+.review-list-grid .candidate-review-card audio,
+.candidate-review-card > audio {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 44px;
+  margin-top: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: var(--color-bg-secondary);
+  accent-color: var(--color-primary);
+  color-scheme: light;
+}
+
+/* Keep audio players contained inside narrow review cards */
+.review-list-grid .candidate-review-card audio {
+  margin-top: 8px;
+}
+
+/* Dark theme support */
+body.dark-theme .review-list-grid .candidate-review-card audio,
+body.dark-theme .candidate-review-card > audio {
+  color-scheme: dark;
+  background: var(--color-card-secondary);
+  border-color: var(--color-border);
+}
+
+/* Compact player for mobile review cards */
+@media (max-width: 600px) {
+  .review-list-grid .candidate-review-card audio {
+    height: 40px;
+    border-radius: 20px;
+  }
+}
+
+/* Keyboard accessibility */
+.candidate-review-card audio:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+
+
+/* =========================================================
+   EXAMITICS CUSTOM REVIEW AUDIO PLAYER
+   Append at the bottom of PremiumReviews.css
+========================================================= */
+
+.review-audio-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 10px;
+  padding: 11px 13px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border);
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    var(--color-card),
+    var(--color-bg-secondary)
+  );
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.review-audio-player:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Hide native controls completely.
+   Playback is controlled by our custom interface. */
+.review-audio-player audio {
+  display: none;
+}
+
+/* Play / pause button */
+.review-audio-play-btn {
+  display: inline-flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--gradient-primary, var(--color-primary));
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 3px 9px rgba(29, 78, 216, 0.2);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.review-audio-play-btn svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 2.5;
+}
+
+.review-audio-play-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 5px 13px rgba(29, 78, 216, 0.25);
+}
+
+.review-audio-play-btn:active {
+  transform: scale(0.96);
+}
+
+.review-audio-play-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Progress area */
+.review-audio-track {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Seek / progress bar */
+.review-audio-range {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin: 9px 0 10px;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-primary) var(--audio-progress, 0%),
+    var(--color-border) var(--audio-progress, 0%),
+    var(--color-border) 100%
+  );
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+.review-audio-range:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Chrome, Edge and Safari progress thumb */
+.review-audio-range::-webkit-slider-thumb {
+  width: 13px;
+  height: 13px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid var(--color-card);
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+  transition: transform 0.15s ease;
+}
+
+.review-audio-range:hover::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+
+/* Firefox progress thumb */
+.review-audio-range::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--color-card);
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* Keyboard accessibility */
+.review-audio-range:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 5px;
+}
+
+/* Current time and total duration */
+.review-audio-times {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.review-audio-times span {
+  white-space: nowrap;
+}
+
+/* Audio unavailable message */
+.review-audio-error {
+  min-width: 0;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Dark theme */
+body.dark-theme .review-audio-player {
+  border-color: var(--color-border);
+  background: linear-gradient(
+    135deg,
+    var(--color-card),
+    var(--color-card-secondary)
+  );
+  box-shadow: var(--shadow-sm);
+}
+
+body.dark-theme .review-audio-player:hover {
+  border-color: var(--color-primary);
+}
+
+body.dark-theme .review-audio-times {
+  color: var(--color-text-muted);
+}
+
+/* Form's voice recording preview */
+.review-audio-preview {
+  width: 100%;
+  min-width: 0;
+}
+
+.review-audio-preview .review-audio-player {
+  margin-top: 12px;
+}
+
+.review-recording-duration {
+  display: block;
+  margin-top: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+/* Keep audio contained inside narrow review cards */
+.review-list-grid .candidate-review-card .review-audio-player {
+  margin-top: auto;
+}
+
+.reviews-track .candidate-review-card .review-audio-player {
+  margin-top: 12px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .review-audio-player {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 13px;
+  }
+
+  .review-audio-play-btn {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .review-audio-play-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .review-audio-range {
+    height: 6px;
+    margin: 8px 0;
+  }
+
+  .review-audio-times {
+    font-size: 0.68rem;
+  }
+}
+
+/* Extra-small screens and two-column review cards */
+@media (max-width: 380px) {
+  .review-audio-player {
+    gap: 8px;
+    padding: 8px;
+    border-radius: 11px;
+  }
+
+  .review-audio-play-btn {
+    flex-basis: 31px;
+    width: 31px;
+    height: 31px;
+  }
+
+  .review-audio-play-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .review-audio-times {
+    font-size: 0.64rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-audio-player,
+  .review-audio-play-btn,
+  .review-audio-play-btn svg,
+  .review-audio-range::-webkit-slider-thumb {
+    transition: none;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   EXAMITICS PREMIUM REVIEW SUBMISSION TOASTS
+   Append at the bottom of PremiumReviews.css
+========================================================= */
+
+.review-toast {
+  position: fixed;
+  top: max(20px, env(safe-area-inset-top));
+  right: 22px;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: min(420px, calc(100vw - 40px));
+  box-sizing: border-box;
+  padding: 15px 16px;
+
+  color: var(--color-text);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-lg, 16px);
+
+  box-shadow:
+    0 12px 32px rgba(15, 23, 42, 0.12),
+    0 3px 8px rgba(15, 23, 42, 0.05);
+
+  animation: examitics-toast-enter 0.28s ease-out;
+}
+
+/* Success state */
+.review-toast--success {
+  border-left-color: #16a34a;
+}
+
+.review-toast--success .review-toast-icon {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+/* Failure state */
+.review-toast--error {
+  border-left-color: #dc2626;
+}
+
+.review-toast--error .review-toast-icon {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+/* Submitting state */
+.review-toast--loading {
+  border-left-color: var(--color-primary);
+}
+
+.review-toast--loading .review-toast-icon {
+  color: var(--color-primary);
+  background: var(--color-bg-secondary);
+}
+
+/* Icon container */
+.review-toast-icon {
+  display: inline-flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  font-size: 20px;
+}
+
+/* Icon sizing */
+.review-toast-icon svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 2.2;
+}
+
+/* Notification message */
+.review-toast-text {
+  flex: 1;
+  min-width: 0;
+
+  color: var(--color-text);
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+/* Dismiss button */
+.review-toast-close {
+  display: inline-flex;
+  flex: 0 0 30px;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.review-toast-close:hover {
+  color: var(--color-text);
+  background: var(--color-bg-secondary);
+  transform: scale(1.04);
+}
+
+.review-toast-close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Loading spinner */
+.review-toast-spinner {
+  animation: examitics-toast-spin 1s linear infinite;
+  transform-origin: center;
+}
+
+/* Entry animation */
+@keyframes examitics-toast-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Spinner animation */
+@keyframes examitics-toast-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+body.dark-theme .review-toast {
+  color: var(--color-text);
+  background: var(--color-card);
+  border-color: var(--color-border);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.32),
+    0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .review-toast--success {
+  border-left-color: #22c55e;
+}
+
+body.dark-theme .review-toast--success .review-toast-icon {
+  color: #86efac;
+  background: rgba(22, 163, 74, 0.17);
+}
+
+body.dark-theme .review-toast--error {
+  border-left-color: #ef4444;
+}
+
+body.dark-theme .review-toast--error .review-toast-icon {
+  color: #fca5a5;
+  background: rgba(220, 38, 38, 0.17);
+}
+
+body.dark-theme .review-toast--loading {
+  border-left-color: var(--color-primary);
+}
+
+body.dark-theme .review-toast--loading .review-toast-icon {
+  color: var(--color-primary);
+  background: var(--color-card-secondary);
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 600px) {
+  .review-toast {
+    top: max(14px, env(safe-area-inset-top));
+    right: 12px;
+
+    width: calc(100vw - 24px);
+    gap: 10px;
+    padding: 13px;
+
+    border-radius: 14px;
+  }
+
+  .review-toast-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .review-toast-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .review-toast-text {
+    font-size: 0.88rem;
+  }
+
+  .review-toast-close {
+    flex-basis: 28px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .review-toast {
+    right: 8px;
+    width: calc(100vw - 16px);
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .review-toast-icon {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .review-toast-text {
+    font-size: 0.83rem;
+  }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .review-toast {
+    animation: none;
+  }
+
+  .review-toast-spinner {
+    animation: none;
+  }
+
+  .review-toast-close {
+    transition: none;
   }
 }
