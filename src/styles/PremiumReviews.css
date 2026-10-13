@@ -39,7 +39,7 @@
   white-space: nowrap;
 }
 
-.reviews-track-window {
+/* .reviews-track-window {
   overflow: hidden;
   width: 100%;
 }
@@ -69,6 +69,212 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+} */
+
+/* =========================================
+   EXAMITICS INTERACTIVE REVIEWS CAROUSEL
+========================================= */
+
+.reviews-track-window {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 4vw 18px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+
+  cursor: grab;
+  outline-offset: -2px;
+}
+
+.reviews-track-window:focus-visible {
+  outline: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+}
+
+.reviews-track-window.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+.reviews-track-window.is-dragging * {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.reviews-track {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+
+  width: max-content;
+  padding: 0;
+
+  animation: none;
+}
+
+.candidate-review-card {
+  flex: 0 0 min(340px, 82vw);
+  width: min(340px, 82vw);
+  min-width: 0;
+  min-height: 180px;
+  box-sizing: border-box;
+
+  padding: 22px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-card);
+  box-shadow: var(--shadow-sm);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  overflow-wrap: anywhere;
+  scroll-snap-align: start;
+}
+
+/* Keep long review text and audio inside each card. */
+.candidate-review-card p {
+  margin: 0;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.candidate-review-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.candidate-review-name > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.candidate-review-card .review-audio-player {
+  margin-top: auto;
+}
+
+/* Previous / next controls and position counter. */
+.reviews-carousel-controls {
+  width: min(1120px, 92%);
+  margin: 0 auto 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.reviews-carousel-position {
+  margin-right: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.reviews-carousel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  color: var(--color-text);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.reviews-carousel-button:hover:not(:disabled) {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.reviews-carousel-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.reviews-carousel-button:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  transform: none;
+}
+
+body.dark-theme .reviews-carousel-button {
+  background: var(--color-card);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .reviews-track-window {
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+
+  .reviews-track {
+    gap: 14px;
+  }
+
+  .candidate-review-card {
+    flex-basis: min(320px, 84vw);
+    width: min(320px, 84vw);
+    padding: 18px;
+  }
+
+  .reviews-carousel-button {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 380px) {
+  .reviews-track {
+    gap: 10px;
+  }
+
+  .candidate-review-card {
+    flex-basis: 86vw;
+    width: 86vw;
+    padding: 15px;
+  }
+}
+
+/* Reduced motion: retain manual scrolling without animation. */
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track-window {
+    scroll-behavior: auto;
+  }
+
+  .reviews-carousel-button {
+    transition: none;
+  }
 }
 
 .candidate-review-name {

@@ -10,6 +10,8 @@ import {
   FiCheckCircle,
   FiAlertCircle,
   FiLoader,
+  FiChevronLeft,
+  FiChevronRight,
 } from "react-icons/fi";
 
 import { supabase } from "../../lib/supabase";
@@ -652,9 +654,143 @@ export function PremiumReviewForm() {
    Published review carousel
 ========================================================= */
 
+// export function PremiumReviewCarousel() {
+//   const [reviews, setReviews] = useState([]);
+//   const [loadingReviews, setLoadingReviews] = useState(true);
+
+//   useEffect(() => {
+//     let cancelled = false;
+
+//     async function loadReviews() {
+//       setLoadingReviews(true);
+
+//       const { data, error } = await supabase
+//         .from("premium_reviews")
+//         .select("id, display_name, review_text, audio_path, created_at")
+//         .order("created_at", { ascending: false })
+//         .limit(30);
+
+//       if (error) {
+//         console.error("Could not load reviews:", error);
+
+//         if (!cancelled) {
+//           setReviews([]);
+//           setLoadingReviews(false);
+//         }
+
+//         return;
+//       }
+
+//       const withAudio = await Promise.all(
+//         (data || []).map(async (review) => {
+//           if (!review.audio_path) {
+//             return { ...review, audioUrl: "" };
+//           }
+
+//           const { data: signed, error: signedError } = await supabase.storage
+//             .from(BUCKET)
+//             .createSignedUrl(review.audio_path, 60 * 60);
+
+//           if (signedError) {
+//             console.error("Could not create audio URL:", signedError);
+//           }
+
+//           return {
+//             ...review,
+//             audioUrl: signed?.signedUrl || "",
+//           };
+//         })
+//       );
+
+//       if (!cancelled) {
+//         setReviews(withAudio);
+//         setLoadingReviews(false);
+//       }
+//     }
+
+//     loadReviews();
+
+//     return () => {
+//       cancelled = true;
+//     };
+//   }, []);
+
+//   if (loadingReviews) {
+//     return (
+//       <section className="reviews-section">
+//         <p>Loading candidate reviews…</p>
+//       </section>
+//     );
+//   }
+
+//   if (!reviews.length) return null;
+
+//   return (
+//     <section
+//       className="reviews-section"
+//       aria-label="Candidate reviews"
+//     >
+//       <div className="reviews-heading">
+//         <div>
+//           <span className="reviews-eyebrow">
+//             CANDIDATE EXPERIENCES
+//           </span>
+
+//           <h2>What candidates say about EXAMITICS</h2>
+
+//           <p>
+//             Experiences shared by our Premium candidates.
+//           </p>
+//         </div>
+
+//         <Link to="/review">View all reviews</Link>
+//       </div>
+
+//       <div className="reviews-track-window">
+//         <div className="reviews-track">
+//           {[...reviews, ...reviews].map((review, index) => (
+//             <article
+//               className="candidate-review-card"
+//               key={`${review.id}-${index}`}
+//             >
+//               <div className="candidate-review-name">
+//                 <span className="review-avatar">
+//                   {(review.display_name || "C")
+//                     .charAt(0)
+//                     .toUpperCase()}
+//                 </span>
+
+//                 <div>
+//                   <strong>{review.display_name}</strong>
+//                   <span>EXAMITICS candidate</span>
+//                 </div>
+//               </div>
+
+//               {review.review_text && (
+//                 <p>{review.review_text}</p>
+//               )}
+
+//               {review.audioUrl && (
+//                 <ReviewAudioPlayer src={review.audioUrl} />
+//               )}
+//             </article>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
 export function PremiumReviewCarousel() {
   const [reviews, setReviews] = useState([]);
   const [loadingReviews, setLoadingReviews] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [canGoPrev, setCanGoPrev] = useState(false);
+  const [canGoNext, setCanGoNext] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const viewportRef = useRef(null);
+  const dragRef = useRef(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -685,12 +821,16 @@ export function PremiumReviewCarousel() {
             return { ...review, audioUrl: "" };
           }
 
-          const { data: signed, error: signedError } = await supabase.storage
-            .from(BUCKET)
-            .createSignedUrl(review.audio_path, 60 * 60);
+          const { data: signed, error: signedError } =
+            await supabase.storage
+              .from(BUCKET)
+              .createSignedUrl(review.audio_path, 60 * 60);
 
           if (signedError) {
-            console.error("Could not create audio URL:", signedError);
+            console.error(
+              "Could not create audio URL:",
+              signedError
+            );
           }
 
           return {
@@ -712,6 +852,141 @@ export function PremiumReviewCarousel() {
       cancelled = true;
     };
   }, []);
+
+  // Keep the navigation buttons and position indicator in sync.
+  const updateNavigation = () => {
+    const viewport = viewportRef.current;
+
+    if (!viewport) return;
+
+    const maxScroll =
+      viewport.scrollWidth - viewport.clientWidth;
+
+    setCanGoPrev(viewport.scrollLeft > 4);
+    setCanGoNext(viewport.scrollLeft < maxScroll - 4);
+
+    const firstCard = viewport.querySelector(
+      ".candidate-review-card"
+    );
+    const track = viewport.querySelector(".reviews-track");
+
+    if (firstCard && track && reviews.length) {
+      const gap =
+        parseFloat(getComputedStyle(track).gap) || 18;
+
+      const step = firstCard.getBoundingClientRect().width + gap;
+
+      setActiveIndex(
+        Math.min(
+          reviews.length - 1,
+          Math.max(0, Math.round(viewport.scrollLeft / step))
+        )
+      );
+    } else {
+      setActiveIndex(0);
+    }
+  };
+
+  useEffect(() => {
+    updateNavigation();
+
+    window.addEventListener("resize", updateNavigation);
+
+    return () => {
+      window.removeEventListener("resize", updateNavigation);
+    };
+  }, [reviews.length]);
+
+  // Move approximately one review card per arrow click.
+  const moveCarousel = (direction) => {
+    const viewport = viewportRef.current;
+
+    if (!viewport) return;
+
+    const firstCard = viewport.querySelector(
+      ".candidate-review-card"
+    );
+    const track = viewport.querySelector(".reviews-track");
+
+    if (!firstCard || !track) return;
+
+    const gap = parseFloat(getComputedStyle(track).gap) || 18;
+    const step = firstCard.getBoundingClientRect().width + gap;
+
+    viewport.scrollBy({
+      left: direction * step,
+      behavior: "smooth",
+    });
+  };
+
+  // Enable click-and-drag for mouse users.
+  // Do not hijack clicks on audio controls or buttons.
+  const handlePointerDown = (event) => {
+    if (event.pointerType !== "mouse" || event.button !== 0) {
+      return;
+    }
+
+    if (
+      event.target.closest?.(
+        "button, input, audio, a, .review-audio-player"
+      )
+    ) {
+      return;
+    }
+
+    const viewport = viewportRef.current;
+
+    if (!viewport) return;
+
+    dragRef.current = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startScrollLeft: viewport.scrollLeft,
+      moved: false,
+    };
+
+    viewport.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event) => {
+    const drag = dragRef.current;
+    const viewport = viewportRef.current;
+
+    if (
+      !drag ||
+      !viewport ||
+      drag.pointerId !== event.pointerId
+    ) {
+      return;
+    }
+
+    const distance = event.clientX - drag.startX;
+
+    if (Math.abs(distance) > 4) {
+      drag.moved = true;
+      setIsDragging(true);
+    }
+
+    if (drag.moved) {
+      viewport.scrollLeft = drag.startScrollLeft - distance;
+    }
+  };
+
+  const finishDragging = (event) => {
+    const drag = dragRef.current;
+    const viewport = viewportRef.current;
+
+    if (!drag || drag.pointerId !== event.pointerId) {
+      return;
+    }
+
+    dragRef.current = null;
+    setIsDragging(false);
+
+    if (viewport?.hasPointerCapture(event.pointerId)) {
+      viewport.releasePointerCapture(event.pointerId);
+    }
+  };
 
   if (loadingReviews) {
     return (
@@ -744,12 +1019,60 @@ export function PremiumReviewCarousel() {
         <Link to="/review">View all reviews</Link>
       </div>
 
-      <div className="reviews-track-window">
+      <div className="reviews-carousel-controls">
+        <span
+          className="reviews-carousel-position"
+          aria-live="polite"
+        >
+          {activeIndex + 1} / {reviews.length}
+        </span>
+
+        <button
+          type="button"
+          className="reviews-carousel-button"
+          onClick={() => moveCarousel(-1)}
+          disabled={!canGoPrev}
+          aria-label="Previous reviews"
+          title="Previous reviews"
+        >
+          <FiChevronLeft />
+        </button>
+
+        <button
+          type="button"
+          className="reviews-carousel-button"
+          onClick={() => moveCarousel(1)}
+          disabled={!canGoNext}
+          aria-label="Next reviews"
+          title="Next reviews"
+        >
+          <FiChevronRight />
+        </button>
+      </div>
+
+      <div
+        ref={viewportRef}
+        className={`reviews-track-window ${
+          isDragging ? "is-dragging" : ""
+        }`}
+        role="region"
+        aria-label="Scrollable candidate reviews"
+        tabIndex={0}
+        onScroll={updateNavigation}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={finishDragging}
+        onPointerCancel={finishDragging}
+        onLostPointerCapture={() => {
+          dragRef.current = null;
+          setIsDragging(false);
+        }}
+      >
         <div className="reviews-track">
-          {[...reviews, ...reviews].map((review, index) => (
+          {reviews.map((review) => (
             <article
               className="candidate-review-card"
-              key={`${review.id}-${index}`}
+              key={review.id}
             >
               <div className="candidate-review-name">
                 <span className="review-avatar">
@@ -778,5 +1101,6 @@ export function PremiumReviewCarousel() {
     </section>
   );
 }
+
 
 export default PremiumReviewCarousel;
