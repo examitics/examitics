@@ -938,3 +938,83 @@
     padding-right: 28px;
   }
 }
+
+
+/* Dismiss button */
+.mock-prep-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  color: var(--color-text);
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.mock-prep-close:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.mock-prep-reviews-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  color: var(--color-primary);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mock-prep-reviews-link:hover {
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.mock-prep-reviews-link svg {
+  flex-shrink: 0;
+}
+
+.mock-prep-footer {
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .mock-prep-close {
+    top: 9px;
+    right: 9px;
+  }
+
+  .mock-prep-badge {
+    max-width: calc(100% - 30px);
+    line-height: 1.5;
+  }
+
+  .mock-prep-reviews-link {
+    width: 100%;
+    text-align: center;
+  }
+}

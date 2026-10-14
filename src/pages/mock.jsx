@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Helmet } from "react-helmet-async";
-
+import { Link } from "react-router-dom";
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 import PMAMockSection from "../components/mock/pmamocksection";
@@ -165,7 +165,119 @@ const MOCK = () => {
               </p>
             </section>
 
-            
+ 
+{/* PMA 159 PREPARATION CARD — FREE USERS ONLY */}
+{shouldShowPreparationMessage && (
+  <section
+    className="mock-prep-card"
+    aria-labelledby="mock-prep-title"
+  >
+    <button
+      type="button"
+      className="mock-prep-close"
+      onClick={() => setShowPreparationMessage(false)}
+      aria-label="Dismiss preparation message"
+    >
+      <FiX />
+    </button>
+
+    <div className="mock-prep-badge">
+      <FiTarget />
+      PMA 159 LONG COURSE • INITIAL TEST PREPARATION
+    </div>
+
+    <div className="mock-prep-header">
+      <div className="mock-prep-icon">
+        <FiZap />
+      </div>
+
+      <div>
+        <h3 id="mock-prep-title">
+          Prepare for PMA 159 with EXAMITICS
+        </h3>
+        <p>
+          Practise with purpose. Build confidence for your
+          PMA Initial Test.
+        </p>
+      </div>
+    </div>
+
+    <div className="mock-prep-message">
+      <p>
+        Dear PMA 159 aspirant, your preparation matters.
+        Use our mock tests to practise important question
+        types, improve your speed and accuracy, and identify
+        the areas where you need more work.
+      </p>
+
+      <p>
+        <strong>
+          Consistent, focused practice can help you aim for
+          a stronger initial-test score.
+        </strong>{" "}
+        Attempt the available tests and review your
+        performance to keep improving.
+      </p>
+    </div>
+
+    <div className="mock-prep-points">
+      <div>
+        <FiCheck />
+        Verbal Intelligence practice
+      </div>
+
+      <div>
+        <FiCheck />
+        Non-Verbal Intelligence practice
+      </div>
+
+      <div>
+        <FiCheck />
+        Academic mock tests
+      </div>
+    </div>
+
+    <div className="mock-prep-offer">
+      <div className="mock-prep-offer-content">
+        <span className="mock-prep-offer-label">
+          WANT MORE PRACTICE?
+        </span>
+
+        <strong>Unlock Premium Access</strong>
+
+        <small>
+          Contact our team on WhatsApp for subscription
+          details and premium mock-test access.
+        </small>
+      </div>
+
+      <a
+        className="mock-prep-whatsapp"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FiMessageCircle />
+        Get Premium Access
+        <FiArrowRight />
+      </a>
+    </div>
+
+    <div className="mock-prep-footer">
+      <span>Want to hear from other candidates?</span>
+
+      <Link
+        to="/review"
+        className="mock-prep-reviews-link"
+      >
+        <FiCheckCircle />
+        Read Premium Candidates’ Reviews
+        <FiArrowRight />
+      </Link>
+    </div>
+  </section>
+)}
+           
 
             {/* =====================================================
                 MOCK RULES
