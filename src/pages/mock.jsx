@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import { Helmet } from "react-helmet-async";
@@ -37,17 +38,17 @@ const MOCK = () => {
     React.useState(true);
 
   const whatsappMessage = encodeURIComponent(
-   "Hello Examitics, I want to get 1-Month Premium access for PMA 159 LC for Rs. 1,500."
+    "Assalam-o-Alaikum EXAMITICS, I want to get the PMA 159 LC offer for 15 days of Premium access for Rs. 650."
   );
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
 
   /*
-   * Show preparation message only to:
-   * 1. Users who are not signed in
-   * 2. Signed-in users who are not Premium
+   * Show the PMA 159 offer only to:
+   * 1. Visitors who are not signed in
+   * 2. Signed-in users who do not have Premium access
    *
-   * Hide from Premium users.
+   * Hide the offer from Premium users.
    */
   const shouldShowPreparationMessage =
     !loading &&
@@ -120,7 +121,7 @@ const MOCK = () => {
 
         <meta
           name="twitter:description"
-          content="Practice free ISSB and PMA mock tests including Verbal, Non-Verbal, Academic and Mechanical Aptitude Tests with detailed performance analysis."
+          content="Practice ISSB and PMA mock tests including Verbal, Non-Verbal, Academic and Mechanical Aptitude Tests with detailed performance analysis."
         />
 
         <meta
@@ -165,119 +166,126 @@ const MOCK = () => {
               </p>
             </section>
 
- 
-{/* PMA 159 PREPARATION CARD — FREE USERS ONLY */}
-{shouldShowPreparationMessage && (
-  <section
-    className="mock-prep-card"
-    aria-labelledby="mock-prep-title"
-  >
-    <button
-      type="button"
-      className="mock-prep-close"
-      onClick={() => setShowPreparationMessage(false)}
-      aria-label="Dismiss preparation message"
-    >
-      <FiX />
-    </button>
+            {/* =====================================================
+                PMA 159 SPECIAL OFFER — FREE USERS ONLY
+            ===================================================== */}
+            {shouldShowPreparationMessage && (
+              <section
+                className="mock-prep-card"
+                aria-labelledby="mock-prep-title"
+              >
+                <button
+                  type="button"
+                  className="mock-prep-close"
+                  onClick={() => setShowPreparationMessage(false)}
+                  aria-label="Dismiss preparation message"
+                >
+                  <FiX />
+                </button>
 
-    <div className="mock-prep-badge">
-      <FiTarget />
-      PMA 159 LONG COURSE • INITIAL TEST PREPARATION
-    </div>
+                <div className="mock-prep-badge">
+                  <FiTarget />
+                  PMA 159 LONG COURSE • SPECIAL OFFER
+                </div>
 
-    <div className="mock-prep-header">
-      <div className="mock-prep-icon">
-        <FiZap />
-      </div>
+                <div className="mock-prep-header">
+                  <div className="mock-prep-icon">
+                    <FiZap />
+                  </div>
 
-      <div>
-        <h3 id="mock-prep-title">
-          Prepare for PMA 159 with EXAMITICS
-        </h3>
-        <p>
-          Practise with purpose. Build confidence for your
-          PMA Initial Test.
-        </p>
-      </div>
-    </div>
+                  <div>
+                    <h3 id="mock-prep-title">
+                      Prepare for PMA 159 with EXAMITICS
+                    </h3>
 
-    <div className="mock-prep-message">
-      <p>
-        Dear PMA 159 aspirant, your preparation matters.
-        Use our mock tests to practise important question
-        types, improve your speed and accuracy, and identify
-        the areas where you need more work.
-      </p>
+                    <p>
+                      Practise smart. Build confidence. Prepare for success.
+                    </p>
+                  </div>
+                </div>
 
-      <p>
-        <strong>
-          Consistent, focused practice can help you aim for
-          a stronger initial-test score.
-        </strong>{" "}
-        Attempt the available tests and review your
-        performance to keep improving.
-      </p>
-    </div>
+                <div className="mock-prep-message">
+                  <p>
+                    Dear PMA 159 aspirant, your goal deserves focused
+                    preparation. Your initial test is an important step
+                    towards joining the Pakistan Army, so make every
+                    practice session count.
+                  </p>
 
-    <div className="mock-prep-points">
-      <div>
-        <FiCheck />
-        Verbal Intelligence practice
-      </div>
+                  <p>
+                    <strong>
+                      Attempt all our important Verbal Intelligence,
+                      Non-Verbal Intelligence, and Academic mock tests.
+                    </strong>{" "}
+                    Strengthen your concepts, improve your speed and
+                    accuracy, and identify the areas where you need more
+                    practice. Stay consistent and work towards achieving
+                    a strong initial-test score.
+                  </p>
+                </div>
 
-      <div>
-        <FiCheck />
-        Non-Verbal Intelligence practice
-      </div>
+                <div className="mock-prep-points">
+                  <div>
+                    <FiCheck />
+                    Verbal Intelligence practice
+                  </div>
 
-      <div>
-        <FiCheck />
-        Academic mock tests
-      </div>
-    </div>
+                  <div>
+                    <FiCheck />
+                    Non-Verbal Intelligence practice
+                  </div>
 
-    <div className="mock-prep-offer">
-      <div className="mock-prep-offer-content">
-        <span className="mock-prep-offer-label">
-          WANT MORE PRACTICE?
-        </span>
+                  <div>
+                    <FiCheck />
+                    Academic mock tests
+                  </div>
+                </div>
 
-        <strong>Unlock Premium Access</strong>
+                <div className="mock-prep-offer">
+                  <div className="mock-prep-offer-content">
+                    <span className="mock-prep-offer-label">
+                      SPECIAL OFFER FOR PMA 159 CANDIDATES
+                    </span>
 
-        <small>
-          Contact our team on WhatsApp for subscription
-          details and premium mock-test access.
-        </small>
-      </div>
+                    <strong>
+                      15 Days Premium Access — Rs. 650 Only
+                    </strong>
 
-      <a
-        className="mock-prep-whatsapp"
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FiMessageCircle />
-        Get Premium Access
-        <FiArrowRight />
-      </a>
-    </div>
+                    <small>
+                      Unlock Premium mock tests, practise important
+                      questions, and take your initial-test preparation
+                      further.
+                    </small>
+                  </div>
 
-    <div className="mock-prep-footer">
-      <span>Want to hear from other candidates?</span>
+                  <a
+                    className="mock-prep-whatsapp"
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiMessageCircle />
+                    Get Premium Access
+                    <FiArrowRight />
+                  </a>
+                </div>
 
-      <Link
-        to="/review"
-        className="mock-prep-reviews-link"
-      >
-        <FiCheckCircle />
-        Read Premium Candidates’ Reviews
-        <FiArrowRight />
-      </Link>
-    </div>
-  </section>
-)}
-           
+                <div className="mock-prep-footer">
+                  <span>
+                    Want to hear from other candidates?
+                  </span>
+
+                  <Link
+                    to="/review"
+                    className="mock-prep-reviews-link"
+                  >
+                    <FiCheckCircle />
+                    Read Premium Candidates’ Reviews
+                    <FiArrowRight />
+                  </Link>
+                </div>
+              </section>
+            )}
 
             {/* =====================================================
                 MOCK RULES
