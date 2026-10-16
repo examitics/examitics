@@ -22,6 +22,8 @@ import tatImg from "../assets/images/tat-img.png";
 import sctImg from "../assets/images/sct-img.png";
 import opiImg from "../assets/images/opi-img.png";
 import matImg from "../assets/images/mat-img.png";
+import srtImg from "../assets/images/srt-img.webp";
+
 import quickmath from "../assets/images/quick-math.png";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
@@ -37,6 +39,7 @@ import {
   FiActivity,
   FiCheckCircle,
   FiArrowRight,
+  FiClock,
 } from "react-icons/fi";
 
 import "../styles/issb-1.css";
@@ -84,6 +87,15 @@ const ISSB = () => {
       image: opiImg,
       action: "opi",
       buttonText: "Start OPI Practice",
+    },
+    {
+      title: "SRT",
+      subtitle: "Situation Reaction Test",
+      description:
+        "Practise responding to real-life situations with practical thinking, responsibility, and sound judgment under time pressure.",
+      image: srtImg,
+      action: "srt",
+      buttonText: "Start SRT Practice",
     },
     {
       title: "MAT",
@@ -341,7 +353,14 @@ const ISSB = () => {
             <div className="psych-grid">
               {psychTests.map((test, index) => (
                 <div className="psych-card exa-card" key={index}>
-                  <img src={test.image} alt={test.title} />
+                  {/* <img src={test.image} alt={test.title} /> */}
+                  {test.image ? (
+                    <img src={test.image} alt={test.title} />
+                  ) : (
+                    <div className="psych-card-icon">
+                      <FiClock />
+                    </div>
+                  )}
 
                   <div className="psych-content">
                     <span>{test.subtitle}</span>
@@ -368,6 +387,9 @@ const ISSB = () => {
 
                         if (test.action === "opi") {
                           navigate("/opi");
+                        }
+                        if (test.action === "srt") {
+                          navigate("/srt");
                         }
                         if (test.action === "mat") {
                           navigate("/mock/mat/set1");

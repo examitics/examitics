@@ -9,6 +9,7 @@ import Result from "./pages/result";
 import MOCK from "./pages/mock";
 import ISSBa from "./pages/issb-1";
 import OPI from "./pages/opi";
+import SRT from "./pages/SRT";
 import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
@@ -106,8 +107,8 @@ function App() {
   return (
     <>
       {/* <AuthTest /> */}
-      <SecurityToast />
-      <SecurityProtection />
+      {/* <SecurityToast />
+      <SecurityProtection /> */}
       <AnnouncementBar />
       <ScrollToTop />
 
@@ -631,7 +632,8 @@ PREMIUM PMA VERBAL MOCK TEST 4
 
         {/* OPI RESULT PAGE */}
         <Route path="/opi-result" element={<OPIResult />} />
-
+{/* SRT PRACTICE PAGE */}
+<Route path="/srt" element={<SRT />} />
         {/* PRIVACY POLICY PAGE */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 

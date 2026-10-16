@@ -728,3 +728,21 @@ button:disabled {
     display: block;
   }
 }
+
+
+
+/* SRT card icon when no dedicated image is available */
+.psych-card-icon {
+  display: grid;
+  place-items: center;
+  min-height: 190px;
+  padding: 30px;
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+  font-size: 3.5rem;
+}
+
+.psych-card-icon svg {
+  width: 64px;
+  height: 64px;
+}
