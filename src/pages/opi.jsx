@@ -1,489 +1,572 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-
+import React from "react";
 import { Helmet } from "react-helmet-async";
-
-import { FiClock, FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { FaClipboardList } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import Navbar from "../components/layout/navbar";
-
-// import Adsterra728x90 from "../components/Adsterra728x90";
-
-import opiQuestions from "../data/opi/opiquestions";
-
-import "../styles/opi.css";
-
+import Footer from "../components/layout/footer";
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
+import {
+  FiArrowRight,
+  FiCheckCircle,
+  FiClock,
+  FiCompass,
+  FiFileText,
+  FiShield,
+  FiTarget,
+  FiUsers,
+} from "react-icons/fi";
+
+import "../styles/opi-landing.css";
+
+const faqs = [
+  {
+    question: "What is the OPI test for ISSB?",
+    answer:
+      "OPI is commonly expanded as Officer Potential Inventory in the context of this EXAMITICS practice resource. This page introduces a practice assessment designed to help candidates reflect on personality-related responses during ISSB preparation. It is not an official ISSB assessment.",
+  },
+  {
+    question: "What does OPI stand for?",
+    answer:
+      "EXAMITICS uses OPI to mean Officer Potential Inventory for this practice tool. Candidates should consult official ISSB or relevant armed-forces recruitment guidance for authoritative information about any formal assessment and its terminology.",
+  },
+  {
+    question: "How long does the EXAMITICS OPI practice test take?",
+    answer:
+      "The current EXAMITICS practice assessment is configured with a 35-minute timer. This is the duration of our online practice tool, not a claim about the duration of an official ISSB assessment.",
+  },
+  {
+    question: "Is the OPI practice test free?",
+    answer:
+      "You can open the OPI practice assessment on EXAMITICS and review the questions available in the tool. The assessment is an educational practice resource and should not be confused with an official recruitment test.",
+  },
+  {
+    question: "What personality traits can I explore?",
+    answer:
+      "The practice report summarizes selected response patterns using the traits implemented in the EXAMITICS scoring system. These results are intended for reflection and personal development, not clinical diagnosis or an official judgment of officer potential.",
+  },
+  {
+    question: "Can this test predict whether I will pass ISSB?",
+    answer:
+      "No. A practice score cannot reliably predict ISSB selection. Official selection involves a broader assessment process, and EXAMITICS results are not official ISSB scores or selection decisions.",
+  },
+  {
+    question: "How should I answer personality assessment questions?",
+    answer:
+      "Read each statement carefully and respond thoughtfully according to your actual behavior. Use the exercise to reflect on your habits, decisions, teamwork, and areas for development rather than trying to guess a supposedly perfect answer.",
+  },
+  {
+    question: "Can I use a personality test for personal development?",
+    answer:
+      "A structured self-reflection exercise can help you think about your habits, communication, decision-making, and personal strengths. The EXAMITICS practice report is educational and is not a clinically validated psychological evaluation.",
+  },
+];
+
 const OPI = () => {
-  const navigate = useNavigate();
-  const paletteRef = useRef(null);
-  const [isChanging, setIsChanging] = useState(false);
-
-  const [timeLeft, setTimeLeft] = useState(35 * 60);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState({});
-
-  const question = opiQuestions[currentQuestion];
-
-  const totalQuestions = opiQuestions.length;
-
-  const answeredCount = Object.keys(answers).length;
-
-  const progress = (answeredCount / totalQuestions) * 100;
-
-  // =====================
-  // TRACKER
-  // =====================
-
-  const getVisibleQuestions = () => {
-    const visible = [];
-
-    for (let i = currentQuestion - 2; i <= currentQuestion + 2; i++) {
-      if (i >= 0 && i < totalQuestions) {
-        visible.push(i);
-      }
-    }
-
-    return visible;
+  const startTest = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  // =====================
-  // SUBMIT TEST
-  // =====================
-
-  const handleSubmit = () => {
-    navigate("/opi-result", {
-      state: {
-        answers,
-        questions: opiQuestions,
-      },
-    });
-  };
-
-  // =====================
-  // TIMER
-  // =====================
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-
-          handleSubmit();
-
-          return 0;
-        }
-
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  // =====================
-  // FORMAT TIME
-  // =====================
-
-  const formatTime = (seconds) => {
-    const mins = Math.floor(seconds / 60);
-
-    const secs = seconds % 60;
-
-    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
-  };
-
-  // =====================
-  // ANSWER
-  // =====================
-
-  const handleAnswer = (value) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [question.id]: value,
-    }));
-  };
-
-  // =====================
-  // NEXT
-  // =====================
-
-  // const handleNext = () => {
-  //   if (currentQuestion < totalQuestions - 1) {
-  //     setCurrentQuestion((prev) => prev + 1);
-  //   }
-  // };
-  const handleNext = () => {
-    if (currentQuestion < totalQuestions - 1) {
-      setIsChanging(true);
-
-      setTimeout(() => {
-        setCurrentQuestion((prev) => prev + 1);
-
-        setTimeout(() => {
-          setIsChanging(false);
-        }, 50);
-      }, 150);
-    }
-  };
-
-  // =====================
-  // PREVIOUS
-  // =====================
-
-  // const handlePrevious = () => {
-  //   if (currentQuestion > 0) {
-  //     setCurrentQuestion((prev) => prev - 1);
-  //   }
-  // };
-  const handlePrevious = () => {
-    if (currentQuestion > 0) {
-      setIsChanging(true);
-
-      setTimeout(() => {
-        setCurrentQuestion((prev) => prev - 1);
-
-        setTimeout(() => {
-          setIsChanging(false);
-        }, 50);
-      }, 150);
-    }
-  };
-
-  // =====================
-  // SCROLL TO CURRENT QUESTION IN PALETTE
-  // =====================
-  useEffect(() => {
-    const palette = paletteRef.current;
-
-    if (!palette) return;
-
-    const activeBtn = palette.children[currentQuestion];
-
-    if (!activeBtn) return;
-
-    activeBtn.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest",
-    });
-  }, [currentQuestion]);
-
-  // =====================
-  // STANDARD OPI OPTIONS
-  // =====================
-
-  const options = [
-    {
-      value: 1,
-      label: "Strongly Agree",
-    },
-    {
-      value: 2,
-      label: "Agree",
-    },
-    {
-      value: 3,
-      label: "Slightly Agree",
-    },
-    {
-      value: 4,
-      label: "Neutral",
-    },
-    {
-      value: 5,
-      label: "Slightly Disagree",
-    },
-    {
-      value: 6,
-      label: "Disagree",
-    },
-    {
-      value: 7,
-      label: "Strongly Disagree",
-    },
-  ];
 
   return (
     <>
       <Helmet>
-        {/* Primary SEO */}
         <title>
-          Free OPI Personality Test | Officer Like Qualities Assessment |
-          EXAMITICS
+          OPI Test for ISSB | Free Personality Practice Test - EXAMITICS
         </title>
 
         <meta
           name="description"
-          content="Take the free OPI Personality Test and receive an instant personality analysis with Officer Like Qualities (OLQs), leadership traits, behavioral strengths and detailed performance insights. Ideal for ISSB, PMA Long Course, Pakistan Army, Navy and Air Force candidates."
+          content="Learn about the OPI test for ISSB and take a free online OPI personality practice assessment. Explore the format, preparation tips, personality-related traits, and educational results with EXAMITICS."
         />
 
         <meta
           name="keywords"
-          content="OPI Test, OPI Personality Test, Officer Like Qualities, OLQ Test, Personality Assessment, ISSB Personality Test, ISSB Psychology Test, Leadership Assessment, Personality Analysis, Pakistan Army ISSB, PMA Long Course Preparation, Pakistan Navy ISSB, Pakistan Air Force ISSB, Free Personality Test, EXAMITICS"
+          content="OPI test for ISSB, ISSB OPI test, OPI personality test, Officer Potential Inventory, ISSB personality test practice, free OPI test, personality traits test, self-awareness assessment, EXAMITICS"
         />
 
         <meta name="author" content="EXAMITICS" />
         <meta name="robots" content="index, follow" />
-        <meta name="language" content="English" />
+        <link
+          rel="canonical"
+          href="https://www.examitics.com/opi"
+        />
 
-        {/* Canonical */}
-        <link rel="canonical" href="https://www.examitics.com/opi" />
-
-        {/* Open Graph */}
         <meta
           property="og:title"
-          content="Free OPI Personality Test | Officer Like Qualities Assessment"
+          content="OPI Test for ISSB | Free Personality Practice Test"
         />
-
         <meta
           property="og:description"
-          content="Discover your personality traits, leadership potential and Officer Like Qualities with a free OPI Personality Test and instant analysis on EXAMITICS."
+          content="Understand the OPI practice test, explore personality-related traits, and prepare for ISSB with the EXAMITICS online assessment."
         />
-
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="EXAMITICS" />
         <meta property="og:locale" content="en_PK" />
-
-        <meta property="og:url" content="https://www.examitics.com/opi" />
-
+        <meta
+          property="og:url"
+          content="https://www.examitics.com/opi"
+        />
         <meta
           property="og:image"
           content="https://www.examitics.com/images/examitics-banner.png"
         />
 
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-
         <meta
           name="twitter:title"
-          content="Free OPI Personality Test | Officer Like Qualities Assessment"
+          content="OPI Test for ISSB | EXAMITICS"
         />
-
         <meta
           name="twitter:description"
-          content="Take the free OPI Personality Test and receive instant personality insights, Officer Like Qualities evaluation and leadership analysis for ISSB preparation."
+          content="Learn about the OPI practice assessment and try an online personality-related test for ISSB preparation and personal reflection."
         />
-
         <meta
           name="twitter:image"
           content="https://www.examitics.com/images/examitics-banner.png"
         />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "OPI Test for ISSB",
+            url: "https://www.examitics.com/opi",
+            description:
+              "An educational guide to the EXAMITICS OPI practice assessment, its format, preparation advice, and personality-related self-reflection.",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "EXAMITICS",
+              url: "https://www.examitics.com/",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "EXAMITICS",
+              url: "https://www.examitics.com/",
+            },
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          })}
+        </script>
       </Helmet>
+
       <BreadcrumbSchema
-  items={[
-    {
-      name: "Home",
-      url: "https://www.examitics.com/",
-    },
-    {
-      name: "OPI Personality Test",
-      url: "https://www.examitics.com/opi",
-    },
-  ]}
-/>
+        items={[
+          {
+            name: "Home",
+            url: "https://www.examitics.com/",
+          },
+          {
+            name: "ISSB Preparation",
+            url: "https://www.examitics.com/issb-1",
+          },
+          {
+            name: "OPI Test",
+            url: "https://www.examitics.com/opi",
+          },
+        ]}
+      />
+
       <Navbar />
-      <div className="opi-page">
-        {/* HEADER */}
 
-        <div className="opi-header-card">
-          <div className="opi-header-left">
-            <div className="opi-test-info">
-              <div className="opi-test-icon">
-                <FaClipboardList />
-              </div>
+      <main className="opi-landing">
+        {/* HERO */}
+        <section className="opi-hero">
+          <div className="opi-hero-content">
+            <span className="opi-eyebrow">
+              EXAMITICS · ISSB PREPARATION
+            </span>
 
-              <div>
-                <h4>OPI TEST</h4>
-                <p>Officer Potential Inventory</p>
-              </div>
+            <h1>
+              OPI Test for ISSB: Free Online Personality Practice Test
+            </h1>
+
+            <p className="opi-hero-description">
+              Learn what the OPI practice test is, understand its format,
+              and explore your responses through an educational
+              personality-related assessment. Designed for ISSB candidates
+              and anyone interested in structured self-reflection.
+            </p>
+
+            <div className="opi-hero-actions">
+              <Link
+                to="/opi-test"
+                className="opi-btn opi-btn-primary"
+                onClick={startTest}
+              >
+                Start Free OPI Practice
+                <FiArrowRight />
+              </Link>
+
+              <a href="#what-is-opi" className="opi-btn opi-btn-secondary">
+                Learn About OPI
+              </a>
             </div>
 
-            <div className="opi-progress-wrapper">
-              <div className="opi-progress-top">
-                <span>
-                  Answered <strong>{answeredCount}</strong> / {totalQuestions}
-                </span>
-
-                <span>{Math.round(progress)}%</span>
-              </div>
-
-              <div className="opi-progress">
-                <div
-                  className="opi-progress-fill"
-                  style={{
-                    width: `${progress}%`,
-                  }}
-                />
-              </div>
+            <div className="opi-hero-points">
+              <span>
+                <FiCheckCircle /> Online practice
+              </span>
+              <span>
+                <FiClock /> 35-minute practice timer
+              </span>
+              <span>
+                <FiFileText /> Educational results
+              </span>
             </div>
           </div>
 
-          <div className="opi-timer">
-            <FiClock />
+          <div className="opi-hero-visual" aria-label="OPI practice overview">
+            <div className="opi-visual-top">
+              <div className="opi-visual-icon">
+                <FiTarget />
+              </div>
+              <div>
+                <span className="opi-visual-kicker">PRACTICE MODULE</span>
+                <h2>OPI Personality Practice</h2>
+              </div>
+            </div>
+
+            <div className="opi-visual-divider" />
+
+            <div className="opi-visual-row">
+              <span>Assessment format</span>
+              <strong>Self-reflection</strong>
+            </div>
+            <div className="opi-visual-row">
+              <span>Time configured</span>
+              <strong>35 minutes</strong>
+            </div>
+            <div className="opi-visual-row">
+              <span>Result type</span>
+              <strong>Practice report</strong>
+            </div>
+
+            <div className="opi-visual-note">
+              <FiShield />
+              <p>
+                For learning and self-reflection. Not an official ISSB result
+                or a clinical psychological evaluation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* QUICK ANSWER */}
+        <section className="opi-quick-answer" id="what-is-opi">
+          <div className="opi-section-icon">
+            <FiCompass />
+          </div>
+          <div>
+            <span className="opi-section-label">QUICK ANSWER</span>
+            <h2>What is the OPI test?</h2>
+            <p>
+              OPI is used here to mean Officer Potential Inventory. On
+              EXAMITICS, it refers to an online practice assessment that
+              encourages candidates to reflect on personality-related
+              statements and review their response patterns. It is intended
+              to support preparation and self-awareness, not reproduce or
+              replace an official ISSB assessment.
+            </p>
+          </div>
+        </section>
+
+        {/* PURPOSE */}
+        <section className="opi-section">
+          <div className="opi-section-heading">
+            <span className="opi-section-label">UNDERSTAND THE ASSESSMENT</span>
+            <h2>Why practise an OPI-style assessment?</h2>
+            <p>
+              Structured self-reflection can help you become more aware of
+              how you respond to common situations, work with other people,
+              and approach decisions.
+            </p>
+          </div>
+
+          <div className="opi-info-grid">
+            <article className="opi-info-card">
+              <div className="opi-card-icon">
+                <FiUsers />
+              </div>
+              <h3>ISSB candidates</h3>
+              <p>
+                Become familiar with a structured practice exercise as part
+                of your wider ISSB preparation. Use it alongside reliable
+                guidance about the official selection process.
+              </p>
+            </article>
+
+            <article className="opi-info-card">
+              <div className="opi-card-icon">
+                <FiTarget />
+              </div>
+              <h3>Self-awareness</h3>
+              <p>
+                Reflect on your everyday preferences, reactions, habits, and
+                approaches to challenges instead of treating a single score
+                as a complete picture of your personality.
+              </p>
+            </article>
+
+            <article className="opi-info-card">
+              <div className="opi-card-icon">
+                <FiCompass />
+              </div>
+              <h3>Personal development</h3>
+              <p>
+                Identify topics worth reflecting on further, such as
+                communication, teamwork, responsibility, and decision-making.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        {/* TRAITS */}
+        <section className="opi-section opi-traits-section">
+          <div className="opi-section-heading">
+            <span className="opi-section-label">PERSONALITY & BEHAVIOUR</span>
+            <h2>Personality traits you can reflect on</h2>
+            <p>
+              Personality is complex. These are useful areas for personal
+              reflection, not a claim that this practice tool clinically
+              measures every trait or establishes official officer potential.
+            </p>
+          </div>
+
+          <div className="opi-traits-grid">
+            {[
+              {
+                title: "Confidence",
+                text: "How comfortable you feel expressing ideas and facing challenges.",
+              },
+              {
+                title: "Responsibility",
+                text: "How you approach commitments, duties, and accountability.",
+              },
+              {
+                title: "Teamwork",
+                text: "How you cooperate, listen, and contribute in group settings.",
+              },
+              {
+                title: "Decision-making",
+                text: "How you consider options and respond when choices are difficult.",
+              },
+              {
+                title: "Self-control",
+                text: "How you reflect on reactions and manage impulses under pressure.",
+              },
+              {
+                title: "Initiative",
+                text: "How willing you are to take constructive action when appropriate.",
+              },
+              {
+                title: "Communication",
+                text: "How you share information, listen, and respond to other people.",
+              },
+              {
+                title: "Adaptability",
+                text: "How you approach changes, setbacks, and unfamiliar situations.",
+              },
+            ].map((trait) => (
+              <article className="opi-trait-item" key={trait.title}>
+                <FiCheckCircle />
+                <div>
+                  <h3>{trait.title}</h3>
+                  <p>{trait.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section className="opi-section">
+          <div className="opi-section-heading">
+            <span className="opi-section-label">HOW IT WORKS</span>
+            <h2>How to take the EXAMITICS OPI practice test</h2>
+            <p>
+              Follow these steps to complete the practice assessment and
+              review the educational report.
+            </p>
+          </div>
+
+          <div className="opi-steps">
+            <article className="opi-step">
+              <span>01</span>
+              <h3>Read each statement</h3>
+              <p>
+                Consider what each statement means in the context of your
+                actual behaviour and experience.
+              </p>
+            </article>
+
+            <article className="opi-step">
+              <span>02</span>
+              <h3>Select a response</h3>
+              <p>
+                Use the available agreement scale or response options to
+                record your answer.
+              </p>
+            </article>
+
+            <article className="opi-step">
+              <span>03</span>
+              <h3>Complete the assessment</h3>
+              <p>
+                Work through the questions at a thoughtful pace and keep an
+                eye on the practice timer.
+              </p>
+            </article>
+
+            <article className="opi-step">
+              <span>04</span>
+              <h3>Review your report</h3>
+              <p>
+                Use the report as a starting point for reflection, not as a
+                definitive label or prediction of selection.
+              </p>
+            </article>
+          </div>
+
+          <div className="opi-inline-cta">
+            <div>
+              <h3>Ready to begin your OPI practice?</h3>
+              <p>
+                Start the online assessment and explore your response
+                patterns.
+              </p>
+            </div>
+            <Link to="/opi-test" className="opi-btn opi-btn-primary">
+              Start OPI Test <FiArrowRight />
+            </Link>
+          </div>
+        </section>
+
+        {/* PREPARATION */}
+        <section className="opi-section opi-preparation">
+          <div className="opi-section-heading">
+            <span className="opi-section-label">PREPARATION GUIDANCE</span>
+            <h2>How to prepare for personality assessments</h2>
+            <p>
+              Good preparation is about understanding yourself and developing
+              sound habits, not memorising answers that appear ideal.
+            </p>
+          </div>
+
+          <div className="opi-preparation-list">
+            <div>
+              <span>01</span>
+              <section>
+                <h3>Answer honestly</h3>
+                <p>
+                  Think about how you usually act, not how you think you are
+                  expected to act in every situation.
+                </p>
+              </section>
+            </div>
 
             <div>
-              <h2>{formatTime(timeLeft)}</h2>
+              <span>02</span>
+              <section>
+                <h3>Reflect on real experiences</h3>
+                <p>
+                  Consider examples from study, family responsibilities,
+                  teamwork, leadership opportunities, and everyday decisions.
+                </p>
+              </section>
+            </div>
 
-              <span>TIME LEFT</span>
+            <div>
+              <span>03</span>
+              <section>
+                <h3>Recognise development areas</h3>
+                <p>
+                  Treat areas for improvement as opportunities to build
+                  practical habits, communication, and self-management.
+                </p>
+              </section>
+            </div>
+
+            <div>
+              <span>04</span>
+              <section>
+                <h3>Use official guidance for official requirements</h3>
+                <p>
+                  For recruitment procedures and formal assessment
+                  requirements, consult official ISSB and relevant armed
+                  forces recruitment sources.
+                </p>
+              </section>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* QUESTION */}
-
-        <div className="opi-content">
-          {/* <div className="opi-question-card"> */}
-          {/* <div key={question.id} className="opi-question-card"> */}
-          <div
-            className={`opi-question-card ${
-              isChanging ? "question-changing" : ""
-            }`}
-          >
-            <p className="question-tag">QUESTION</p>
-
-            <h2 className="question-text">
-              <span>{String(currentQuestion + 1).padStart(2, "0")}.</span>{" "}
-              {question.statement}
-            </h2>
-
-            {question.type === "situational" && (
-              <div className="situational-badge">Situational Question</div>
-            )}
-
-            {/* OPTIONS */}
-
-            <div className="opi-options">
-              {question.type === "situational"
-                ? question.options.map((option, index) => (
-                    <div
-                      key={index}
-                      className={`opi-option-card ${
-                        answers[question.id] === index + 1 ? "selected" : ""
-                      }`}
-                      onClick={() => handleAnswer(index + 1)}
-                    >
-                      <div className="option-circle" />
-
-                      <div className="option-label">{option}</div>
-                    </div>
-                  ))
-                : options.map((option) => (
-                    <div
-                      key={option.value}
-                      className={`opi-option-card ${
-                        answers[question.id] === option.value ? "selected" : ""
-                      }`}
-                      onClick={() => handleAnswer(option.value)}
-                    >
-                      <div className="option-circle" />
-
-                      <div className="option-number">{option.value}</div>
-
-                      <div className="option-label">{option.label}</div>
-                    </div>
-                  ))}
-            </div>
-
-            {/* ========================================== */}
-            <div className="opi-navigation">
-              <button
-                className="opi-nav-btn secondary"
-                onClick={handlePrevious}
-                disabled={currentQuestion === 0}
-              >
-                <FiChevronLeft />
-                Previous
-              </button>
-
-              <button className="opi-nav-btn submit-btn" onClick={handleSubmit}>
-                Submit Test
-              </button>
-              {/* <button
-  className="opi-nav-btn submit-btn"
-  onClick={() => {
-    window.open(
-      "https://www.effectivecpmnetwork.com/iiikcn40sy?key=62694b4e41a1a3c22f1b3bbb5189f72d",
-      "_blank"
-    );
-
-    handleSubmit();
-  }}
->
-  Submit Test
-</button> */}
-
-              <button
-                className="opi-nav-btn primary"
-                onClick={handleNext}
-                disabled={currentQuestion === totalQuestions - 1}
-              >
-                Next
-                <FiChevronRight />
-              </button>
-            </div>
-            {/* ============================== */}
-            <div className="opi-palette" ref={paletteRef}>
-              {" "}
-              {opiQuestions.map((q, index) => (
-                <button
-                  key={q.id}
-                  className={`palette-btn
-                ${currentQuestion === index ? "active" : ""}
-                ${answers[q.id] ? "answered" : ""}`}
-                  onClick={() => setCurrentQuestion(index)}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
+        {/* FAQ */}
+        <section className="opi-section opi-faq-section" id="opi-faq">
+          <div className="opi-section-heading">
+            <span className="opi-section-label">OPI TEST FAQS</span>
+            <h2>Frequently asked questions about the OPI test</h2>
+            <p>
+              Quick answers about the practice assessment, its duration,
+              preparation, and how to interpret the results.
+            </p>
           </div>
 
-          {/* TRACKER */}
-
-          <div className="opi-tracker-container">
-            <div className="opi-tracker-header">Questions</div>
-
-            <div className="opi-tracker">
-              {getVisibleQuestions().map((index) => {
-                const questionId = opiQuestions[index]?.id;
-
-                const isAnswered = answers[questionId] !== undefined;
-
-                const isCurrent = index === currentQuestion;
-
-                const isUpcoming = index > currentQuestion;
-
-                return (
-                  <div
-                    key={index}
-                    className={`
-                        tracker-item
-                        ${isCurrent ? "current" : ""}
-                        ${isAnswered ? "answered" : ""}
-                        ${isUpcoming ? "upcoming" : ""}
-                      `}
-                  >
-                    <span className="tracker-number">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    {isAnswered && !isCurrent && (
-                      <span className="tracker-check">✓</span>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+          <div className="opi-faq-list">
+            {faqs.map((faq) => (
+              <details className="opi-faq-item" key={faq.question}>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
           </div>
-        </div>
-      </div>
-      {/* <div className="desktop-ad">
-        <Adsterra728x90 />
-      </div>{" "} */}
+        </section>
+
+        {/* DISCLAIMER */}
+        <section className="opi-disclaimer">
+          <FiShield />
+          <div>
+            <h2>Important note about this practice test</h2>
+            <p>
+              EXAMITICS provides an educational practice resource. This
+              assessment is not an official ISSB test, does not establish
+              clinical personality characteristics, and cannot guarantee or
+              predict selection. Follow official recruitment guidance for
+              authoritative requirements.
+            </p>
+          </div>
+        </section>
+
+        {/* FINAL CTA */}
+        <section className="opi-final-cta">
+          <span className="opi-section-label">PRACTISE WITH EXAMITICS</span>
+          <h2>Start your OPI personality practice today</h2>
+          <p>
+            Explore the assessment, reflect on your responses, and continue
+            preparing with the EXAMITICS ISSB learning resources.
+          </p>
+          <Link to="/opi-test" className="opi-btn opi-btn-primary">
+            Start Free OPI Practice <FiArrowRight />
+          </Link>
+          <Link to="/issb-1" className="opi-back-link">
+            Explore more ISSB practice tests
+          </Link>
+        </section>
+      </main>
+
+      <Footer />
     </>
   );
 };

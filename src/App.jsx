@@ -9,6 +9,7 @@ import Result from "./pages/result";
 import MOCK from "./pages/mock";
 import ISSBa from "./pages/issb-1";
 import OPI from "./pages/opi";
+import OPITest from "./pages/opi-test";
 import SRT from "./pages/SRT";
 import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -102,14 +103,13 @@ import "./styles/globals.css";
 import DefenceDayOfferPopup from "./components/DefenceDayOfferPopup";
 // import AuthTest from "./components/AuthTest";
 
-import MonetagInPagePush from "./components/MonetagInPagePush";
 
 function App() {
   usePageTracking();
 
   return (
     <>
-      <MonetagInPagePush />
+      
       {/* <AuthTest /> */}
       <SecurityToast />
       <SecurityProtection />
@@ -633,7 +633,8 @@ PREMIUM PMA VERBAL MOCK TEST 4
         <Route path="/quick-math/result" element={<QuickMathResult />} />
         {/* OPI PAGE */}
         <Route path="/opi" element={<OPI />} />
-
+{/* INTERACTIVE OPI PRACTICE TEST */}
+<Route path="/opi-test" element={<OPITest />} />
         {/* OPI RESULT PAGE */}
         <Route path="/opi-result" element={<OPIResult />} />
 {/* SRT PRACTICE PAGE */}

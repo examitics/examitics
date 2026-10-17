@@ -1,0 +1,810 @@
+/* =========================================
+   EXAMITICS OPI INFORMATION LANDING PAGE
+========================================= */
+
+.opi-landing {
+  --opi-primary: var(--color-primary, #2563eb);
+  --opi-text: var(--color-text, #0f172a);
+  --opi-muted: var(--color-text-muted, #64748b);
+  --opi-bg: var(--color-bg, #f4f7fb);
+  --opi-card: var(--color-card, #ffffff);
+  --opi-border: var(--color-border, #e2e8f0);
+
+  color: var(--opi-text);
+  background: var(--opi-bg);
+  min-height: 100vh;
+  padding-bottom: 48px;
+}
+
+.opi-landing *,
+.opi-landing *::before,
+.opi-landing *::after {
+  box-sizing: border-box;
+}
+
+.opi-landing a {
+  text-decoration: none;
+}
+
+.opi-landing p {
+  line-height: 1.8;
+}
+
+.opi-landing h1,
+.opi-landing h2,
+.opi-landing h3,
+.opi-landing p {
+  margin-top: 0;
+}
+
+.opi-landing section {
+  scroll-margin-top: 100px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.opi-hero {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0 48px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.8fr);
+  align-items: center;
+  gap: 44px;
+}
+
+.opi-hero-content {
+  min-width: 0;
+}
+
+.opi-eyebrow,
+.opi-section-label {
+  display: inline-block;
+  color: var(--opi-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.opi-hero h1 {
+  max-width: 760px;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  margin-bottom: 20px;
+}
+
+.opi-hero-description {
+  max-width: 690px;
+  color: var(--opi-muted);
+  font-size: 1.05rem;
+  margin-bottom: 26px;
+}
+
+.opi-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.opi-btn {
+  min-height: 48px;
+  padding: 13px 19px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  font: inherit;
+  font-size: 0.93rem;
+  font-weight: 700;
+  line-height: 1.3;
+
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.opi-btn:hover {
+  transform: translateY(-2px);
+}
+
+.opi-btn:focus-visible,
+.opi-landing a:focus-visible,
+.opi-faq-item summary:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+.opi-btn-primary {
+  background: var(--opi-primary);
+  color: #ffffff !important;
+  box-shadow: 0 7px 18px rgb(37 99 235 / 18%);
+}
+
+.opi-btn-primary:hover {
+  filter: brightness(0.96);
+  box-shadow: 0 10px 22px rgb(37 99 235 / 24%);
+}
+
+.opi-btn-secondary {
+  background: var(--opi-card);
+  color: var(--opi-text) !important;
+  border-color: var(--opi-border);
+}
+
+.opi-btn-secondary:hover {
+  background: var(--opi-bg);
+}
+
+.opi-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 24px;
+}
+
+.opi-hero-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--opi-muted);
+  font-size: 0.82rem;
+}
+
+.opi-hero-points svg {
+  color: var(--opi-primary);
+  flex-shrink: 0;
+}
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.opi-hero-visual {
+  padding: 27px;
+  border: 1px solid var(--opi-border);
+  border-radius: 22px;
+  background: var(--opi-card);
+  box-shadow: 0 14px 40px rgb(15 23 42 / 6%);
+}
+
+.opi-visual-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.opi-visual-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #eff6ff;
+  color: var(--opi-primary);
+
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.opi-visual-kicker {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--opi-muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.opi-visual-top h2 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.opi-visual-divider {
+  height: 1px;
+  background: var(--opi-border);
+  margin: 24px 0 12px;
+}
+
+.opi-visual-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--opi-border);
+  font-size: 0.88rem;
+}
+
+.opi-visual-row span {
+  color: var(--opi-muted);
+}
+
+.opi-visual-row strong {
+  text-align: right;
+  font-weight: 700;
+}
+
+.opi-visual-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  margin-top: 20px;
+  border-radius: 12px;
+  background: var(--opi-bg);
+}
+
+.opi-visual-note svg {
+  flex-shrink: 0;
+  color: var(--opi-primary);
+  margin-top: 4px;
+}
+
+.opi-visual-note p {
+  margin-bottom: 0;
+  color: var(--opi-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   QUICK ANSWER
+========================================= */
+
+.opi-quick-answer {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto 20px;
+  padding: 28px;
+
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 18px;
+
+  border: 1px solid var(--opi-border);
+  border-left: 4px solid var(--opi-primary);
+  border-radius: 16px;
+  background: var(--opi-card);
+  box-shadow: 0 5px 18px rgb(15 23 42 / 3%);
+}
+
+.opi-section-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: var(--opi-primary);
+  font-size: 1.4rem;
+}
+
+.opi-quick-answer h2 {
+  margin-bottom: 10px;
+  font-size: 1.55rem;
+  line-height: 1.35;
+}
+
+.opi-quick-answer p {
+  margin-bottom: 0;
+  color: var(--opi-muted);
+}
+
+/* =========================================
+   SHARED SECTIONS
+========================================= */
+
+.opi-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 54px 0 12px;
+}
+
+.opi-section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.opi-section-heading h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin-bottom: 13px;
+}
+
+.opi-section-heading > p {
+  color: var(--opi-muted);
+  margin-bottom: 0;
+}
+
+/* =========================================
+   INFORMATION CARDS
+========================================= */
+
+.opi-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.opi-info-card {
+  padding: 25px;
+  background: var(--opi-card);
+  border: 1px solid var(--opi-border);
+  border-radius: 17px;
+  box-shadow: 0 5px 20px rgb(15 23 42 / 3%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.opi-info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgb(15 23 42 / 6%);
+}
+
+.opi-card-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 19px;
+  border-radius: 13px;
+  background: #eff6ff;
+  color: var(--opi-primary);
+  font-size: 1.3rem;
+}
+
+.opi-info-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.opi-info-card p {
+  color: var(--opi-muted);
+  font-size: 0.91rem;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   TRAITS GRID
+========================================= */
+
+.opi-traits-section {
+  margin-top: 30px;
+  padding: 36px;
+  border: 1px solid var(--opi-border);
+  border-radius: 22px;
+  background: var(--opi-card);
+}
+
+.opi-traits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+}
+
+.opi-trait-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--opi-border);
+}
+
+.opi-trait-item > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--opi-primary);
+  font-size: 1.1rem;
+}
+
+.opi-trait-item h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.opi-trait-item p {
+  color: var(--opi-muted);
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.opi-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.opi-step {
+  padding: 22px;
+  border: 1px solid var(--opi-border);
+  border-radius: 15px;
+  background: var(--opi-card);
+}
+
+.opi-step > span {
+  display: inline-grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  margin-bottom: 18px;
+  border-radius: 11px;
+  background: #eff6ff;
+  color: var(--opi-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.opi-step h3 {
+  font-size: 1rem;
+  margin-bottom: 9px;
+}
+
+.opi-step p {
+  color: var(--opi-muted);
+  font-size: 0.87rem;
+  margin-bottom: 0;
+}
+
+.opi-inline-cta {
+  margin-top: 25px;
+  padding: 24px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  border: 1px solid var(--opi-border);
+  border-radius: 16px;
+  background: var(--opi-card);
+}
+
+.opi-inline-cta h3 {
+  margin-bottom: 5px;
+  font-size: 1.15rem;
+}
+
+.opi-inline-cta p {
+  margin-bottom: 0;
+  color: var(--opi-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   PREPARATION LIST
+========================================= */
+
+.opi-preparation-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.opi-preparation-list > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 22px;
+  border: 1px solid var(--opi-border);
+  border-radius: 15px;
+  background: var(--opi-card);
+}
+
+.opi-preparation-list > div > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #eff6ff;
+  color: var(--opi-primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.opi-preparation-list h3 {
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+
+.opi-preparation-list p {
+  color: var(--opi-muted);
+  font-size: 0.89rem;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.opi-faq-section {
+  max-width: 940px;
+}
+
+.opi-faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.opi-faq-item {
+  overflow: hidden;
+  border: 1px solid var(--opi-border);
+  border-radius: 13px;
+  background: var(--opi-card);
+}
+
+.opi-faq-item summary {
+  position: relative;
+  padding: 19px 48px 19px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.97rem;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.opi-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.opi-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 19px;
+  transform: translateY(-50%);
+  color: var(--opi-primary);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.opi-faq-item[open] summary::after {
+  content: "−";
+}
+
+.opi-faq-item[open] summary {
+  border-bottom: 1px solid var(--opi-border);
+}
+
+.opi-faq-item p {
+  padding: 17px 20px 20px;
+  margin-bottom: 0;
+  color: var(--opi-muted);
+  font-size: 0.92rem;
+}
+
+/* =========================================
+   DISCLAIMER
+========================================= */
+
+.opi-disclaimer {
+  width: min(1180px, calc(100% - 40px));
+  margin: 48px auto 0;
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  border: 1px solid var(--opi-border);
+  border-radius: 15px;
+  background: var(--opi-card);
+}
+
+.opi-disclaimer > svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--opi-primary);
+  font-size: 1.35rem;
+}
+
+.opi-disclaimer h2 {
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+
+.opi-disclaimer p {
+  margin-bottom: 0;
+  color: var(--opi-muted);
+  font-size: 0.88rem;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.opi-final-cta {
+  width: min(1180px, calc(100% - 40px));
+  margin: 35px auto 0;
+  padding: 42px 25px;
+  border: 1px solid var(--opi-border);
+  border-radius: 22px;
+  background: var(--opi-card);
+  text-align: center;
+}
+
+.opi-final-cta h2 {
+  max-width: 720px;
+  margin: 0 auto 13px;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.25;
+}
+
+.opi-final-cta > p {
+  max-width: 680px;
+  margin: 0 auto 22px;
+  color: var(--opi-muted);
+}
+
+.opi-back-link {
+  display: block;
+  width: fit-content;
+  margin: 18px auto 0;
+  color: var(--opi-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .opi-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 42px;
+  }
+
+  .opi-hero-visual {
+    max-width: 620px;
+  }
+
+  .opi-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .opi-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .opi-traits-section {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .opi-hero,
+  .opi-section,
+  .opi-quick-answer,
+  .opi-disclaimer,
+  .opi-final-cta {
+    width: calc(100% - 28px);
+  }
+
+  .opi-hero {
+    padding-top: 32px;
+    gap: 25px;
+  }
+
+  .opi-hero h1 {
+    font-size: clamp(1.85rem, 8vw, 2.45rem);
+    letter-spacing: -0.6px;
+  }
+
+  .opi-hero-description {
+    font-size: 0.96rem;
+  }
+
+  .opi-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .opi-btn {
+    width: 100%;
+  }
+
+  .opi-hero-points {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .opi-hero-visual {
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .opi-quick-answer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 22px;
+  }
+
+  .opi-quick-answer h2 {
+    font-size: 1.35rem;
+  }
+
+  .opi-section {
+    padding-top: 40px;
+  }
+
+  .opi-section-heading h2 {
+    font-size: 1.65rem;
+  }
+
+  .opi-info-grid,
+  .opi-traits-grid,
+  .opi-steps,
+  .opi-preparation-list {
+    grid-template-columns: 1fr;
+  }
+
+  .opi-info-card {
+    padding: 22px;
+  }
+
+  .opi-traits-section {
+    padding: 20px;
+  }
+
+  .opi-trait-item {
+    padding: 16px 0;
+  }
+
+  .opi-inline-cta {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .opi-preparation-list > div {
+    padding: 18px;
+  }
+
+  .opi-faq-item summary {
+    padding: 17px 42px 17px 16px;
+    font-size: 0.92rem;
+  }
+
+  .opi-faq-item p {
+    padding: 15px 16px 18px;
+  }
+
+  .opi-disclaimer {
+    padding: 19px;
+  }
+
+  .opi-final-cta {
+    padding: 32px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opi-landing *,
+  .opi-landing *::before,
+  .opi-landing *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
