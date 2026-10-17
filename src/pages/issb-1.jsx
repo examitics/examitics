@@ -375,7 +375,7 @@ const ISSB = () => {
                       // disabled={test.action === "mat"}
                       onClick={() => {
                         if (test.action === "wat") {
-                          setActiveTest("/wat");
+                          navigate("/wat");
                         }
 
                         if (test.action === "tat") {
