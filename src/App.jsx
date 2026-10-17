@@ -10,6 +10,9 @@ import MOCK from "./pages/mock";
 import ISSBa from "./pages/issb-1";
 import OPI from "./pages/opi";
 import OPITest from "./pages/opi-test";
+import MAT from "./pages/mat";
+import WAT from "./pages/wat";
+import WATTest from "./pages/wat-test";
 import SRT from "./pages/SRT";
 import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -635,6 +638,13 @@ PREMIUM PMA VERBAL MOCK TEST 4
         <Route path="/opi" element={<OPI />} />
 {/* INTERACTIVE OPI PRACTICE TEST */}
 <Route path="/opi-test" element={<OPITest />} />
+{/* MAT INFORMATIONAL LANDING PAGE */}
+<Route path="/mat" element={<MAT />} />
+{/* WAT INFORMATIONAL LANDING PAGE */}
+<Route path="/wat" element={<WAT />} />
+
+{/* INTERACTIVE WAT PRACTICE */}
+<Route path="/wat-test" element={<WATTest />} />
         {/* OPI RESULT PAGE */}
         <Route path="/opi-result" element={<OPIResult />} />
 {/* SRT PRACTICE PAGE */}

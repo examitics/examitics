@@ -52,9 +52,19 @@ const WATS = ({ closeWAT }) => {
     setShowModal(false);
 
     // FULLSCREEN MODE
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-    }
+    // if (document.documentElement.requestFullscreen) {
+    //   document.documentElement.requestFullscreen();
+    // }
+    // FULLSCREEN MODE
+if (
+  document.fullscreenEnabled &&
+  document.documentElement.requestFullscreen
+) {
+  document.documentElement.requestFullscreen().catch(() => {
+    // Continue the test if fullscreen is unavailable.
+  });
+}
+
 
     // START COUNTDOWN
     setCountdown(3);
@@ -163,11 +173,16 @@ const WATS = ({ closeWAT }) => {
 
     if (!confirmExit) return;
 
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    }
+    // if (document.fullscreenElement) {
+    //   document.exitFullscreen();
+    // }
 
-    closeWAT();
+    // closeWAT();
+    if (document.fullscreenElement && document.exitFullscreen) {
+  document.exitFullscreen().catch(() => {});
+}
+
+closeWAT();
   }}
 >
   ✕

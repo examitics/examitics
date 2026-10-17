@@ -1,0 +1,945 @@
+
+.wat-landing {
+  --wat-bg: #f4f7fb;
+  --wat-card: #ffffff;
+  --wat-text: #0f172a;
+  --wat-muted: #526176;
+  --wat-border: #dce5ef;
+  --wat-primary: #174a83;
+  --wat-primary-dark: #10365f;
+  --wat-accent: #dcecff;
+
+  background: var(--wat-bg);
+  color: var(--wat-text);
+  overflow: hidden;
+  padding: 36px 24px 72px;
+}
+
+.wat-landing * {
+  box-sizing: border-box;
+}
+
+.wat-landing a {
+  text-decoration: none;
+}
+
+.wat-landing h1,
+.wat-landing h2,
+.wat-landing h3 {
+  color: var(--wat-text);
+  line-height: 1.22;
+}
+
+.wat-landing p {
+  color: var(--wat-muted);
+  line-height: 1.75;
+}
+
+.wat-hero,
+.wat-quick-answer,
+.wat-section,
+.wat-example-section,
+.wat-practice-cta,
+.wat-disclaimer,
+.wat-final-cta {
+  width: min(1120px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wat-eyebrow,
+.wat-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--wat-primary);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Hero */
+
+.wat-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  align-items: center;
+  gap: 54px;
+  padding: 54px 0 64px;
+}
+
+.wat-eyebrow {
+  margin-bottom: 20px;
+}
+
+.wat-hero h1 {
+  margin: 0 0 22px;
+  font-size: clamp(2.15rem, 4.2vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.wat-hero-description {
+  margin-bottom: 28px;
+  font-size: 1.04rem;
+}
+
+.wat-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wat-btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 13px 19px;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.wat-btn:hover {
+  transform: translateY(-2px);
+}
+
+.wat-btn-primary {
+  background: var(--wat-primary);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgb(23 74 131 / 15%);
+}
+
+.wat-btn-primary:hover {
+  background: var(--wat-primary-dark);
+  color: #ffffff;
+}
+
+.wat-btn-secondary {
+  border-color: var(--wat-border);
+  background: var(--wat-card);
+  color: var(--wat-text);
+}
+
+.wat-btn-secondary:hover {
+  background: var(--wat-accent);
+  color: var(--wat-text);
+}
+
+.wat-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 20px;
+  margin-top: 26px;
+}
+
+.wat-hero-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--wat-muted);
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.wat-hero-points svg {
+  color: var(--wat-primary);
+}
+
+/* Hero panel */
+
+.wat-hero-visual {
+  border: 1px solid var(--wat-border);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 100% 0%, #dcecff 0, transparent 45%),
+    var(--wat-card);
+  padding: 30px;
+  box-shadow: 0 20px 55px rgb(15 23 42 / 7%);
+}
+
+.wat-visual-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wat-visual-icon,
+.wat-section-icon,
+.wat-card-icon,
+.wat-cta-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--wat-accent);
+  color: var(--wat-primary);
+}
+
+.wat-visual-icon {
+  width: 58px;
+  height: 58px;
+  font-size: 1.6rem;
+}
+
+.wat-visual-kicker {
+  color: var(--wat-primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.wat-visual-top h2 {
+  margin: 5px 0 0;
+  font-size: 1.25rem;
+}
+
+.wat-visual-divider {
+  height: 1px;
+  margin: 25px 0 10px;
+  background: var(--wat-border);
+}
+
+.wat-visual-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.wat-visual-row span {
+  color: var(--wat-muted);
+  font-size: 0.88rem;
+}
+
+.wat-visual-row strong {
+  color: var(--wat-text);
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.wat-visual-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  border-radius: 12px;
+  background: #f3f7fc;
+  padding: 14px;
+}
+
+.wat-visual-note svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--wat-primary);
+}
+
+.wat-visual-note p {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+/* Quick answer */
+
+.wat-quick-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 78px;
+  border: 1px solid var(--wat-border);
+  border-radius: 18px;
+  background: var(--wat-card);
+  padding: 30px;
+  box-shadow: 0 10px 30px rgb(15 23 42 / 3%);
+  scroll-margin-top: 100px;
+}
+
+.wat-section-icon {
+  width: 54px;
+  height: 54px;
+  font-size: 1.5rem;
+}
+
+.wat-quick-answer h2 {
+  margin: 8px 0 10px;
+  font-size: 1.65rem;
+}
+
+.wat-quick-answer p {
+  margin-bottom: 0;
+}
+
+/* General sections */
+
+.wat-section {
+  margin-bottom: 78px;
+  scroll-margin-top: 100px;
+}
+
+.wat-section-heading {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.wat-section-heading h2 {
+  margin: 10px 0 14px;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.wat-section-heading p {
+  margin-bottom: 0;
+}
+
+/* Process cards */
+
+.wat-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.wat-process-card {
+  border: 1px solid var(--wat-border);
+  border-radius: 16px;
+  background: var(--wat-card);
+  padding: 25px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.wat-process-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgb(15 23 42 / 5%);
+}
+
+.wat-card-icon {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  font-size: 1.35rem;
+}
+
+.wat-card-step {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--wat-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.wat-process-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+}
+
+.wat-process-card p {
+  margin-bottom: 0;
+  font-size: 0.93rem;
+}
+
+/* Example */
+
+.wat-example-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 78px;
+  border: 1px solid var(--wat-border);
+  border-radius: 22px;
+  background: var(--wat-card);
+  padding: 36px;
+}
+
+.wat-example-content h2 {
+  margin: 10px 0 16px;
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  letter-spacing: -0.03em;
+}
+
+.wat-example-content p {
+  margin-bottom: 14px;
+}
+
+.wat-example-quote {
+  margin: 15px 0;
+  border-left: 4px solid var(--wat-primary);
+  border-radius: 0 10px 10px 0;
+  background: var(--wat-bg);
+  padding: 18px 20px;
+  color: var(--wat-text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.wat-example-visual {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at center, #ffffff 0, #edf4fc 75%);
+  padding: 24px;
+}
+
+.wat-example-word {
+  border: 1px solid #b8d2ed;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 18px 24px;
+  color: #174a83;
+  font-size: 1.2rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.wat-example-arrow {
+  margin: 12px 0;
+  color: var(--wat-primary);
+  font-size: 1.5rem;
+  transform: rotate(90deg);
+}
+
+.wat-example-response {
+  border: 1px solid var(--wat-border);
+  border-radius: 12px;
+  background: var(--wat-card);
+  padding: 15px 18px;
+  color: var(--wat-text);
+  font-weight: 700;
+  text-align: center;
+}
+
+.wat-example-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--wat-muted);
+  font-size: 0.83rem;
+  text-align: center;
+}
+
+.wat-example-caption svg {
+  flex: 0 0 auto;
+  color: var(--wat-primary);
+}
+
+/* Principles */
+
+.wat-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.wat-principle-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid var(--wat-border);
+  border-radius: 15px;
+  background: var(--wat-card);
+  padding: 23px;
+}
+
+.wat-principle-card > svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--wat-primary);
+  font-size: 1.3rem;
+}
+
+.wat-principle-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.04rem;
+}
+
+.wat-principle-card p {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+/* Steps */
+
+.wat-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.wat-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  border: 1px solid var(--wat-border);
+  border-radius: 15px;
+  background: var(--wat-card);
+  padding: 24px;
+}
+
+.wat-step-number {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--wat-accent);
+  color: var(--wat-primary);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.wat-step h3 {
+  margin: 2px 0 9px;
+  font-size: 1.04rem;
+}
+
+.wat-step p {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+/* Main practice CTA */
+
+.wat-practice-cta {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 78px;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #123b68, #1c5b98);
+  padding: 34px;
+  box-shadow: 0 18px 40px rgb(23 74 131 / 15%);
+}
+
+.wat-cta-icon {
+  width: 60px;
+  height: 60px;
+  background: rgb(255 255 255 / 14%);
+  color: #ffffff;
+  font-size: 1.65rem;
+}
+
+.wat-cta-content {
+  flex: 1;
+}
+
+.wat-practice-cta .wat-section-label {
+  color: #cfe4ff;
+}
+
+.wat-practice-cta h2 {
+  margin: 7px 0 9px;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+}
+
+.wat-practice-cta p {
+  margin-bottom: 0;
+  color: #e0ebf7;
+  font-size: 0.94rem;
+}
+
+.wat-btn-light {
+  flex: 0 0 auto;
+  background: #ffffff;
+  color: #123b68;
+}
+
+.wat-btn-light:hover {
+  background: #edf4fc;
+  color: #123b68;
+}
+
+/* FAQs */
+
+.wat-faq-section {
+  max-width: 900px;
+}
+
+.wat-faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.wat-faq-item {
+  overflow: hidden;
+  border: 1px solid var(--wat-border);
+  border-radius: 13px;
+  background: var(--wat-card);
+}
+
+.wat-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 22px;
+  color: var(--wat-text);
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.wat-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.wat-faq-item summary svg {
+  flex: 0 0 auto;
+  color: var(--wat-primary);
+}
+
+.wat-faq-item[open] summary {
+  border-bottom: 1px solid var(--wat-border);
+  background: #f8fafd;
+}
+
+.wat-faq-item > p {
+  margin: 0;
+  padding: 18px 22px 22px;
+  font-size: 0.94rem;
+}
+
+/* Disclaimer */
+
+.wat-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 54px;
+  border: 1px solid #d7e3f0;
+  border-radius: 15px;
+  background: #edf4fc;
+  padding: 23px;
+}
+
+.wat-disclaimer > svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--wat-primary);
+  font-size: 1.45rem;
+}
+
+.wat-disclaimer h2 {
+  margin: 0 0 8px;
+  font-size: 1.04rem;
+}
+
+.wat-disclaimer p {
+  margin-bottom: 0;
+  font-size: 0.89rem;
+}
+
+/* Final CTA */
+
+.wat-final-cta {
+  border: 1px solid var(--wat-border);
+  border-radius: 22px;
+  background: var(--wat-card);
+  padding: 45px 24px;
+  text-align: center;
+}
+
+.wat-final-cta h2 {
+  max-width: 740px;
+  margin: 12px auto;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  letter-spacing: -0.035em;
+}
+
+.wat-final-cta p {
+  max-width: 650px;
+  margin: 0 auto 23px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .wat-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-top: 34px;
+  }
+
+  .wat-hero-visual {
+    max-width: 650px;
+  }
+
+  .wat-example-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wat-practice-cta {
+    flex-wrap: wrap;
+  }
+
+  .wat-cta-content {
+    flex-basis: calc(100% - 90px);
+  }
+
+  .wat-btn-light {
+    margin-left: 82px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wat-landing {
+    padding: 22px 16px 48px;
+  }
+
+  .wat-hero {
+    gap: 27px;
+    padding: 25px 0 42px;
+  }
+
+  .wat-eyebrow {
+    margin-bottom: 14px;
+    font-size: 0.68rem;
+  }
+
+  .wat-hero h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    letter-spacing: -0.04em;
+  }
+
+  .wat-hero-description {
+    font-size: 0.96rem;
+  }
+
+  .wat-hero-actions {
+    flex-direction: column;
+  }
+
+  .wat-hero-actions .wat-btn {
+    width: 100%;
+  }
+
+  .wat-hero-points {
+    display: grid;
+    gap: 12px;
+  }
+
+  .wat-hero-visual {
+    border-radius: 17px;
+    padding: 22px;
+  }
+
+  .wat-visual-row {
+    gap: 10px;
+  }
+
+  .wat-visual-row span,
+  .wat-visual-row strong {
+    font-size: 0.82rem;
+  }
+
+  .wat-quick-answer {
+    gap: 15px;
+    margin-bottom: 54px;
+    border-radius: 15px;
+    padding: 21px;
+  }
+
+  .wat-section-icon {
+    width: 43px;
+    height: 43px;
+    font-size: 1.2rem;
+  }
+
+  .wat-quick-answer h2 {
+    font-size: 1.35rem;
+  }
+
+  .wat-section,
+  .wat-example-section {
+    margin-bottom: 55px;
+  }
+
+  .wat-section-heading {
+    margin-bottom: 24px;
+  }
+
+  .wat-section-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  .wat-process-grid,
+  .wat-principles-grid,
+  .wat-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .wat-process-card {
+    padding: 21px;
+  }
+
+  .wat-example-section {
+    gap: 25px;
+    border-radius: 17px;
+    padding: 22px;
+  }
+
+  .wat-example-visual {
+    min-height: 220px;
+    padding: 18px;
+  }
+
+  .wat-practice-cta {
+    gap: 16px;
+    margin-bottom: 55px;
+    border-radius: 17px;
+    padding: 24px 21px;
+  }
+
+  .wat-cta-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+
+  .wat-cta-content {
+    flex-basis: calc(100% - 65px);
+  }
+
+  .wat-practice-cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .wat-btn-light {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .wat-faq-item summary {
+    gap: 12px;
+    padding: 17px;
+    font-size: 0.93rem;
+  }
+
+  .wat-faq-item > p {
+    padding: 16px 17px 19px;
+    font-size: 0.9rem;
+  }
+
+  .wat-disclaimer {
+    gap: 12px;
+    margin-bottom: 35px;
+    padding: 18px;
+  }
+
+  .wat-final-cta {
+    border-radius: 17px;
+    padding: 33px 20px;
+  }
+
+  .wat-final-cta h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Dark theme */
+
+body.dark-theme .wat-landing {
+  --wat-bg: #0b1220;
+  --wat-card: #111c2d;
+  --wat-text: #edf3fb;
+  --wat-muted: #b2c0d2;
+  --wat-border: #29384d;
+  --wat-primary: #8bbcff;
+  --wat-primary-dark: #a7ceff;
+  --wat-accent: #1c3553;
+}
+
+body.dark-theme .wat-landing .wat-hero-visual {
+  background:
+    radial-gradient(circle at 100% 0%, #1b3553 0, transparent 45%),
+    var(--wat-card);
+}
+
+body.dark-theme .wat-landing .wat-visual-note,
+body.dark-theme .wat-landing .wat-faq-item[open] summary {
+  background: #17263a;
+}
+
+body.dark-theme .wat-landing .wat-visual-row {
+  border-bottom-color: #29384d;
+}
+
+body.dark-theme .wat-landing .wat-example-visual {
+  background: radial-gradient(circle at center, #17263a 0, #101b2b 75%);
+}
+
+body.dark-theme .wat-landing .wat-example-word {
+  border-color: #385777;
+  background: #17263a;
+  color: #cfe4ff;
+}
+
+body.dark-theme .wat-landing .wat-example-quote {
+  background: #17263a;
+  color: #edf3fb;
+}
+
+body.dark-theme .wat-landing .wat-disclaimer {
+  border-color: #29384d;
+  background: #142238;
+}
+
+body.dark-theme .wat-landing .wat-btn-secondary {
+  background: var(--wat-card);
+  color: var(--wat-text);
+}
+
+body.dark-theme .wat-landing .wat-btn-secondary:hover {
+  background: #17263a;
+}
+
+body.dark-theme .wat-landing .wat-practice-cta {
+  background: linear-gradient(120deg, #102b4b, #174a78);
+}
+
+body.dark-theme .wat-landing .wat-btn-light {
+  background: #edf3fb;
+  color: #123b68;
+}
+
+body.dark-theme .wat-landing .wat-btn-light:hover {
+  background: #dce9f8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wat-landing *,
+  .wat-landing *::before,
+  .wat-landing *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

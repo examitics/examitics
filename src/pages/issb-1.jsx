@@ -10,6 +10,7 @@ import TAT from "../components/issb/tat";
 import SCT from "../components/issb/sct";
 
 import OPI from "../pages/opi";
+import WAT from "../pages/wat";
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
 
@@ -374,7 +375,7 @@ const ISSB = () => {
                       // disabled={test.action === "mat"}
                       onClick={() => {
                         if (test.action === "wat") {
-                          setActiveTest("wat");
+                          setActiveTest("/wat");
                         }
 
                         if (test.action === "tat") {
@@ -392,7 +393,7 @@ const ISSB = () => {
                           navigate("/srt");
                         }
                         if (test.action === "mat") {
-                          navigate("/mock/mat/set1");
+                          navigate("/mat");
                         }
                         if (test.action === "quick-math") {
                           navigate("/quick-math");
