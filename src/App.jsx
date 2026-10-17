@@ -101,11 +101,15 @@ import AnnouncementBar from "./components/layout/AnnouncementBar";
 import "./styles/globals.css";
 import DefenceDayOfferPopup from "./components/DefenceDayOfferPopup";
 // import AuthTest from "./components/AuthTest";
+
+import MonetagInPagePush from "./components/MonetagInPagePush";
+
 function App() {
   usePageTracking();
 
   return (
     <>
+      <MonetagInPagePush />
       {/* <AuthTest /> */}
       <SecurityToast />
       <SecurityProtection />
