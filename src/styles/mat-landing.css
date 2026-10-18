@@ -6,7 +6,7 @@
   --mat-text: #0f172a;
   --mat-muted: #526176;
   --mat-border: #dce5ef;
-  --mat-primary: #174a83;
+  --mat-primary: var(--color-primary, #2563eb);
   --mat-primary-dark: #10365f;
   --mat-accent: #dcecff;
 

@@ -5,7 +5,7 @@
   --wat-text: #0f172a;
   --wat-muted: #526176;
   --wat-border: #dce5ef;
-  --wat-primary: #174a83;
+  --wat-primary: var(--color-primary, #2563eb);
   --wat-primary-dark: #10365f;
   --wat-accent: #dcecff;
 
@@ -117,13 +117,13 @@
 }
 
 .wat-btn-primary {
-  background: var(--wat-primary);
+  background: var(--color-primary, #2563eb);
   color: #ffffff;
   box-shadow: 0 8px 20px rgb(23 74 131 / 15%);
 }
 
 .wat-btn-primary:hover {
-  background: var(--wat-primary-dark);
+  background: var(--color-primary, #2563eb);
   color: #ffffff;
 }
 

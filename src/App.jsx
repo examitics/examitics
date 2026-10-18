@@ -13,6 +13,8 @@ import OPITest from "./pages/opi-test";
 import MAT from "./pages/mat";
 import WAT from "./pages/wat";
 import WATTest from "./pages/wat-test";
+import TATPage from "./pages/tat";
+import TATTest from "./pages/tat-test";
 import SRT from "./pages/SRT";
 import OPIResult from "./pages/opiresult";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -38,7 +40,7 @@ import NotesHub from "./pages/NotesHub";
 import More from "./pages/more";
 import AgeCalculator from "./pages/age-calculator";
 import BMICalculator from "./pages/bmi-calculator";
-import UnitConverter from "./pages/unit-converter"; 
+import UnitConverter from "./pages/unit-converter";
 import GPACalculator from "./pages/gpa-calculator";
 import PercentageCalculator from "./pages/percentage-calculator";
 
@@ -87,11 +89,6 @@ import GeneralKnowledge from "./pages/notes/GeneralKnowledge";
 import GlobalCurrentAffairs from "./pages/notes/GlobalCurrentAffairs";
 import PakistanAffairs from "./pages/notes/PakistanAffairs";
 
-
-
-
-
-
 import ScrollToTop from "./components/common/ScrollToTop";
 import FloatingFeedback from "./components/common/FloatingFeedback";
 import { usePageTracking } from "./analytics/usePageTracking";
@@ -106,13 +103,11 @@ import "./styles/globals.css";
 import DefenceDayOfferPopup from "./components/DefenceDayOfferPopup";
 // import AuthTest from "./components/AuthTest";
 
-
 function App() {
   usePageTracking();
 
   return (
     <>
-      
       {/* <AuthTest /> */}
       <SecurityToast />
       <SecurityProtection />
@@ -160,27 +155,12 @@ function App() {
           path="/notes/current-affairs/pakistan"
           element={<CurrentAffairsPakistan />}
         />
-        <Route
-          path="/notes/academics/mathematics"
-          element={<Mathematics />}
-        />
+        <Route path="/notes/academics/mathematics" element={<Mathematics />} />
 
-        <Route
-          path="/notes/academics/english"
-          element={<English />}
-        />
-        <Route
-          path="/notes/academics/physics"
-          element={<Physics />}
-        />
-        <Route
-          path="/notes/academics/biology"
-          element={<Biology />}
-        />
-        <Route
-          path="/notes/academics/chemistry"
-          element={<Chemistry />}
-        />
+        <Route path="/notes/academics/english" element={<English />} />
+        <Route path="/notes/academics/physics" element={<Physics />} />
+        <Route path="/notes/academics/biology" element={<Biology />} />
+        <Route path="/notes/academics/chemistry" element={<Chemistry />} />
         <Route
           path="/notes/academics/general-knowledge"
           element={<GeneralKnowledge />}
@@ -198,7 +178,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/login" element={<Login />} />
-<Route path="/review" element={<Review />} />
+        <Route path="/review" element={<Review />} />
         {/* PREMIUM PAGE */}
         <Route path="/premium" element={<Premium />} />
         <Route path="/premium/plans" element={<PremiumPlans />} />
@@ -277,50 +257,38 @@ function App() {
     PREMIUM PMA ACADEMIC MOCK TEST 5
 ========================================== */}
 
-<Route
-  path="/mock/academic/set5"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="academic"
-        setId="set5"
-      />
-    </PremiumRoute>
-  }
-/>
-{/* ==========================================
+        <Route
+          path="/mock/academic/set5"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="academic" setId="set5" />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
     PREMIUM PMA ACADEMIC MOCK TEST 6
 ========================================== */}
 
-<Route
-  path="/mock/academic/set6"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="academic"
-        setId="set6"
-      />
-    </PremiumRoute>
-  }
-/>
-{/* ==========================================
+        <Route
+          path="/mock/academic/set6"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="academic" setId="set6" />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
     PREMIUM PMA ACADEMIC MOCK TEST 7
 ========================================== */}
 
-<Route
-  path="/mock/academic/set7"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="academic"
-        setId="set7"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/academic/set7"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="academic" setId="set7" />
+            </PremiumRoute>
+          }
+        />
         {/* ==========================================
     PREMIUM PMA VERBAL MOCK TEST 2
 ========================================== */}
@@ -376,18 +344,14 @@ PREMIUM PMA VERBAL MOCK TEST 4
     PREMIUM PMA VERBAL MOCK TEST 6
 ========================================== */}
 
-<Route
-  path="/mock/verbal/set6"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="verbal"
-        setId="set6"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/verbal/set6"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="verbal" setId="set6" />
+            </PremiumRoute>
+          }
+        />
         {/* ==========================================
     PREMIUM PMA NON-VERBAL MOCK TEST 2
 ========================================== */}
@@ -439,100 +403,72 @@ PREMIUM PMA VERBAL MOCK TEST 4
             </PremiumRoute>
           }
         />
-{/* ==========================================
+        {/* ==========================================
     PREMIUM PMA NON-VERBAL MOCK TEST 6
 ========================================== */}
 
-<Route
-  path="/mock/nonverbal/set6"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="pma-lc"
-        category="nonverbal"
-        setId="set6"
-      />
-    </PremiumRoute>
-  }
-/>
-{/* ==========================================
+        <Route
+          path="/mock/nonverbal/set6"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="nonverbal" setId="set6" />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
     PREMIUM AFNS ACADEMIC MOCK TEST 2
 ========================================== */}
 
-<Route
-  path="/mock/afns/academic/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="afns"
-        category="academic"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
-<Route
-  path="/mock/afns/academic/set3"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="afns"
-        category="academic"
-        setId="set3"
-      />
-    </PremiumRoute>
-  }
-/>
-<Route
-  path="/mock/afns/academic/set4"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="afns"
-        category="academic"
-        setId="set4"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/afns/academic/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="afns" category="academic" setId="set2" />
+            </PremiumRoute>
+          }
+        />
+        <Route
+          path="/mock/afns/academic/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="afns" category="academic" setId="set3" />
+            </PremiumRoute>
+          }
+        />
+        <Route
+          path="/mock/afns/academic/set4"
+          element={
+            <PremiumRoute>
+              <MockTest exam="afns" category="academic" setId="set4" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/afns/academic/set5"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="afns"
-        category="academic"
-        setId="set5"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/afns/academic/set5"
+          element={
+            <PremiumRoute>
+              <MockTest exam="afns" category="academic" setId="set5" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/afns/academic/set6"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="afns"
-        category="academic"
-        setId="set6"
-      />
-    </PremiumRoute>
-  }
-/>
-<Route
-  path="/mock/afns/academic/set7"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="afns"
-        category="academic"
-        setId="set7"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/afns/academic/set6"
+          element={
+            <PremiumRoute>
+              <MockTest exam="afns" category="academic" setId="set6" />
+            </PremiumRoute>
+          }
+        />
+        <Route
+          path="/mock/afns/academic/set7"
+          element={
+            <PremiumRoute>
+              <MockTest exam="afns" category="academic" setId="set7" />
+            </PremiumRoute>
+          }
+        />
 
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
@@ -611,24 +547,15 @@ PREMIUM PMA VERBAL MOCK TEST 4
         {/* ISSB-1 PAGE */}
         <Route path="/issb-1" element={<ISSBa />} />
 
-<Route path="/more" element={<More />} />
-<Route path="/more/age-calculator" element={<AgeCalculator />} />
-<Route
-  path="/more/bmi-calculator"
-  element={<BMICalculator />}
-/>
-<Route
-  path="/more/unit-converter"
-  element={<UnitConverter />}
-/>
-<Route
-  path="/more/gpa-calculator"
-  element={<GPACalculator />}
-/>
-<Route
-  path="/more/percentage-calculator"
-  element={<PercentageCalculator />}
-/>
+        <Route path="/more" element={<More />} />
+        <Route path="/more/age-calculator" element={<AgeCalculator />} />
+        <Route path="/more/bmi-calculator" element={<BMICalculator />} />
+        <Route path="/more/unit-converter" element={<UnitConverter />} />
+        <Route path="/more/gpa-calculator" element={<GPACalculator />} />
+        <Route
+          path="/more/percentage-calculator"
+          element={<PercentageCalculator />}
+        />
         {/* QUICK MATH PAGE */}
         <Route path="/quick-math" element={<QuickMath />} />
         <Route path="/quick-math/setup" element={<QuickMathSetup />} />
@@ -636,19 +563,24 @@ PREMIUM PMA VERBAL MOCK TEST 4
         <Route path="/quick-math/result" element={<QuickMathResult />} />
         {/* OPI PAGE */}
         <Route path="/opi" element={<OPI />} />
-{/* INTERACTIVE OPI PRACTICE TEST */}
-<Route path="/opi-test" element={<OPITest />} />
-{/* MAT INFORMATIONAL LANDING PAGE */}
-<Route path="/mat" element={<MAT />} />
-{/* WAT INFORMATIONAL LANDING PAGE */}
-<Route path="/wat" element={<WAT />} />
+        {/* INTERACTIVE OPI PRACTICE TEST */}
+        <Route path="/opi-test" element={<OPITest />} />
+        {/* MAT INFORMATIONAL LANDING PAGE */}
+        <Route path="/mat" element={<MAT />} />
+        {/* WAT INFORMATIONAL LANDING PAGE */}
+        <Route path="/wat" element={<WAT />} />
 
-{/* INTERACTIVE WAT PRACTICE */}
-<Route path="/wat-test" element={<WATTest />} />
+        {/* INTERACTIVE WAT PRACTICE */}
+        <Route path="/wat-test" element={<WATTest />} />
+        {/* TAT INFORMATION / SEO LANDING PAGE */}
+        <Route path="/tat" element={<TATPage />} />
+
+        {/* TAT PRACTICE TEST */}
+        <Route path="/tat-test" element={<TATTest />} />
         {/* OPI RESULT PAGE */}
         <Route path="/opi-result" element={<OPIResult />} />
-{/* SRT PRACTICE PAGE */}
-<Route path="/srt" element={<SRT />} />
+        {/* SRT PRACTICE PAGE */}
+        <Route path="/srt" element={<SRT />} />
         {/* PRIVACY POLICY PAGE */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 

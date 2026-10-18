@@ -379,7 +379,7 @@ const ISSB = () => {
                         }
 
                         if (test.action === "tat") {
-                          setActiveTest("tat");
+                          navigate("/tat");
                         }
 
                         if (test.action === "sct") {
