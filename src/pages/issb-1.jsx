@@ -383,7 +383,7 @@ const ISSB = () => {
                         }
 
                         if (test.action === "sct") {
-                          setActiveTest("sct");
+                          navigate("/sct");
                         }
 
                         if (test.action === "opi") {
@@ -576,13 +576,13 @@ const ISSB = () => {
       <Footer />
       {/* {showWAT && <WATS closeWAT={() => setShowWAT(false)} />}
       {showTAT && <TAT closeTAT={() => setShowTAT(false)} />} */}
-      {activeTest === "wat" && <WATS closeWAT={() => setActiveTest(null)} />}
+      {/* {activeTest === "wat" && <WATS closeWAT={() => setActiveTest(null)} />} */}
 
-      {activeTest === "tat" && <TAT closeTAT={() => setActiveTest(null)} />}
+      {/* {activeTest === "tat" && <TAT closeTAT={() => setActiveTest(null)} />} */}
 
-      {activeTest === "sct" && <SCT closeSCT={() => setActiveTest(null)} />}
+      {/* {activeTest === "sct" && <SCT closeSCT={() => setActiveTest(null)} />} */}
 
-      {activeTest === "opi" && <OPI />}
+      {/* {activeTest === "opi" && <OPI />} */}
     </>
   );
 };

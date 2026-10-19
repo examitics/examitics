@@ -1,0 +1,737 @@
+/* =========================================
+   SCT SEO LANDING PAGE
+   Uses EXAMITICS global design variables
+========================================= */
+
+.sct-landing {
+  --sct-primary: var(--color-primary, #174a83);
+  --sct-primary-hover: var(--color-primary-hover, #123a68);
+  --sct-text: var(--color-text, #0f172a);
+  --sct-muted: var(--color-text-muted, #526176);
+  --sct-bg: var(--color-bg, #f4f7fb);
+  --sct-card: var(--color-card, #ffffff);
+  --sct-card-secondary: var(--color-card-secondary, #f8fafc);
+  --sct-border: var(--color-border, #dce5ef);
+
+  color: var(--sct-text);
+  background: var(--sct-bg);
+  overflow: hidden;
+}
+
+.sct-landing p {
+  color: var(--sct-muted);
+}
+
+.sct-landing h1,
+.sct-landing h2,
+.sct-landing h3 {
+  color: var(--sct-text);
+  line-height: 1.25;
+}
+
+.sct-landing h1 {
+  font-size: clamp(2.15rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.sct-landing h2 {
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+  font-weight: 750;
+  letter-spacing: -0.035em;
+}
+
+.sct-landing h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.sct-landing a:focus-visible,
+.sct-landing summary:focus-visible {
+  outline: 3px solid var(--sct-primary);
+  outline-offset: 4px;
+}
+
+/* HERO */
+
+.sct-hero {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 76px 0 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 54px;
+  align-items: center;
+}
+
+.sct-hero-content {
+  min-width: 0;
+}
+
+.sct-eyebrow,
+.sct-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--sct-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sct-hero h1 {
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+
+.sct-hero-description {
+  max-width: 680px;
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.sct-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.sct-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 21px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.sct-btn svg {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.sct-btn-primary {
+  background: var(--sct-primary);
+  color: #ffffff !important;
+}
+
+.sct-btn-primary:hover {
+  background: var(--sct-primary-hover);
+  transform: translateY(-2px);
+}
+
+.sct-btn-secondary {
+  background: var(--sct-card);
+  color: var(--sct-text) !important;
+  border-color: var(--sct-border);
+}
+
+.sct-btn-secondary:hover {
+  background: var(--sct-card-secondary);
+  border-color: var(--sct-primary);
+}
+
+.sct-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 26px;
+}
+
+.sct-hero-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--sct-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sct-hero-points svg {
+  flex-shrink: 0;
+  color: var(--sct-primary);
+  font-size: 1rem;
+}
+
+/* HERO VISUAL */
+
+.sct-hero-visual {
+  padding: 28px;
+  background: var(--sct-card);
+  border: 1px solid var(--sct-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md, 0 12px 32px rgba(15, 23, 42, 0.07));
+}
+
+.sct-visual-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.sct-visual-icon,
+.sct-info-icon,
+.sct-principle-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: var(--sct-card-secondary);
+  color: var(--sct-primary);
+  font-size: 1.35rem;
+}
+
+.sct-visual-kicker {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--sct-muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.sct-visual-top h2 {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.sct-visual-divider {
+  height: 1px;
+  margin: 23px 0 12px;
+  background: var(--sct-border);
+}
+
+.sct-visual-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--sct-border);
+  font-size: 0.9rem;
+}
+
+.sct-visual-row span {
+  color: var(--sct-muted);
+}
+
+.sct-visual-row strong {
+  color: var(--sct-text);
+  text-align: right;
+  font-weight: 700;
+}
+
+.sct-visual-note {
+  margin-top: 17px;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+/* TRUST STRIP */
+
+.sct-trust-strip {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 38px;
+  padding: 22px 4%;
+  background: var(--sct-card);
+  border-top: 1px solid var(--sct-border);
+  border-bottom: 1px solid var(--sct-border);
+}
+
+.sct-trust-strip div {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--sct-muted);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.sct-trust-strip svg {
+  flex-shrink: 0;
+  color: var(--sct-primary);
+  font-size: 1.1rem;
+}
+
+/* GENERAL SECTIONS */
+
+.sct-section {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 78px 0;
+}
+
+.sct-section-soft {
+  width: 100%;
+  max-width: none;
+  padding-right: max(4%, calc((100% - 1100px) / 2));
+  padding-left: max(4%, calc((100% - 1100px) / 2));
+  background: var(--sct-card-secondary);
+  border-top: 1px solid var(--sct-border);
+  border-bottom: 1px solid var(--sct-border);
+}
+
+.sct-section-heading {
+  max-width: 790px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.sct-section-heading .sct-section-kicker {
+  margin-bottom: 12px;
+}
+
+.sct-section-heading h2 {
+  margin-bottom: 16px;
+}
+
+.sct-section-heading > p {
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+/* INFO CARDS */
+
+.sct-info-grid,
+.sct-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.sct-info-card,
+.sct-principle-card {
+  min-width: 0;
+  padding: 25px;
+  background: var(--sct-card);
+  border: 1px solid var(--sct-border);
+  border-radius: 15px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.sct-info-card:hover,
+.sct-principle-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md, 0 10px 25px rgba(15, 23, 42, 0.06));
+}
+
+.sct-info-icon {
+  margin-bottom: 19px;
+}
+
+.sct-info-card h3,
+.sct-principle-card h3 {
+  margin-bottom: 10px;
+}
+
+.sct-info-card p,
+.sct-principle-card p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* FORMAT CARDS */
+
+.sct-format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.sct-format-card {
+  min-width: 0;
+  padding: 25px;
+  background: var(--sct-card);
+  border: 1px solid var(--sct-border);
+  border-radius: 15px;
+}
+
+.sct-format-label {
+  display: inline-block;
+  margin-bottom: 17px;
+  color: var(--sct-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.sct-format-card h3 {
+  margin-bottom: 12px;
+}
+
+.sct-format-card strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--sct-primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.sct-format-card p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.sct-disclaimer {
+  max-width: 850px;
+  margin: 24px auto 0;
+  padding: 15px 18px;
+  background: var(--sct-card);
+  border: 1px solid var(--sct-border);
+  border-left: 4px solid var(--sct-primary);
+  border-radius: 8px;
+  font-size: 0.84rem;
+  line-height: 1.75;
+}
+
+/* PRACTICE STEPS */
+
+.sct-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.sct-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  min-width: 0;
+  padding: 23px;
+  background: var(--sct-card);
+  border: 1px solid var(--sct-border);
+  border-radius: 14px;
+}
+
+.sct-step-number {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: var(--sct-card-secondary);
+  color: var(--sct-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.sct-step-card h3 {
+  margin: 2px 0 8px;
+}
+
+.sct-step-card p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* RESPONSE PRINCIPLES */
+
+.sct-principles-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sct-principle-card {
+  padding: 23px;
+}
+
+.sct-principle-icon {
+  width: 43px;
+  height: 43px;
+  margin-bottom: 17px;
+  font-size: 1.2rem;
+}
+
+/* CTA */
+
+.sct-cta-section {
+  padding: 70px 4%;
+  background: var(--sct-card);
+  border-top: 1px solid var(--sct-border);
+  border-bottom: 1px solid var(--sct-border);
+}
+
+.sct-cta-content {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sct-cta-content .sct-section-kicker {
+  margin-bottom: 12px;
+}
+
+.sct-cta-content h2 {
+  margin-bottom: 16px;
+}
+
+.sct-cta-content > p {
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 0.97rem;
+  line-height: 1.85;
+}
+
+.sct-cta-content .sct-btn {
+  margin-top: 26px;
+}
+
+/* FAQ */
+
+.sct-faq-section {
+  max-width: 900px;
+}
+
+.sct-faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.sct-faq-item {
+  background: var(--sct-card);
+  border: 1px solid var(--sct-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sct-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 19px 21px;
+  cursor: pointer;
+  color: var(--sct-text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.6;
+  list-style: none;
+}
+
+.sct-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.sct-faq-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--sct-primary);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.sct-faq-item[open] summary::after {
+  content: "−";
+}
+
+.sct-faq-number {
+  display: none;
+}
+
+.sct-faq-item > p {
+  padding: 0 21px 21px;
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+/* EDITORIAL NOTE */
+
+.sct-editorial-note {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 0 0 60px;
+}
+
+.sct-editorial-note p {
+  padding: 17px 20px;
+  background: var(--sct-card-secondary);
+  border: 1px solid var(--sct-border);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.sct-editorial-note strong {
+  color: var(--sct-text);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .sct-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 58px 0;
+  }
+
+  .sct-hero-content {
+    max-width: 760px;
+  }
+
+  .sct-hero-visual {
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .sct-info-grid,
+  .sct-format-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sct-principles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sct-section {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sct-hero {
+    width: 90%;
+    padding: 42px 0;
+    gap: 28px;
+  }
+
+  .sct-hero h1 {
+    font-size: clamp(2rem, 9vw, 2.65rem);
+  }
+
+  .sct-hero-description {
+    font-size: 0.96rem;
+    line-height: 1.8;
+  }
+
+  .sct-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 24px;
+  }
+
+  .sct-btn {
+    width: 100%;
+  }
+
+  .sct-hero-points {
+    display: grid;
+    gap: 11px;
+  }
+
+  .sct-hero-visual {
+    padding: 21px;
+    border-radius: 15px;
+  }
+
+  .sct-visual-row {
+    font-size: 0.83rem;
+  }
+
+  .sct-trust-strip {
+    justify-content: flex-start;
+    gap: 13px;
+    padding: 20px 5%;
+  }
+
+  .sct-trust-strip div {
+    width: 100%;
+    font-size: 0.84rem;
+  }
+
+  .sct-section {
+    width: 90%;
+    padding: 50px 0;
+  }
+
+  .sct-section-soft {
+    width: 100%;
+    padding: 50px 5%;
+  }
+
+  .sct-section-heading {
+    margin-bottom: 27px;
+  }
+
+  .sct-section-heading h2 {
+    font-size: 1.7rem;
+  }
+
+  .sct-section-heading > p {
+    font-size: 0.92rem;
+  }
+
+  .sct-info-grid,
+  .sct-format-grid,
+  .sct-steps,
+  .sct-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sct-info-card,
+  .sct-format-card,
+  .sct-principle-card {
+    padding: 21px;
+  }
+
+  .sct-step-card {
+    padding: 19px;
+    gap: 13px;
+  }
+
+  .sct-cta-section {
+    padding: 52px 5%;
+  }
+
+  .sct-cta-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .sct-faq-item summary {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+
+  .sct-faq-item > p {
+    padding: 0 16px 18px;
+    font-size: 0.86rem;
+  }
+
+  .sct-editorial-note {
+    width: 90%;
+    padding-bottom: 40px;
+  }
+
+  .sct-editorial-note p {
+    padding: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sct-landing *,
+  .sct-landing *::before,
+  .sct-landing *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
