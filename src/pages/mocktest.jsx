@@ -13,6 +13,8 @@ import academicSet1 from "../data/mcqs/academic/set1";
 import nonVerbalSet1 from "../data/mcqs/nonverbal/set1";
 // import nonVerbalSet2 from "../data/mcqs/nonverbal/set2";
 
+import NavyAcademicsSet1 from "../data/navy-mcqs/academics/academic-set-1";
+
 import MAT from "../data/mcqs/mat/set1";
 
 import "../styles/mocktest.css";
@@ -26,7 +28,6 @@ import pafMathSet1 from "../data/paf-mcqs/math/pafMath-Set1";
 import pafPhysicsSet1 from "../data/paf-mcqs/physics/pafPhysics-Set1";
 
 import AfnsAcademicsSet1 from "../data/afns-mcqs/academics/Set-1";
-
 
 // ==========================================
 // SHUFFLE FUNCTION
@@ -89,6 +90,9 @@ const questionBank = {
   "afns-academic": {
     set1: AfnsAcademicsSet1,
   },
+  "navy-academic": {
+    set1: NavyAcademicsSet1,
+  },
 };
 
 // ==========================================
@@ -129,7 +133,7 @@ const MockTest = ({
   const [skippedQuestions, setSkippedQuestions] = useState([]);
 
   const [submitting, setSubmitting] = useState(false);
-const [submitError, setSubmitError] = useState("");
+  const [submitError, setSubmitError] = useState("");
 
   // ==========================================
   // TEST TIME LIMIT
@@ -269,51 +273,53 @@ const [submitError, setSubmitError] = useState("");
 
         return;
       }
-      
+
       const premiumMock =
-  // ==========================================
-  // PMA PREMIUM MOCK TESTS
-  // ==========================================
-// Academic Set 2, 3, 4, 5 & 6
-(exam === "pma-lc" &&
-  category === "academic" &&
-  ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
+        // ==========================================
+        // PMA PREMIUM MOCK TESTS
+        // ==========================================
+        // Academic Set 2, 3, 4, 5 & 6
+        (exam === "pma-lc" &&
+          category === "academic" &&
+          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
+        // Verbal Set 2, 3, 4 & 5
+        (exam === "pma-lc" &&
+          category === "verbal" &&
+          ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+        // Non-Verbal Set 2, 3, 4, 5 & 6
+        (exam === "pma-lc" &&
+          category === "nonverbal" &&
+          ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+        // ==========================================
+        // AFNS PREMIUM MOCK TESTS
+        // ==========================================
 
-// Verbal Set 2, 3, 4 & 5
-(exam === "pma-lc" &&
-  category === "verbal" &&
-  ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+        (exam === "afns" &&
+          category === "academic" &&
+          ["set2", "set3", "set4", "Set5", "set6", "set7"].includes(setId)) ||
+        // ==========================================
+        // PAF PREMIUM MOCK TESTS
+        // ==========================================
 
-// Non-Verbal Set 2, 3, 4, 5 & 6
-(exam === "pma-lc" &&
-  category === "nonverbal" &&
-  ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+        // English Set 2 & 3
+        (exam === "paf" &&
+          category === "english" &&
+          ["set2", "set3"].includes(setId)) ||
+        // Math Set 2 & 3
+        (exam === "paf" &&
+          category === "math" &&
+          ["set2", "set3"].includes(setId)) ||
+        // Physics Set 2 & 3
+        (exam === "paf" &&
+          category === "physics" &&
+          ["set2", "set3"].includes(setId)) ||
+        // ==========================================
+        // NAVY PREMIUM MOCK TESTS
+        // ==========================================
 
-  // ==========================================
-// AFNS PREMIUM MOCK TESTS
-// ==========================================
-
-  (exam === "afns" &&
-    category === "academic" &&
-    ["set2", "set3", "set4", "Set5", "set6", "set7"].includes(setId)) ||
-  // ==========================================
-  // PAF PREMIUM MOCK TESTS
-  // ==========================================
-
-  // English Set 2 & 3
-  (exam === "paf" &&
-    category === "english" &&
-    ["set2", "set3"].includes(setId)) ||
-
-  // Math Set 2 & 3
-  (exam === "paf" &&
-    category === "math" &&
-    ["set2", "set3"].includes(setId)) ||
-
-  // Physics Set 2 & 3
-  (exam === "paf" &&
-    category === "physics" &&
-    ["set2", "set3"].includes(setId));
+        (exam === "navy" &&
+          category === "academic" &&
+          ["set2", "set3", "set4", "set5"].includes(setId));
 
       if (premiumMock) {
         const { data, error } = await supabase
@@ -321,9 +327,6 @@ const [submitError, setSubmitError] = useState("");
           .select(
             "id, question_number, question, options, correct_answer, image",
           )
-          // .eq("exam", "pma-lc")
-          // .eq("category", "academic")
-          // .eq("set_id", "set2")
           .eq("exam", exam)
           .eq("category", category)
           .eq("set_id", setId)
@@ -416,7 +419,11 @@ const [submitError, setSubmitError] = useState("");
       // NORMAL LOCAL MOCK TESTS
       // ==========================================
 
-      const selectedQuestions = questionBank[category]?.[setId] || [];
+      // const selectedQuestions = questionBank[category]?.[setId] || [];
+      const selectedQuestions =
+        exam === "navy" && category === "academic"
+          ? questionBank["navy-academic"]?.[setId] || []
+          : questionBank[category]?.[setId] || [];
 
       const randomizedQuestions = shuffleArray(selectedQuestions).map((q) => ({
         ...q,
@@ -618,140 +625,116 @@ const [submitError, setSubmitError] = useState("");
   //   });
   // };
   // ==========================================
-// SUBMIT TEST
-// ==========================================
+  // SUBMIT TEST
+  // ==========================================
 
-// ==========================================
-// SUBMIT TEST
-// ==========================================
+  // ==========================================
+  // SUBMIT TEST
+  // ==========================================
 
-const handleSubmit = async () => {
-  // Prevent multiple submissions.
-  if (submitting) {
-    return;
-  }
-
-  if (!questions || questions.length === 0) {
-    return;
-  }
-
-  setSubmitting(true);
-  setSubmitError("");
-
-  try {
-    // ==========================================
-    // CALCULATE TIME USED
-    // ==========================================
-
-    const testDuration =
-      category === "intelligence"
-        ? 40 * 60
-        : 30 * 60;
-
-    const timeTakenSeconds = Math.max(
-      0,
-      testDuration - timeLeft
-    );
-
-    // ==========================================
-    // DETERMINE PREMIUM TEST
-    // ==========================================
-
-    const isPremiumTest =
-     // PMA Academic
-// PMA Academic
-(
-  exam === "pma-lc" &&
-  category === "academic" &&
-  ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)
-) ||
-
-      // PMA Verbal
-      // (
-      //   exam === "pma-lc" &&
-      //   category === "verbal" &&
-      //   setId === "set2"
-      // ) ||
-      // PMA Verbal
-(
-  exam === "pma-lc" &&
-  category === "verbal" &&
-  ["set2", "set3", "set4", "set5", "set6"].includes(setId)
-) ||
-
-// PMA Non-Verbal
-(
-  exam === "pma-lc" &&
-  category === "nonverbal" &&
-  ["set2", "set3", "set4", "set5", "set6"].includes(setId)
-) ||
-// AFNS Academic Set 2
-  (exam === "afns" &&
-    category === "academic" &&
-    ["set2", "set3", "set4", "Set5", "set6", "set7"].includes(setId))||
-      // PAF English
-      (
-        exam === "paf" &&
-        category === "english" &&
-        ["set2", "set3"].includes(setId)
-      ) ||
-
-      // PAF Math
-      (
-        exam === "paf" &&
-        category === "math" &&
-        ["set2", "set3"].includes(setId)
-      ) ||
-
-      // PAF Physics
-      (
-        exam === "paf" &&
-        category === "physics" &&
-        ["set2", "set3"].includes(setId)
-      );
-
-    // ==========================================
-    // FREE TEST
-    // ==========================================
-
-    if (!isPremiumTest) {
-      console.log(
-        "Free mock test submitted locally."
-      );
-
-      navigate("/result", {
-        state: {
-          questions,
-          answers,
-          timeLeft,
-          category,
-          setId,
-          exam,
-        },
-      });
-
+  const handleSubmit = async () => {
+    // Prevent multiple submissions.
+    if (submitting) {
       return;
     }
 
-    // ==========================================
-    // PREMIUM TEST
-    // ==========================================
+    if (!questions || questions.length === 0) {
+      return;
+    }
 
-    const questionIds = questions.map(
-      (question) => question.id
-    );
+    setSubmitting(true);
+    setSubmitError("");
 
-    const userAnswers = {
-      ...answers,
-    };
+    try {
+      // ==========================================
+      // CALCULATE TIME USED
+      // ==========================================
 
-    // ==========================================
-    // SECURE SUPABASE SUBMISSION
-    // ==========================================
+      const testDuration = category === "intelligence" ? 40 * 60 : 30 * 60;
 
-    const { data, error } = await supabase.rpc(
-      "submit_mock_test",
-      {
+      const timeTakenSeconds = Math.max(0, testDuration - timeLeft);
+
+      // ==========================================
+      // DETERMINE PREMIUM TEST
+      // ==========================================
+
+      const isPremiumTest =
+        // PMA Academic
+        // PMA Academic
+        (exam === "pma-lc" &&
+          category === "academic" &&
+          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
+        // PMA Verbal
+        // (
+        //   exam === "pma-lc" &&
+        //   category === "verbal" &&
+        //   setId === "set2"
+        // ) ||
+        // PMA Verbal
+        (exam === "pma-lc" &&
+          category === "verbal" &&
+          ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+        // PMA Non-Verbal
+        (exam === "pma-lc" &&
+          category === "nonverbal" &&
+          ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+        // AFNS Academic Set 2
+        (exam === "afns" &&
+          category === "academic" &&
+          ["set2", "set3", "set4", "Set5", "set6", "set7"].includes(setId)) ||
+        // PAF English
+        (exam === "paf" &&
+          category === "english" &&
+          ["set2", "set3"].includes(setId)) ||
+        // PAF Math
+        (exam === "paf" &&
+          category === "math" &&
+          ["set2", "set3"].includes(setId)) ||
+        // PAF Physics
+        (exam === "paf" &&
+          category === "physics" &&
+          ["set2", "set3"].includes(setId)) ||
+        // Navy Academic Set 2
+        (exam === "navy" &&
+          category === "academic" &&
+          ["set2", "set3", "set4", "set5"].includes(setId));
+
+      // ==========================================
+      // FREE TEST
+      // ==========================================
+
+      if (!isPremiumTest) {
+        console.log("Free mock test submitted locally.");
+
+        navigate("/result", {
+          state: {
+            questions,
+            answers,
+            timeLeft,
+            category,
+            setId,
+            exam,
+          },
+        });
+
+        return;
+      }
+
+      // ==========================================
+      // PREMIUM TEST
+      // ==========================================
+
+      const questionIds = questions.map((question) => question.id);
+
+      const userAnswers = {
+        ...answers,
+      };
+
+      // ==========================================
+      // SECURE SUPABASE SUBMISSION
+      // ==========================================
+
+      const { data, error } = await supabase.rpc("submit_mock_test", {
         question_ids: questionIds,
 
         user_answers: userAnswers,
@@ -763,69 +746,56 @@ const handleSubmit = async () => {
         test_set_id: setId,
 
         time_taken_seconds: timeTakenSeconds,
+      });
+
+      // ==========================================
+      // SUPABASE ERROR
+      // ==========================================
+
+      if (error) {
+        console.error("Mock test submission error:", error);
+
+        setSubmitError(
+          error.message || "Unable to submit your test. Please try again.",
+        );
+
+        setSubmitting(false);
+
+        return;
       }
-    );
 
-    // ==========================================
-    // SUPABASE ERROR
-    // ==========================================
+      // ==========================================
+      // PREMIUM SUCCESS
+      // ==========================================
 
-    if (error) {
-      console.error(
-        "Mock test submission error:",
-        error
-      );
+      console.log("Premium mock test submitted:", data);
+
+      navigate("/result", {
+        state: {
+          questions,
+          answers,
+          timeLeft,
+          category,
+          setId,
+          exam,
+
+          // Secure result from Supabase.
+          result: data,
+
+          // Saved progress record.
+          attemptId: data?.attempt_id,
+        },
+      });
+    } catch (error) {
+      console.error("Unexpected mock test submission error:", error);
 
       setSubmitError(
-        error.message ||
-          "Unable to submit your test. Please try again."
+        "Something went wrong while submitting your test. Please try again.",
       );
 
       setSubmitting(false);
-
-      return;
     }
-
-    // ==========================================
-    // PREMIUM SUCCESS
-    // ==========================================
-
-    console.log(
-      "Premium mock test submitted:",
-      data
-    );
-
-    navigate("/result", {
-      state: {
-        questions,
-        answers,
-        timeLeft,
-        category,
-        setId,
-        exam,
-
-        // Secure result from Supabase.
-        result: data,
-
-        // Saved progress record.
-        attemptId: data?.attempt_id,
-      },
-    });
-
-  } catch (error) {
-
-    console.error(
-      "Unexpected mock test submission error:",
-      error
-    );
-
-    setSubmitError(
-      "Something went wrong while submitting your test. Please try again."
-    );
-
-    setSubmitting(false);
-  }
-};
+  };
 
   // ==========================================
   // QUESTIONS LOADING
@@ -940,13 +910,22 @@ const handleSubmit = async () => {
     ? `PAF ${category.toUpperCase()} Mock Test`
     : `PMA ${category.toUpperCase()} Mock Test`}
 </h2> */}
-<h2>
-  {exam === "paf"
-    ? `PAF ${category.toUpperCase()} Mock Test`
-    : exam === "afns"
-    ? `AFNS ${category.toUpperCase()} Mock Test`
-    : `PMA ${category.toUpperCase()} Mock Test`}
-</h2>
+          {/* <h2>
+            {exam === "paf"
+              ? `PAF ${category.toUpperCase()} Mock Test`
+              : exam === "afns"
+                ? `AFNS ${category.toUpperCase()} Mock Test`
+                : `PMA ${category.toUpperCase()} Mock Test`}
+          </h2> */}
+          <h2>
+            {exam === "navy"
+              ? `PAKISTAN NAVY ${category.toUpperCase()} Mock Test`
+              : exam === "paf"
+                ? `PAF ${category.toUpperCase()} Mock Test`
+                : exam === "afns"
+                  ? `AFNS ${category.toUpperCase()} Mock Test`
+                  : `PMA ${category.toUpperCase()} Mock Test`}
+          </h2>
 
           {/* ==================================
               PROGRESS
@@ -1114,19 +1093,15 @@ const handleSubmit = async () => {
             Submit Test
           </button> */}
 
-          {submitError && (
-  <p className="submit-error">
-    {submitError}
-  </p>
-)}
+          {submitError && <p className="submit-error">{submitError}</p>}
 
           <button
-  className="submit-btn"
-  onClick={handleSubmit}
-  disabled={submitting}
->
-  {submitting ? "Submitting..." : "Submit Test"}
-</button>
+            className="submit-btn"
+            onClick={handleSubmit}
+            disabled={submitting}
+          >
+            {submitting ? "Submitting..." : "Submit Test"}
+          </button>
         </div>
 
         {/* ====================================

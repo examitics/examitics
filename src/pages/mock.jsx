@@ -8,6 +8,7 @@ import Footer from "../components/layout/footer";
 import PMAMockSection from "../components/mock/pmamocksection";
 import PAFMockSection from "../components/mock/pafmocksection";
 import AFNSMockSection from "../components/mock/afnsmocksection";
+import NavyMockSection from "../components/mock/navymocksection";
 
 import {
   FiClock,
@@ -348,6 +349,12 @@ const MOCK = () => {
               examCode="afns"
             />
 
+<div style={{ margin: "20px" }}></div>
+
+{/* PAKISTAN NAVY */}
+<NavyMockSection
+  title="PAKISTAN NAVY MOCK TESTS"
+/>
             <div style={{ margin: "20px" }}></div>
 
             {/* =====================================================

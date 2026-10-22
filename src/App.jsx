@@ -534,6 +534,76 @@ PREMIUM PMA VERBAL MOCK TEST 4
           }
         />
 
+        {/* ==========================================
+    PREMIUM NAVY ACADEMIC MOCK TEST 2
+========================================== */}
+
+<Route
+  path="/mock/navy/academic/set2"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="navy"
+        category="academic"
+        setId="set2"
+      />
+    </PremiumRoute>
+  }
+/>
+
+{/* ==========================================
+    PREMIUM NAVY ACADEMIC MOCK TEST 3
+========================================== */}
+
+<Route
+  path="/mock/navy/academic/set3"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="navy"
+        category="academic"
+        setId="set3"
+      />
+    </PremiumRoute>
+  }
+/>
+{/* ==========================================
+    PREMIUM NAVY ACADEMIC MOCK TEST 4
+========================================== */}
+<Route
+  path="/mock/navy/academic/set4"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="navy"
+        category="academic"
+        setId="set4"
+      />
+    </PremiumRoute>
+  }
+/>
+
+{/* ==========================================
+    PREMIUM NAVY ACADEMIC MOCK TEST 5
+========================================== */}
+<Route
+  path="/mock/navy/academic/set5"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="navy"
+        category="academic"
+        setId="set5"
+      />
+    </PremiumRoute>
+  }
+/>
+
+{/* PAKISTAN NAVY MOCK TESTS */}
+<Route
+  path="/mock/navy/:category/:setId"
+  element={<MockTest exam="navy" />}
+/>
         {/* FREE MOCK TESTS */}
         <Route path="/mock/:category/:setId" element={<MockTest />} />
 
