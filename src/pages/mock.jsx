@@ -114,15 +114,35 @@ const MOCK = () => {
     };
   }, []);
 
+  // Updated WhatsApp message for the 1-week Rs. 400 offer.
   const whatsappMessage = encodeURIComponent(
-    "Assalam-o-Alaikum EXAMITICS, I want to get the PMA 159 LC offer for 15 days of Premium access for Rs. 650."
+    "Assalam-o-Alaikum EXAMITICS, I registered before 24 October 2026 and want to claim the PMA 159 LC offer for 1 week of Premium access for Rs. 400."
   );
 
   const whatsappUrl =
     `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
 
+  /*
+   * Offer eligibility:
+   * - Authentication must finish loading.
+   * - The user must be logged in.
+   * - The user must not already have Premium.
+   * - The account must have been created before 24 October 2026
+   *   in Pakistan Standard Time.
+   */
+  const offerCutoff = new Date("2026-10-24T00:00:00+05:00");
+
+  const isEligibleForOffer = Boolean(
+    user?.created_at &&
+      new Date(user.created_at) < offerCutoff
+  );
+
   const shouldShowPreparationMessage =
-    !loading && (!user || !isPremium) && showPreparationMessage;
+    !loading &&
+    Boolean(user) &&
+    !isPremium &&
+    isEligibleForOffer &&
+    showPreparationMessage;
 
   const examCategories = [
     { id: "pma-lc", label: "PMA LC" },
@@ -236,7 +256,7 @@ const MOCK = () => {
               </p>
             </section>
 
-            {/* PMA 159 SPECIAL OFFER — FREE USERS ONLY */}
+            {/* PMA 159 SPECIAL OFFER — ELIGIBLE EXISTING USERS ONLY */}
             {shouldShowPreparationMessage && (
               <section
                 className="mock-prep-card"
@@ -253,7 +273,7 @@ const MOCK = () => {
 
                 <div className="mock-prep-badge">
                   <FiTarget />
-                  PMA 159 LONG COURSE • SPECIAL OFFER
+                  PMA 159 LONG COURSE • EXCLUSIVE OFFER
                 </div>
 
                 <div className="mock-prep-header">
@@ -263,32 +283,33 @@ const MOCK = () => {
 
                   <div>
                     <h3 id="mock-prep-title">
-                      Prepare for PMA 159 with EXAMITICS
+                      Measure Your Preparation Before the Actual Exam
                     </h3>
 
                     <p>
-                      Practise smart. Build confidence. Prepare for success.
+                      Practice with purpose. Identify weak areas. Prepare
+                      for success.
                     </p>
                   </div>
                 </div>
 
                 <div className="mock-prep-message">
                   <p>
-                    Dear PMA 159 aspirant, your goal deserves focused
-                    preparation. Your initial test is an important step
-                    towards joining the Pakistan Army, so make every
-                    practice session count.
+                    Dear PMA 159 LC aspirant, your actual initial test is
+                    an important step towards joining the Pakistan Army.
+                    Do not wait until exam day to discover where you need
+                    improvement.
                   </p>
 
                   <p>
                     <strong>
-                      Attempt all our important Verbal Intelligence,
-                      Non-Verbal Intelligence, and Academic mock tests.
+                      Attempt these important mock tests before your
+                      actual exam to measure your preparation.
                     </strong>{" "}
-                    Strengthen your concepts, improve your speed and
-                    accuracy, and identify the areas where you need more
-                    practice. Stay consistent and work towards achieving
-                    a strong initial-test score.
+                    Practise Verbal Intelligence, Non-Verbal Intelligence,
+                    and Academic questions to assess your performance,
+                    improve your speed and accuracy, and identify the
+                    topics that need more attention.
                   </p>
                 </div>
 
@@ -312,17 +333,18 @@ const MOCK = () => {
                 <div className="mock-prep-offer">
                   <div className="mock-prep-offer-content">
                     <span className="mock-prep-offer-label">
-                      SPECIAL OFFER FOR PMA 159 CANDIDATES
+                      EXCLUSIVE OFFER FOR EXISTING USERS
                     </span>
 
                     <strong>
-                      15 Days Premium Access — Rs. 650 Only
+                      1 Week Premium Access — Rs. 400 Only
                     </strong>
 
                     <small>
-                      Unlock Premium mock tests, practise important
-                      questions, and take your initial-test preparation
-                      further.
+                      Available to candidates registered on EXAMITICS
+                      before 24 October 2026. Unlock Premium mock tests
+                      and assess your readiness before your actual
+                      PMA 159 initial test.
                     </small>
                   </div>
 
