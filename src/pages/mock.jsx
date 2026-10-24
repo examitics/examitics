@@ -1,6 +1,5 @@
 
 import React from "react";
-
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/navbar";
@@ -24,10 +23,6 @@ import {
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 import { useAuth } from "../context/AuthContext";
-
-// import SidebarAd160x300 from "../components/SidebarAd160x300";
-// import Adsterra728x90 from "../components/Adsterra728x90";
-
 import "../styles/mock.css";
 
 const WHATSAPP_NUMBER = "923014709158";
@@ -35,33 +30,113 @@ const WHATSAPP_NUMBER = "923014709158";
 const MOCK = () => {
   const { user, isPremium, loading } = useAuth();
 
+  const [activeExam, setActiveExam] = React.useState("pma-lc");
   const [showPreparationMessage, setShowPreparationMessage] =
     React.useState(true);
+
+  /*
+   * Keep the category bar immediately below the real site navbar.
+   * Measure the navbar's viewport bottom so its actual position,
+   * height changes, and responsive layout are taken into account.
+   */
+  React.useEffect(() => {
+    const findNavbar = () => {
+      const selectors = [
+        "#navbar",
+        ".navbar",
+        ".site-header",
+        ".main-header",
+        "header",
+      ];
+
+      for (const selector of selectors) {
+        const element = document.querySelector(selector);
+
+        if (element && !element.closest(".mock-exam-nav")) {
+          return element;
+        }
+      }
+
+      // Fallback: find a navigation element other than the category bar.
+      const navElements = document.querySelectorAll("nav");
+
+      for (const element of navElements) {
+        if (!element.classList.contains("mock-exam-nav")) {
+          return element;
+        }
+      }
+
+      return null;
+    };
+
+    const navbar = findNavbar();
+
+    if (!navbar) {
+      console.warn(
+        "EXAMITICS mock navigation: navbar element was not found. Check the navbar selector."
+      );
+      return;
+    }
+
+    const updateStickyPosition = () => {
+      const navbarRect = navbar.getBoundingClientRect();
+
+      document.documentElement.style.setProperty(
+        "--mock-sticky-top",
+        `${Math.max(0, navbarRect.bottom)}px`
+      );
+    };
+
+    updateStickyPosition();
+
+    let observer;
+
+    if (typeof ResizeObserver !== "undefined") {
+      observer = new ResizeObserver(updateStickyPosition);
+      observer.observe(navbar);
+    }
+
+    window.addEventListener("scroll", updateStickyPosition, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateStickyPosition);
+
+    return () => {
+      observer?.disconnect();
+
+      window.removeEventListener("scroll", updateStickyPosition);
+      window.removeEventListener("resize", updateStickyPosition);
+
+      document.documentElement.style.removeProperty(
+        "--mock-sticky-top"
+      );
+    };
+  }, []);
 
   const whatsappMessage = encodeURIComponent(
     "Assalam-o-Alaikum EXAMITICS, I want to get the PMA 159 LC offer for 15 days of Premium access for Rs. 650."
   );
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
+  const whatsappUrl =
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
 
-  /*
-   * Show the PMA 159 offer only to:
-   * 1. Visitors who are not signed in
-   * 2. Signed-in users who do not have Premium access
-   *
-   * Hide the offer from Premium users.
-   */
   const shouldShowPreparationMessage =
-    !loading &&
-    (!user || !isPremium) &&
-    showPreparationMessage;
+    !loading && (!user || !isPremium) && showPreparationMessage;
+
+  const examCategories = [
+    { id: "pma-lc", label: "PMA LC" },
+    { id: "afns", label: "AFNS" },
+    { id: "navy", label: "Navy" },
+    { id: "paf", label: "PAF" },
+  ];
 
   return (
     <>
       <Helmet>
-        {/* Primary SEO */}
         <title>
-          Free ISSB & PMA Mock Tests | Intelligence Test Practice | EXAMITICS
+          Free ISSB &amp; PMA Mock Tests | Intelligence Test Practice |
+          EXAMITICS
         </title>
 
         <meta
@@ -78,16 +153,14 @@ const MOCK = () => {
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
 
-        {/* Canonical */}
         <link
           rel="canonical"
           href="https://www.examitics.com/mock"
         />
 
-        {/* Open Graph */}
         <meta
           property="og:title"
-          content="Free ISSB & PMA Mock Tests | Intelligence Test Practice"
+          content="Free ISSB &amp; PMA Mock Tests | Intelligence Test Practice"
         />
 
         <meta
@@ -109,7 +182,6 @@ const MOCK = () => {
           content="https://www.examitics.com/images/examitics-banner.png"
         />
 
-        {/* Twitter */}
         <meta
           name="twitter:card"
           content="summary_large_image"
@@ -117,7 +189,7 @@ const MOCK = () => {
 
         <meta
           name="twitter:title"
-          content="Free ISSB & PMA Mock Tests | Intelligence Test Practice"
+          content="Free ISSB &amp; PMA Mock Tests | Intelligence Test Practice"
         />
 
         <meta
@@ -149,10 +221,7 @@ const MOCK = () => {
       <div className="mock-page-layout">
         <main className="mock-page section-padding">
           <div className="container-custom">
-
-            {/* =====================================================
-                HERO
-            ===================================================== */}
+            {/* HERO */}
             <section className="mock-hero">
               <div className="mock-badge exa-badge">
                 EXAMITICS MOCK CENTER
@@ -167,9 +236,7 @@ const MOCK = () => {
               </p>
             </section>
 
-            {/* =====================================================
-                PMA 159 SPECIAL OFFER — FREE USERS ONLY
-            ===================================================== */}
+            {/* PMA 159 SPECIAL OFFER — FREE USERS ONLY */}
             {shouldShowPreparationMessage && (
               <section
                 className="mock-prep-card"
@@ -272,9 +339,7 @@ const MOCK = () => {
                 </div>
 
                 <div className="mock-prep-footer">
-                  <span>
-                    Want to hear from other candidates?
-                  </span>
+                  <span>Want to hear from other candidates?</span>
 
                   <Link
                     to="/review"
@@ -288,20 +353,14 @@ const MOCK = () => {
               </section>
             )}
 
-            {/* =====================================================
-                MOCK RULES
-            ===================================================== */}
+            {/* MOCK RULES */}
             <div className="mock-rules-grid">
-
               <div className="mock-rule-card">
                 <FiClock className="mock-rule-icon" />
 
                 <div>
                   <h4>Timed Tests</h4>
-
-                  <p>
-                    Each mock follows real exam timing.
-                  </p>
+                  <p>Each mock follows real exam timing.</p>
                 </div>
               </div>
 
@@ -310,10 +369,7 @@ const MOCK = () => {
 
                 <div>
                   <h4>No Refresh</h4>
-
-                  <p>
-                    Avoid refreshing during attempts.
-                  </p>
+                  <p>Avoid refreshing during attempts.</p>
                 </div>
               </div>
 
@@ -322,49 +378,58 @@ const MOCK = () => {
 
                 <div>
                   <h4>Instant Result</h4>
-
-                  <p>
-                    Get score immediately after submission.
-                  </p>
+                  <p>Get score immediately after submission.</p>
                 </div>
               </div>
-
             </div>
 
-            {/* =====================================================
-                PMA LONG COURSE
-            ===================================================== */}
-            <PMAMockSection
-              title="PMA LONG COURSE"
-              examCode="pma-lc"
-            />
+            {/* FULL-WIDTH STICKY EXAM CATEGORY NAVIGATION */}
+            <nav
+              className="mock-exam-nav"
+              aria-label="Select mock test category"
+            >
+              {examCategories.map((exam) => (
+                <button
+                  key={exam.id}
+                  type="button"
+                  className={`mock-exam-nav-btn ${
+                    activeExam === exam.id ? "active" : ""
+                  }`}
+                  aria-pressed={activeExam === exam.id}
+                  onClick={() => setActiveExam(exam.id)}
+                >
+                  {exam.label}
+                </button>
+              ))}
+            </nav>
 
-            <div style={{ margin: "20px" }}></div>
+            {/* SELECTED EXAM SECTION */}
+            {activeExam === "pma-lc" && (
+              <PMAMockSection
+                title="PMA LONG COURSE"
+                examCode="pma-lc"
+              />
+            )}
 
-            {/* =====================================================
-                AFNS
-            ===================================================== */}
-            <AFNSMockSection
-              title="AFNS"
-              examCode="afns"
-            />
+            {activeExam === "afns" && (
+              <AFNSMockSection
+                title="AFNS"
+                examCode="afns"
+              />
+            )}
 
-<div style={{ margin: "20px" }}></div>
+            {activeExam === "navy" && (
+              <NavyMockSection
+                title="PAKISTAN NAVY MOCK TESTS"
+              />
+            )}
 
-{/* PAKISTAN NAVY */}
-<NavyMockSection
-  title="PAKISTAN NAVY MOCK TESTS"
-/>
-            <div style={{ margin: "20px" }}></div>
-
-            {/* =====================================================
-                PAF
-            ===================================================== */}
-            <PAFMockSection
-              title="PAF INITIAL TEST"
-              examCode="paf-initial"
-            />
-
+            {activeExam === "paf" && (
+              <PAFMockSection
+                title="PAF INITIAL TEST"
+                examCode="paf-initial"
+              />
+            )}
           </div>
         </main>
       </div>
