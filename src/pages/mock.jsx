@@ -137,13 +137,14 @@ const MOCK = () => {
       new Date(user.created_at) < offerCutoff
   );
 
-  const shouldShowPreparationMessage =
-    !loading &&
-    Boolean(user) &&
-    !isPremium &&
-    isEligibleForOffer &&
-    showPreparationMessage;
-
+  // const shouldShowPreparationMessage =
+  //   !loading &&
+  //   Boolean(user) &&
+  //   !isPremium &&
+  //   isEligibleForOffer &&
+  //   showPreparationMessage;
+const shouldShowPreparationMessage =
+  !loading && !isPremium && showPreparationMessage;
   const examCategories = [
     { id: "pma-lc", label: "PMA LC" },
     { id: "afns", label: "AFNS" },
