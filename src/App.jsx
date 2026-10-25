@@ -515,6 +515,59 @@ PREMIUM PMA VERBAL MOCK TEST 4
             </PremiumRoute>
           }
         />
+        
+<Route
+  path="/mock/physics/set4"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="paf"
+        category="physics"
+        setId="set4"
+      />
+    </PremiumRoute>
+  }
+/>
+
+<Route
+  path="/mock/physics/set5"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="paf"
+        category="physics"
+        setId="set5"
+      />
+    </PremiumRoute>
+  }
+/>
+
+<Route
+  path="/mock/physics/set6"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="paf"
+        category="physics"
+        setId="set6"
+      />
+    </PremiumRoute>
+  }
+/>
+
+<Route
+  path="/mock/physics/set7"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="paf"
+        category="physics"
+        setId="set7"
+      />
+    </PremiumRoute>
+  }
+/>
+
 
         <Route
           path="/mock/math/set2"
@@ -598,6 +651,23 @@ PREMIUM PMA VERBAL MOCK TEST 4
     </PremiumRoute>
   }
 />
+
+{/* ==========================================
+    PREMIUM NAVY ACADEMIC MOCK TEST 6
+========================================== */}
+<Route
+  path="/mock/navy/academic/set6"
+  element={
+    <PremiumRoute>
+      <MockTest
+        exam="navy"
+        category="academic"
+        setId="set6"
+      />
+    </PremiumRoute>
+  }
+/>
+
 
 {/* PAKISTAN NAVY MOCK TESTS */}
 <Route

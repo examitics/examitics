@@ -270,13 +270,13 @@ const MockTable = ({ examCode }) => {
               <button
                 type="button"
                 className="mock-table-btn mock-premium-btn"
-                // onClick={() => handlePremiumClick("/mock/academic/set6")}
+                onClick={() => handlePremiumClick("/mock/navy/academic/set6")}
               >
-                <span>Comming Soon</span>
-                {/* <span className="mock-premium-diamond">◆</span>
+                <span>Academic Mock 6</span>
+                <span className="mock-premium-diamond">◆</span>
                 {!isPremium && (
                   <span className="mock-premium-label">PREMIUM</span>
-                )} */}
+                )}
               </button>
             </td>
           </tr>

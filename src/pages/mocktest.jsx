@@ -312,14 +312,14 @@ const MockTest = ({
         // Physics Set 2 & 3
         (exam === "paf" &&
           category === "physics" &&
-          ["set2", "set3"].includes(setId)) ||
+          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
         // ==========================================
         // NAVY PREMIUM MOCK TESTS
         // ==========================================
 
         (exam === "navy" &&
           category === "academic" &&
-          ["set2", "set3", "set4", "set5"].includes(setId));
+          ["set2", "set3", "set4", "set5", "set6"].includes(setId));
 
       if (premiumMock) {
         const { data, error } = await supabase
@@ -693,11 +693,11 @@ const MockTest = ({
         // PAF Physics
         (exam === "paf" &&
           category === "physics" &&
-          ["set2", "set3"].includes(setId)) ||
+          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
         // Navy Academic Set 2
         (exam === "navy" &&
           category === "academic" &&
-          ["set2", "set3", "set4", "set5"].includes(setId));
+          ["set2", "set3", "set4", "set5", "set6"].includes(setId));
 
       // ==========================================
       // FREE TEST

@@ -193,6 +193,191 @@ const MockTable = ({ examCode }) => {
               </button>
             </td>
           </tr>
+
+          
+          <tr>
+            <td>
+              <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+              
+            </td>
+
+            <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() => handlePremiumClick("/mock/physics/set4")}
+              >
+                <span>Physics Mock 4</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+              
+            </td>
+
+            <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() => handlePremiumClick("/mock/physics/set5")}
+              >
+                <span>Physics Mock 5</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+              
+            </td>
+
+            <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() => handlePremiumClick("/mock/physics/set6")}
+              >
+                <span>Physics Mock 6</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+              
+            </td>
+
+            <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() => handlePremiumClick("/mock/physics/set7")}
+              >
+                <span>Physics Mock 7</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
+            </td>
+
+            <td>
+               <Link
+                to={`/mock/${examCode}/verbal-3`}
+                className="mock-table-btn"
+              >
+                Comming Soon 
+              </Link>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
