@@ -10,6 +10,7 @@ import {
   FiLogOut,
   FiShield,
   FiMessageCircle,
+  FiBell,
   FiMail,
 } from "react-icons/fi";
 
@@ -20,6 +21,7 @@ import AdminUsers from "../components/admin/AdminUsers";
 import AdminSubscriptions from "../components/admin/AdminSubscriptions";
 import AdminMockTests from "../components/admin/AdminMockTests";
 import AdminReviews from "../components/admin/AdminReviews";
+import AdminNotifications from "../components/admin/AdminNotifications";
 
 import "../styles/Admin.css";
 
@@ -119,6 +121,11 @@ function Admin() {
       label: "Settings",
       icon: <FiSettings />,
     },
+    {
+      id: "notifications",
+      label: "Notifications",
+      icon: <FiBell />,
+    }
   ];
 
   const renderContent = () => {
@@ -134,6 +141,9 @@ function Admin() {
 
       case "reviews":
         return <AdminReviews />;
+
+      case "notifications":
+  return <AdminNotifications />;  
 
       case "settings":
         return (

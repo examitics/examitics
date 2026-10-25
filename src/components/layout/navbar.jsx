@@ -14,7 +14,7 @@ import {
   FiSearch,
   FiChevronDown,
 } from "react-icons/fi";
-
+import NotificationBell from "./NotificationBell";
 import logoDark from "../../assets/logos/examitics-logo.png";
 import logoLight from "../../assets/logos/examitics-logo.png";
 
@@ -362,7 +362,7 @@ const Navbar = () => {
                 NOTIFICATIONS
             ================================================= */}
 
-            <button
+            {/* <button
               type="button"
               className="exa-icon-btn"
               aria-label="Notifications"
@@ -370,7 +370,9 @@ const Navbar = () => {
               <FiBell />
 
               <span className="notification-dot"></span>
-            </button>
+            </button> */}
+            {/* NOTIFICATIONS */}
+<NotificationBell />
 
             {/* =================================================
                 DARK / LIGHT MODE
