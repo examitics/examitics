@@ -1130,7 +1130,7 @@
 .mock-exam-nav {
   position: sticky;
   top: var(--mock-sticky-top, 0px);
-  z-index: 999;
+  z-index: 998;
 
   /* Extend beyond .container-custom to the viewport edges */
   width: 100vw;
