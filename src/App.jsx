@@ -472,6 +472,75 @@ PREMIUM PMA VERBAL MOCK TEST 4
           }
         />
 
+        {/* PAF PREMIUM INTELLIGENCE MOCK TEST 2 */}
+        <Route
+          path="/mock/intelligence/intelligence-set2"
+          element={
+            <PremiumRoute>
+              <MockTest
+                exam="paf"
+                category="intelligence"
+                setId="intelligence-set2"
+              />
+            </PremiumRoute>
+          }
+        />
+
+        <Route
+          path="/mock/intelligence/intelligence-set3"
+          element={
+            <PremiumRoute>
+              <MockTest
+                exam="paf"
+                category="intelligence"
+                setId="intelligence-set3"
+              />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
+    PREMIUM PAF INTELLIGENCE MOCK TEST 4
+========================================== */}
+
+        <Route
+          path="/mock/intelligence/intelligence-set4"
+          element={
+            <PremiumRoute>
+              <MockTest
+                exam="paf"
+                category="intelligence"
+                setId="intelligence-set4"
+              />
+            </PremiumRoute>
+          }
+        />
+
+        {/* PREMIUM PAF INTELLIGENCE MOCK TEST 5 */}
+        <Route
+          path="/mock/intelligence/intelligence-set5"
+          element={
+            <PremiumRoute>
+              <MockTest
+                exam="paf"
+                category="intelligence"
+                setId="intelligence-set5"
+              />
+            </PremiumRoute>
+          }
+        />
+        {/* PREMIUM PAF INTELLIGENCE MOCK TEST 6 */}
+        <Route
+          path="/mock/intelligence/intelligence-set6"
+          element={
+            <PremiumRoute>
+              <MockTest
+                exam="paf"
+                category="intelligence"
+                setId="intelligence-set6"
+              />
+            </PremiumRoute>
+          }
+        />
         {/* ==========================================
     PREMIUM PAF ENGLISH MOCK TEST 2
 ========================================== */}
@@ -515,59 +584,42 @@ PREMIUM PMA VERBAL MOCK TEST 4
             </PremiumRoute>
           }
         />
-        
-<Route
-  path="/mock/physics/set4"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="physics"
-        setId="set4"
-      />
-    </PremiumRoute>
-  }
-/>
 
-<Route
-  path="/mock/physics/set5"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="physics"
-        setId="set5"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/physics/set4"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="physics" setId="set4" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/physics/set6"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="physics"
-        setId="set6"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/physics/set5"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="physics" setId="set5" />
+            </PremiumRoute>
+          }
+        />
 
-<Route
-  path="/mock/physics/set7"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="paf"
-        category="physics"
-        setId="set7"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/physics/set6"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="physics" setId="set6" />
+            </PremiumRoute>
+          }
+        />
 
+        <Route
+          path="/mock/physics/set7"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="physics" setId="set7" />
+            </PremiumRoute>
+          }
+        />
 
         <Route
           path="/mock/math/set2"
@@ -587,93 +639,82 @@ PREMIUM PMA VERBAL MOCK TEST 4
           }
         />
 
+        {/* PREMIUM PAF MATH MOCK TEST 4 */}
+        <Route
+          path="/mock/math/set4"
+          element={
+            <PremiumRoute>
+              <MockTest exam="paf" category="math" setId="set4" />
+            </PremiumRoute>
+          }
+        />
+
         {/* ==========================================
     PREMIUM NAVY ACADEMIC MOCK TEST 2
 ========================================== */}
 
-<Route
-  path="/mock/navy/academic/set2"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="navy"
-        category="academic"
-        setId="set2"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/navy/academic/set2"
+          element={
+            <PremiumRoute>
+              <MockTest exam="navy" category="academic" setId="set2" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM NAVY ACADEMIC MOCK TEST 3
 ========================================== */}
 
-<Route
-  path="/mock/navy/academic/set3"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="navy"
-        category="academic"
-        setId="set3"
-      />
-    </PremiumRoute>
-  }
-/>
-{/* ==========================================
+        <Route
+          path="/mock/navy/academic/set3"
+          element={
+            <PremiumRoute>
+              <MockTest exam="navy" category="academic" setId="set3" />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
     PREMIUM NAVY ACADEMIC MOCK TEST 4
 ========================================== */}
-<Route
-  path="/mock/navy/academic/set4"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="navy"
-        category="academic"
-        setId="set4"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/navy/academic/set4"
+          element={
+            <PremiumRoute>
+              <MockTest exam="navy" category="academic" setId="set4" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM NAVY ACADEMIC MOCK TEST 5
 ========================================== */}
-<Route
-  path="/mock/navy/academic/set5"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="navy"
-        category="academic"
-        setId="set5"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/navy/academic/set5"
+          element={
+            <PremiumRoute>
+              <MockTest exam="navy" category="academic" setId="set5" />
+            </PremiumRoute>
+          }
+        />
 
-{/* ==========================================
+        {/* ==========================================
     PREMIUM NAVY ACADEMIC MOCK TEST 6
 ========================================== */}
-<Route
-  path="/mock/navy/academic/set6"
-  element={
-    <PremiumRoute>
-      <MockTest
-        exam="navy"
-        category="academic"
-        setId="set6"
-      />
-    </PremiumRoute>
-  }
-/>
+        <Route
+          path="/mock/navy/academic/set6"
+          element={
+            <PremiumRoute>
+              <MockTest exam="navy" category="academic" setId="set6" />
+            </PremiumRoute>
+          }
+        />
 
-
-{/* PAKISTAN NAVY MOCK TESTS */}
-<Route
-  path="/mock/navy/:category/:setId"
-  element={<MockTest exam="navy" />}
-/>
+        {/* PAKISTAN NAVY MOCK TESTS */}
+        <Route
+          path="/mock/navy/:category/:setId"
+          element={<MockTest exam="navy" />}
+        />
         {/* FREE MOCK TESTS */}
         <Route path="/mock/:category/:setId" element={<MockTest />} />
 
@@ -708,7 +749,7 @@ PREMIUM PMA VERBAL MOCK TEST 4
         {/* INTERACTIVE OPI PRACTICE TEST */}
         <Route path="/opi-test" element={<OPITest />} />
         <Route path="/sct" element={<SCTPage />} />
-<Route path="/sct-test" element={<SCTTest />} />
+        <Route path="/sct-test" element={<SCTTest />} />
         {/* MAT INFORMATIONAL LANDING PAGE */}
         <Route path="/mat" element={<MAT />} />
         {/* WAT INFORMATIONAL LANDING PAGE */}

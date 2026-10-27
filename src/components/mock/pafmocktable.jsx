@@ -72,16 +72,32 @@ const MockTable = ({ examCode }) => {
 
           <tr>
             <td>
-              <Link
+              {/* <Link
                 to={`/mock/${examCode}/nonverbal-2`}
                 className="mock-table-btn"
               >
                 Comming Soon 
-              </Link>
+              </Link> */}
+
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() =>
+                  handlePremiumClick("/mock/intelligence/intelligence-set2")
+                }
+              >
+                <span>Intelligence Mock 2</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
             </td>
 
             <td>
-            <button
+              <button
                 type="button"
                 className="mock-table-btn mock-premium-btn"
                 onClick={() => handlePremiumClick("/mock/math/set2")}
@@ -133,12 +149,21 @@ const MockTable = ({ examCode }) => {
 
           <tr>
             <td>
-              <Link
-                to={`/mock/${examCode}/verbal-3`}
-                className="mock-table-btn"
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() =>
+                  handlePremiumClick("/mock/intelligence/intelligence-set3")
+                }
               >
-                Comming Soon 
-              </Link>
+                <span>Intelligence Mock 3</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
             </td>
 
             <td>
@@ -194,25 +219,39 @@ const MockTable = ({ examCode }) => {
             </td>
           </tr>
 
-          
           <tr>
             <td>
-              <Link
-                to={`/mock/${examCode}/verbal-3`}
-                className="mock-table-btn"
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() =>
+                  handlePremiumClick("/mock/intelligence/intelligence-set4")
+                }
               >
-                Comming Soon 
-              </Link>
+                <span>Intelligence Mock 4</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
             </td>
 
             <td>
-               <Link
-                to={`/mock/${examCode}/verbal-3`}
-                className="mock-table-btn"
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() => handlePremiumClick("/mock/math/set4")}
               >
-                Comming Soon 
-              </Link>
-              
+                <span>Math Mock 4</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
             </td>
 
             <td>
@@ -232,33 +271,41 @@ const MockTable = ({ examCode }) => {
             </td>
 
             <td>
-               <Link
+              <Link
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
           </tr>
 
           <tr>
             <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() =>
+                  handlePremiumClick("/mock/intelligence/intelligence-set5")
+                }
+              >
+                <span>Intelligence Mock 5</span>
+
+                <span className="mock-premium-diamond">◆</span>
+
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
+            </td>
+
+            <td>
               <Link
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
-            </td>
-
-            <td>
-               <Link
-                to={`/mock/${examCode}/verbal-3`}
-                className="mock-table-btn"
-              >
-                Comming Soon 
-              </Link>
-              
             </td>
 
             <td>
@@ -278,33 +325,39 @@ const MockTable = ({ examCode }) => {
             </td>
 
             <td>
-               <Link
+              <Link
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
           </tr>
 
           <tr>
             <td>
+              <button
+                type="button"
+                className="mock-table-btn mock-premium-btn"
+                onClick={() =>
+                  handlePremiumClick("/mock/intelligence/intelligence-set6")
+                }
+              >
+                <span>Intelligence Mock 6</span>
+                <span className="mock-premium-diamond">◆</span>
+                {!isPremium && (
+                  <span className="mock-premium-label">PREMIUM</span>
+                )}
+              </button>
+            </td>
+
+            <td>
               <Link
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
-            </td>
-
-            <td>
-               <Link
-                to={`/mock/${examCode}/verbal-3`}
-                className="mock-table-btn"
-              >
-                Comming Soon 
-              </Link>
-              
             </td>
 
             <td>
@@ -324,11 +377,11 @@ const MockTable = ({ examCode }) => {
             </td>
 
             <td>
-               <Link
+              <Link
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
           </tr>
@@ -339,18 +392,17 @@ const MockTable = ({ examCode }) => {
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
 
             <td>
-               <Link
+              <Link
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
-              
             </td>
 
             <td>
@@ -370,11 +422,11 @@ const MockTable = ({ examCode }) => {
             </td>
 
             <td>
-               <Link
+              <Link
                 to={`/mock/${examCode}/verbal-3`}
                 className="mock-table-btn"
               >
-                Comming Soon 
+                Comming Soon
               </Link>
             </td>
           </tr>

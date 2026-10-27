@@ -281,6 +281,112 @@ const ISSB = () => {
             </div>
           </section>
 
+          {/* FREE ISSB COMMUNITY */}
+          <section
+            className="issb-community-section"
+            aria-labelledby="issb-community-title"
+          >
+            <div className="issb-community-card">
+              <div className="issb-community-header">
+                <div className="issb-community-icon">
+                  <FiUsers />
+                </div>
+
+                <div className="issb-community-heading">
+                  <span className="issb-community-label">
+                    FREE STUDENT COMMUNITY
+                  </span>
+
+                  <h2 id="issb-community-title">
+                    EXAMITICS ISSB Practice Community
+                  </h2>
+
+                  <p>
+                    Speak with confidence. Practise together. Lead with purpose.
+                  </p>
+                </div>
+
+                <span className="issb-community-free-badge">FREE</span>
+              </div>
+
+              <div className="issb-community-body">
+                <p className="issb-community-intro">
+                  Join fellow ISSB candidates on WhatsApp for free lecturette,
+                  public speaking, and Group Discussion (GD) practice. Improve
+                  your communication skills, exchange ideas, and build
+                  confidence in a supportive learning environment.
+                </p>
+
+                <div className="issb-community-features">
+                  <div className="issb-community-feature">
+                    <div className="issb-community-feature-icon">
+                      <FiMessageSquare />
+                    </div>
+
+                    <div>
+                      <h3>Lecturette & Public Speaking</h3>
+                      <p>
+                        Practise speaking on different topics, organizing your
+                        thoughts, and expressing ideas clearly.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="issb-community-feature">
+                    <div className="issb-community-feature-icon">
+                      <FiUsers />
+                    </div>
+
+                    <div>
+                      <h3>Group Discussion Practice</h3>
+                      <p>
+                        Discuss important topics, listen to different
+                        perspectives, and develop teamwork and communication.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="issb-community-feature">
+                    <div className="issb-community-feature-icon">
+                      <FiTarget />
+                    </div>
+
+                    <div>
+                      <h3>Small Batches & Leadership</h3>
+                      <p>
+                        Practise in groups of around 10 candidates, with
+                        rotating opportunities to coordinate discussions and
+                        lead sessions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="issb-community-cta">
+                  <div className="issb-community-cta-text">
+                    <h3>Prepare Together, Grow Together</h3>
+                    <p>
+                      Connect with other candidates and take the first step
+                      toward more confident communication.
+                    </p>
+                  </div>
+
+                  <a
+                    href="https://chat.whatsapp.com/FikkQW0qTdmAx8gA9CdWdb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="issb-community-button"
+                    aria-label="Join the free EXAMITICS ISSB WhatsApp Community"
+                  >
+                    <FiMessageSquare />
+                    Join Free WhatsApp Community
+                    <FiArrowRight />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* <div className="mobile-ad">
             <h6 style={{ display: "grid", placeItems: "center" }}>
               Advertisement

@@ -308,11 +308,15 @@ const MockTest = ({
         // Math Set 2 & 3
         (exam === "paf" &&
           category === "math" &&
-          ["set2", "set3"].includes(setId)) ||
+          ["set2", "set3", "set4"].includes(setId)) ||
         // Physics Set 2 & 3
         (exam === "paf" &&
           category === "physics" &&
           ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
+        // PAF Intelligence Set 2
+        (exam === "paf" &&
+          category === "intelligence" &&
+          ["intelligence-set2","intelligence-set3", "intelligence-set4", "intelligence-set5", "intelligence-set6" ].includes(setId))||
         // ==========================================
         // NAVY PREMIUM MOCK TESTS
         // ==========================================
@@ -689,7 +693,7 @@ const MockTest = ({
         // PAF Math
         (exam === "paf" &&
           category === "math" &&
-          ["set2", "set3"].includes(setId)) ||
+          ["set2", "set3", "set4"].includes(setId)) ||
         // PAF Physics
         (exam === "paf" &&
           category === "physics" &&

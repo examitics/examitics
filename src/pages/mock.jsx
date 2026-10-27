@@ -258,7 +258,7 @@ const shouldShowPreparationMessage =
             </section>
 
             {/* PMA 159 SPECIAL OFFER — ELIGIBLE EXISTING USERS ONLY */}
-            {shouldShowPreparationMessage && (
+            {/* {shouldShowPreparationMessage && (
               <section
                 className="mock-prep-card"
                 aria-labelledby="mock-prep-title"
@@ -374,7 +374,7 @@ const shouldShowPreparationMessage =
                   </Link>
                 </div>
               </section>
-            )}
+            )} */}
 
             {/* MOCK RULES */}
             <div className="mock-rules-grid">
