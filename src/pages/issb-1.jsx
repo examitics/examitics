@@ -1,22 +1,11 @@
-// import React from "react";
-
+import React from "react";
 import { Helmet } from "react-helmet-async";
-
-import React, { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-import WATS from "../components/issb/wats";
-import TAT from "../components/issb/tat";
-import SCT from "../components/issb/sct";
 
-import OPI from "../pages/opi";
-import WAT from "../pages/wat";
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
-
-import armyLogo from "../assets/logos/forces-logo/PAK-ARMY-logo.png";
-import navyLogo from "../assets/logos/forces-logo/PAK-NAVY-logo.png";
-import pafLogo from "../assets/logos/forces-logo/PAK-AIR-FORCE-logo.png";
+import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
+import ISSBCommunityAudio from "../components/ISSBCommunityAudio";
 
 import watImg from "../assets/images/wat-img.png";
 import tatImg from "../assets/images/tat-img.png";
@@ -24,15 +13,7 @@ import sctImg from "../assets/images/sct-img.png";
 import opiImg from "../assets/images/opi-img.png";
 import matImg from "../assets/images/mat-img.png";
 import srtImg from "../assets/images/srt-img.webp";
-
 import quickmath from "../assets/images/quick-math.png";
-
-import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
-
-import ISSBCommunityAudio from "../components/ISSBCommunityAudio";
-
-// import Adsterra728x90 from "../components/Adsterra728x90";
-// import Adsterra300x250 from "../components/Adsterra300x250";
 
 import {
   FiShield,
@@ -48,7 +29,6 @@ import {
 import "../styles/issb-1.css";
 
 const ISSB = () => {
-  const [activeTest, setActiveTest] = useState(null);
   const navigate = useNavigate();
 
   const psychTests = [
@@ -61,7 +41,6 @@ const ISSB = () => {
       action: "wat",
       buttonText: "Start WAT Practice",
     },
-
     {
       title: "TAT",
       subtitle: "Thematic Apperception Test",
@@ -71,7 +50,6 @@ const ISSB = () => {
       action: "tat",
       buttonText: "Start Picture Story Practice",
     },
-
     {
       title: "SCT",
       subtitle: "Sentence Completion Test",
@@ -81,7 +59,6 @@ const ISSB = () => {
       action: "sct",
       buttonText: "Start Sentence Completion Test Practice",
     },
-
     {
       title: "OPI",
       subtitle: "Personality Reflection",
@@ -113,48 +90,10 @@ const ISSB = () => {
       title: "Quick Math Practice",
       subtitle: "ISSB & PMA Mental Math Trainer",
       description:
-        "Improve your calculation speed for ISSB (Military planning) and PMA initial tests.",
+        "Improve your calculation speed for ISSB military planning and PMA initial tests.",
       image: quickmath,
       action: "quick-math",
       buttonText: "Start Quick Math Practice",
-    },
-  ];
-
-  const gtoTasks = [
-    {
-      title: "Group Discussion",
-      detail:
-        "Leadership, confidence, communication, and group coordination are assessed.",
-    },
-
-    {
-      title: "Progressive Group Task",
-      detail:
-        "Candidates solve outdoor group obstacles with planning and teamwork.",
-    },
-
-    {
-      title: "Command Task",
-      detail:
-        "Tests leadership, command ability, confidence, and decision making.",
-    },
-
-    {
-      title: "Lecturette",
-      detail:
-        "Candidates speak confidently on assigned topics before the group.",
-    },
-
-    {
-      title: "Individual Obstacles",
-      detail:
-        "Physical obstacles including monkey bridge, rope climbing, zig-zag, and ditch crossing.",
-    },
-
-    {
-      title: "Mutual Assessment",
-      detail:
-        "Candidates evaluate fellow group members honestly and professionally.",
     },
   ];
 
@@ -170,10 +109,27 @@ const ISSB = () => {
     "Hanging Log",
   ];
 
+  const handlePractice = (action) => {
+    const routes = {
+      wat: "/wat",
+      tat: "/tat",
+      sct: "/sct",
+      opi: "/opi",
+      srt: "/srt",
+      mat: "/mat",
+      "quick-math": "/quick-math",
+    };
+
+    const route = routes[action];
+
+    if (route) {
+      navigate(route);
+    }
+  };
+
   return (
     <>
       <Helmet>
-        {/* Primary SEO */}
         <title>
           ISSB Preparation | Free MAT, WAT, TAT, SCT & OPI Practice Tests |
           EXAMITICS
@@ -193,20 +149,16 @@ const ISSB = () => {
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
 
-        {/* Canonical */}
         <link rel="canonical" href="https://www.examitics.com/issb-1" />
 
-        {/* Open Graph */}
         <meta
           property="og:title"
           content="ISSB Preparation | Free MAT, WAT, TAT, SCT & OPI Practice Tests | EXAMITICS"
         />
-
         <meta
           property="og:description"
           content="Practice free ISSB mock tests including MAT, WAT, TAT, SCT, OPI and intelligence tests. Improve your ISSB preparation with realistic online practice."
         />
-
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="EXAMITICS" />
         <meta property="og:locale" content="en_PK" />
@@ -216,7 +168,6 @@ const ISSB = () => {
           content="https://www.examitics.com/images/examitics-banner.png"
         />
 
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -231,6 +182,7 @@ const ISSB = () => {
           content="https://www.examitics.com/images/examitics-banner.png"
         />
       </Helmet>
+
       <BreadcrumbSchema
         items={[
           {
@@ -243,15 +195,17 @@ const ISSB = () => {
           },
         ]}
       />
+
       <Navbar />
+
       <main className="issb-page section-padding">
         <div className="container-custom">
           {/* HERO */}
           <section className="issb-hero">
             <div className="issb-hero-content">
               <div className="issb-badge exa-badge">
-                <FiShield />
-                ISSB PREPARATION SYSTEM
+                <FiShield aria-hidden="true" />
+                <span>ISSB PREPARATION SYSTEM</span>
               </div>
 
               <h1>Prepare For ISSB With Structured Officer-Level Guidance</h1>
@@ -267,9 +221,9 @@ const ISSB = () => {
                   Start Preparation
                 </a>
 
-                <a href="issbguide" className="exa-btn exa-btn-outline">
+                <a href="/issbguide" className="exa-btn exa-btn-outline">
                   Explore ISSB Process
-                  <FiArrowRight />
+                  <FiArrowRight aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -279,21 +233,22 @@ const ISSB = () => {
                 src="https://static.wixstatic.com/media/0b1f9a_f1b84cd52132448b804dbb46ab3160e2~mv2.jpg/v1/fill/w_873,h_491,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/32cc86e6-da34-432c-bf89-2a02d44d8e34.jpg"
                 alt="ISSB preparation"
                 className="issb-hero-image"
+                fetchPriority="high"
               />
             </div>
           </section>
-{/* ISSB AUDIO ANNOUNCEMENT */}
-<ISSBCommunityAudio />
 
-{/* Existing FREE ISSB COMMUNITY section stays here */}
-          {/* FREE ISSB COMMUNITY */}
+          {/* AUDIO ANNOUNCEMENT */}
+          <ISSBCommunityAudio />
+
+          {/* FREE WHATSAPP COMMUNITY */}
           <section
             className="issb-community-section"
             aria-labelledby="issb-community-title"
           >
             <div className="issb-community-card">
               <div className="issb-community-header">
-                <div className="issb-community-icon">
+                <div className="issb-community-icon" aria-hidden="true">
                   <FiUsers />
                 </div>
 
@@ -323,48 +278,57 @@ const ISSB = () => {
                 </p>
 
                 <div className="issb-community-features">
-                  <div className="issb-community-feature">
-                    <div className="issb-community-feature-icon">
+                  <article className="issb-community-feature">
+                    <div
+                      className="issb-community-feature-icon"
+                      aria-hidden="true"
+                    >
                       <FiMessageSquare />
                     </div>
 
-                    <div>
+                    <div className="issb-community-feature-content">
                       <h3>Lecturette & Public Speaking</h3>
                       <p>
                         Practise speaking on different topics, organizing your
                         thoughts, and expressing ideas clearly.
                       </p>
                     </div>
-                  </div>
+                  </article>
 
-                  <div className="issb-community-feature">
-                    <div className="issb-community-feature-icon">
+                  <article className="issb-community-feature">
+                    <div
+                      className="issb-community-feature-icon"
+                      aria-hidden="true"
+                    >
                       <FiUsers />
                     </div>
 
-                    <div>
+                    <div className="issb-community-feature-content">
                       <h3>Group Discussion Practice</h3>
                       <p>
                         Discuss important topics, listen to different
                         perspectives, and develop teamwork and communication.
                       </p>
                     </div>
-                  </div>
+                  </article>
 
-                  <div className="issb-community-feature">
-                    <div className="issb-community-feature-icon">
+                  <article className="issb-community-feature">
+                    <div
+                      className="issb-community-feature-icon"
+                      aria-hidden="true"
+                    >
                       <FiTarget />
                     </div>
 
-                    <div>
+                    <div className="issb-community-feature-content">
                       <h3>Small Batches & Leadership</h3>
                       <p>
-                        Practise in groups of around 10 candidates, with
-                        rotating opportunities to coordinate discussions and
-                        lead sessions.
+                        Practise in groups of around 10 candidates. Candidates
+                        get rotating opportunities to coordinate discussions,
+                        lead Group Discussions, and conduct lecturette sessions.
                       </p>
                     </div>
-                  </div>
+                  </article>
                 </div>
 
                 <div className="issb-community-cta">
@@ -383,72 +347,16 @@ const ISSB = () => {
                     className="issb-community-button"
                     aria-label="Join the free EXAMITICS ISSB WhatsApp Community"
                   >
-                    <FiMessageSquare />
-                    Join Free WhatsApp Community
-                    <FiArrowRight />
+                    <FiMessageSquare aria-hidden="true" />
+                    <span>Join Free WhatsApp Community</span>
+                    <FiArrowRight aria-hidden="true" />
                   </a>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* <div className="mobile-ad">
-            <h6 style={{ display: "grid", placeItems: "center" }}>
-              Advertisement
-            </h6>
-            <Adsterra300x250 />
-          </div>
-          <div className="desktop-ad">
-            <h6 style={{ display: "grid", placeItems: "center" }}>
-              Advertisement
-            </h6>
-
-            <Adsterra728x90 />
-          </div> */}
-          {/* PROCESS */}
-          {/* <section className="issb-process-section">
-            <div className="section-heading center-heading">
-              <span className="section-tag">ISSB PROCESS</span>
-
-              <h2>Complete ISSB Selection Journey</h2>
-            </div>
-
-            <div className="process-timeline">
-              <div className="process-card exa-card">
-                <span>01</span>
-                <h3>Screening</h3>
-                <p>
-                  Initial intelligence screening and personality observation.
-                </p>
-              </div>
-
-              <div className="process-card exa-card">
-                <span>02</span>
-                <h3>Psych Tests</h3>
-                <p>WAT, TAT, SCT, and self-description evaluations.</p>
-              </div>
-
-              <div className="process-card exa-card">
-                <span>03</span>
-                <h3>GTO Tasks</h3>
-                <p>Outdoor leadership, planning, and obstacle-based tasks.</p>
-              </div>
-
-              <div className="process-card exa-card">
-                <span>04</span>
-                <h3>Interview</h3>
-                <p>Deputy President and Psychologist personality interviews.</p>
-              </div>
-
-              <div className="process-card exa-card">
-                <span>05</span>
-                <h3>Conference</h3>
-                <p>Final assessment and recommendation decision.</p>
-              </div>
-            </div>
-          </section> */}
-
-          {/* PSYCH TESTS */}
+          {/* PSYCHOLOGICAL TESTS */}
           <section className="issb-section" id="psych-tests">
             <div className="section-heading">
               <span className="section-tag">PSYCHOLOGICAL TESTS</span>
@@ -463,91 +371,39 @@ const ISSB = () => {
             </div>
 
             <div className="psych-grid">
-              {psychTests.map((test, index) => (
-                <div className="psych-card exa-card" key={index}>
-                  {/* <img src={test.image} alt={test.title} /> */}
+              {psychTests.map((test) => (
+                <article className="psych-card exa-card" key={test.action}>
                   {test.image ? (
-                    <img src={test.image} alt={test.title} />
+                    <img
+                      src={test.image}
+                      alt={`${test.title} practice`}
+                      loading="lazy"
+                    />
                   ) : (
-                    <div className="psych-card-icon">
+                    <div className="psych-card-icon" aria-hidden="true">
                       <FiClock />
                     </div>
                   )}
 
                   <div className="psych-content">
                     <span>{test.subtitle}</span>
-
                     <h3>{test.title}</h3>
-
                     <p>{test.description}</p>
 
                     <button
+                      type="button"
                       className="exa-btn exa-btn-primary"
-                      // disabled={test.action === "mat"}
-                      onClick={() => {
-                        if (test.action === "wat") {
-                          navigate("/wat");
-                        }
-
-                        if (test.action === "tat") {
-                          navigate("/tat");
-                        }
-
-                        if (test.action === "sct") {
-                          navigate("/sct");
-                        }
-
-                        if (test.action === "opi") {
-                          navigate("/opi");
-                        }
-                        if (test.action === "srt") {
-                          navigate("/srt");
-                        }
-                        if (test.action === "mat") {
-                          navigate("/mat");
-                        }
-                        if (test.action === "quick-math") {
-                          navigate("/quick-math");
-                        }
-                      }}
+                      onClick={() => handlePractice(test.action)}
                     >
                       {test.buttonText}
                     </button>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </section>
 
-          {/* GTO */}
-          {/* <section className="issb-section" id="gto">
-            <div className="section-heading">
-              <span className="section-tag">GTO TASKS</span>
-
-              <h2>Group Testing Officer Activities</h2>
-
-              <p>
-                GTO tasks are designed to assess leadership, courage, planning,
-                teamwork, communication, physical fitness, and command ability.
-              </p>
-            </div>
-
-            <div className="gto-grid">
-              {gtoTasks.map((task, index) => (
-                <div className="gto-card exa-card" key={index}>
-                  <div className="gto-icon">
-                    <FiUsers />
-                  </div>
-
-                  <h3>{task.title}</h3>
-
-                  <p>{task.detail}</p>
-                </div>
-              ))}
-            </div>
-          </section> */}
-
-          {/* OBSTACLES */}
+          {/* INDIVIDUAL OBSTACLES */}
           <section className="obstacles-section exa-card">
             <div className="obstacles-left">
               <span className="section-tag">INDIVIDUAL OBSTACLES</span>
@@ -560,11 +416,10 @@ const ISSB = () => {
               </p>
 
               <div className="obstacle-list">
-                {obstacles.map((item, index) => (
-                  <div className="obstacle-item" key={index}>
-                    <FiCheckCircle />
-
-                    {item}
+                {obstacles.map((item) => (
+                  <div className="obstacle-item" key={item}>
+                    <FiCheckCircle aria-hidden="true" />
+                    <span>{item}</span>
                   </div>
                 ))}
               </div>
@@ -573,33 +428,22 @@ const ISSB = () => {
             <div className="obstacles-image">
               <img
                 src="https://images.unsplash.com/photo-1517466787929-bc90951d0974"
-                alt="Obstacle training"
+                alt="Physical obstacle and team training"
+                loading="lazy"
               />
             </div>
           </section>
-          {/* <div className="mobile-ad">
-            <h6 style={{ display: "grid", placeItems: "center" }}>
-              Advertisement
-            </h6>
-            <Adsterra300x250 />
-          </div>
-          <div className="desktop-ad">
-            <h6 style={{ display: "grid", placeItems: "center" }}>
-              Advertisement
-            </h6>
-            <Adsterra728x90 />
-          </div> */}
-          {/* INTERVIEW */}
+
+          {/* INTERVIEW PREPARATION */}
           <section className="issb-section">
             <div className="section-heading">
               <span className="section-tag">INTERVIEW PREPARATION</span>
-
               <h2>Deputy President & Psychologist Interviews</h2>
             </div>
 
             <div className="interview-grid">
-              <div className="interview-card exa-card">
-                <div className="interview-icon">
+              <article className="interview-card exa-card">
+                <div className="interview-icon" aria-hidden="true">
                   <FiMessageSquare />
                 </div>
 
@@ -613,10 +457,10 @@ const ISSB = () => {
                   <li>Quick Math Questions</li>
                   <li>Current Affairs</li>
                 </ul>
-              </div>
+              </article>
 
-              <div className="interview-card exa-card">
-                <div className="interview-icon">
+              <article className="interview-card exa-card">
+                <div className="interview-icon" aria-hidden="true">
                   <FiActivity />
                 </div>
 
@@ -630,70 +474,49 @@ const ISSB = () => {
                   <li>Confidence Checking</li>
                   <li>Officer-Like Qualities</li>
                 </ul>
-              </div>
+              </article>
             </div>
           </section>
 
-          {/* TIPS */}
+          {/* SUCCESS QUALITIES */}
           <section className="tips-section">
             <div className="section-heading center-heading">
               <span className="section-tag">SUCCESS QUALITIES</span>
-
               <h2>Important Officer-Like Qualities</h2>
             </div>
 
             <div className="tips-grid">
               <div className="tip-box">Leadership</div>
-
               <div className="tip-box">Confidence</div>
-
               <div className="tip-box">Discipline</div>
-
               <div className="tip-box">Communication</div>
-
               <div className="tip-box">Teamwork</div>
-
               <div className="tip-box">Positive Thinking</div>
             </div>
           </section>
 
-          {/* CTA */}
+          {/* FINAL CTA */}
           <section className="issb-cta">
             <h2>Ready To Begin Your ISSB Preparation?</h2>
 
             <p>
-              Train with structured ISSB preparation, psychological assessments,
-              interview guidance, and GTO preparation modules on EXAMITICS.
+              Train with structured ISSB preparation, psychological
+              assessments, interview guidance, and GTO preparation modules on
+              EXAMITICS.
             </p>
 
-            <button className="exa-btn exa-btn-primary">
-              <a href="#psych-tests">Start ISSB Journey</a>
-            </button>
+            <a
+              href="#psych-tests"
+              className="exa-btn exa-btn-primary issb-cta-button"
+            >
+              Start ISSB Journey
+              <FiArrowRight aria-hidden="true" />
+            </a>
           </section>
         </div>
-        {/* <div className="desktop-ad">
-          <h6 style={{ display: "grid", placeItems: "center" }}>
-            Advertisement
-          </h6>
-          <Adsterra728x90 />
-        </div>
-        <div className="mobile-ad">
-          <h6 style={{ display: "grid", placeItems: "center" }}>
-            Advertisement
-          </h6>
-          <Adsterra300x250 />
-        </div>{" "} */}
       </main>
+
       <Footer />
-      {/* {showWAT && <WATS closeWAT={() => setShowWAT(false)} />}
-      {showTAT && <TAT closeTAT={() => setShowTAT(false)} />} */}
-      {/* {activeTest === "wat" && <WATS closeWAT={() => setActiveTest(null)} />} */}
-
-      {/* {activeTest === "tat" && <TAT closeTAT={() => setActiveTest(null)} />} */}
-
-      {/* {activeTest === "sct" && <SCT closeSCT={() => setActiveTest(null)} />} */}
-
-      {/* {activeTest === "opi" && <OPI />} */}
     </>
   );
 };
