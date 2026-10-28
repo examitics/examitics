@@ -29,6 +29,8 @@ import quickmath from "../assets/images/quick-math.png";
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 
+import ISSBCommunityAudio from "../components/ISSBCommunityAudio";
+
 // import Adsterra728x90 from "../components/Adsterra728x90";
 // import Adsterra300x250 from "../components/Adsterra300x250";
 
@@ -280,7 +282,10 @@ const ISSB = () => {
               />
             </div>
           </section>
+{/* ISSB AUDIO ANNOUNCEMENT */}
+<ISSBCommunityAudio />
 
+{/* Existing FREE ISSB COMMUNITY section stays here */}
           {/* FREE ISSB COMMUNITY */}
           <section
             className="issb-community-section"
