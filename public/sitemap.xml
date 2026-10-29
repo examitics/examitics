@@ -1,250 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
-  <url>
-    <loc>https://www.examitics.com/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- Homepage and main navigation -->
+  <url><loc>https://www.examitics.com/</loc></url>
+  <url><loc>https://www.examitics.com/exams</loc></url>
+  <url><loc>https://www.examitics.com/mock</loc></url>
+  <url><loc>https://www.examitics.com/issb-1</loc></url>
+  <url><loc>https://www.examitics.com/issbguide</loc></url>
+  <url><loc>https://www.examitics.com/knowledgehub</loc></url>
 
-  <!-- Main Pages -->
-  <url>
-    <loc>https://www.examitics.com/exams</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Armed Forces preparation guides -->
+  <url><loc>https://www.examitics.com/pma-lc-initial-procedure</loc></url>
+  <url><loc>https://www.examitics.com/paf-initial-test-procedure</loc></url>
 
-  <url>
-    <loc>https://www.examitics.com/mock</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Psychology and aptitude test landing pages -->
+  <url><loc>https://www.examitics.com/opi</loc></url>
+  <url><loc>https://www.examitics.com/wat</loc></url>
+  <url><loc>https://www.examitics.com/tat</loc></url>
+  <url><loc>https://www.examitics.com/sct</loc></url>
+  <url><loc>https://www.examitics.com/mat</loc></url>
+  <url><loc>https://www.examitics.com/srt</loc></url>
 
-  <url>
-    <loc>https://www.examitics.com/pma-lc</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Premium information pages -->
+  <url><loc>https://www.examitics.com/premium</loc></url>
+  <url><loc>https://www.examitics.com/premium/plans</loc></url>
 
-  <url>
-    <loc>https://www.examitics.com/pma-lc-initial-procedure</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Quick Math -->
+  <url><loc>https://www.examitics.com/quick-math</loc></url>
 
-  <url>
-    <loc>https://www.examitics.com/issbguide</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- More tools and calculators -->
+  <url><loc>https://www.examitics.com/more</loc></url>
+  <url><loc>https://www.examitics.com/more/age-calculator</loc></url>
+  <url><loc>https://www.examitics.com/more/bmi-calculator</loc></url>
+  <url><loc>https://www.examitics.com/more/percentage-calculator</loc></url>
+  <url><loc>https://www.examitics.com/more/unit-converter</loc></url>
+  <url><loc>https://www.examitics.com/more/gpa-calculator</loc></url>
 
-  <url>
-    <loc>https://www.examitics.com/issb-1</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- General Knowledge -->
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/motorways-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/national-highways-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/rivers-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/dams-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/lakes-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/mountains-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/deserts-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/national-parks-of-pakistan</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/countries-and-capitals</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/general-knowledge/world-currencies</loc></url>
 
-  <url>
-    <loc>https://www.examitics.com/opi</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Current Affairs -->
+  <url><loc>https://www.examitics.com/knowledge/current-affairs/pakistan-current-affairs</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/current-affairs/international-current-affairs</loc></url>
+  <url><loc>https://www.examitics.com/knowledge/current-affairs/sports-current-affairs</loc></url>
 
-  <url>
-    <loc>https://www.examitics.com/knowledgehub</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Mock Tests -->
-  <url>
-    <loc>https://www.examitics.com/mock/verbal/set1</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/mock/verbal/set2</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/mock/nonverbal/set1</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/mock/academic/set1</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/mock/academic/set2</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/mock/academic/set3</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/mock/full-test</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Knowledge Hub -->
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/motorways-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/national-highways-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/rivers-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/dams-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/lakes-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/mountains-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/deserts-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/national-parks-of-pakistan</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/countries-and-capitals</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/knowledge/general-knowledge/world-currencies</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Legal -->
-  <url>
-    <loc>https://www.examitics.com/privacy-policy</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/terms-conditions</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-    <!-- More Tools & Calculators -->
-
-  <url>
-    <loc>https://www.examitics.com/more</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/more/age-calculator</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/more/bmi-calculator</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/more/percentage-calculator</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/more/unit-converter</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.examitics.com/more/gpa-calculator</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Legal pages -->
+  <url><loc>https://www.examitics.com/privacy-policy</loc></url>
+  <url><loc>https://www.examitics.com/terms-conditions</loc></url>
 
 </urlset>
