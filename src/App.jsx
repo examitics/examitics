@@ -723,6 +723,7 @@ PREMIUM PMA VERBAL MOCK TEST 4
 
         {/* MOCK PAGE */}
         <Route path="/mock" element={<MOCK />} />
+        <Route path="/mock/:exam" element={<MOCK />} />
 
         {/* NOTES HUB PAGE */}
         <Route path="/notes" element={<NotesHub />} />

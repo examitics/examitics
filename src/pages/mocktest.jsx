@@ -296,7 +296,7 @@ const MockTest = ({
 
         (exam === "afns" &&
           category === "academic" &&
-          ["set2", "set3", "set4", "Set5", "set6", "set7"].includes(setId)) ||
+          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
         // ==========================================
         // PAF PREMIUM MOCK TESTS
         // ==========================================

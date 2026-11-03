@@ -1,9 +1,11 @@
 
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+
 import Navbar from "../components/layout/navbar";
 import Footer from "../components/layout/footer";
+
 import PMAMockSection from "../components/mock/pmamocksection";
 import PAFMockSection from "../components/mock/pafmocksection";
 import AFNSMockSection from "../components/mock/afnsmocksection";
@@ -23,16 +25,113 @@ import {
 
 import BreadcrumbSchema from "../components/seo/BreadcrumbSchema";
 import { useAuth } from "../context/AuthContext";
+
 import "../styles/mock.css";
 
 const WHATSAPP_NUMBER = "923014709158";
 
+const examCategories = [
+  { id: "pma-lc", label: "PMA LC" },
+  { id: "afns", label: "AFNS" },
+  { id: "navy", label: "Navy" },
+  { id: "paf", label: "PAF" },
+];
+
+const MOCK_SEO = {
+  mock: {
+    title:
+      "Pakistan Armed Forces Mock Tests – PMA, PAF, Navy & AFNS | EXAMITICS",
+    description:
+      "Prepare for Pakistan Armed Forces initial tests with online mock tests for PMA Long Course, AFNS, Pakistan Navy and PAF. Practise intelligence and academic MCQs, improve speed and evaluate your preparation on EXAMITICS.",
+    keywords:
+      "Pakistan Armed Forces Mock Tests, PMA Mock Test, PMA Long Course Initial Test, AFNS Mock Test, Pakistan Navy Initial Test, Navy Mock Test, PAF Initial Test, PAF Mock Test, Verbal Intelligence Test, Non Verbal Intelligence Test, Academic MCQs, EXAMITICS",
+    breadcrumb: "Mock Tests",
+    heading: "Pakistan Armed Forces Initial Test Mock Tests",
+    intro:
+      "Prepare for the Pakistan Army PMA Long Course, Armed Forces Nursing Service (AFNS), Pakistan Navy and Pakistan Air Force (PAF) initial tests with online practice mock exams. Attempt verbal intelligence, non-verbal intelligence and academic MCQs, improve your speed and accuracy, and assess your preparation with timed tests and instant results.",
+  },
+
+  "pma-lc": {
+    title:
+      "PMA Long Course Mock Tests – Verbal, Non-Verbal & Academic | EXAMITICS",
+    description:
+      "Prepare for the Pakistan Army PMA Long Course initial test with online verbal intelligence, non-verbal intelligence and academic mock tests. Practise MCQs, improve speed and assess your preparation on EXAMITICS.",
+    keywords:
+      "PMA Long Course Mock Test, PMA Initial Test Preparation, PMA Verbal Intelligence Test, PMA Non Verbal Intelligence Test, PMA Academic Test, Pakistan Army Initial Test, PMA LC MCQs, EXAMITICS",
+    breadcrumb: "PMA Long Course Mock Tests",
+    heading: "PMA Long Course Initial Test Mock Tests",
+    intro:
+      "Prepare for the Pakistan Army PMA Long Course initial test with online verbal intelligence, non-verbal intelligence and academic mock tests. Practise important MCQs, improve your speed and accuracy, and evaluate your preparation with timed tests and instant results.",
+  },
+
+  afns: {
+    title:
+      "AFNS Initial Test Mock Tests – Intelligence & Academic MCQs | EXAMITICS",
+    description:
+      "Prepare for the Armed Forces Nursing Service (AFNS) initial test with online verbal, non-verbal and academic mock tests. Practise important MCQs and evaluate your AFNS test preparation on EXAMITICS.",
+    keywords:
+      "AFNS Mock Test, AFNS Initial Test Preparation, AFNS Verbal Intelligence, AFNS Non Verbal Intelligence, AFNS Academic MCQs, AFNS Test Preparation, Armed Forces Nursing Service Test, EXAMITICS",
+    breadcrumb: "AFNS Mock Tests",
+    heading: "AFNS Initial Test Mock Tests",
+    intro:
+      "Prepare for the Armed Forces Nursing Service (AFNS) initial test with online verbal intelligence, non-verbal intelligence and academic mock tests. Practise important questions, improve your test-taking speed and assess your preparation with timed mock exams on EXAMITICS.",
+  },
+
+  navy: {
+    title:
+      "Pakistan Navy Initial Test Mock Tests – PN Cadet & Sailor | EXAMITICS",
+    description:
+      "Prepare for Pakistan Navy initial tests with online verbal intelligence, non-verbal intelligence and academic mock tests. Practise for PN Cadet, Sailor and other Navy entry tests on EXAMITICS.",
+    keywords:
+      "Pakistan Navy Mock Test, Navy Initial Test Preparation, PN Cadet Test, Pakistan Navy Verbal Intelligence, Navy Non Verbal Intelligence, Navy Academic MCQs, Sailor Initial Test, EXAMITICS",
+    breadcrumb: "Pakistan Navy Mock Tests",
+    heading: "Pakistan Navy Initial Test Mock Tests",
+    intro:
+      "Prepare for Pakistan Navy initial tests with online verbal intelligence, non-verbal intelligence and academic mock tests. Practise for PN Cadet, Sailor and other Navy entry tests, improve your speed and evaluate your preparation with EXAMITICS.",
+  },
+
+  paf: {
+    title:
+      "PAF Initial Test Mock Tests – Intelligence, English, Math & Physics | EXAMITICS",
+    description:
+      "Prepare for Pakistan Air Force initial tests with online intelligence and academic mock tests. Practise English, Mathematics, Physics, verbal and non-verbal intelligence MCQs on EXAMITICS.",
+    keywords:
+      "PAF Mock Test, PAF Initial Test Preparation, Pakistan Air Force Test, PAF Intelligence Test, PAF English MCQs, PAF Mathematics MCQs, PAF Physics MCQs, EXAMITICS",
+    breadcrumb: "PAF Mock Tests",
+    heading: "Pakistan Air Force Initial Test Mock Tests",
+    intro:
+      "Prepare for Pakistan Air Force (PAF) initial tests with online intelligence and academic mock tests. Practise verbal and non-verbal intelligence, English, Mathematics and Physics MCQs to improve your speed, accuracy and preparation on EXAMITICS.",
+  },
+};
+
 const MOCK = () => {
   const { user, isPremium, loading } = useAuth();
 
-  const [activeExam, setActiveExam] = React.useState("pma-lc");
+  const navigate = useNavigate();
+  const { exam: examParam } = useParams();
+
+  const validExamIds = examCategories.map((exam) => exam.id);
+
+  const activeExam = validExamIds.includes(examParam)
+    ? examParam
+    : "pma-lc";
+
   const [showPreparationMessage, setShowPreparationMessage] =
     React.useState(true);
+
+  // Redirect invalid exam URLs to the main Mock Center.
+  React.useEffect(() => {
+    if (examParam && !validExamIds.includes(examParam)) {
+      navigate("/mock", { replace: true });
+    }
+  }, [examParam, navigate]);
+
+  // Select SEO metadata according to the current URL.
+  const seo = MOCK_SEO[examParam || "mock"] || MOCK_SEO.mock;
+
+  const canonicalUrl = `https://www.examitics.com${
+    examParam ? `/mock/${examParam}` : "/mock"
+  }`;
 
   /*
    * Keep the category bar immediately below the real site navbar.
@@ -114,7 +213,7 @@ const MOCK = () => {
     };
   }, []);
 
-  // Updated WhatsApp message for the 1-week Rs. 400 offer.
+  // WhatsApp message for the 1-week Rs. 400 offer.
   const whatsappMessage = encodeURIComponent(
     "Assalam-o-Alaikum EXAMITICS, I registered before 24 October 2026 and want to claim the PMA 159 LC offer for 1 week of Premium access for Rs. 400."
   );
@@ -143,60 +242,45 @@ const MOCK = () => {
   //   !isPremium &&
   //   isEligibleForOffer &&
   //   showPreparationMessage;
-const shouldShowPreparationMessage =
-  !loading && !isPremium && showPreparationMessage;
-  const examCategories = [
-    { id: "pma-lc", label: "PMA LC" },
-    { id: "afns", label: "AFNS" },
-    { id: "navy", label: "Navy" },
-    { id: "paf", label: "PAF" },
-  ];
+
+  const shouldShowPreparationMessage =
+    !loading && !isPremium && showPreparationMessage;
 
   return (
     <>
       <Helmet>
-        <title>
-          Free ISSB &amp; PMA Mock Tests | Intelligence Test Practice |
-          EXAMITICS
-        </title>
+        {/* Primary SEO metadata */}
+        <title>{seo.title}</title>
 
         <meta
           name="description"
-          content="Practice free ISSB and PMA Long Course mock tests including Verbal Intelligence, Non-Verbal Intelligence, Academic Tests, Mechanical Aptitude Test (MAT) and Full-Length Initial Tests. Improve your preparation for Pakistan Army, Pakistan Navy and Pakistan Air Force selection."
+          content={seo.description}
         />
 
         <meta
           name="keywords"
-          content="ISSB Mock Test, PMA Mock Test, PMA Long Course Mock Test, Online Intelligence Test, Verbal Intelligence Test, Non-Verbal Intelligence Test, Academic Test, Mechanical Aptitude Test, MAT Test, Pakistan Army Initial Test, Pakistan Navy Test, Pakistan Air Force Test, Free Mock Tests, ISSB Preparation, PMA Preparation, EXAMITICS"
+          content={seo.keywords}
         />
 
         <meta name="author" content="EXAMITICS" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
 
-        <link
-          rel="canonical"
-          href="https://www.examitics.com/mock"
-        />
+        {/* Canonical URL */}
+        <link rel="canonical" href={canonicalUrl} />
 
-        <meta
-          property="og:title"
-          content="Free ISSB &amp; PMA Mock Tests | Intelligence Test Practice"
-        />
+        {/* Open Graph metadata */}
+        <meta property="og:title" content={seo.title} />
 
         <meta
           property="og:description"
-          content="Take free online mock tests for ISSB and PMA Long Course. Practice Verbal Intelligence, Non-Verbal Intelligence, Academic Tests, Mechanical Aptitude Test and Full-Length Initial Tests."
+          content={seo.description}
         />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="EXAMITICS" />
         <meta property="og:locale" content="en_PK" />
-
-        <meta
-          property="og:url"
-          content="https://www.examitics.com/mock"
-        />
+        <meta property="og:url" content={canonicalUrl} />
 
         <meta
           property="og:image"
@@ -204,23 +288,27 @@ const shouldShowPreparationMessage =
         />
 
         <meta
-          name="twitter:card"
-          content="summary_large_image"
+          property="og:image:alt"
+          content="EXAMITICS Pakistan Armed Forces online mock test preparation"
         />
 
-        <meta
-          name="twitter:title"
-          content="Free ISSB &amp; PMA Mock Tests | Intelligence Test Practice"
-        />
+        {/* Twitter metadata */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
 
         <meta
           name="twitter:description"
-          content="Practice ISSB and PMA mock tests including Verbal, Non-Verbal, Academic and Mechanical Aptitude Tests with detailed performance analysis."
+          content={seo.description}
         />
 
         <meta
           name="twitter:image"
           content="https://www.examitics.com/images/examitics-banner.png"
+        />
+
+        <meta
+          name="twitter:image:alt"
+          content="EXAMITICS online mock tests for Pakistan Armed Forces candidates"
         />
       </Helmet>
 
@@ -234,6 +322,14 @@ const shouldShowPreparationMessage =
             name: "Mock Tests",
             url: "https://www.examitics.com/mock",
           },
+          ...(examParam
+            ? [
+                {
+                  name: seo.breadcrumb,
+                  url: canonicalUrl,
+                },
+              ]
+            : []),
         ]}
       />
 
@@ -248,13 +344,9 @@ const shouldShowPreparationMessage =
                 EXAMITICS MOCK CENTER
               </div>
 
-              <h1>Practice Like The Real Exam</h1>
+              <h1>{seo.heading}</h1>
 
-              <p>
-                Attempt exam style mock tests designed to improve your
-                speed, intelligence solving ability, and academic
-                performance under real exam conditions.
-              </p>
+              <p>{seo.intro}</p>
             </section>
 
             {/* PMA 159 SPECIAL OFFER — ELIGIBLE EXISTING USERS ONLY */}
@@ -419,7 +511,7 @@ const shouldShowPreparationMessage =
                     activeExam === exam.id ? "active" : ""
                   }`}
                   aria-pressed={activeExam === exam.id}
-                  onClick={() => setActiveExam(exam.id)}
+                  onClick={() => navigate(`/mock/${exam.id}`)}
                 >
                   {exam.label}
                 </button>
