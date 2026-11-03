@@ -1215,3 +1215,240 @@
   }
 }
 
+
+
+/* =========================================
+   PMA MOCK SECTION - AEO / GEO CONTENT
+========================================= */
+
+.mock-seo-content {
+  width: 100%;
+  max-width: 1050px;
+  margin: 34px auto 4px;
+  padding-top: 30px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.mock-seo-intro {
+  margin-bottom: 30px;
+}
+
+.mock-seo-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
+}
+
+.mock-seo-content h2 {
+  margin: 0 0 14px;
+  color: var(--color-text);
+  font-size: clamp(21px, 3vw, 27px);
+  line-height: 1.35;
+}
+
+.mock-seo-content h3 {
+  margin: 0 0 12px;
+  color: var(--color-text);
+  font-size: 19px;
+  line-height: 1.45;
+}
+
+.mock-seo-content h4 {
+  margin: 0 0 8px;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.mock-seo-content p {
+  margin: 0 0 12px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.mock-seo-block {
+  margin-bottom: 30px;
+}
+
+.mock-seo-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.mock-seo-category {
+  padding: 18px;
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.mock-seo-category-number {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
+}
+
+.mock-seo-category p {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.mock-seo-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 17px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mock-seo-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mock-seo-step-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.mock-seo-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin: 15px 0 0;
+  padding-left: 20px;
+}
+
+.mock-seo-tips li {
+  padding-left: 4px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.mock-seo-tips strong {
+  color: var(--color-text);
+}
+
+.mock-seo-faq {
+  margin-top: 32px;
+}
+
+.mock-seo-faq-item {
+  margin-bottom: 9px;
+  padding: 15px 17px;
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.mock-seo-faq-item summary {
+  position: relative;
+  padding-right: 20px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.mock-seo-faq-item summary::marker {
+  color: var(--color-primary);
+}
+
+.mock-seo-faq-item p {
+  margin: 12px 0 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--color-border);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.mock-seo-conclusion {
+  margin-top: 28px;
+  padding: 20px;
+  background: var(--color-card-secondary);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.mock-seo-conclusion h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.mock-seo-conclusion p {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .mock-seo-content {
+    margin-top: 26px;
+    padding-top: 24px;
+  }
+
+  .mock-seo-category-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .mock-seo-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-seo-block {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mock-seo-content h3 {
+    font-size: 17px;
+  }
+
+  .mock-seo-content p,
+  .mock-seo-tips li {
+    font-size: 13px;
+  }
+
+  .mock-seo-category {
+    padding: 15px;
+  }
+
+  .mock-seo-faq-item {
+    padding: 13px;
+  }
+
+  .mock-seo-faq-item summary {
+    font-size: 13px;
+  }
+
+  .mock-seo-conclusion {
+    padding: 16px;
+  }
+}
