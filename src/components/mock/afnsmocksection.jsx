@@ -41,11 +41,11 @@ const AFNSMockSEO = () => {
       answer:
         "No. EXAMITICS is an independent exam-preparation platform. Its AFNS mock tests are practice resources and are not official examinations issued by the Pakistan Army."
     },
-    {
-      question: "Do AFNS mock tests guarantee selection?",
-      answer:
-        "No. Mock tests are intended to support preparation and self-assessment. They cannot guarantee selection or success in the actual recruitment process."
-    }
+    // {
+    //   question: "Do AFNS mock tests guarantee selection?",
+    //   answer:
+    //     "No. Mock tests are intended to support preparation and self-assessment. They cannot guarantee selection or success in the actual recruitment process."
+    // }
   ];
 
   const preparationSteps = [

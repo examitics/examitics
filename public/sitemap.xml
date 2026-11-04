@@ -8,6 +8,20 @@
   <url><loc>https://www.examitics.com/issb-1</loc></url>
   <url><loc>https://www.examitics.com/issbguide</loc></url>
   <url><loc>https://www.examitics.com/knowledgehub</loc></url>
+  
+  <!-- Mock test landing pages -->
+  <url>
+    <loc>https://www.examitics.com/mock/pma-lc</loc>
+  </url>
+  <url>
+    <loc>https://www.examitics.com/mock/afns</loc>
+  </url>
+  <url>
+    <loc>https://www.examitics.com/mock/navy</loc>
+  </url>
+  <url>
+    <loc>https://www.examitics.com/mock/paf</loc>
+  </url>
 
   <!-- Armed Forces preparation guides -->
   <url><loc>https://www.examitics.com/pma-lc-initial-procedure</loc></url>

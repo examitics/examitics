@@ -27,11 +27,11 @@ const PMAMockSEO = () => {
       answer:
         "Attempt a mock test under timed conditions, review your result, identify questions or topics that caused difficulty, and practise those areas before attempting another test. Consistent practice can help improve familiarity with question formats and time management."
     },
-    {
-      question: "Do EXAMITICS mock tests guarantee success in the PMA initial test?",
-      answer:
-        "No. Mock tests are preparation resources and do not guarantee selection or success. Your performance in the actual recruitment process depends on your preparation and performance in the relevant selection stages."
-    },
+    // {
+    //   question: "Do EXAMITICS mock tests guarantee success in the PMA initial test?",
+    //   answer:
+    //     "No. Mock tests are preparation resources and do not guarantee selection or success. Your performance in the actual recruitment process depends on your preparation and performance in the relevant selection stages."
+    // },
     {
       question: "Are EXAMITICS mock tests official Pakistan Army tests?",
       answer:

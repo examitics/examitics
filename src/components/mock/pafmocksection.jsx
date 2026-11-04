@@ -300,7 +300,7 @@ const PAFMockSEO = () => {
           </p>
         </details>
 
-        <details className="mock-seo-faq-item">
+        {/* <details className="mock-seo-faq-item">
           <summary>
             Do these PAF mock tests guarantee selection?
           </summary>
@@ -311,7 +311,7 @@ const PAFMockSEO = () => {
             on the official recruitment requirements and
             assessment process.
           </p>
-        </details>
+        </details> */}
       </section>
 
       {/* CONCLUSION */}

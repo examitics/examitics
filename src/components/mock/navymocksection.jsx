@@ -274,7 +274,7 @@ const NavyMockSEO = () => {
           </p>
         </details>
 
-        <details className="mock-seo-faq-item">
+        {/* <details className="mock-seo-faq-item">
           <summary>
             Do these mock tests guarantee selection in the Pakistan Navy?
           </summary>
@@ -285,7 +285,7 @@ const NavyMockSEO = () => {
             on the official eligibility requirements, assessments,
             and selection process.
           </p>
-        </details>
+        </details> */}
       </section>
 
       {/* CONCLUSION */}
