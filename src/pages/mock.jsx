@@ -212,15 +212,13 @@ const MOCK = () => {
       );
     };
   }, []);
+// WhatsApp message for the Rs. 1000 monthly Premium offer.
+const whatsappMessage = encodeURIComponent(
+  "Assalam-o-Alaikum EXAMITICS, I am interested in the monthly Premium subscription offer for Rs. 1000 /-. Please share the details."
+);
 
-  // WhatsApp message for the 1-week Rs. 400 offer.
-  const whatsappMessage = encodeURIComponent(
-    "Assalam-o-Alaikum EXAMITICS, I registered before 24 October 2026 and want to claim the PMA 159 LC offer for 1 week of Premium access for Rs. 400."
-  );
-
-  const whatsappUrl =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
-
+const whatsappUrl =
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
   /*
    * Offer eligibility:
    * - Authentication must finish loading.
@@ -349,124 +347,126 @@ const MOCK = () => {
               <p>{seo.intro}</p>
             </section>
 
-            {/* PMA 159 SPECIAL OFFER — ELIGIBLE EXISTING USERS ONLY */}
-            {/* {shouldShowPreparationMessage && (
-              <section
-                className="mock-prep-card"
-                aria-labelledby="mock-prep-title"
-              >
-                <button
-                  type="button"
-                  className="mock-prep-close"
-                  onClick={() => setShowPreparationMessage(false)}
-                  aria-label="Dismiss preparation message"
-                >
-                  <FiX />
-                </button>
+{/* MONTHLY PREMIUM SUBSCRIPTION OFFER */}
+{shouldShowPreparationMessage && (
+  <section
+    className="mock-prep-card"
+    aria-labelledby="mock-prep-title"
+  >
+    <button
+      type="button"
+      className="mock-prep-close"
+      onClick={() => setShowPreparationMessage(false)}
+      aria-label="Dismiss subscription offer"
+    >
+      <FiX />
+    </button>
 
-                <div className="mock-prep-badge">
-                  <FiTarget />
-                  PMA 159 LONG COURSE • EXCLUSIVE OFFER
-                </div>
+    <div className="mock-prep-badge">
+      <FiZap />
+      EXAMITICS PREMIUM • SPECIAL OFFER
+    </div>
 
-                <div className="mock-prep-header">
-                  <div className="mock-prep-icon">
-                    <FiZap />
-                  </div>
+    <div className="mock-prep-header">
+      <div className="mock-prep-icon">
+        <FiTarget />
+      </div>
 
-                  <div>
-                    <h3 id="mock-prep-title">
-                      Measure Your Preparation Before the Actual Exam
-                    </h3>
+      <div>
+        <h3 id="mock-prep-title">
+          Take Your Preparation to the Next Level
+        </h3>
 
-                    <p>
-                      Practice with purpose. Identify weak areas. Prepare
-                      for success.
-                    </p>
-                  </div>
-                </div>
+        <p>
+          Prepare smarter. Practise more. Improve your performance.
+        </p>
+      </div>
+    </div>
 
-                <div className="mock-prep-message">
-                  <p>
-                    Dear PMA 159 LC aspirant, your actual initial test is
-                    an important step towards joining the Pakistan Army.
-                    Do not wait until exam day to discover where you need
-                    improvement.
-                  </p>
+    <div className="mock-prep-message">
+      <p>
+        Serious preparation requires consistent practice and
+        access to quality study resources. EXAMITICS Premium
+        helps you prepare for Pakistan Armed Forces initial
+        tests with additional mock tests and preparation
+        resources.
+      </p>
 
-                  <p>
-                    <strong>
-                      Attempt these important mock tests before your
-                      actual exam to measure your preparation.
-                    </strong>{" "}
-                    Practise Verbal Intelligence, Non-Verbal Intelligence,
-                    and Academic questions to assess your performance,
-                    improve your speed and accuracy, and identify the
-                    topics that need more attention.
-                  </p>
-                </div>
+      <p>
+        <strong>
+          Upgrade to Premium and unlock more opportunities
+          to practise and evaluate your preparation.
+        </strong>
+        {" "}
+        Strengthen your verbal intelligence, non-verbal
+        intelligence and academic preparation with additional
+        practice material.
+      </p>
+    </div>
 
-                <div className="mock-prep-points">
-                  <div>
-                    <FiCheck />
-                    Verbal Intelligence practice
-                  </div>
+    <div className="mock-prep-points">
+      <div>
+        <FiCheck />
+        Verbal Intelligence
+        </div>
 
-                  <div>
-                    <FiCheck />
-                    Non-Verbal Intelligence practice
-                  </div>
+      <div>
+        <FiCheck />
+        Non-Verbal Intelligence
+        </div>
 
-                  <div>
-                    <FiCheck />
-                    Academic mock tests
-                  </div>
-                </div>
+      <div>
+        <FiCheck />
+    Academic 
+      </div>
+    </div>
 
-                <div className="mock-prep-offer">
-                  <div className="mock-prep-offer-content">
-                    <span className="mock-prep-offer-label">
-                      EXCLUSIVE OFFER FOR EXISTING USERS
-                    </span>
+    <div className="mock-prep-offer">
+      <div className="mock-prep-offer-content">
+        <span className="mock-prep-offer-label">
+          LIMITED-TIME SPECIAL PRICE
+        </span>
 
-                    <strong>
-                      1 Week Premium Access — Rs. 400 Only
-                    </strong>
+        <strong>
+          Monthly Premium — Rs. 1,000 Only
+        </strong>
 
-                    <small>
-                      Available to candidates registered on EXAMITICS
-                      before 24 October 2026. Unlock Premium mock tests
-                      and assess your readiness before your actual
-                      PMA 159 initial test.
-                    </small>
-                  </div>
+        <small>
+          Regular monthly price Rs. <s>1,500</s>.
+          Get one month of EXAMITICS Premium access
+          for just Rs. 1,000.
+        </small>
+        <span className="mock-prep-expiry">
+  Offer valid until 15 November 2026
+</span>
+      </div>
 
-                  <a
-                    className="mock-prep-whatsapp"
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FiMessageCircle />
-                    Get Premium Access
-                    <FiArrowRight />
-                  </a>
-                </div>
+      <a
+        className="mock-prep-whatsapp"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FiMessageCircle />
+        Get Premium Access
+        <FiArrowRight />
+      </a>
+    </div>
 
-                <div className="mock-prep-footer">
-                  <span>Want to hear from other candidates?</span>
+    <div className="mock-prep-footer">
+      <span>Want to hear from other candidates?</span>
 
-                  <Link
-                    to="/review"
-                    className="mock-prep-reviews-link"
-                  >
-                    <FiCheckCircle />
-                    Read Premium Candidates’ Reviews
-                    <FiArrowRight />
-                  </Link>
-                </div>
-              </section>
-            )} */}
+      <Link
+        to="/review"
+        className="mock-prep-reviews-link"
+      >
+        <FiCheckCircle />
+        Read Premium Candidates’ Reviews
+        <FiArrowRight />
+      </Link>
+    </div>
+  </section>
+)}
 
             {/* MOCK RULES */}
             <div className="mock-rules-grid">

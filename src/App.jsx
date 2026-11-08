@@ -418,6 +418,18 @@ PREMIUM PMA VERBAL MOCK TEST 4
           }
         />
         {/* ==========================================
+    PREMIUM PMA NON-VERBAL MOCK TEST 7
+========================================== */}
+
+        <Route
+          path="/mock/nonverbal/set7"
+          element={
+            <PremiumRoute>
+              <MockTest exam="pma-lc" category="nonverbal" setId="set7" />
+            </PremiumRoute>
+          }
+        />
+        {/* ==========================================
     PREMIUM AFNS ACADEMIC MOCK TEST 2
 ========================================== */}
 

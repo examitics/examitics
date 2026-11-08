@@ -1612,3 +1612,12 @@
     transform: none;
   }
 }
+
+
+.mock-prep-expiry {
+  display: block;
+  margin-top: 8px;
+  color: #b45309;
+  font-size: 0.82rem;
+  font-weight: 700;
+}

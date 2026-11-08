@@ -289,7 +289,7 @@ const MockTest = ({
         // Non-Verbal Set 2, 3, 4, 5 & 6
         (exam === "pma-lc" &&
           category === "nonverbal" &&
-          ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
         // ==========================================
         // AFNS PREMIUM MOCK TESTS
         // ==========================================
@@ -681,7 +681,7 @@ const MockTest = ({
         // PMA Non-Verbal
         (exam === "pma-lc" &&
           category === "nonverbal" &&
-          ["set2", "set3", "set4", "set5", "set6"].includes(setId)) ||
+          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
         // AFNS Academic Set 2
         (exam === "afns" &&
           category === "academic" &&
