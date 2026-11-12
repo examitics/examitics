@@ -279,9 +279,22 @@ const MockTest = ({
         // PMA PREMIUM MOCK TESTS
         // ==========================================
         // Academic Set 2, 3, 4, 5 & 6
-        (exam === "pma-lc" &&
-          category === "academic" &&
-          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
+        
+// PMA Academic Premium Sets 2–10
+(exam === "pma-lc" &&
+  category === "academic" &&
+  [
+    "set2",
+    "set3",
+    "set4",
+    "set5",
+    "set6",
+    "set7",
+    "set8",
+    "set9",
+    "set10",
+  ].includes(setId)) ||
+
         // Verbal Set 2, 3, 4 & 5
         (exam === "pma-lc" &&
           category === "verbal" &&
@@ -665,9 +678,22 @@ const MockTest = ({
       const isPremiumTest =
         // PMA Academic
         // PMA Academic
-        (exam === "pma-lc" &&
-          category === "academic" &&
-          ["set2", "set3", "set4", "set5", "set6", "set7"].includes(setId)) ||
+        
+// PMA Academic Premium Sets 2–10
+(exam === "pma-lc" &&
+  category === "academic" &&
+  [
+    "set2",
+    "set3",
+    "set4",
+    "set5",
+    "set6",
+    "set7",
+    "set8",
+    "set9",
+    "set10",
+  ].includes(setId)) ||
+
         // PMA Verbal
         // (
         //   exam === "pma-lc" &&

@@ -291,6 +291,46 @@ function App() {
             </PremiumRoute>
           }
         />
+
+{/* ==========================================
+    PREMIUM PMA ACADEMIC MOCK TEST 8
+========================================== */}
+
+<Route
+  path="/mock/academic/set8"
+  element={
+    <PremiumRoute>
+      <MockTest exam="pma-lc" category="academic" setId="set8" />
+    </PremiumRoute>
+  }
+/>
+
+{/* ==========================================
+    PREMIUM PMA ACADEMIC MOCK TEST 9
+========================================== */}
+
+<Route
+  path="/mock/academic/set9"
+  element={
+    <PremiumRoute>
+      <MockTest exam="pma-lc" category="academic" setId="set9" />
+    </PremiumRoute>
+  }
+/>
+
+{/* ==========================================
+    PREMIUM PMA ACADEMIC MOCK TEST 10
+========================================== */}
+
+<Route
+  path="/mock/academic/set10"
+  element={
+    <PremiumRoute>
+      <MockTest exam="pma-lc" category="academic" setId="set10" />
+    </PremiumRoute>
+  }
+/>
+
         {/* ==========================================
     PREMIUM PMA VERBAL MOCK TEST 2
 ========================================== */}

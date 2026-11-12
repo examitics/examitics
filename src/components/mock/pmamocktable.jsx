@@ -334,6 +334,88 @@ const MockTable = ({ examCode }) => {
               </button>
             </td>
           </tr>
+
+{/* ==========================================
+    PMA ACADEMIC MOCK TEST 8
+========================================== */}
+<tr>
+  <td>
+    <span className="mock-table-btn">Coming Soon</span>
+  </td>
+
+  <td>
+    <span className="mock-table-btn">Coming Soon</span>
+  </td>
+
+  <td>
+    <button
+      type="button"
+      className="mock-table-btn mock-premium-btn"
+      onClick={() => handlePremiumClick("/mock/academic/set8")}
+    >
+      <span>Academic Mock 8</span>
+      <span className="mock-premium-diamond">◆</span>
+      {!isPremium && (
+        <span className="mock-premium-label">PREMIUM</span>
+      )}
+    </button>
+  </td>
+</tr>
+
+{/* ==========================================
+    PMA ACADEMIC MOCK TEST 9
+========================================== */}
+<tr>
+  <td>
+    <span className="mock-table-btn">Coming Soon</span>
+  </td>
+
+  <td>
+    <span className="mock-table-btn">Coming Soon</span>
+  </td>
+
+  <td>
+    <button
+      type="button"
+      className="mock-table-btn mock-premium-btn"
+      onClick={() => handlePremiumClick("/mock/academic/set9")}
+    >
+      <span>Academic Mock 9</span>
+      <span className="mock-premium-diamond">◆</span>
+      {!isPremium && (
+        <span className="mock-premium-label">PREMIUM</span>
+      )}
+    </button>
+  </td>
+</tr>
+
+{/* ==========================================
+    PMA ACADEMIC MOCK TEST 10
+========================================== */}
+<tr>
+  <td>
+    <span className="mock-table-btn">Coming Soon</span>
+  </td>
+
+  <td>
+    <span className="mock-table-btn">Coming Soon</span>
+  </td>
+
+  <td>
+    <button
+      type="button"
+      className="mock-table-btn mock-premium-btn"
+      onClick={() => handlePremiumClick("/mock/academic/set10")}
+    >
+      <span>Academic Mock 10</span>
+      <span className="mock-premium-diamond">◆</span>
+      {!isPremium && (
+        <span className="mock-premium-label">PREMIUM</span>
+      )}
+    </button>
+  </td>
+</tr>
+
         </tbody>
       </table>
     </div>
