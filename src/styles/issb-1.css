@@ -95,6 +95,7 @@
 }
 
 .issb-hero-image-wrapper {
+  min-height: 600px;
   min-width: 0;
   overflow: hidden;
   border: 1px solid var(--color-border);
@@ -105,7 +106,7 @@
 
 .issb-hero-image {
   width: 100%;
-  height: clamp(300px, 38vw, 520px);
+  height: clamp(600px, 38vw, 520px);
   object-fit: cover;
   object-position: center;
   filter: grayscale(12%);
@@ -1558,5 +1559,966 @@
   .issb-page .issb-section > .section-heading p {
     font-size: 14px;
     line-height: 1.75;
+  }
+}
+
+
+
+
+/* =====================================================
+   ISSB PAGE RESTRUCTURE - NEW COMPONENTS
+   Append to the bottom of issb-1.css
+===================================================== */
+
+/* HERO IMAGE CAROUSEL */
+
+.issb-hero-carousel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0f2747;
+}
+
+.issb-carousel-images {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.issb-carousel-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.025);
+  transition:
+    opacity 1.1s ease-in-out,
+    transform 5.5s ease-out;
+  pointer-events: none;
+}
+
+.issb-carousel-image.active {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.issb-carousel-overlay {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 65px 25px 52px;
+  background: linear-gradient(
+    to top,
+    rgba(8, 22, 42, 0.88),
+    rgba(8, 22, 42, 0.35),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.issb-carousel-overlay span {
+  display: block;
+  margin-bottom: 8px;
+  color: #bfdbfe;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.issb-carousel-overlay h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(19px, 2.5vw, 27px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.issb-carousel-dots {
+  position: absolute;
+  z-index: 3;
+  right: 22px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.issb-carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.issb-carousel-dot.active {
+  width: 25px;
+  background: #fff;
+}
+
+.issb-carousel-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* HERO HIGHLIGHTS */
+
+.issb-hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 22px;
+}
+
+.issb-hero-highlights span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.issb-hero-highlights svg {
+  color: var(--color-success);
+  font-size: 15px;
+}
+
+/* QUICK ANSWER - AEO */
+
+.issb-quick-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 15px 0 55px;
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-bg-secondary);
+}
+
+.issb-quick-answer-icon {
+  display: flex;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 13px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-primary);
+  font-size: 22px;
+}
+
+.issb-quick-answer > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.issb-quick-answer h2 {
+  margin: 8px 0 12px;
+  color: var(--color-text);
+  font-size: clamp(21px, 2.5vw, 27px);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.issb-quick-answer p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.issb-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.issb-inline-link:hover {
+  text-decoration: underline;
+}
+
+/* SECTION NAVIGATION */
+
+.issb-section-navigation {
+  position: sticky;
+  z-index: 20;
+  top: 75px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  margin: 0 0 58px;
+  padding: 10px;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
+  background: var(--color-card);
+  box-shadow: var(--shadow-sm);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.issb-section-navigation a {
+  display: inline-flex;
+  flex-shrink: 0;
+  min-height: 37px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 13px;
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.issb-section-navigation a:hover {
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+}
+
+.issb-page section[id] {
+  scroll-margin-top: 150px;
+}
+
+/* ROADMAP */
+
+.issb-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.issb-roadmap-card {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-card);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.issb-roadmap-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.issb-roadmap-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.issb-roadmap-number {
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+
+.issb-roadmap-icon,
+.issb-gto-icon {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(59, 130, 246, 0.17);
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-primary);
+  font-size: 21px;
+}
+
+.issb-roadmap-card h3 {
+  margin: 0 0 10px;
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.issb-roadmap-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* PSYCHOLOGICAL TEST IMAGE WRAPPER */
+
+.psych-card {
+  overflow: hidden;
+}
+
+.psych-card-image-wrapper {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.psych-card-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.psych-card:hover .psych-card-image-wrapper img {
+  transform: scale(1.035);
+}
+
+.psych-card-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(15, 39, 71, 0.88);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.psych-content {
+  display: flex;
+  height: calc(100% - 205px);
+  flex-direction: column;
+}
+
+.psych-content p {
+  flex: 1;
+}
+
+/* TWO BUTTONS PER TEST CARD */
+
+.issb-test-card-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 9px;
+  margin-top: 19px;
+}
+
+.issb-test-explore-button,
+.issb-test-practice-button {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.issb-test-explore-button {
+  background: var(--color-card);
+  color: var(--color-text);
+}
+
+.issb-test-explore-button:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+}
+
+.issb-test-practice-button {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.issb-test-practice-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.94);
+  color: #fff;
+}
+
+.issb-test-explore-button svg,
+.issb-test-practice-button svg {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* ADDITIONAL TOOLS */
+
+.issb-additional-tools {
+  margin-top: 65px;
+}
+
+.issb-additional-tools-heading {
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+.issb-additional-tools-heading h3 {
+  margin: 9px 0;
+  color: var(--color-text);
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.issb-additional-tools-heading p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.issb-tools-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+
+.issb-tool-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 22px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 15px;
+  background: var(--color-card);
+}
+
+.issb-tool-card > img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.issb-tool-card > div {
+  min-width: 0;
+}
+
+.issb-tool-card > div > span {
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.issb-tool-card h3 {
+  margin: 7px 0;
+  color: var(--color-text);
+  font-size: 20px;
+}
+
+.issb-tool-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* GTO GRID */
+
+.issb-gto-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.issb-gto-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-card);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.issb-gto-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+}
+
+.issb-gto-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.issb-gto-card-top > span {
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.issb-gto-card h3 {
+  margin: 0 0 9px;
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.issb-gto-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.issb-gto-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 17px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg-secondary);
+}
+
+.issb-gto-note svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--color-primary);
+}
+
+.issb-gto-note p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* PHYSICAL PREPARATION */
+
+.issb-physical-note {
+  margin-top: 22px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* INTERVIEW LIST */
+
+.interview-card > p {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.interview-card ul {
+  padding-left: 19px;
+}
+
+.interview-card li {
+  margin-bottom: 9px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* OFFICER QUALITIES */
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tip-box {
+  display: flex;
+  min-height: 53px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-card);
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tip-box svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+/* PREPARATION ADVICE */
+
+.issb-advice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.issb-advice-card {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-card);
+}
+
+.issb-advice-card > svg {
+  margin-bottom: 17px;
+  color: var(--color-primary);
+  font-size: 24px;
+}
+
+.issb-advice-card h3 {
+  margin: 0 0 9px;
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.issb-advice-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* FAQ */
+
+.issb-faq-list {
+  display: grid;
+  gap: 11px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.issb-faq-item {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-card);
+}
+
+.issb-faq-item summary {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 20px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.55;
+  cursor: pointer;
+  list-style: none;
+}
+
+.issb-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.issb-faq-item summary svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition: transform 0.2s ease;
+}
+
+.issb-faq-item[open] summary {
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary);
+}
+
+.issb-faq-item[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.issb-faq-answer {
+  padding: 18px 20px;
+}
+
+.issb-faq-answer p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* FINAL CTA */
+
+.issb-cta-eyebrow {
+  display: block;
+  margin-bottom: 15px;
+  color: #93c5fd;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.issb-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.issb-cta-actions .issb-cta-button {
+  margin: 0;
+}
+
+.issb-disclaimer {
+  max-width: 760px;
+  margin: 26px auto 0 !important;
+  color: rgba(255, 255, 255, 0.68) !important;
+  font-size: 11px !important;
+  line-height: 1.8 !important;
+}
+
+/* ACCESSIBILITY */
+
+.issb-page a:focus-visible,
+.issb-page button:focus-visible,
+.issb-page summary:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .issb-carousel-image,
+  .issb-carousel-dot,
+  .issb-roadmap-card,
+  .issb-gto-card,
+  .issb-test-explore-button,
+  .issb-test-practice-button,
+  .issb-faq-item summary svg {
+    transition: none !important;
+  }
+
+  .issb-roadmap-card:hover,
+  .issb-gto-card:hover,
+  .issb-test-practice-button:hover {
+    transform: none;
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 992px) {
+  .issb-roadmap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .issb-gto-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .issb-section-navigation {
+    top: 65px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .issb-hero-carousel {
+    min-height: 250px;
+  }
+
+  .issb-carousel-images {
+    min-height: 250px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .issb-carousel-overlay {
+    padding: 55px 18px 48px;
+  }
+
+  .issb-carousel-overlay h2 {
+    font-size: 20px;
+  }
+
+  .issb-carousel-dots {
+    right: 16px;
+    bottom: 17px;
+  }
+
+  .issb-hero-highlights {
+    gap: 10px 14px;
+  }
+
+  .issb-section-navigation {
+    top: 55px;
+    margin-bottom: 42px;
+    padding: 7px;
+    border-radius: 10px;
+  }
+
+  .issb-section-navigation a {
+    min-height: 35px;
+    padding: 7px 11px;
+    font-size: 11px;
+  }
+
+  .issb-quick-answer {
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .issb-quick-answer-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+  }
+
+  .issb-roadmap-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .issb-gto-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .issb-advice-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .issb-tool-card {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 14px;
+    padding: 13px;
+  }
+
+  .issb-tool-card > img {
+    height: 125px;
+  }
+
+  .issb-test-card-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .issb-test-explore-button,
+  .issb-test-practice-button {
+    min-height: 43px;
+  }
+
+  .issb-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .issb-cta-actions .issb-cta-button {
+    width: 100%;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .issb-quick-answer {
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .issb-gto-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .issb-tool-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .issb-tool-card > img {
+    height: 180px;
+  }
+
+  .issb-test-card-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .issb-test-explore-button,
+  .issb-test-practice-button {
+    gap: 5px;
+    padding: 9px 5px;
+    font-size: 10px;
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .tip-box {
+    min-height: 48px;
+    gap: 6px;
+    padding: 9px 5px;
+    font-size: 11px;
+  }
+
+  .issb-faq-item summary {
+    padding: 15px;
+    font-size: 13px;
+  }
+
+  .issb-faq-answer {
+    padding: 15px;
+  }
+
+  .issb-carousel-images {
+    min-height: 225px;
   }
 }
