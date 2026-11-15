@@ -16,6 +16,12 @@ import matImg from "../assets/images/mat-img.png";
 import srtImg from "../assets/images/srt-img.webp";
 import quickmath from "../assets/images/quick-math.png";
 
+import issbwat from "../assets/issb-page-img/issb-wat.png";
+import issbmat from "../assets/issb-page-img/issb-mat.png";
+import issbsct from "../assets/issb-page-img/issb-sct.png";
+import issbsrt from "../assets/issb-page-img/issb-srt.png";
+import issbopi from "../assets/issb-page-img/issb-opi.png";
+import issbtat from "../assets/issb-page-img/issb-tat.png";
 import {
   FiShield,
   FiTarget,
@@ -32,10 +38,11 @@ import {
   FiMic,
   FiHeart,
   FiFlag,
-  FiZap,
   FiChevronDown,
   FiPlayCircle,
   FiExternalLink,
+  FiPause,
+  FiPlay,
 } from "react-icons/fi";
 
 import "../styles/issb-1.css";
@@ -48,41 +55,59 @@ const SITE_URL = "https://www.examitics.com";
 const PAGE_URL = `${SITE_URL}/issb-1`;
 const OG_IMAGE = `${SITE_URL}/images/examitics-banner.png`;
 
+const OFFICIAL_ISSB_GUIDELINES =
+  "https://issb.gov.pk/guidelines";
+
+const OFFICIAL_ISSB_SELECTION_SYSTEM =
+  "https://issb.gov.pk/selection-system";
+
 // ======================================================
 // HERO CAROUSEL
+// Local images are used instead of third-party thumbnails.
 // ======================================================
 
 const heroSlides = [
   {
-    image:
-      "https://www.pakistantoday.com.pk/uploads/thumbs/Parade-cmlgsig9kfq2o58pqxj7ykprj-1200.webp",
-    alt: "ISSB candidate preparation and selection environment",
-    title: "Prepare with purpose",
+    image: issbwat,
+    alt: "Word Association Test practice for ISSB preparation",
+    title: "Develop clear and constructive thinking",
+    caption: "Word Association Test preparation",
   },
   {
-    image: "https://brainymedforcesacademy.com/assets/paf-pilots-jf17-CZBO5SKB.jpg",
-    alt: "Word Association Test preparation for ISSB candidates",
-    title: "Develop positive thinking",
+    image: issbtat,
+    alt: "Picture story writing practice for ISSB candidates",
+    title: "Improve observation and story writing",
+    caption: "Picture Story and TAT preparation",
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRPrS3ZCJPYug2Rvf1nOkd70uOQ0UTmW1X2kFNiRBQnmj9sLWw5pvkrkuF&s=10",
-    alt: "Picture story writing practice for ISSB psychological assessment",
-    title: "Build your thinking skills",
+    image: issbsct,
+    alt: "Sentence Completion Test preparation",
+    title: "Practise natural and clear expression",
+    caption: "Sentence Completion Test preparation",
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNNDqRpX1wkcmxI-tP_QtlCwBGZiRPVeD0NdHqg-mwFToF2mbn4dCSZw87&s=10",
-    alt: "Situation Reaction Test practice for ISSB preparation",
-    title: "Improve practical judgment",
+    image: issbopi,
+    alt: "Officer Potential Inventory practice resources",
+    title: "Understand personality-related questions",
+    caption: "OPI practice resources",
   },
   {
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRunp5lFMyojkWDUEJwNykOyxxHsvya4TzZQr4-vMhFtw&s=10",
-    alt: "Mechanical aptitude practice for ISSB preparation",
-    title: "Strengthen your reasoning",
+    image: issbmat,
+    alt: "Mechanical Aptitude Test practice",
+    title: "Strengthen mechanical reasoning",
+    caption: "Mechanical Aptitude Test preparation",
+  },
+  {
+    image: issbsrt,
+    alt: "Situation Reaction Test preparation",
+    title: "Develop practical decision-making",
+    caption: "Situation Reaction Test preparation",
   },
 ];
 
 // ======================================================
 // PSYCHOLOGICAL TESTS
+// Each card has separate learning and practice links.
 // ======================================================
 
 const psychTests = [
@@ -90,7 +115,7 @@ const psychTests = [
     title: "WAT",
     subtitle: "Word Association Test",
     description:
-      "Practise responding to words with clear, relevant and constructive thoughts. Develop quick thinking and concise expression.",
+      "Learn how word association exercises work and practise forming clear, relevant and constructive responses within a limited time.",
     image: watImg,
     exploreUrl: "/wat",
     practiceUrl: "/wat-test",
@@ -101,7 +126,7 @@ const psychTests = [
     title: "TAT",
     subtitle: "Thematic Apperception Test",
     description:
-      "Practise picture-based story writing, logical sequencing, observation and realistic problem-solving.",
+      "Explore picture-based story writing. Practise observation, logical sequencing, realistic situations and meaningful conclusions.",
     image: tatImg,
     exploreUrl: "/tat",
     practiceUrl: "/tat-test",
@@ -112,7 +137,7 @@ const psychTests = [
     title: "SCT",
     subtitle: "Sentence Completion Test",
     description:
-      "Explore sentence completion exercises and practise expressing thoughts clearly and naturally.",
+      "Understand sentence completion exercises and practise expressing your thoughts naturally, clearly and consistently.",
     image: sctImg,
     exploreUrl: "/sct",
     practiceUrl: "/sct-test",
@@ -123,7 +148,7 @@ const psychTests = [
     title: "OPI",
     subtitle: "Officer Potential Inventory",
     description:
-      "Explore personality-related self-reflection and practise questions about personal habits, attitudes and behavior.",
+      "Explore OPI-style questions involving personal habits, attitudes, preferences and self-reflection. Practise reading questions carefully and responding honestly.",
     image: opiImg,
     exploreUrl: "/opi",
     practiceUrl: "/opi-test",
@@ -134,18 +159,18 @@ const psychTests = [
     title: "SRT",
     subtitle: "Situation Reaction Test",
     description:
-      "Practise responding to everyday situations with practical judgment, responsibility and timely decision-making.",
+      "Practise responding to everyday situations with practical judgment, responsibility, initiative and sensible decision-making.",
     image: srtImg,
-    exploreUrl: "#psych-tests",
+    exploreUrl: "/issbguide",
     practiceUrl: "/srt",
-    exploreText: "ISSB Overview",
+    exploreText: "Read ISSB Guide",
     practiceText: "Start SRT Practice",
   },
   {
     title: "MAT",
     subtitle: "Mechanical Aptitude Test",
     description:
-      "Understand basic mechanical concepts, gears, levers, pulleys, motion and practical mechanical reasoning.",
+      "Understand mechanical reasoning involving gears, levers, pulleys, motion, force and everyday mechanical principles.",
     image: matImg,
     exploreUrl: "/mat",
     practiceUrl: "/mock/mat/set1",
@@ -163,7 +188,7 @@ const additionalTools = [
     title: "Quick Math",
     subtitle: "Mental Mathematics Practice",
     description:
-      "Improve calculation speed, numerical confidence and mental arithmetic for preparation and interviews.",
+      "Improve calculation speed, numerical confidence and mental arithmetic through focused practice exercises.",
     image: quickmath,
     exploreUrl: "/quick-math",
     practiceUrl: "/quick-math/practice",
@@ -171,19 +196,52 @@ const additionalTools = [
 ];
 
 // ======================================================
-// PHYSICAL OBSTACLES
+// PREPARATION ROADMAP
 // ======================================================
 
-const obstacles = [
-  "Monkey Bridge",
-  "Tarzan Swing",
-  "Rope Climbing",
-  "Ditch Crossing",
-  "High Jump",
-  "Zig Zag",
-  "Boxing Ring",
-  "Tire Crossing",
-  "Hanging Log",
+const preparationSteps = [
+  {
+    number: "01",
+    title: "Understand the ISSB Process",
+    description:
+      "Learn about the selection system, assessment activities and the purpose of different preparation areas.",
+    icon: FiBookOpen,
+  },
+  {
+    number: "02",
+    title: "Practise Psychological Tests",
+    description:
+      "Become familiar with WAT, TAT, SCT, OPI, SRT and mechanical aptitude practice.",
+    icon: FiTarget,
+  },
+  {
+    number: "03",
+    title: "Develop Communication Skills",
+    description:
+      "Practise group discussions, lecturettes, active listening and clear expression in English and Urdu.",
+    icon: FiMessageSquare,
+  },
+  {
+    number: "04",
+    title: "Prepare for GTO Activities",
+    description:
+      "Understand group tasks, planning, cooperation, initiative and responsible leadership.",
+    icon: FiUsers,
+  },
+  {
+    number: "05",
+    title: "Improve Physical Fitness",
+    description:
+      "Develop suitable stamina, mobility, balance and physical confidence through gradual training.",
+    icon: FiActivity,
+  },
+  {
+    number: "06",
+    title: "Prepare for Interviews",
+    description:
+      "Reflect on your education, interests, experiences, personal background, goals and general awareness.",
+    icon: FiAward,
+  },
 ];
 
 // ======================================================
@@ -196,7 +254,7 @@ const gtoTasks = [
     short: "GD",
     icon: FiUsers,
     description:
-      "This test is conducted by Deputy President. Practise presenting ideas, listening to others, discussing different viewpoints and contributing constructively to group discussions.",
+      "Practise presenting relevant ideas, listening to others, discussing different viewpoints and contributing constructively to a group.",
   },
   {
     title: "Group Planning Exercise",
@@ -210,21 +268,21 @@ const gtoTasks = [
     short: "PGT",
     icon: FiTarget,
     description:
-      "Learn about cooperation, communication, problem-solving and coordinated teamwork while approaching group challenges.",
+      "Understand teamwork, communication, coordination and problem-solving while approaching group challenges.",
   },
   {
     title: "Half Group Task",
     short: "HGT",
     icon: FiUsers,
     description:
-      "Understand how smaller teams coordinate responsibilities, exchange ideas and work toward a shared objective.",
+      "Learn how smaller teams coordinate responsibilities, exchange ideas and work toward a shared objective.",
   },
   {
     title: "Command Task",
     short: "CT",
     icon: FiFlag,
     description:
-      "Explore decision-making, communication, responsibility and leadership while managing a task with a team.",
+      "Explore leadership, decision-making, communication and responsibility while managing a task with a team.",
   },
   {
     title: "Lecturette",
@@ -250,52 +308,19 @@ const gtoTasks = [
 ];
 
 // ======================================================
-// PREPARATION ROADMAP
+// PHYSICAL OBSTACLES
 // ======================================================
 
-const preparationSteps = [
-  {
-    number: "01",
-    title: "Understand the ISSB Process",
-    description:
-      "Learn about the selection process, assessment activities and the purpose of different preparation areas.",
-    icon: FiBookOpen,
-  },
-  {
-    number: "02",
-    title: "Practise Psychological Tests",
-    description:
-      "Build familiarity with WAT, TAT, SCT, OPI, SRT and mechanical aptitude practice.",
-    icon: FiTarget,
-  },
-  {
-    number: "03",
-    title: "Develop Communication Skills",
-    description:
-      "Practise group discussions, lecturettes, listening, clear expression and respectful communication.",
-    icon: FiMessageSquare,
-  },
-  {
-    number: "04",
-    title: "Prepare for GTO Activities",
-    description:
-      "Learn about group tasks, planning, cooperation, initiative and responsible leadership.",
-    icon: FiUsers,
-  },
-  {
-    number: "05",
-    title: "Work on Physical Fitness",
-    description:
-      "Develop suitable stamina, mobility, balance and physical confidence through safe training.",
-    icon: FiActivity,
-  },
-  {
-    number: "06",
-    title: "Prepare for Interviews",
-    description:
-      "Reflect on your education, interests, family background, experiences, goals and general awareness.",
-    icon: FiAward,
-  },
+const obstacles = [
+  "Monkey Bridge",
+  "Tarzan Swing",
+  "Rope Climbing",
+  "Ditch Crossing",
+  "High Jump",
+  "Zig Zag",
+  "Boxing Ring",
+  "Tire Crossing",
+  "Hanging Log",
 ];
 
 // ======================================================
@@ -336,29 +361,49 @@ const officerQualities = [
 
 // ======================================================
 // FAQ CONTENT
-// Keep answers consistent with visible page content.
+// These answers are also used in the visible FAQ schema.
 // ======================================================
 
 const faqs = [
   {
     question: "What is ISSB in Pakistan?",
     answer:
-      "ISSB stands for Inter Services Selection Board. It is associated with the selection and assessment of candidates for officer-level entry into Pakistan's armed forces. Candidates should consult the relevant official armed-forces recruitment channels for current eligibility criteria, schedules and selection instructions.",
+      "ISSB stands for Inter Services Selection Board. It is the selection organization responsible for assessing candidates for officer-level entry into the Pakistan Army, Pakistan Navy and Pakistan Air Force. Its assessment system considers different aspects of a candidate's personality, abilities and potential.",
   },
   {
     question: "How can I prepare for ISSB in Pakistan?",
     answer:
-      "A balanced ISSB preparation plan can include understanding the selection process, practising psychological exercises, improving communication, learning about GTO activities, maintaining physical fitness and preparing to discuss your education, interests and personal experiences.",
+      "Start by understanding the official selection system. Develop communication skills, practise educational psychological exercises, participate in group activities, maintain physical fitness and improve general awareness. Use practice resources to become familiar with exercise formats rather than memorizing artificial responses.",
   },
   {
     question: "Which psychological tests can I practise on EXAMITICS?",
     answer:
-      "EXAMITICS provides educational practice resources for Word Association Test (WAT), Thematic Apperception Test (TAT), Sentence Completion Test (SCT), Officer Potential Inventory (OPI), Situation Reaction Test (SRT) and Mechanical Aptitude Test (MAT). These are independent practice resources, not official ISSB assessments.",
+      "EXAMITICS provides independent educational practice resources for Word Association Test (WAT), Thematic Apperception Test (TAT), Sentence Completion Test (SCT), Officer Potential Inventory (OPI), Situation Reaction Test (SRT) and Mechanical Aptitude Test (MAT). These resources are not official ISSB assessments.",
+  },
+  {
+    question: "What is the OPI test in ISSB?",
+    answer:
+      "OPI refers to Officer Potential Inventory. OPI-related practice may include questions about personal habits, preferences, attitudes and self-reflection. Candidates should understand the questions and respond honestly. EXAMITICS provides independent OPI practice resources to help candidates become familiar with this type of exercise.",
+  },
+  {
+    question: "How can I practise the OPI test online?",
+    answer:
+      "You can use the EXAMITICS OPI information page to understand the practice format and then open the online OPI practice module. Use practice to become familiar with question presentation and timing, not to memorize supposedly perfect personality answers.",
+  },
+  {
+    question: "What is the MAT test in ISSB?",
+    answer:
+      "MAT means Mechanical Aptitude Test. Mechanical aptitude practice commonly covers basic mechanical principles such as gears, levers, pulleys, force, motion and simple machines. Candidates can use these exercises to strengthen mechanical reasoning and understand how different mechanisms work.",
+  },
+  {
+    question: "How can I practise the Mechanical Aptitude Test online?",
+    answer:
+      "Start with the EXAMITICS MAT guide to understand basic mechanical concepts, then attempt the available MAT practice questions. Review mistakes and learn why the correct option works instead of relying only on memorized answers.",
   },
   {
     question: "What are GTO tasks in ISSB preparation?",
     answer:
-      "GTO preparation commonly discusses group activities and leadership-related exercises such as Group Discussion, Group Planning Exercise, Progressive Group Task, Half Group Task, Command Task, Lecturette, Individual Obstacles and Final Group Task. Candidates should refer to official guidance for current selection procedures.",
+      "GTO preparation commonly discusses group activities such as Group Discussion, Group Planning Exercise, Progressive Group Task, Half Group Task, Command Task, Lecturette, Individual Obstacles and Final Group Task. The official ISSB selection system may adjust activities according to its requirements.",
   },
   {
     question: "How can I improve my Group Discussion skills?",
@@ -368,7 +413,7 @@ const faqs = [
   {
     question: "How can I prepare for the ISSB interview?",
     answer:
-      "Reflect honestly on your educational background, family, interests, hobbies, experiences, goals and general awareness. Practise explaining your thoughts clearly and naturally rather than memorizing scripted answers.",
+      "Reflect honestly on your educational background, family, interests, hobbies, experiences, goals and general awareness. Practise explaining your thoughts clearly and naturally instead of memorizing scripted answers.",
   },
   {
     question: "Can online ISSB practice guarantee selection?",
@@ -393,15 +438,38 @@ const faqs = [
 
 const ISSB = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [carouselPaused, setCarouselPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  // Automatic hero carousel.
+  // Respect the visitor's operating-system motion preference.
   useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    const updatePreference = () => {
+      setPrefersReducedMotion(mediaQuery.matches);
+    };
+
+    updatePreference();
+
+    mediaQuery.addEventListener?.("change", updatePreference);
+
+    return () => {
+      mediaQuery.removeEventListener?.("change", updatePreference);
+    };
+  }, []);
+
+  // Automatically rotate slides only when motion is allowed.
+  useEffect(() => {
+    if (prefersReducedMotion || carouselPaused) return undefined;
+
     const interval = window.setInterval(() => {
       setActiveSlide((previous) => (previous + 1) % heroSlides.length);
-    }, 5000);
+    }, 6000);
 
     return () => window.clearInterval(interval);
-  }, []);
+  }, [prefersReducedMotion, carouselPaused]);
 
   // ====================================================
   // STRUCTURED DATA: WEBPAGE
@@ -411,10 +479,10 @@ const ISSB = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": `${PAGE_URL}#webpage`,
-    name: "ISSB Preparation in Pakistan | Complete ISSB Preparation Hub",
+    name: "ISSB Preparation in Pakistan | Online Practice Hub",
     url: PAGE_URL,
     description:
-      "Explore ISSB preparation in Pakistan with EXAMITICS. Learn about psychological test practice, GTO activities, interviews, physical preparation and candidate community resources.",
+      "Explore independent ISSB preparation resources with WAT, TAT, SCT, OPI, SRT and MAT practice, GTO preparation, interview guidance and physical fitness advice.",
     inLanguage: "en-PK",
     isPartOf: {
       "@type": "WebSite",
@@ -436,6 +504,10 @@ const ISSB = () => {
         "@type": "Thing",
         name: "ISSB GTO preparation",
       },
+      {
+        "@type": "Thing",
+        name: "ISSB online practice",
+      },
     ],
     audience: {
       "@type": "EducationalAudience",
@@ -450,6 +522,7 @@ const ISSB = () => {
 
   // ====================================================
   // STRUCTURED DATA: FAQ
+  // Matches the questions and answers visible on the page.
   // ====================================================
 
   const faqSchema = {
@@ -472,9 +545,9 @@ const ISSB = () => {
   const practiceSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "ISSB Online Preparation and Practice Resources",
+    name: "ISSB Online Practice Resources",
     description:
-      "Independent ISSB preparation and practice resources available on EXAMITICS.",
+      "Independent educational practice resources for candidates preparing for ISSB in Pakistan.",
     itemListElement: psychTests.map((test, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -483,29 +556,29 @@ const ISSB = () => {
     })),
   };
 
+  const currentSlide = heroSlides[activeSlide];
+
   return (
     <>
       <Helmet>
         {/* PRIMARY SEO */}
 
         <title>
-          ISSB Preparation in Pakistan | Online Practice & Complete Guide -
-          EXAMITICS
+          ISSB Preparation in Pakistan | Online Practice Tests | EXAMITICS
         </title>
 
         <meta
           name="description"
-          content="Prepare for ISSB in Pakistan with EXAMITICS. Explore free WAT, TAT, SCT, OPI, SRT and MAT practice, GTO preparation, interviews, physical fitness guidance and ISSB candidate community resources."
-        />
-
-        <meta
-          name="keywords"
-          content="ISSB preparation Pakistan, ISSB preparation online, ISSB mock test, ISSB psychological tests, WAT practice, TAT practice, SCT practice, OPI practice, SRT practice, MAT test, ISSB GTO tasks, ISSB interview preparation, ISSB Group Discussion, ISSB lecturette, Pakistan Army ISSB preparation, Pakistan Navy ISSB preparation, Pakistan Air Force ISSB preparation, EXAMITICS"
+          content="Prepare for ISSB in Pakistan with WAT, TAT, SCT, OPI, SRT and MAT practice, plus GTO, interview, communication and fitness guidance. Explore independent learning resources by EXAMITICS."
         />
 
         <meta name="author" content="EXAMITICS" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="language" content="English" />
+
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large"
+        />
+
         <meta name="content-language" content="en-PK" />
 
         <link rel="canonical" href={PAGE_URL} />
@@ -514,12 +587,12 @@ const ISSB = () => {
 
         <meta
           property="og:title"
-          content="ISSB Preparation in Pakistan | EXAMITICS"
+          content="ISSB Preparation in Pakistan | Online Practice | EXAMITICS"
         />
 
         <meta
           property="og:description"
-          content="Your ISSB preparation hub: psychological test practice, GTO preparation, interview guidance, physical preparation and a free candidate community."
+          content="Explore ISSB psychological test practice, GTO preparation, interview guidance and candidate learning resources with EXAMITICS."
         />
 
         <meta property="og:type" content="website" />
@@ -527,9 +600,10 @@ const ISSB = () => {
         <meta property="og:locale" content="en_PK" />
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:image" content={OG_IMAGE} />
+
         <meta
           property="og:image:alt"
-          content="EXAMITICS ISSB preparation resources"
+          content="EXAMITICS ISSB online preparation and practice resources"
         />
 
         {/* TWITTER / X */}
@@ -543,7 +617,7 @@ const ISSB = () => {
 
         <meta
           name="twitter:description"
-          content="Explore online ISSB practice tests, GTO preparation, interview guidance and candidate learning resources with EXAMITICS."
+          content="Explore WAT, TAT, SCT, OPI, SRT and MAT practice, GTO preparation and interview guidance."
         />
 
         <meta name="twitter:image" content={OG_IMAGE} />
@@ -585,8 +659,10 @@ const ISSB = () => {
               01. HERO SECTION
           ========================================== */}
 
-          <section className="issb-hero" aria-labelledby="issb-main-title">
-
+          <section
+            className="issb-hero"
+            aria-labelledby="issb-main-title"
+          >
             <div className="issb-hero-content">
 
               <div className="issb-badge exa-badge">
@@ -595,16 +671,16 @@ const ISSB = () => {
               </div>
 
               <h1 id="issb-main-title">
-                ISSB Preparation in Pakistan: Psych Tests, GTO Tasks, Interviews & Complete
-                Guidance
+                ISSB Preparation in Pakistan: Online Practice Tests,
+                GTO and Interview Guidance
               </h1>
 
               <p>
-                Prepare for the Inter Services Selection Board (ISSB) with
-                structured educational resources. Explore psychological test
-                practice, GTO activities, interview preparation, physical
-                fitness guidance and communication development for aspiring
-                armed-forces officers in Pakistan.
+                Prepare for the Inter Services Selection Board (ISSB)
+                with independent educational resources. Explore
+                psychological test practice, GTO activities, interview
+                preparation, physical fitness guidance and communication
+                development for aspiring armed-forces officers in Pakistan.
               </p>
 
               <div className="issb-hero-buttons">
@@ -613,7 +689,7 @@ const ISSB = () => {
                   href="#psych-tests"
                   className="exa-btn exa-btn-primary"
                 >
-                  Start Preparation
+                  Start Practice
                   <FiArrowRight aria-hidden="true" />
                 </a>
 
@@ -641,14 +717,14 @@ const ISSB = () => {
 
                 <span>
                   <FiCheckCircle aria-hidden="true" />
-                  Free Community
+                  Free Candidate Community
                 </span>
 
               </div>
 
             </div>
 
-            {/* AUTOMATIC IMAGE CAROUSEL */}
+            {/* LOCAL IMAGE CAROUSEL */}
 
             <div
               className="issb-hero-image-wrapper exa-card issb-hero-carousel"
@@ -659,7 +735,7 @@ const ISSB = () => {
 
                 {heroSlides.map((slide, index) => (
                   <img
-                    key={slide.image}
+                    key={slide.title}
                     src={slide.image}
                     alt={slide.alt}
                     className={`issb-hero-image issb-carousel-image ${
@@ -667,6 +743,7 @@ const ISSB = () => {
                     }`}
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchPriority={index === 0 ? "high" : "auto"}
+                    decoding="async"
                     aria-hidden={activeSlide !== index}
                   />
                 ))}
@@ -674,28 +751,51 @@ const ISSB = () => {
               </div>
 
               <div className="issb-carousel-overlay">
+
                 <span>EXAMITICS · ISSB PREPARATION</span>
-                {/* <h2>{heroSlides[activeSlide].title}</h2> */}
+
+                <h2>{currentSlide.title}</h2>
+
+                <p>{currentSlide.caption}</p>
+
               </div>
 
               <div
-                className="issb-carousel-dots"
+                className="issb-carousel-controls"
                 role="group"
-                aria-label="Choose hero image"
+                aria-label="Slideshow controls"
               >
 
-                {heroSlides.map((slide, index) => (
-                  <button
-                    key={slide.image}
-                    type="button"
-                    className={`issb-carousel-dot ${
-                      activeSlide === index ? "active" : ""
-                    }`}
-                    onClick={() => setActiveSlide(index)}
-                    aria-label={`Show slide ${index + 1}: ${slide.title}`}
-                    aria-pressed={activeSlide === index}
-                  />
-                ))}
+                <button
+                  type="button"
+                  className="issb-carousel-play"
+                  onClick={() => setCarouselPaused((previous) => !previous)}
+                  aria-label={
+                    carouselPaused
+                      ? "Resume automatic slideshow"
+                      : "Pause automatic slideshow"
+                  }
+                  aria-pressed={carouselPaused}
+                >
+                  {carouselPaused ? <FiPlay /> : <FiPause />}
+                </button>
+
+                <div className="issb-carousel-dots">
+
+                  {heroSlides.map((slide, index) => (
+                    <button
+                      key={slide.title}
+                      type="button"
+                      className={`issb-carousel-dot ${
+                        activeSlide === index ? "active" : ""
+                      }`}
+                      onClick={() => setActiveSlide(index)}
+                      aria-label={`Show slide ${index + 1}: ${slide.title}`}
+                      aria-pressed={activeSlide === index}
+                    />
+                  ))}
+
+                </div>
 
               </div>
 
@@ -723,28 +823,83 @@ const ISSB = () => {
               </span>
 
               <h2 id="issb-quick-answer-title">
-                What is ISSB in Pakistan?
+                What Is ISSB Preparation?
               </h2>
 
               <p>
-                ISSB stands for Inter Services Selection Board. It is
-                associated with the selection and assessment of candidates
-                seeking officer-level entry into Pakistan's armed forces.
-                Preparation can involve psychological exercises, group
-                activities, interviews, communication skills and physical
-                readiness. EXAMITICS provides independent educational
-                resources to help candidates practise and understand these
-                preparation areas.
+                ISSB preparation means developing the knowledge, skills
+                and personal readiness needed for the Inter Services
+                Selection Board assessment. It may include becoming
+                familiar with psychological exercises, improving
+                communication, participating in group activities,
+                developing physical fitness and learning to express
+                your experiences honestly. The official ISSB selection
+                system evaluates candidates through different assessment
+                activities; online practice is only a supplementary
+                learning resource.
               </p>
 
-              <Link to="/issbguide" className="issb-inline-link">
-                Read the Complete ISSB Selection Guide
+              <Link
+                to="/issbguide"
+                className="issb-inline-link"
+              >
+                Understand the Complete ISSB Selection Process
                 <FiArrowRight aria-hidden="true" />
               </Link>
 
             </div>
 
           </section>
+
+          {/* OFFICIAL GUIDANCE / TRUST */}
+
+          <aside
+            className="issb-official-guidance"
+            aria-label="Official ISSB guidance"
+          >
+
+            <div className="issb-official-guidance-icon">
+              <FiShield aria-hidden="true" />
+            </div>
+
+            <div className="issb-official-guidance-content">
+
+              <h2>Use Practice Resources Responsibly</h2>
+
+              <p>
+                The official ISSB guidelines emphasize honesty,
+                natural behaviour, clear thinking, communication and
+                participation. They caution candidates against artificial
+                behaviour and superficial preparation. Use online
+                exercises to understand formats and improve skills,
+                not to memorize supposedly perfect answers.
+              </p>
+
+              <div className="issb-official-guidance-links">
+
+                <a
+                  href={OFFICIAL_ISSB_GUIDELINES}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Official ISSB Guidelines
+                  <FiExternalLink aria-hidden="true" />
+                </a>
+
+                <a
+                  href={OFFICIAL_ISSB_SELECTION_SYSTEM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Official Selection System
+                  <FiExternalLink aria-hidden="true" />
+                </a>
+
+              </div>
+
+            </div>
+
+          </aside>
 
           {/* ==========================================
               03. STICKY SECTION NAVIGATION
@@ -760,6 +915,7 @@ const ISSB = () => {
             <a href="#gto-preparation">GTO Tasks</a>
             <a href="#physical-preparation">Physical</a>
             <a href="#interview-preparation">Interviews</a>
+            <a href="#officer-qualities">Qualities</a>
             <a href="#issb-community">Community</a>
             <a href="#issb-faq">FAQs</a>
 
@@ -786,10 +942,10 @@ const ISSB = () => {
               </h2>
 
               <p>
-                A balanced approach to ISSB preparation combines psychological
-                practice, communication, teamwork, physical readiness and
-                personal reflection. Use this roadmap to organize your
-                preparation.
+                A balanced approach to ISSB preparation combines
+                psychological practice, communication, teamwork,
+                physical readiness and personal reflection.
+                Use this roadmap to organize your preparation.
               </p>
 
             </div>
@@ -850,10 +1006,10 @@ const ISSB = () => {
               </h2>
 
               <p>
-                Explore the different psychological practice modules available
-                on EXAMITICS. Each test card provides two options: learn about
-                the test through its informational page or open the interactive
-                practice experience.
+                Explore the psychological practice resources available
+                on EXAMITICS. Each test card provides two separate options:
+                learn about the test through its informational page or
+                open the corresponding practice experience.
               </p>
 
             </div>
@@ -873,6 +1029,7 @@ const ISSB = () => {
                       src={test.image}
                       alt={`${test.subtitle} preparation and practice`}
                       loading="lazy"
+                      decoding="async"
                     />
 
                     <span className="psych-card-label">
@@ -932,8 +1089,8 @@ const ISSB = () => {
                 <h3>Improve Your Mental Calculation Skills</h3>
 
                 <p>
-                  Develop numerical confidence and calculation speed with
-                  additional EXAMITICS practice tools.
+                  Develop numerical confidence and calculation speed
+                  with additional EXAMITICS practice tools.
                 </p>
 
               </div>
@@ -951,6 +1108,7 @@ const ISSB = () => {
                       src={tool.image}
                       alt="Quick Math mental mathematics practice"
                       loading="lazy"
+                      decoding="async"
                     />
 
                     <div>
@@ -1016,8 +1174,8 @@ const ISSB = () => {
               <p>
                 GTO preparation focuses on understanding group activities,
                 communication, cooperation, planning and responsible
-                leadership. Explore the commonly discussed activities below
-                as part of your learning.
+                leadership. Explore the commonly discussed activities
+                below as part of your learning.
               </p>
 
             </div>
@@ -1028,7 +1186,6 @@ const ISSB = () => {
                 const Icon = task.icon;
 
                 return (
-
                   <article
                     className="issb-gto-card exa-card"
                     key={task.short}
@@ -1049,7 +1206,6 @@ const ISSB = () => {
                     <p>{task.description}</p>
 
                   </article>
-
                 );
               })}
 
@@ -1061,9 +1217,10 @@ const ISSB = () => {
 
               <p>
                 These descriptions are educational preparation guidance.
-                Always consult relevant official recruitment instructions for
-                authoritative information about the current ISSB selection
-                process.
+                ISSB states that the design and structure of selection
+                activities may be adjusted according to its requirements.
+                Always consult official instructions for authoritative
+                information about the current selection process.
               </p>
 
             </div>
@@ -1114,8 +1271,9 @@ const ISSB = () => {
               </div>
 
               <p className="issb-physical-note">
-                Train progressively, use appropriate supervision and avoid
-                attempting hazardous obstacles without proper facilities.
+                Train progressively, use appropriate supervision and
+                avoid attempting hazardous obstacles without suitable
+                facilities and safety measures.
               </p>
 
             </div>
@@ -1126,6 +1284,7 @@ const ISSB = () => {
                 src="https://images.unsplash.com/photo-1517466787929-bc90951d0974"
                 alt="Outdoor physical training and team fitness preparation"
                 loading="lazy"
+                decoding="async"
               />
 
             </div>
@@ -1155,8 +1314,8 @@ const ISSB = () => {
               <p>
                 Prepare to communicate clearly and honestly about your
                 background, interests, experiences, goals and general
-                awareness. Focus on self-understanding instead of memorizing
-                artificial answers.
+                awareness. Focus on self-understanding instead of
+                memorizing artificial answers.
               </p>
 
             </div>
@@ -1177,11 +1336,9 @@ const ISSB = () => {
                 </p>
 
                 <ul>
-
                   {interviewTopics.map((topic) => (
                     <li key={topic}>{topic}</li>
                   ))}
-
                 </ul>
 
               </article>
@@ -1196,7 +1353,8 @@ const ISSB = () => {
 
                 <p>
                   Develop self-awareness and practise explaining your
-                  experiences, decisions, behavior and personal development.
+                  experiences, decisions, behaviour and personal
+                  development.
                 </p>
 
                 <ul>
@@ -1239,8 +1397,8 @@ const ISSB = () => {
               </h2>
 
               <p>
-                Build habits that support responsible behavior, teamwork,
-                effective communication and personal growth.
+                Build habits that support responsible behaviour,
+                teamwork, effective communication and personal growth.
               </p>
 
             </div>
@@ -1307,9 +1465,10 @@ const ISSB = () => {
 
                 <p className="issb-community-intro">
                   Join fellow ISSB candidates on WhatsApp for preparation
-                  discussions, learning resources, lecturette, public speaking
-                  and Group Discussion (GD) practice. Share ideas, improve
-                  communication and learn together in a supportive environment.
+                  discussions, learning resources, lecturette, public
+                  speaking and Group Discussion (GD) practice. Share
+                  ideas, improve communication and learn together in
+                  a supportive environment.
                 </p>
 
                 <div className="issb-community-features">
@@ -1419,7 +1578,7 @@ const ISSB = () => {
 
             </div>
 
-            {/* COMMUNITY AUDIO */}
+            {/* EXISTING COMMUNITY AUDIO PLAYER */}
 
             <ISSBCommunityAudio />
 
@@ -1446,8 +1605,9 @@ const ISSB = () => {
               </h2>
 
               <p>
-                Consistent preparation, self-awareness and practical learning
-                are more useful than relying on memorized answers or shortcuts.
+                Consistent preparation, self-awareness and practical
+                learning are more useful than relying on memorized
+                answers or shortcuts.
               </p>
 
             </div>
@@ -1461,8 +1621,8 @@ const ISSB = () => {
                 <h3>Follow a Consistent Routine</h3>
 
                 <p>
-                  Set aside regular time for psychological practice, reading,
-                  physical activity and communication development.
+                  Set aside regular time for psychological practice,
+                  reading, physical activity and communication development.
                 </p>
 
               </article>
@@ -1474,8 +1634,9 @@ const ISSB = () => {
                 <h3>Practise Communication</h3>
 
                 <p>
-                  Participate in discussions, listen carefully and practise
-                  explaining your thoughts in clear and natural language.
+                  Participate in discussions, listen carefully and
+                  practise explaining your thoughts in clear and
+                  natural language.
                 </p>
 
               </article>
@@ -1487,8 +1648,9 @@ const ISSB = () => {
                 <h3>Develop Self-Awareness</h3>
 
                 <p>
-                  Reflect on your strengths, weaknesses, habits, decisions and
-                  experiences. Focus on genuine personal improvement.
+                  Reflect on your strengths, weaknesses, habits,
+                  decisions and experiences. Focus on genuine
+                  personal improvement.
                 </p>
 
               </article>
@@ -1532,8 +1694,8 @@ const ISSB = () => {
 
               <p>
                 Find answers to common questions about ISSB preparation,
-                psychological practice, GTO activities, interviews and
-                EXAMITICS learning resources.
+                OPI, MAT, psychological practice, GTO activities,
+                interviews and EXAMITICS learning resources.
               </p>
 
             </div>
@@ -1585,9 +1747,10 @@ const ISSB = () => {
             </h2>
 
             <p>
-              Explore psychological practice tests, understand GTO activities,
-              prepare for interviews and connect with fellow candidates.
-              Build your preparation step by step with EXAMITICS.
+              Explore psychological practice tests, understand GTO
+              activities, prepare for interviews and connect with
+              fellow candidates. Build your preparation step by
+              step with EXAMITICS.
             </p>
 
             <div className="issb-cta-actions">
@@ -1604,17 +1767,18 @@ const ISSB = () => {
                 to="/issbguide"
                 className="exa-btn exa-btn-outline issb-cta-button"
               >
-                Read ISSB Guide
+                Read Complete ISSB Guide
                 <FiBookOpen aria-hidden="true" />
               </Link>
 
             </div>
 
             <p className="issb-disclaimer">
-              EXAMITICS is an independent educational platform and is not
-              affiliated with or endorsed by the Inter Services Selection Board
-              or Pakistan's armed forces. Practice resources do not guarantee
-              selection.
+              EXAMITICS is an independent educational platform and is
+              not affiliated with or endorsed by the Inter Services
+              Selection Board or Pakistan's armed forces. Practice
+              resources do not represent official assessments and
+              cannot guarantee selection.
             </p>
 
           </section>

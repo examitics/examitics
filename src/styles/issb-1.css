@@ -2522,3 +2522,241 @@
     min-height: 225px;
   }
 }
+
+
+/* =====================================================
+   ISSB PAGE IMPROVEMENTS
+   Append to the bottom of src/styles/issb-1.css
+===================================================== */
+
+/* HERO IMAGE SIZE */
+
+.issb-page .issb-hero-image-wrapper {
+  min-height: 0;
+  height: clamp(300px, 36vw, 460px);
+  position: relative;
+}
+
+.issb-page .issb-hero-image {
+  min-height: 0;
+  height: 100%;
+}
+
+.issb-page .issb-carousel-images {
+  min-height: 0;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+/* CAROUSEL OVERLAY */
+
+.issb-page .issb-carousel-overlay {
+  padding: 80px 25px 70px;
+}
+
+.issb-page .issb-carousel-overlay h2 {
+  max-width: 520px;
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: clamp(19px, 2.5vw, 27px);
+  line-height: 1.3;
+}
+
+.issb-page .issb-carousel-overlay p {
+  margin: 0;
+  color: #dbeafe;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* CAROUSEL CONTROLS */
+
+.issb-carousel-controls {
+  position: absolute;
+  z-index: 4;
+  right: 18px;
+  bottom: 17px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.issb-carousel-play {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  background: rgba(15, 39, 71, 0.72);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+.issb-carousel-play:hover {
+  background: #fff;
+  color: #0f2747;
+}
+
+.issb-carousel-play:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.issb-page .issb-carousel-dots {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* OFFICIAL ISSB GUIDANCE PANEL */
+
+.issb-official-guidance {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin: 0 0 45px;
+  padding: 23px 25px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.issb-official-guidance-icon {
+  display: flex;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 12px;
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+  font-size: 21px;
+}
+
+.issb-official-guidance-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.issb-official-guidance h2 {
+  margin: 0 0 9px;
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.issb-official-guidance p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.issb-official-guidance-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin-top: 14px;
+}
+
+.issb-official-guidance-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.issb-official-guidance-links a:hover {
+  text-decoration: underline;
+}
+
+.issb-official-guidance-links svg {
+  font-size: 13px;
+}
+
+/* RESPONSIVE HERO */
+
+@media (max-width: 992px) {
+  .issb-page .issb-hero-image-wrapper {
+    height: clamp(280px, 52vw, 420px);
+  }
+}
+
+@media (max-width: 600px) {
+  .issb-page .issb-hero-image-wrapper {
+    height: 280px;
+  }
+
+  .issb-page .issb-carousel-overlay {
+    padding: 65px 18px 65px;
+  }
+
+  .issb-carousel-controls {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+  }
+
+  .issb-official-guidance {
+    gap: 12px;
+    margin-bottom: 35px;
+    padding: 17px;
+  }
+
+  .issb-official-guidance-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: 18px;
+  }
+
+  .issb-official-guidance h2 {
+    font-size: 16px;
+  }
+
+  .issb-official-guidance p {
+    font-size: 12px;
+  }
+
+  .issb-official-guidance-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .issb-page .issb-hero-image-wrapper {
+    height: 250px;
+  }
+
+  .issb-page .issb-carousel-overlay h2 {
+    font-size: 18px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .issb-page .issb-carousel-image {
+    transition: none !important;
+  }
+
+  .issb-carousel-play {
+    transition: none !important;
+  }
+}
