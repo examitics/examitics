@@ -1,106 +1,172 @@
-// import React from "react";
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
-import "../../styles/footer.css";
-import logo from "../../assets/logos/examitics-logo.png";
 import {
   FiFacebook,
   FiInstagram,
-  FiTwitter,
-  FiLinkedin,
+  FiMessageCircle,
   FiArrowUpRight,
+  FiBookOpen,
+  FiTarget,
+  FiGrid,
+  FiShield,
+  FiStar,
+  FiSend,
+  FiChevronDown,
+  FiCheckCircle,
 } from "react-icons/fi";
+
+import logo from "../../assets/logos/examitics-logo.png";
+import "../../styles/footer.css";
+
+const FEEDBACK_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbyZLhwG2Ezp2ZrfJIErZG-6teJg8rLYRUUiTdy7lWyYl5CG1S_Bkp9B_PD7aYpqDPEXtg/exec";
+
+const WHATSAPP_URL = "https://wa.me/923014709158";
 
 const Footer = () => {
   const [rating, setRating] = useState(0);
   const [feedback, setFeedback] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+
+  const currentYear = new Date().getFullYear();
 
   const handleFeedbackSubmit = async (e) => {
     e.preventDefault();
 
     if (!rating) {
-      setMessage("Please select a rating.");
+      setMessageType("error");
+      setMessage("Please select a rating before submitting.");
       return;
     }
 
     if (!feedback.trim()) {
-      setMessage("Please enter feedback.");
+      setMessageType("error");
+      setMessage("Please write a short feedback message.");
       return;
     }
 
     try {
       setLoading(true);
       setMessage("");
+      setMessageType("");
 
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyZLhwG2Ezp2ZrfJIErZG-6teJg8rLYRUUiTdy7lWyYl5CG1S_Bkp9B_PD7aYpqDPEXtg/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "text/plain",
-          },
-          body: JSON.stringify({
-            name: name.trim() || "Anonymous",
-            email: email.trim() || "Not provided",
-            rating,
-            feedback,
-          }),
+      await fetch(FEEDBACK_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
         },
+        body: JSON.stringify({
+          name: name.trim() || "Anonymous",
+          email: email.trim() || "Not provided",
+          rating,
+          feedback: feedback.trim(),
+          source: "Website Footer",
+          submittedAt: new Date().toISOString(),
+        }),
+      });
+
+      // no-cors responses are opaque, so the browser cannot verify
+      // whether the Google Apps Script processed the submission.
+      setMessageType("success");
+      setMessage(
+        "Thank you for sharing your feedback with EXAMITICS."
       );
-
-      const result = await response.text();
-
-      console.log("Feedback Response:", result);
-
-      setMessage("Thank you for your feedback!");
 
       setRating(0);
       setFeedback("");
+      setName("");
+      setEmail("");
     } catch (error) {
-      console.error(error);
-      setMessage("Failed to submit feedback. Please try again.");
+      setMessageType("error");
+      setMessage(
+        "We couldn't submit your feedback. Please try again."
+      );
     } finally {
       setLoading(false);
     }
   };
+
+  const exploreLinks = [
+    { label: "Home", to: "/" },
+    { label: "Explore All Exams", to: "/exams" },
+    { label: "Mock Test Center", to: "/mock" },
+    { label: "Knowledge Hub", to: "/knowledgehub" },
+    { label: "Notes Hub", to: "/notes" },
+    { label: "More Tools", to: "/more" },
+  ];
+
+  const preparationLinks = [
+    { label: "PMA Long Course", to: "/mock/pma-lc" },
+    { label: "PAF Initial Test", to: "/mock/paf" },
+    { label: "Pakistan Navy", to: "/mock/navy" },
+    { label: "AFNS Preparation", to: "/mock/afns" },
+    { label: "ISSB Preparation", to: "/issb-1" },
+    { label: "ISSB Comprehensive Guide", to: "/issbguide" },
+  ];
+
+  const resourceLinks = [
+    { label: "OPI Practice", to: "/opi" },
+    { label: "WAT Practice", to: "/wat" },
+    { label: "TAT Practice", to: "/tat" },
+    { label: "SCT Practice", to: "/sct" },
+    { label: "SRT Practice", to: "/srt" },
+    { label: "Premium Plans", to: "/premium/plans" },
+  ];
+
+  const toolLinks = [
+    { label: "Age Calculator", to: "/more/age-calculator" },
+    { label: "BMI Calculator", to: "/more/bmi-calculator" },
+    { label: "Unit Converter", to: "/more/unit-converter" },
+    { label: "GPA Calculator", to: "/more/gpa-calculator" },
+    { label: "Percentage Calculator", to: "/more/percentage-calculator" },
+    { label: "Quick Math", to: "/quick-math/setup" },
+  ];
+
+  const renderLinks = (links) =>
+    links.map((item) => (
+      <Link key={item.label} to={item.to}>
+        {item.label}
+        <FiArrowUpRight className="exa-footer-link-icon" />
+      </Link>
+    ));
+
   return (
-    <footer className="footer">
-      <div className="container-custom">
-        {/* =====================================
-            TOP
-        ===================================== */}
+    <footer className="exa-footer">
+      <div className="exa-footer-container">
 
-        <div className="footer-top">
-          {/* BRAND */}
+        {/* TOP BRAND SECTION */}
+        <div className="exa-footer-top">
 
-          <div className="footer-brand">
-            <div className="footer-logo">
-              <span>
-                <img src={logo} alt="Examitics Logo" />
-              </span>
+          <div className="exa-footer-brand">
+
+            <Link to="/" className="exa-footer-logo">
+              <img src={logo} alt="EXAMITICS - Armed Forces Preparation Platform" />
+            </Link>
+
+            <div className="exa-footer-brand-name">
+              <h2>EXAMITICS</h2>
+              <span>Preparation. Practice. Performance.</span>
             </div>
 
-            <h3>Examitics</h3>
-
-            <p>
-              Examitics is a modern MCQ-based preparation platform designed for
-              disciplined learning, competitive exams, and intelligent
-              performance tracking.
+            <p className="exa-footer-description">
+              A comprehensive preparation platform for Pakistan Armed
+              Forces aspirants. Prepare for initial tests, practice
+              psychological assessments, strengthen your knowledge and
+              develop the confidence to move forward.
             </p>
 
-            {/* SOCIALS */}
-
-            <div className="footer-socials">
+            <div className="exa-footer-socials">
               <a
                 href="https://www.facebook.com/profile.php?id=61593908024099"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="EXAMITICS on Facebook"
               >
                 <FiFacebook />
               </a>
@@ -109,163 +175,236 @@ const Footer = () => {
                 href="https://www.instagram.com/examitics/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="EXAMITICS on Instagram"
               >
                 <FiInstagram />
               </a>
 
-              {/* <a href="#">
-                <FiTwitter />
-              </a> */}
-
-              {/* <a href="#">
-                <FiLinkedin />
-              </a> */}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contact EXAMITICS on WhatsApp"
+              >
+                <FiMessageCircle />
+              </a>
             </div>
+
           </div>
 
-          {/* LINKS */}
+          {/* NAVIGATION COLUMNS */}
+          <div className="exa-footer-navigation">
 
-          <div className="footer-links-wrapper">
-            {/* QUICK LINKS */}
+            <div className="exa-footer-column">
+              <div className="exa-footer-column-heading">
+                <FiGrid />
+                <h3>Explore</h3>
+              </div>
 
-            <div className="footer-links">
-              <h4>Quick Links</h4>
-
-              <a href="/">Home</a>
-              <a href="/exams">Exams</a>
-              {/* <a href="#features">Features</a> */}
-              <a href="/mock">Mock Tests</a>
+              {renderLinks(exploreLinks)}
             </div>
 
-            {/* EXAMS */}
+            <div className="exa-footer-column">
+              <div className="exa-footer-column-heading">
+                <FiShield />
+                <h3>Preparation</h3>
+              </div>
 
-            <div className="footer-links">
-              <h4>Exam Categories</h4>
-
-              <a href="/pma-lc">PMA Long Course</a>
-              <a href="/issb-1">ISSB Preparation</a>
-              {/* <a href="">PAF Initial Test</a> */}
-              {/* <a href="">Navy Initial Test</a> */}
+              {renderLinks(preparationLinks)}
             </div>
 
-            {/* PLATFORM */}
+            <div className="exa-footer-column">
+              <div className="exa-footer-column-heading">
+                <FiBookOpen />
+                <h3>Resources</h3>
+              </div>
 
-            <div className="footer-links">
-              <h4>Platform</h4>
-
-              {/* <a href="/issb-1#psych-tests">Psychological Tests</a> */}
-              {/* <Link to="#psych-tests">Psychological-Tests</Link> */}
-              {/* <a href="#analytics">Performance Tracking</a> */}
-              <a href="/mock">Practice MCQs</a>
-              <a href="/opi">OPI Test</a>
-              <a href="/knowledgehub">Knowledge Hub</a>
+              {renderLinks(resourceLinks)}
             </div>
+
+            <div className="exa-footer-column">
+              <div className="exa-footer-column-heading">
+                <FiTarget />
+                <h3>Tools</h3>
+              </div>
+
+              {renderLinks(toolLinks)}
+            </div>
+
           </div>
         </div>
 
-        {/* =====================================
-            NEWSLETTER
-        ===================================== */}
+        {/* SUPPORT CTA */}
+        <div className="exa-footer-support">
 
-        <div className="footer-newsletter">
-          <div>
-            <h3>Stay Updated with Examitics</h3>
+          <div className="exa-footer-support-content">
+            <span className="exa-footer-eyebrow">
+              NEED ASSISTANCE?
+            </span>
+
+            <h3>We're here to help you prepare.</h3>
 
             <p>
-              Receive platform updates, new exam categories, and preparation
-              resources directly.
+              Have a question about preparation, mock tests or Premium
+              access? Get in touch with the EXAMITICS team.
             </p>
           </div>
 
-          <form className="footer-form">
-            <input type="email" placeholder="Enter your email" />
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="exa-footer-support-button"
+          >
+            <FiMessageCircle />
+            Contact on WhatsApp
+            <FiArrowUpRight />
+          </a>
 
-            <button type="submit">
-              Subscribe
-              <FiArrowUpRight />
-            </button>
-          </form>
         </div>
 
-        {/* =====================================
-            Feedback
-        ===================================== */}
+        {/* FEEDBACK SECTION */}
+        <details className="exa-footer-feedback">
 
-        <div
-          className="footer-newsletter feedback-section"
-          id="feedback-section"
-        >
-          <div>
-            <h3>Share your Feedback with Examitics</h3>
+          <summary>
+            <span className="exa-footer-feedback-title">
+              <FiStar />
+              Share your experience with EXAMITICS
+            </span>
 
-            <p>Help us improve by sharing your experience and suggestions.</p>
-          </div>
+            <span className="exa-footer-feedback-toggle">
+              Share Feedback
+              <FiChevronDown />
+            </span>
+          </summary>
 
-          <form className="footer-form" onSubmit={handleFeedbackSubmit}>
-            {" "}
-            <div className="feedback-card">
-              <h3>Share Your Feedback</h3>
-              <p>Help us improve EXAMITICS</p>
+          <div className="exa-footer-feedback-content feedback-section"  >
 
-              {/* NAME */}
-              <input
-                type="text"
-                placeholder="Your name (optional)"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
+            <div className="exa-footer-feedback-intro">
+              <h3>Your feedback helps us improve.</h3>
+              <p>
+                Tell us about your experience and suggest what we
+                should improve next.
+              </p>
+            </div>
 
-              {/* EMAIL */}
-              <input
-                type="email"
-                placeholder="Your email (optional)"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+            <form
+              className="exa-footer-feedback-form"
+              onSubmit={handleFeedbackSubmit}
+            >
 
-              {/* RATING */}
-              <div className="feedback-rating">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <FaStar
-                    key={star}
-                    className={`star ${star <= rating ? "active" : ""}`}
-                    onClick={() => setRating(star)}
-                  />
-                ))}
+              <div className="exa-footer-feedback-fields">
+
+                <input
+                  type="text"
+                  placeholder="Your name (optional)"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  maxLength={100}
+                  autoComplete="name"
+                />
+
+                <input
+                  type="email"
+                  placeholder="Your email (optional)"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  maxLength={150}
+                  autoComplete="email"
+                />
+
               </div>
 
-              {/* FEEDBACK TEXT */}
+              <div className="exa-footer-rating">
+
+                <span>How would you rate EXAMITICS?</span>
+
+                <div className="exa-footer-stars">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      className={
+                        star <= rating
+                          ? "exa-footer-star active"
+                          : "exa-footer-star"
+                      }
+                      onClick={() => setRating(star)}
+                      aria-label={`Rate ${star} out of 5`}
+                      aria-pressed={rating === star}
+                    >
+                      <FiStar />
+                    </button>
+                  ))}
+                </div>
+
+              </div>
+
               <textarea
+                placeholder="Share your suggestions or experience..."
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
-                placeholder="Write your feedback..."
-                rows="4"
+                rows={4}
+                maxLength={2000}
+                required
               />
 
-              {/* BUTTON */}
-              <button onClick={handleFeedbackSubmit} disabled={loading}>
-                {loading ? "Submitting..." : "Send Feedback"}
-              </button>
+              <div className="exa-footer-feedback-submit">
 
-              {/* MESSAGE */}
-              {message && <p className="feedback-message">{message}</p>}
-            </div>
-          </form>
-        </div>
+                <span className="exa-footer-feedback-note">
+                  Your feedback helps us build a better platform.
+                </span>
 
-        {/* =====================================
-            BOTTOM
-        ===================================== */}
+                <button type="submit" disabled={loading}>
+                  {loading ? (
+                    "Submitting..."
+                  ) : (
+                    <>
+                      Send Feedback
+                      <FiSend />
+                    </>
+                  )}
+                </button>
 
-        <div className="footer-bottom">
-          <p>© 2026 Examitics. All rights reserved.</p>
+              </div>
 
-          <div className="footer-bottom-links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
+              {message && (
+                <p
+                  className={`exa-footer-feedback-message ${messageType}`}
+                  role="status"
+                  aria-live="polite"
+                >
+                  {messageType === "success" && <FiCheckCircle />}
+                  {message}
+                </p>
+              )}
 
-            <Link to="/terms-conditions">Terms & Conditions</Link>
+            </form>
           </div>
+
+        </details>
+
+        {/* FOOTER BOTTOM */}
+        <div className="exa-footer-bottom">
+
+          <div className="exa-footer-copyright">
+            <span>
+              © {currentYear} EXAMITICS. All rights reserved.
+            </span>
+
+            <span className="exa-footer-tagline">
+              Built for aspirants. Focused on progress.
+            </span>
+          </div>
+
+          <div className="exa-footer-legal">
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-conditions">Terms & Conditions</Link>
+            <Link to="/premium/plans">Premium Plans</Link>
+          </div>
+
         </div>
+
       </div>
     </footer>
   );
