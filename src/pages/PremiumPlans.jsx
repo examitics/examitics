@@ -12,6 +12,8 @@ import {
   FiHeadphones,
   FiRefreshCw,
 } from "react-icons/fi";
+import Navbar from "../components/layout/navbar";
+import Footer from "../components/layout/footer";
 import { useAuth } from "../context/AuthContext";
 import "../styles/PremiumPlans.css";
 import DefenceDayCountdown from "../components/DefenceDayCountdown";
@@ -52,18 +54,10 @@ function PremiumPlans() {
   };
 
   return (
+    <>
+    <Navbar />
     <main className="premium-plans-page">
       <div className="premium-plans-container">
-
-        {/* Back */}
-        <button
-          type="button"
-          className="premium-plans-back-btn"
-          onClick={handleBack}
-        >
-          <FiArrowLeft />
-          Back to Premium
-        </button>
 
         {/* Header */}
         <section className="premium-plans-header">
@@ -120,12 +114,12 @@ function PremiumPlans() {
 
             <div className="premium-plan-price">
   <span className="premium-original-price">
-    {/* Rs. 1,500 */}
+    Rs. 1,500
   </span>
 
   <div className="premium-current-price">
     <span className="premium-currency">Rs.</span>
-    <strong>1,500</strong>
+    <strong>500</strong>
     <span className="premium-period">/ month</span>
   </div> 
 </div>
@@ -158,7 +152,7 @@ function PremiumPlans() {
 
               <li>
                 <FiCheck />
-                Premium WhatsApp community
+                Premium Notes Hub page access
               </li>
 
               <li>
@@ -557,6 +551,8 @@ function PremiumPlans() {
 
       </div>
     </main>
+    <Footer />
+    </>
   );
 }
 

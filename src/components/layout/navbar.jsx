@@ -341,6 +341,14 @@ const Navbar = () => {
   More Tools
   <span className="exa-new-badge">NEW</span>
 </Link>
+<Link
+  to="/premium/plans"
+  className="exa-premium-link"
+  onClick={handleNavigation}
+>
+  Pricing
+
+</Link>
           </nav>
 
           {/* =================================================
