@@ -912,7 +912,6 @@ PREMIUM PMA VERBAL MOCK TEST 4
         {/* Add more routes for other exams as needed */}
       </Routes>
       <FloatingFeedback />
-      <AnnouncementBar />
       <DefenceDayOfferPopup />
     </>
   );

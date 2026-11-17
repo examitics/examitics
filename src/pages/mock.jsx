@@ -348,7 +348,7 @@ const whatsappUrl =
             </section>
 
 {/* MONTHLY PREMIUM SUBSCRIPTION OFFER */}
-{shouldShowPreparationMessage && (
+{/* {shouldShowPreparationMessage && (
   <section
     className="mock-prep-card"
     aria-labelledby="mock-prep-title"
@@ -466,7 +466,7 @@ const whatsappUrl =
       </Link>
     </div>
   </section>
-)}
+)} */}
 
             {/* MOCK RULES */}
             <div className="mock-rules-grid">
