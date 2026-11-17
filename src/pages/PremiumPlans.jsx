@@ -543,10 +543,10 @@ function PremiumPlans() {
         <div className="premium-plans-note">
           <FiShield />
 
-          <span>
+          {/* <span>
             Premium access is securely linked to your Examitics
             account. Never share your password or OTP with anyone.
-          </span>
+          </span> */}
         </div>
 
       </div>
