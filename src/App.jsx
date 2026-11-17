@@ -92,7 +92,7 @@ import GlobalCurrentAffairs from "./pages/notes/GlobalCurrentAffairs";
 import PakistanAffairs from "./pages/notes/PakistanAffairs";
 
 import ScrollToTop from "./components/common/ScrollToTop";
-import FloatingFeedback from "./components/common/FloatingFeedback";
+// import FloatingFeedback from "./components/common/FloatingFeedback";
 import { usePageTracking } from "./analytics/usePageTracking";
 
 import SecurityProtection from "./components/SecurityProtection";
@@ -911,7 +911,7 @@ PREMIUM PMA VERBAL MOCK TEST 4
         />
         {/* Add more routes for other exams as needed */}
       </Routes>
-      <FloatingFeedback />
+      {/* <FloatingFeedback /> */}
       <DefenceDayOfferPopup />
     </>
   );
