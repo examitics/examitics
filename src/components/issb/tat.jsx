@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useRef } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 
 import "../../styles/tat.css";
 import tatSets from "../../data/tat";
@@ -10,65 +10,45 @@ const TAT = ({ closeTAT }) => {
   // =========================
 
   const [showModal, setShowModal] = useState(true);
-
   const [countdown, setCountdown] = useState(null);
-
   const [testStarted, setTestStarted] = useState(false);
-
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const [phase, setPhase] = useState("observation");
-
   const [timeLeft, setTimeLeft] = useState(0);
-
   const [testCompleted, setTestCompleted] = useState(false);
-
   const [selectedSet, setSelectedSet] = useState([]);
-
-  const [lastSetIndex, setLastSetIndex] = useState(null);
 
   // Current Story
   const currentItem = selectedSet?.[currentIndex];
 
+  // Sounds
   const startSound = useRef(new Audio("/sounds/buzzer.mp3"));
-
   const beepSound = useRef(new Audio("/sounds/beep.mp3"));
-
   const buzzerSound = useRef(new Audio("/sounds/buzzer.mp3"));
 
   // =========================
-  // START TEST
+  // START SELECTED TEST
   // =========================
 
-  const handleStartTest = () => {
-    // Safety Check
-    if (!tatSets.length) return;
+  const handleStartTest = (setIndex) => {
+    const chosenSet = tatSets[setIndex];
 
-    let randomIndex;
+    if (!chosenSet || !chosenSet.length) return;
 
-    // Prevent same set appearing twice consecutively
-    do {
-      randomIndex = Math.floor(Math.random() * tatSets.length);
-    } while (tatSets.length > 1 && randomIndex === lastSetIndex);
+    // Select candidate's chosen set
+    setSelectedSet(chosenSet);
 
-    setLastSetIndex(randomIndex);
-
-    setSelectedSet(tatSets[randomIndex]);
-
-    // Reset Complete Test State
+    // Reset test state
     setCurrentIndex(0);
-
     setTestCompleted(false);
-
     setTestStarted(false);
-
     setPhase("observation");
-
     setTimeLeft(0);
 
-    // Start Countdown
+    // Close selection modal
     setShowModal(false);
 
+    // Start countdown
     setCountdown(3);
   };
 
@@ -79,31 +59,15 @@ const TAT = ({ closeTAT }) => {
   useEffect(() => {
     if (countdown === null) return;
 
-    // if (countdown === 0) {
-    //   if (!currentItem) return;
-
-    //   setTestStarted(true);
-
-    //   setPhase("observation");
-
-    //   setTimeLeft(currentItem.observationTime);
-
-    //   setCountdown(null);
-
-    //   return;
-    // }
-
     if (countdown === 0) {
-      startSound.current.play();
+      startSound.current.currentTime = 0;
+      startSound.current.play().catch(() => {});
 
       if (!currentItem) return;
 
       setTestStarted(true);
-
       setPhase("observation");
-
       setTimeLeft(currentItem.observationTime);
-
       setCountdown(null);
 
       return;
@@ -125,69 +89,42 @@ const TAT = ({ closeTAT }) => {
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
-        // Phase Ends
+        // Current phase has ended
         if (prev === 1) {
-          // Observation → Writing
-
-          // if (phase === "observation") {
-          //   setPhase("writing");
-
-          //   return currentItem.writingTime;
-          // }
+          // Observation -> Writing
           if (phase === "observation") {
             beepSound.current.currentTime = 0;
-
-            beepSound.current.play();
+            beepSound.current.play().catch(() => {});
 
             setPhase("writing");
 
             return currentItem.writingTime;
           }
 
-          // Writing → Next Story
+          // Writing -> Next Story
           if (phase === "writing") {
-            // Last Story Finished
-            // if (currentIndex === selectedSet.length - 1) {
-            //   setTestCompleted(true);
+            buzzerSound.current.currentTime = 0;
+            buzzerSound.current.play().catch(() => {});
 
-            //   clearInterval(timer);
+            // Last story completed
+            if (currentIndex === selectedSet.length - 1) {
+              setTestCompleted(true);
+              clearInterval(timer);
 
-            //   return 0;
-            // }
-
-            if (phase === "writing") {
-              buzzerSound.current.currentTime = 0;
-
-              buzzerSound.current.play();
-
-              if (currentIndex === selectedSet.length - 1) {
-                setTestCompleted(true);
-
-                clearInterval(timer);
-
-                return 0;
-              }
-
-              const nextItem = selectedSet[currentIndex + 1];
-
-              setCurrentIndex((prev) => prev + 1);
-
-              setPhase("observation");
-
-              return nextItem.observationTime;
+              return 0;
             }
 
-            // const nextItem = selectedSet[currentIndex + 1];
+            // Move to next story
+            const nextItem = selectedSet[currentIndex + 1];
 
-            setCurrentIndex((prev) => prev + 1);
-
+            setCurrentIndex((prevIndex) => prevIndex + 1);
             setPhase("observation");
 
             return nextItem.observationTime;
           }
         }
 
-        // Prevent Negative Values
+        // Prevent negative timer
         return Math.max(prev - 1, 0);
       });
     }, 1000);
@@ -208,7 +145,6 @@ const TAT = ({ closeTAT }) => {
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
-
     const secs = seconds % 60;
 
     return `${mins}:${secs.toString().padStart(2, "0")}`;
@@ -220,6 +156,7 @@ const TAT = ({ closeTAT }) => {
 
   return (
     <div className="tat-container">
+
       {/* EXIT BUTTON */}
 
       <button
@@ -231,36 +168,80 @@ const TAT = ({ closeTAT }) => {
 
           closeTAT();
         }}
+        aria-label="Exit TAT practice"
       >
         ✕
       </button>
 
-      {/* INTRO MODAL */}
+      {/* SET SELECTION MODAL */}
 
       {showModal && (
         <div className="tat-modal-overlay">
           <div className="tat-modal">
-            <h2>Picture Story Practice</h2>
 
-            <ul>
-              <li>4 Picture Stories</li>
+            <div className="tat-modal-heading">
+              <span className="tat-modal-eyebrow">
+                EXAMITICS ISSB PRACTICE
+              </span>
 
-              <li>Picture shown for 30 seconds</li>
+              <h2>Select Your TAT Practice Set</h2>
 
-              <li>3.5 minutes story writing time</li>
+              <p>
+                Choose one of the three available sets to begin your
+                picture story practice.
+              </p>
+            </div>
 
-              <li>2 Pointer Stories</li>
+            {/* SET BUTTONS */}
 
-              <li>Pointer shown for 30 seconds</li>
+            <div className="tat-set-selection">
 
-              <li>3 minutes writing time</li>
+              {tatSets.map((set, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className="tat-set-btn"
+                  onClick={() => handleStartTest(index)}
+                >
+                  <span className="tat-set-number">
+                    SET {index + 1}
+                  </span>
 
-              <li>Use your notebook/copy</li>
-            </ul>
+                  <span className="tat-set-description">
+                    {set.length} Stories
+                  </span>
 
-            <button className="tat-start-btn" onClick={handleStartTest}>
-              Start Practice
-            </button>
+                  <span className="tat-set-arrow">
+                    Start Practice →
+                  </span>
+                </button>
+              ))}
+
+            </div>
+
+            {/* TEST INSTRUCTIONS */}
+
+            <div className="tat-instructions">
+
+              <h3>Test Instructions</h3>
+
+              <ul>
+                <li>4 Picture Stories</li>
+                <li>30 seconds observation time for each picture</li>
+                <li>3.5 minutes writing time for each picture</li>
+                <li>2 Pointer Stories</li>
+                <li>30 seconds observation time for each pointer</li>
+                <li>3 minutes writing time for each pointer</li>
+                <li>Write your stories in your notebook/copy</li>
+              </ul>
+
+            </div>
+
+            <p className="tat-modal-note">
+              Select a set to begin. A 3-second countdown will start
+              before the first story appears.
+            </p>
+
           </div>
         </div>
       )}
@@ -277,16 +258,21 @@ const TAT = ({ closeTAT }) => {
 
       {testStarted && !testCompleted && countdown === null && (
         <div className="tat-test-screen">
+
           <div className="tat-top-bar">
+
             <span>
               Story {currentIndex + 1} / {selectedSet.length}
             </span>
 
             <span className="phase-indicator">
-              {phase === "observation" ? "Observation Phase" : "Writing Phase"}
+              {phase === "observation"
+                ? "Observation Phase"
+                : "Writing Phase"}
             </span>
 
             <span>{formatTime(timeLeft)}</span>
+
           </div>
 
           {/* OBSERVATION PHASE */}
@@ -296,13 +282,15 @@ const TAT = ({ closeTAT }) => {
               {currentItem?.type === "picture" && (
                 <img
                   src={currentItem.image}
-                  alt="Story"
+                  alt={`TAT picture story ${currentIndex + 1}`}
                   className="tat-image"
                 />
               )}
 
               {currentItem?.type === "pointer" && (
-                <div className="pointer-box">{currentItem.text}</div>
+                <div className="pointer-box">
+                  {currentItem.text}
+                </div>
               )}
             </>
           )}
@@ -311,11 +299,16 @@ const TAT = ({ closeTAT }) => {
 
           {phase === "writing" && (
             <div className="writing-screen">
+
               <h1>WRITE YOUR STORY</h1>
 
-              <p>Continue writing on your notebook/copy.</p>
+              <p>
+                Continue writing on your notebook/copy.
+              </p>
+
             </div>
           )}
+
         </div>
       )}
 
@@ -323,11 +316,35 @@ const TAT = ({ closeTAT }) => {
 
       {testCompleted && (
         <div className="tat-completed">
+
           <h1>TEST COMPLETED</h1>
 
-          <p>{selectedSet.length} Stories Completed Successfully</p>
+          <p>
+            {selectedSet.length} Stories Completed Successfully
+          </p>
+
+          <p className="tat-completed-subtitle">
+            You have successfully completed your TAT practice session.
+          </p>
+
+          <button
+            className="tat-start-btn tat-restart-btn"
+            onClick={() => {
+              setTestStarted(false);
+              setTestCompleted(false);
+              setCurrentIndex(0);
+              setTimeLeft(0);
+              setPhase("observation");
+              setSelectedSet([]);
+              setShowModal(true);
+            }}
+          >
+            Practice Another Set
+          </button>
+
         </div>
       )}
+
     </div>
   );
 };

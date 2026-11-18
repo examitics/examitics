@@ -1,18 +1,7 @@
+
 /* =========================
    TAT OVERLAY
 ========================= */
-/* 
-.tat-container {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-
-  background: var(--bg-primary);
-
-  color: var(--text-primary);
-
-  overflow: hidden;
-} */
 
 .tat-container {
   position: fixed;
@@ -22,13 +11,13 @@
   background: rgba(5, 10, 20, 0.85);
 
   backdrop-filter: blur(25px);
-
   -webkit-backdrop-filter: blur(25px);
 
   color: white;
 
   overflow: hidden;
 }
+
 /* =========================
    EXIT BUTTON
 ========================= */
@@ -60,12 +49,11 @@
 
 .tat-exit-btn:hover {
   transform: scale(1.08);
-
   background: rgba(239, 68, 68, 0.25);
 }
 
 /* =========================
-   MODAL
+   MODAL OVERLAY
 ========================= */
 
 .tat-modal-overlay {
@@ -83,11 +71,20 @@
   backdrop-filter: blur(10px);
 
   z-index: 10000;
+
+  overflow-y: auto;
 }
+
+/* =========================
+   MODAL
+========================= */
 
 .tat-modal {
   width: 100%;
-  max-width: 650px;
+  max-width: 680px;
+
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
 
   background: var(--bg-card);
 
@@ -102,54 +99,167 @@
   animation: fadeInUp 0.4s ease;
 }
 
-.tat-modal h2 {
+.tat-modal-heading {
   text-align: center;
+  margin-bottom: 1.8rem;
+}
 
-  margin-bottom: 1.5rem;
+.tat-modal-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--primary-color);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tat-modal h2 {
+  margin-bottom: 12px;
 
   color: var(--text-primary);
 
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
 }
 
-.tat-modal ul {
-  margin-bottom: 2rem;
-
-  padding-left: 1.25rem;
-}
-
-.tat-modal li {
-  margin-bottom: 12px;
-
+.tat-modal-heading p {
   color: var(--text-secondary);
 
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.tat-start-btn {
-  width: 100%;
+/* =========================
+   SET SELECTION
+========================= */
 
-  padding: 14px;
+.tat-set-selection {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  border: none;
+  gap: 14px;
 
+  margin: 25px 0;
+}
+
+.tat-set-btn {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 22px 10px;
+
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
 
-  background: var(--gradient-primary);
+  background: var(--bg-primary);
 
-  color: white;
-
-  font-weight: 700;
-
-  font-size: 1rem;
+  color: var(--text-primary);
 
   cursor: pointer;
 
-  transition: all 0.3s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.tat-start-btn:hover {
-  transform: translateY(-2px);
+.tat-set-btn:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--primary-color);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow-md);
+}
+
+.tat-set-btn:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.tat-set-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+
+  color: var(--primary-color);
+}
+
+.tat-set-description {
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  color: var(--text-secondary);
+}
+
+.tat-set-arrow {
+  margin-top: 4px;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  color: var(--text-primary);
+}
+
+/* =========================
+   INSTRUCTIONS
+========================= */
+
+.tat-instructions {
+  padding: 18px 20px;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+
+  background: var(--bg-primary);
+}
+
+.tat-instructions h3 {
+  margin-bottom: 14px;
+
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.tat-instructions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tat-instructions li {
+  margin-bottom: 9px;
+
+  color: var(--text-secondary);
+
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.tat-instructions li:last-child {
+  margin-bottom: 0;
+}
+
+.tat-modal-note {
+  margin-top: 18px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.8rem;
+  line-height: 1.5;
+
+  text-align: center;
 }
 
 /* =========================
@@ -191,24 +301,6 @@
    TOP BAR
 ========================= */
 
-/* .tat-top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem 1.5rem;
-
-  margin-bottom: 2rem;
-
-  background: var(--bg-card);
-
-  border: 1px solid var(--border-color);
-
-  border-radius: var(--radius-lg);
-
-  box-shadow: var(--shadow-md);
-} */
-
 .tat-top-bar {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -232,10 +324,8 @@
 
 .tat-top-bar span {
   font-weight: 700;
-
   color: var(--text-primary);
 }
-
 
 .phase-indicator {
   padding: 8px 16px;
@@ -247,7 +337,6 @@
   color: var(--primary-color);
 
   font-size: 0.9rem;
-
   font-weight: 600;
 }
 
@@ -362,8 +451,22 @@
 
 .tat-completed p {
   color: var(--text-secondary);
-
   font-size: 1.1rem;
+}
+
+.tat-completed-subtitle {
+  margin-top: 8px;
+  margin-bottom: 24px;
+
+  max-width: 500px;
+
+  line-height: 1.6;
+}
+
+.tat-restart-btn {
+  width: auto;
+  min-width: 220px;
+  padding: 14px 25px;
 }
 
 /* =========================
@@ -419,6 +522,7 @@
 
   .tat-top-bar {
     padding: 12px 16px;
+    gap: 10px;
   }
 
   .tat-modal {
@@ -431,5 +535,66 @@
 
   .pointer-box {
     font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tat-modal-overlay {
+    padding: 12px;
+  }
+
+  .tat-modal {
+    padding: 1.25rem;
+    max-height: calc(100vh - 24px);
+  }
+
+  .tat-set-selection {
+    gap: 8px;
+  }
+
+  .tat-set-btn {
+    padding: 17px 5px;
+    gap: 8px;
+  }
+
+  .tat-set-number {
+    font-size: 1.05rem;
+  }
+
+  .tat-set-description {
+    font-size: 0.75rem;
+  }
+
+  .tat-set-arrow {
+    font-size: 0.68rem;
+  }
+
+  .tat-instructions {
+    padding: 15px;
+  }
+
+  .tat-instructions li {
+    font-size: 0.82rem;
+  }
+
+  .tat-top-bar {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+
+  .phase-indicator {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+  }
+
+  .tat-image {
+    height: calc(100vh - 170px);
+  }
+
+  .pointer-box {
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 }

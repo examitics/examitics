@@ -30,14 +30,14 @@ const tatSet1 = [
   {
     id: 5,
     type: "pointer",
-    text: "A young officer faced a difficult decision.",
+    text: "Their relations were very good but suddenly....",
     observationTime: 30,
     writingTime: 180,
   },
   {
     id: 6,
     type: "pointer",
-    text: "The team discovered an opportunity during the mission.",
+    text: "When he saw her in trouble then he....",
     observationTime: 30,
     writingTime: 180,
   },
