@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -17,28 +18,28 @@ const steps = [
     icon: <FiSearch />,
     title: "Choose Your Preparation",
     description:
-      "Select PMA Long Course, ISSB, Pakistan Air Force, Pakistan Navy, Intelligence Tests or Psychology Tests according to your selection journey.",
+      "Select your preparation pathway, including PMA Long Course, AFNS, PAF, Pakistan Navy or ISSB. Explore the resources relevant to your goals.",
   },
   {
     number: "02",
     icon: <FiEdit3 />,
-    title: "Practice Mock Tests",
+    title: "Learn and Practise",
     description:
-      "Attempt realistic mock tests, intelligence questions, WAT, TAT, SCT, OPI and interview preparation material completely free.",
+      "Study preparation guides, revise important concepts and attempt available intelligence, academic and psychology practice tests.",
   },
   {
     number: "03",
     icon: <FiBarChart2 />,
-    title: "Analyze Your Performance",
+    title: "Review Your Performance",
     description:
-      "Review your scores, identify weak areas and monitor your improvement through detailed performance analytics.",
+      "Check your test results, review correct answers and identify topics that require additional attention wherever result analysis is available.",
   },
   {
     number: "04",
     icon: <FiAward />,
-    title: "Improve & Succeed",
+    title: "Continue Improving",
     description:
-      "Continue practicing until you build confidence for PMA Initial Test, ISSB, PAF and Pakistan Navy selection.",
+      "Build a consistent preparation routine through regular practice, structured learning and revision before your selection examinations.",
   },
 ];
 
@@ -47,34 +48,31 @@ const HowItWorks = () => {
     <section className="how-it-works section-padding">
       <div className="container-custom">
 
-        {/* Header */}
+        {/* HEADER */}
 
         <div className="how-header">
-
           <span className="how-badge">
             How EXAMITICS Works
           </span>
 
           <h2>
-            Start Preparing in
-            <span> Four Simple Steps</span>
+            A Structured Approach to
+            <span> Your Preparation Journey</span>
           </h2>
 
           <p>
-            EXAMITICS helps candidates prepare smarter through structured
-            mock tests, psychology practice, study guides and performance
-            tracking for Pakistan Armed Forces selection.
+            EXAMITICS brings together online mock tests,
+            psychology practice, educational resources and
+            preparation guides to help candidates organize
+            their Pakistan Armed Forces selection preparation.
           </p>
-
         </div>
 
-        {/* Timeline */}
+        {/* PREPARATION TIMELINE */}
 
         <div className="timeline">
-
-          {steps.map((step, index) => (
-
-            <div className="timeline-item" key={index}>
+          {steps.map((step) => (
+            <div className="timeline-item" key={step.number}>
 
               <div className="timeline-number">
                 {step.number}
@@ -89,32 +87,28 @@ const HowItWorks = () => {
               <p>{step.description}</p>
 
             </div>
-
           ))}
-
         </div>
 
         {/* CTA */}
 
         <div className="prep-footer">
-
           <h3>
             Ready to Begin Your Preparation?
           </h3>
 
           <p>
-            Explore mock tests, psychology practice and complete study
-            material designed to help you prepare confidently.
+            Find the right mock tests, explore learning resources
+            and start working towards your Armed Forces selection goals.
           </p>
 
           <Link
-            to="/exams"
+            to="/mock"
             className="exa-btn exa-btn-primary"
           >
-            Start Free Preparation
+            Start Practising
             <FiArrowRight />
           </Link>
-
         </div>
 
       </div>

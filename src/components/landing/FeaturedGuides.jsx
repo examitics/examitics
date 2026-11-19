@@ -1,5 +1,7 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
+
 import {
   FiArrowRight,
   FiBook,
@@ -12,48 +14,32 @@ import "./FeaturedGuides.css";
 const guides = [
   {
     title: "PMA Long Course Initial Test Guide",
-    badge: "Most Popular",
+    badge: "PMA Preparation",
     image: "/images/pma-lc-guide.png",
-
     description:
-      "Complete PMA Initial Test preparation including verbal intelligence, non-verbal intelligence, academic tests, medical examination, physical tests and initial interview.",
-
+      "Understand the PMA Long Course initial selection process, including intelligence tests, academic preparation, medical requirements, physical assessment and initial interview.",
     readTime: "15 min",
-
     category: "PMA",
-
     link: "/pma-lc-initial-procedure",
   },
-
   {
     title: "PAF Initial Test Guide",
-    badge: "Most Popular",
+    badge: "PAF Preparation",
     image: "/images/paf-guide.png",
-
     description:
-      "Complete PAF Initial Test preparation including verbal intelligence, non-verbal intelligence, academic tests, medical examination, physical tests and initial interview.",
-
+      "Explore the Pakistan Air Force initial selection process, intelligence assessment, academic preparation, medical examination and interview guidance.",
     readTime: "15 min",
-
     category: "PAF",
-
     link: "/paf-initial-test-procedure",
   },
-
   {
     title: "Complete ISSB Preparation Guide",
-
     badge: "Complete Guide",
-
     image: "/images/issb-guide.png",
-
     description:
-      "Learn the complete ISSB selection procedure including psychology tests, group tasks, command task, interview, conference and officer-like qualities.",
-
+      "Understand the ISSB selection process, psychological assessment, GTO activities, interviews, conference and important officer-like qualities.",
     readTime: "20 min",
-
     category: "ISSB",
-
     link: "/issbguide",
   },
 ];
@@ -62,7 +48,8 @@ const FeaturedGuides = () => {
   return (
     <section className="featured-guides section-padding">
       <div className="container-custom">
-        {/* Header */}
+
+        {/* HEADER */}
 
         <div className="guides-header">
           <span className="guides-badge">
@@ -70,27 +57,27 @@ const FeaturedGuides = () => {
           </span>
 
           <h2>
-            Start With Our
-            <span> Complete Preparation Guides</span>
+            Learn Before You
+            <span> Attempt Your Tests</span>
           </h2>
 
           <p>
-            Read step-by-step guides covering the complete Pakistan Army
-            selection process, PMA Long Course Initial Test and ISSB
-            preparation before attempting mock tests.
+            Explore structured preparation guides to understand
+            the selection procedures, important examination
+            stages and preparation requirements for Pakistan
+            Armed Forces candidates.
           </p>
         </div>
 
-        {/* Cards */}
+        {/* GUIDE CARDS */}
 
         <div className="guides-grid">
-          {guides.map((guide, index) => (
+          {guides.map((guide) => (
             <article
               className="guide-card exa-card"
-              key={index}
+              key={guide.category}
             >
               <div className="guide-image">
-
                 <img
                   src={guide.image}
                   alt={guide.title}
@@ -103,24 +90,17 @@ const FeaturedGuides = () => {
               </div>
 
               <div className="guide-content">
+
                 <div className="guide-meta">
-
                   <span>
-
                     <FiLayers />
-
                     {guide.category}
-
                   </span>
 
                   <span>
-
                     <FiClock />
-
-                    {guide.readTime}
-
+                    {guide.readTime} read
                   </span>
-
                 </div>
 
                 <h3>{guide.title}</h3>
@@ -132,30 +112,64 @@ const FeaturedGuides = () => {
                   className="guide-link"
                 >
                   Read Complete Guide
-
                   <FiArrowRight />
-
                 </Link>
+
               </div>
             </article>
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* ADDITIONAL RESOURCES */}
 
         <div className="guides-footer">
           <FiBook />
 
           <h3>
-            More Preparation Guides Coming Soon
+            Explore More Preparation Resources
           </h3>
 
           <p>
-            We regularly publish new preparation guides covering PMA,
-            ISSB, Pakistan Air Force, Pakistan Navy and intelligence
-            test preparation.
+            Continue learning through the EXAMITICS Knowledge Hub,
+            explore interactive psychology practice and access
+            the complete online mock-test center.
           </p>
+
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "14px",
+              marginTop: "24px",
+            }}
+          >
+            <Link
+              to="/knowledgehub"
+              className="guide-link"
+            >
+              Knowledge Hub
+              <FiArrowRight />
+            </Link>
+
+            <Link
+              to="/issb-1"
+              className="guide-link"
+            >
+              ISSB Practice
+              <FiArrowRight />
+            </Link>
+
+            <Link
+              to="/mock"
+              className="guide-link"
+            >
+              Mock Test Center
+              <FiArrowRight />
+            </Link>
+          </div>
         </div>
+
       </div>
     </section>
   );

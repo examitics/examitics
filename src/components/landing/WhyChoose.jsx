@@ -1,5 +1,7 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
+
 import {
   FiShield,
   FiBookOpen,
@@ -16,68 +18,67 @@ import "./WhyChoose.css";
 const features = [
   {
     icon: <FiShield />,
-    title: "Free Resources",
+    title: "Structured Exam Preparation",
     description:
-      "Practice mock tests, psychology tests and study guides without subscriptions or hidden charges.",
+      "Explore dedicated preparation resources for PMA Long Course, AFNS, Pakistan Air Force and Pakistan Navy initial tests.",
   },
   {
     icon: <FiBookOpen />,
-    title: "Real Exam Pattern",
+    title: "Learning and Study Resources",
     description:
-      "Prepare with mock tests based on the latest PMA Long Course, ISSB, PAF and Pakistan Navy selection procedures.",
+      "Understand important concepts through preparation guides, Knowledge Hub articles, study notes and subject-based resources.",
   },
   {
     icon: <FiBarChart2 />,
-    title: "Performance Analytics",
+    title: "Test Results and Performance Review",
     description:
-      "Track your scores, identify weak areas and monitor your preparation progress after every test.",
+      "Review your mock-test results, check correct answers and identify areas that need further practice through available result analysis.",
   },
   {
     icon: <FiAward />,
-    title: "Complete Preparation",
+    title: "ISSB Psychology Preparation",
     description:
-      "Access Verbal Intelligence, Non-Verbal Intelligence, WAT, TAT, SCT, OPI, Mechanical Aptitude and Interview preparation.",
+      "Explore WAT, TAT, SCT, OPI, SRT, MAT and other psychology preparation resources through dedicated learning and practice pages.",
   },
   {
     icon: <FiSmartphone />,
-    title: "Study Anywhere",
+    title: "Flexible Online Learning",
     description:
-      "Prepare anytime using your desktop, tablet or mobile without compromising your learning experience.",
+      "Access EXAMITICS through your desktop, tablet or mobile browser and prepare at your own pace.",
   },
   {
     icon: <FiRefreshCw />,
-    title: "Regular Updates",
+    title: "Continuously Improving Resources",
     description:
-      "New mock tests, guides and preparation material are added regularly to keep content up to date.",
+      "Explore new practice sets, educational material and preparation resources as EXAMITICS continues to develop.",
   },
 ];
 
-const stats = [
-  {
-    number: "120+",
-    label: "Mock Tests",
-  },
-  {
-    number: "15+",
-    label: "Preparation Guides",
-  },
-  {
-    number: "8",
-    label: "Exam Categories",
-  },
-  {
-    number: "70%",
-    label: "Free Platform",
-  },
+const trustAreas = [
+  "PMA Long Course",
+  "AFNS",
+  "Pakistan Air Force",
+  "Pakistan Navy",
+  "ISSB Preparation",
+  "Verbal Intelligence",
+  "Non-Verbal Intelligence",
+  "Academic Tests",
+  "WAT",
+  "TAT",
+  "SCT",
+  "OPI",
+  "SRT",
+  "MAT",
+  "Initial Interview",
+  "GTO Preparation",
 ];
 
 const WhyChoose = () => {
   return (
     <section className="why-choose section-padding">
       <div className="container-custom">
-        {/* ===========================
-            HEADER
-        ============================ */}
+
+        {/* HEADER */}
 
         <div className="why-header">
           <span className="why-badge">
@@ -91,92 +92,59 @@ const WhyChoose = () => {
           </h2>
 
           <p>
-            EXAMITICS is a free online preparation platform that helps
-            candidates prepare for Pakistan Army, PMA Long Course, ISSB,
-            Pakistan Air Force and Pakistan Navy recruitment through mock tests,
-            psychology practice, study guides and performance analytics.
+            EXAMITICS is an online preparation platform designed
+            for candidates pursuing opportunities in Pakistan's
+            Armed Forces. Explore initial-test mock examinations,
+            ISSB psychology practice, preparation guides, study
+            resources and performance review tools in one place.
           </p>
         </div>
 
-        {/* ===========================
-            FEATURE CARDS
-        ============================ */}
+        {/* FEATURE CARDS */}
 
         <div className="why-grid">
           {features.map((feature, index) => (
             <article className="why-card exa-card" key={index}>
-              <div className="why-icon">{feature.icon}</div>
+              <div className="why-icon">
+                {feature.icon}
+              </div>
 
               <h3>{feature.title}</h3>
 
               <p>{feature.description}</p>
-
-              {/* <div className="why-card-footer">
-                <span>Learn More</span>
-
-                <FiArrowRight />
-              </div> */}
             </article>
           ))}
         </div>
 
-        {/* ===========================
-            TRUST SECTION
-        ============================ */}
+        {/* PREPARATION AREAS */}
 
         <div className="why-trust">
-          <h3>Prepare for Every Stage of Selection</h3>
+          <h3>Explore Different Areas of Preparation</h3>
 
           <div className="trust-tags">
-            <span>PMA Long Course</span>
-            <span>ISSB</span>
-            <span>Pakistan Army</span>
-            <span>Pakistan Air Force</span>
-            <span>Pakistan Navy</span>
-            <span>Verbal Intelligence</span>
-            <span>Non-Verbal Intelligence</span>
-            <span>Mechanical Aptitude</span>
-            <span>Academic Tests</span>
-            <span>WAT</span>
-            <span>TAT</span>
-            <span>SCT</span>
-            <span>OPI</span>
-            <span>Initial Interview</span>
+            {trustAreas.map((area) => (
+              <span key={area}>{area}</span>
+            ))}
           </div>
         </div>
 
-        {/* ===========================
-            STATS
-        ============================ */}
-
-        <div className="why-stats">
-          {stats.map((item, index) => (
-            <div className="why-stat exa-card" key={index}>
-              <h3>{item.number}</h3>
-
-              <p>{item.label}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* ===========================
-            CTA
-        ============================ */}
+        {/* CTA */}
 
         <div className="why-cta">
-          <h3>Start Your Preparation Today</h3>
+          <h3>Take the Next Step in Your Preparation</h3>
 
           <p>
-            Practice with free mock tests, improve your performance and prepare
-            confidently for PMA, ISSB, Pakistan Air Force and Pakistan Navy
-            selection.
+            Choose your examination, practise relevant questions,
+            explore preparation material and build a consistent
+            study routine with EXAMITICS.
           </p>
 
-          <Link to="/exams" className="exa-btn exa-btn-primary">
-            Start Free Preparation
+          <Link to="/mock" className="exa-btn exa-btn-primary">
+            Explore Mock Test Center
             <FiArrowRight />
           </Link>
         </div>
+
       </div>
     </section>
   );
