@@ -170,7 +170,7 @@ function PremiumPlans() {
               type="button"
               className="premium-plan-btn"
               onClick={() =>
-                handleWhatsApp("Monthly", "Rs. 1,500")
+                handleWhatsApp("Monthly", "Rs. 500")
               }
               disabled={isPremium}
             >
