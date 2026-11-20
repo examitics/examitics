@@ -113,7 +113,7 @@ function App() {
       {/* <AuthTest /> */}
       {/* <SecurityToast /> */}
       <SecurityProtection />
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> */}
       <ScrollToTop />
 
       <Routes>

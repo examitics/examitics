@@ -114,12 +114,12 @@ function PremiumPlans() {
 
             <div className="premium-plan-price">
   <span className="premium-original-price">
-    Rs. 1,500
+    {/* Rs. 1,500 */}
   </span>
 
   <div className="premium-current-price">
     <span className="premium-currency">Rs.</span>
-    <strong>500</strong>
+    <strong>1,500</strong>
     <span className="premium-period">/ month</span>
   </div> 
 </div>
@@ -170,13 +170,13 @@ function PremiumPlans() {
               type="button"
               className="premium-plan-btn"
               onClick={() =>
-                handleWhatsApp("Monthly", "Rs.500")
+                handleWhatsApp("Monthly", "Rs.1,500")
               }
               disabled={isPremium}
             >
               <FiMessageCircle />
 
-              {isPremium
+              {isPremium 
                 ? "Premium Active"
                 : "Get Monthly Plan"}
             </button>
